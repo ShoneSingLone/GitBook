@@ -9,6 +9,7 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 > [HTML+CSS基础课程](https://www.imooc.com/learn/9)
 
 # HTML
+[MDN-Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
 
 ## Web_Components
 [Web_Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
@@ -25,8 +26,24 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 # CSS
 [divcss学习网站](http://www.divcss5.com/)
 
+[MDN-Web/CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
+
+[MDN-Web/CSS/Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)
+
 border的样式很重要
 if `border：none;` 浏览器不会渲染border; 只有宽度，没有样式，也不会渲染, 所以一定要有样式才有效。 
+##继承
+颜色，文字，字体间距行高对齐方式，和列表的样式
+
+- 所有元素可继承：visibility和cursor。
+- 内联元素可继承：letter-spacing、word-spacing、white-space、line-height、color、font、font-family、font-size、font-style、font-variant、font-weight、text-decoration、text-transform、direction。
+- 终端块状元素可继承：text-indent和text-align。
+- 列表元素可继承：list-style、list-style-type、list-style-position、list-style-image。
+
+## 层叠
+- 特殊性、权重：ID选择器>Class选择器=伪类>标签名称选择器
+- 顺序
+- 重要性：！important
 
 ## 单位
 [vm rem em](https://zhuanlan.zhihu.com/p/30413803?group_id=906220704115974144)
@@ -80,6 +97,12 @@ HTML每个元素都是大大小小的盒子。
 
 #### 宽度和高度
 css内定义的宽（width）和高（height），指的是填充以里的内容范围。 因此一个元素实际宽度（盒子的宽度）=左边界+左边框+左填充+内容宽度+右填充+右边框+右边界。
+> ![iebox和w3cbox.png](./media/iebox和w3cbox.png)
+- 标准盒子模型 ＝ margin + border + padding + content （content =  width | height）
+- IE盒子模型 ＝ margin + content （content = border + padding + width | height）
+
+
+
 ![boxwidthandheight](./media/boxwidthandheight.jpg)
 
 [深入理解父元素与子元素的width关系](http://www.cnblogs.com/zhuzhenwei918/p/6389567.html)
@@ -1023,7 +1046,34 @@ $("button").trigger("click!");
 >[正则表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)
 
 
-# Network
+# Network 网络
+>《图解HTTP》
+
+## HTTP
+[超文本转移协议](http://www.cnblogs.com/gudi/p/6959715.html) /超文本传输协议
+
+历史：1990-1993=>1994=>1995=>1996=>1997
+
+### TCP/IP协议族
+#### 分层
+分层模式(Layered Architecture)、关注分离（separation of concerns）
+
+- 应用层：HTTP、FTP、DNS=>HTTP请求是一份协议，是一份描述
+- 传输层：TCP、UDP（用户数据报协议 user data protocol）=>根据描述对数据进行分割打上标记序号和端口号
+- 网络层：IP=>主机到主机的通信服务：选路径（forwarding and routing）
+- 数据链路、物理层：MAC地址=>
+
+HTTP报文→|应用层|→TCP首部→|传输层|→IP数据包→|网络层|→网络架构...
+
+#### 与HTTP关系密切的协议
+- IP：各种数据包传送到对方
+    - IP地址
+    - MAC地址
+- UDP：确保可靠性（HTTP无状态是什么意思？）（挖坑）
+    - three-way handshaking保证传输
+- DNS
+
+
 ## 状态码
 - 403：客户端没有访问权限
 - 404：客户端请求出现错误，请求的资源是不存在的
@@ -1101,7 +1151,7 @@ MixIn混入[多重继承](https://www.liaoxuefeng.com/wiki/0014316089557264a6b34
 - what
     jar听说过没有呀？高内聚低耦合，实现相关功能
 - how
-    - 单个文件（.js)
+    - 单个文件(.js)
     - exports 和 require 
 
 
@@ -1211,7 +1261,7 @@ npm install webpack –g
 
 用来操作锚，作为页面状态的。同时还有缓存技术就是指indexDB，是Brower端的数据库。可以做类似Photoshop历史记录的功能。（暂时还没有实现redo和undo）。
 
-## HTML5 history属性（待研究）
+## HTML5 history属性（挖坑）
 
 ## 使用HTTP和HTTPS的区别
 
@@ -1291,6 +1341,9 @@ const router = new VueRouter({
 
 
 # 开发工具
+## VS Code
+[Visual Studio Code 设置同步到github的插件介绍及使用方法(Settings Sync)](http://www.whidy.net/visual-studio-code-settings-sync-introduction.html)
+
 ## 软件工程
 ### JS程序流程可视化
 [js2flowchart 一个根据JavaScript代码生成漂亮SVG流程图的工具](https://www.ctolib.com/topics-126117.html)

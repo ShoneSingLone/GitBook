@@ -1,5 +1,5 @@
 # Summary
 
 * [Introduction](README.md)
-* [note](note.md)
+* [total](note.md)
 
