@@ -13,6 +13,13 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 
 ## Web_Components
 [Web_Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
+- [自定义元素](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Custom_Elements)
+- [HTML模板](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template)
+- [影子DOM](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Shadow_DOM)
+    - 
+    >[Shadow-DOM](https://aotu.io/notes/2016/06/24/Shadow-DOM/index.html)
+- [HTML导入](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/HTML_Imports)
+
 [从HTML Components的衰落看Web Components的危机](https://github.com/xufei/blog/issues/3)
 
 ## canvs
@@ -358,7 +365,6 @@ Inline-block和浮动布局的区别？
         </html>
          ```
 
-
 ## 布局模板
 ### flex布局
 [深入理解 flex 布局以及计算](https://www.w3cplus.com/css3/flexbox-layout-and-calculation.html)
@@ -379,6 +385,7 @@ glyphicons 矢量图
 # JavaScript
 
 >**参考书目** 《JavaScript权威指南》
+>[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/)
 
 ## 数据类型
 
@@ -413,7 +420,16 @@ console.log(Object.prototype.toString.call(null));//[object Null]
 
 2.	Object
 
-### 变量作用域
+### 变量
+
+#### 解构赋值
+
+>[概念：XOR_swap](https://en.wikipedia.org/wiki/XOR_swap)
+
+- 表明原变量的类型，属性名字、顺序要一致
+- 取数赋值跟交换是两种用途：`[a,b] = [b,a]`此为交换
+
+#### 变量作用域
 [变量用var和不用var的区别](https://segmentfault.com/a/1190000000638445)
 [ES6 变量作用域与提升：变量的生命周期详解](https://segmentfault.com/a/1190000010640225)
 ---
@@ -497,6 +513,10 @@ for of针对这些做了极大的优化
 - 更适合遍历数组
 
 ## 对象
+
+## 属性
+[Object.defineProperty()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+
 ### 对象的创建
 - 字面量:不会调用Object构造函数
 - new
@@ -534,6 +554,9 @@ function isArray(obj) {
 ```
 
 ### 函数(function)
+
+#### 箭头函数Arrow_functions
+[Arrow_functions](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 可以被定义，可以被调用，是一种语法，也是一种值，可以被程序操作，可以作为函数的参数。
 
@@ -1044,6 +1067,105 @@ $("button").trigger("click!");
 
 # 正则表达式
 >[正则表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)
+>[正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
+>[正则表达式的简单应用](http://www.yjs001.cn/web/regex/66051207346118647191.html)
+
+***
+如何匹配{abc：（a*c）=》c }？
+***
+
+## WHAT
+Regular Expression，是用来查找特定字符串的规则的表达式。（这个表达式描述的是这个查找规则）
+正则表达式是匹配模式，匹配字符||位置。（注意这个关系）
+
+## WHY
+与通配符相比，能灵活准确地查找出特定的字符串。
+## HOW
+>"我要找一个 **这样并这样** 的东西，吧啦吧啦..."
+
+从三个方面描述匹配规则（**这样并这样**）：
+- 位置
+- 字符
+- 数量
+
+ ![如何描述](http://upload-images.jianshu.io/upload_images/2333173-3310351ef6934fb6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+[原图](http://naotu.baidu.com/file/1aecbf1ac0a61154a6ec8a5a9f62d1c7?token=0771c8b6cc1fc0c4)
+
+**“在什么位置查找多少数量的什么字符。”**
+使用正则表达式的语法来表达如是的语句，成矣。
+
+## 1.正则表达式基本语法
+
+#### 位置 
+代码/语法|说明
+---|---
+\b|word start or end
+^|string start
+$|string end
+
+### 零宽断言：
+
+||零宽度正预测|零宽度负回顾|
+|---|---|--
+|先行断言|(?=exp)someword|(?!=exp)someword
+||**(?=exp)someword**：查找exp，且后面是someword|**(?！=exp)someword**：查找exp，且后面**不**是someword
+|后发断言|(?<=exp)someword|(?!<=exp)someword
+||**(?<=exp)someword**：查找exp，且前面是someword|**(?！<=exp)someword**：查找exp，且前面**不**是someword
+**怎么理解(?<=\s)\d+(?=\s)最后的(?=\s)?**
+
+#### 字符
+代码/语法| 说明
+---|---
+.|any character
+\w|word num underline
+\s|blank ：space
+\d|digit ：any of the numbers from 0 to 9 
+[]|collection
+**注意：大写字母与此相反，如\D表示不是数字。**
+
+
+#### 数量
+代码/语法| 说明
+---|---
+* | 0 or more
++ | 1 or more
+? | 0 or at most 1
+{n}|n 
+{n,m}|between n and m include
+{n,}|n or more
+
+### 其他
+
+#### mate character元字符
+元字符代表一类:\d=[0-9]；非元字符代表本身:\(\)=>()。
+#### 分支条件 |
+
+#### 分组节（）
+(){1,3}：()里的部分重复1或3次。
+#### 向后引用
+使用()可以指定一个子表达式，按从左至右的顺序会自动编号，0号是整个Sting。
+- 组号分配过程。
+- ？这里的分组是否与JavaScript中的match方法有联系
+>我们已经讨论了前两种语法。第三个(?:exp)不会改变正则表达式的处理方式，只是这样的组匹配的内容不会像前两种那样被捕获到某个组里面，也不会拥有组号。“我为什么会想要这样做？”——好问题，你觉得为什么呢？
+
+误：两个文本的替换可以匹配具体的内容FP_&1_&2 ，其中&1和&2即可指定具体的替换位置
+
+#### 反义
+大写和^。
+
+#### 贪婪与懒惰
+尽可能匹配最长的String与竟可能匹配少String：
+?的使用法。
+
+在大量使用嵌套的字符中需要思量。（常见的便是HTML文件中的<>嵌套，常用的规则利用)
+```
+(?<=<(\w)>).*(?=<\/\1)
+```
+
+#### 转义
+反斜杠\就是转义
+
+
 
 
 # Network 网络
@@ -1288,7 +1410,66 @@ npm install webpack –g
 [Axios实践](http://www.jianshu.com/p/df464b26ae58)
 
 # Vue
+
+- 跨组件数据流，
+- 自定义事件通信
+- 构建工具集成
+
+## 相关资料
+[教程](https://cn.vuejs.org/v2/guide/)
+[API](https://cn.vuejs.org/v2/api/)
+
+## 术语和概念
+- [Model–view–viewmodel](https://en.wikipedia.org/wiki/Model–view–viewmodel)
+- [Single-page application](https://en.wikipedia.org/wiki/Single-page_application)
+
+## 实例
+- 所有的 Vue 组件都是 Vue 实例
+- 只有当实例被创建时 data 中存在的属性是响应式的
+    - 数据占位的方式：
+    ```js
+    data: {
+    newTodoText: '',
+    visitCount: 0,
+    hideCompletedTodos: false,
+    todos: [],
+    error: null
+    }
+    ```
+- 除了 data 属性，Vue 实例暴露了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的属性区分开来
+
+#### 实例API
+- el
+- data
+- template
+- watch
+- methods
+- computed
+
+
+### 生命周期lifecycle
+![lifecycle.png](./media/lifecycle.png)
+
+[Vue源码浅析（二）-生命周期](https://www.cnblogs.com/libin-1/p/6845669.html)
+
+### 模板语法
+- Vue 不是基于字符串的模板引擎
+
+### 计算属性和观察者
+- 计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。
+- 同样的理由，如果只是针对值的计算，首选计算属性；但是如果某值发生变化引起其他的处理程序，比如drawer（举一个例子），还是考虑watch观察者
+
+### 条件渲染
+- template作为wrap不会被渲染
+- v-if、v-else v-else-if
+- key确保单独渲染而不是复用
+    - 有一个疑问（挖坑）如果在表单中使用，最终是会出现的DOM中？这里的显隐跟hidden或者visible
+- 一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。    
+
+
+
 #### 踩过的坑
+组件需在使用前声明，并没有类似变量提升的机制。
 - router
     1. children 使用的是数组 []
     2. children 在parent里要有`<router-view>`
@@ -1338,7 +1519,8 @@ const router = new VueRouter({
 [Why History_API not Hash](https://segmentfault.com/q/1010000010340823)
 [History_API](https://developer.mozilla.org/zh-CN/docs/Web/API/History_API)
 
-
+## 状态机
+[使用coroutine实现状态机（2）](https://zhuanlan.zhihu.com/p/31566664)
 
 # 开发工具
 ## VS Code
