@@ -33,6 +33,7 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 # CSS
 [divcss学习网站](http://www.divcss5.com/)
 
+
 [MDN-Web/CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
 
 [MDN-Web/CSS/Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)
@@ -191,7 +192,7 @@ var      | 定义变                             |
                 left:50%
             }
             .container ul{
-                list-style:none;
+                list-style:none; 
                 margin:0;
                 padding:0;
                 position:relative;
@@ -224,6 +225,15 @@ var      | 定义变                             |
 1. 垂直居中
     1. 父元素高度确定
         1. 单行文本:通过设置height 和 line-height 高度一致来实现的。
+            - ```
+            <style>
+            .container{
+                height:100px;
+                line-height:100px;
+                background:#999;
+            }
+            </style>
+            ```
         1. 多行文本或图片：
             1. 使用插入 table  (包括tbody、tr、td)标签，同时设置 vertical-align：middle。
             1. 在 chrome、firefox 及 IE8 以上的浏览器下可以设置块级元素的 display 为 table-cell（设置为表格单元显示），激活 vertical-align 属性，但注意 IE6、7 并不支持这个样式, 兼容性比较差。相当于内置了方法1.
@@ -249,7 +259,7 @@ var      | 定义变                             |
 - fix float所产生的塌陷
     - [利用:after伪类元素清除](http://www.html-js.com/article/2203)
     - [Why does overflow hidden stop floating elements escaping their container?](https://stackoverflow.com/questions/9193214/why-does-overflow-hidden-stop-floating-elements-escaping-their-container)
-    - [BFC 块级格式化上下文](http://web.jobbole.com/83149/)+ [CSS之BFC详解](http://www.html-js.com/article/1866)
+    - [BFC 块级格式化上下文](http://web.jobbole.com/83149/)+ [CSS之BFC详解](http://www.html-js.com/article/1866)+[](http://www.10tiao.com/html/59/201712/2651553261/1.html)
     **BFC特性**
 		1. 内部的Box会在垂直方向，从顶部开始一个接一个地放置。
 		1. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加
@@ -377,6 +387,8 @@ Inline-block和浮动布局的区别？
 [Web前端实现瀑布流的几js实现瀑布流的三种方式比较，js瀑布三种方式种方法](http://www.jianshu.com/p/d4ca937c6f96?from=jiantop.com)
 [纯js实现瀑布流布局及ajax动态新增数据  ](https://www.teakki.com/p/5901f3cab819c55a2789c289)
 
+## 
+[使用 CSS overscroll-behavior 控制滚动行为：自定义下拉刷新和溢出效果](https://github.com/dev-reading/fe/blob/master/articles/2017-11-15-overscroll-behavior.md)
 ## @font-face
 glyphicons 矢量图
 
@@ -386,6 +398,7 @@ glyphicons 矢量图
 
 >**参考书目** 《JavaScript权威指南》
 >[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/)
+>[es2015](https://babeljs.io/learn-es2015/)
 
 ## 数据类型
 
@@ -1247,6 +1260,9 @@ MixIn混入[多重继承](https://www.liaoxuefeng.com/wiki/0014316089557264a6b34
 
 [《JavaScript设计模式与开发实践》](https://www.amazon.cn/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5-%E6%9B%BE%E6%8E%A2/dp/B01F7IELCW/ref=sr_1_3?s=digital-text&ie=UTF8&qid=1507800630&sr=1-3&keywords=JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
 
+## 集合模式
+[集合模式](http://www.cnblogs.com/huangpeng/archive/2011/06/28/2092591.html)
+
 ## 享元模式
 享元模式用于**减少**应用程序所需要的对象数量。(jQuery中的`on()委托delegate`就是这个模式。)
 一个对象，会变化的属性和不会变化的属性分开。享元模式要求将对象的属性划分为内部状态与外部状态（状态在这里通常指属性）。享元模式的目标是尽量减少共享对象的数量，关于如何划分内部状态和外部状态，下面的几条经验提供了一些指引。
@@ -1278,16 +1294,28 @@ MixIn混入[多重继承](https://www.liaoxuefeng.com/wiki/0014316089557264a6b34
 
 
 ## npm
+[npm 中文文档](https://www.npmjs.com.cn/)
+[npm English](https://docs.npmjs.com/getting-started/what-is-npm)
+
+```cmd
+> npm install npm@latest -g
+> npm install -g <package_name> --save-dev
+> npm update <package_name>
+> npm uninstall -g <package_name> --save-dev
+
+```
 
 [tree-cli:生成目录树](https://www.npmjs.com/package/tree-cli)
-在windows下与CMDtree冲突，就将tree.cmd rename=>ntree.cmd
+在windows下与CMD:tree冲突，就将tree.cmd rename=>ntree.cmd
 所以命令就是`ntree`
+
 ```
 tree -l 2 --ignore 'node_modules/, .git/, .gitignore' -o tree.txt
 //-d: list directories only.
 //-l: level max display depth of the directory tree.
 //--ignore: ignores directory or file you specify - accepts arrays as comma-delimited strings: 'node_modules/, .git/, .gitignore'
 ```
+
 ### 服务器
 [Node.js静态文件服务器实战](http://www.infoq.com/cn/news/2011/11/tyq-nodejs-static-file-server)
 [node.js 一个简单的页面输出](http://www.cnblogs.com/rubylouvre/archive/2011/11/20/2255083.html)
@@ -1321,7 +1349,7 @@ app.delete('/user', function (req, res) {
 ## Yarn[官网](https://yarnpkg.com/zh-Hans/)
 ## cli对比 [migrating-from-npm](https://yarnpkg.com/zh-Hans/docs/migrating-from-npm)
 
-### npm scripts
+### npm  scripts
 
 简单来说，npm script学习了Gulp的优点。
 
@@ -1344,6 +1372,8 @@ app.delete('/user', function (req, res) {
 ### Webpack
 #### What？
 [官网](https://doc.webpack-china.org/concepts/)
+[Webpack from First Principles](https://www.youtube.com/watch?v=WQue1AN93YU)
+
 >webpack 是一个现代 JavaScript 应用程序的模块打包器(module bundler)。
 
 #### Why？
@@ -1390,7 +1420,20 @@ npm install webpack –g
 ## AMD和CMD
 优劣或者各自的适用场景
 当我们来说加载的时候来说一下浏览器的渲染机制，当我们输入网址之后到底发生了什么。
+### RequireJS
+[RequireJS](http://requirejs.org/)
+
 [使用requirejs进行模块化开发](http://w3cboy.com/post/2014/09/%E4%BD%BF%E7%94%A8requirejs%E8%BF%9B%E8%A1%8C%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/)
+
+[RequireJS和AMD规范](http://javascript.ruanyifeng.com/tool/requirejs.html)
+
+- 引入RequireJS
+- data-main
+    - require.config
+    - 没有按照AMD规范的第三方库如何引入？
+        - path:实际路径
+        - shim:具体的依赖
+    - 非JavaScript文件如何引入？
 
 ## HTML中value innerText innerHTML的区别
 - innerHTML:浏览器会将inneHTML后面的内容作为html来解析。
@@ -1441,6 +1484,7 @@ npm install webpack –g
 #### 实例API
 - el
 - data
+    - 可以使用【集合模式】例如message可能不止一个
 - template
 - watch
 - methods
@@ -1466,7 +1510,44 @@ npm install webpack –g
     - 有一个疑问（挖坑）如果在表单中使用，最终是会出现的DOM中？这里的显隐跟hidden或者visible
 - 一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。    
 
+### 表单输入绑定
+#### 值绑定
+- v-bind:value
+- v-bind:true-value
+- v-bind:false-value
 
+#### 修饰符
+.lazy:input→change
+.number
+.trim
+
+
+### 混合
+mixin 这个概念在SASS中是提到过的，但是Python中应该也有。
+
+```
+// 定义一个使用混合对象的组件
+var Component = Vue.extend({
+  mixins: [myMixin]
+})
+
+```
+#### 选项合并
+生命周期的钩子函数类似于.on()的作用，混合对象的钩子将在组件自身钩子之前调用 。而其他属性只会取组件的调用。
+
+
+### 自定义指令
+#### 注册
+和components的策略是一样的。
+注意钩子函数：
+- bind
+- inserted
+- update
+- componentUpdated
+- unbind
+
+#### other
+[自定义 input 类型](https://cn.vuejs.org/v2/guide/components.html#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E7%BB%84%E4%BB%B6)
 
 #### 踩过的坑
 组件需在使用前声明，并没有类似变量提升的机制。
@@ -1527,6 +1608,180 @@ const router = new VueRouter({
 [Visual Studio Code 设置同步到github的插件介绍及使用方法(Settings Sync)](http://www.whidy.net/visual-studio-code-settings-sync-introduction.html)
 
 ## 软件工程
+
+### SASS
+#### SASS
+
+[Sass 基础教程](http://www.sasschina.com/guide/)
+
+[SassScript](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)
+
+---
+#### SASS的使用
+安装
+- gem install sass
+使用
+- sass test.scss test.css
+- sass --style compressed test.sass test.css
+    - nested：嵌套缩进的css代码，它是默认值。
+    - expanded：没有缩进的、扩展的css代码。
+    - compact：简洁格式的css代码。
+    - compressed：压缩后的css代码。
+- sass --watch test.scss:test.css
+
+---
+##### 0. Sass 文件后缀名
+
+- sass 类似Python的风格 程序员亲近
+- scss 类似CSS的风格亲 设计师亲近（产生less的源力）
+
+##### 1. 使用变量
+- `$`用于声明
+- 计算
+```css
+    margin: (14px/2);
+    top: 50px + 100px;
+    right: $var * 10%;
+```
+
+##### 2. 嵌套CSS 规则
+- 没什么好说的，sass目的就是要像写程序一样复用代码
+- 父选择器的标识符`&`
+    
+    接伪类
+    ```css
+    article a {
+        color: blue;
+        &:hover { color: red }
+    }
+    /*编译后*/
+    article a { color: blue }
+    article a:hover { color: red }
+    ```
+    同时父选择器标识符还有另外一种用法，你可以在父选择器之前添加选择器。举例来说，当用户在使用IE浏览器时，你会通过JavaScript在<body>标签上添加一个ie的类名，为这种情况编写特殊的样式如下：
+    ```css
+    /*&位置*/
+    #content aside {
+                color: red;
+                body.ie & { color: green }
+    }
+
+    /*编译后*/
+    #content aside {color: red};
+    body.ie #content aside { color: green }
+    ```
+- 群组选择器的嵌套
+    - `,`
+    
+- 子组合选择器和同层组合选择器：>、+和~  [Selector](./jQuery.html)
+    - " "是`ancestor descendant`中间的空格符号，同理 `>`、`+` 、`~`一样有效
+    ```css
+    article {
+        ~ article { border-top: 1px dashed #ccc }
+        > section { background: #eee }
+        dl > {
+            dt { color: #333 }
+            dd { color: #555 }
+        }
+        nav + & { margin-top: 0 }
+    }
+    /*编译后*/
+    article ~ article { border-top: 1px dashed #ccc }
+    article > footer { background: #eee }
+    article dl > dt { color: #333 }
+    article dl > dd { color: #555 }
+    nav + article { margin-top: 0 }
+    ```
+- 嵌套属性
+    - `:`把属性名从中划线-的地方断开，在根属性后边添加一个冒号:，紧跟一个{ }块，把子属性部分写在这个{ }块中
+    ```css
+    nav {
+        border: {
+        style: solid;
+        width: 1px;
+        color: #ccc;
+        }
+    }
+    /*编译后*/
+    nav {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #ccc;
+    }
+    ```
+- 其他
+    - @debugger @warn @error
+    - @if @else
+    - @for @each @while
+    - @function @return 
+
+    
+
+##### 3. 导入SASS文件
+- 使用SASS部分文件
+    - `_`前缀
+    - sass局部文件的文件名以下划线开头。这样，sass就不会在编译时单独编译这个文件输出css，而只把这个文件用作导入。当你@import一个局部文件时，还可以不写文件的全名，即省略文件名开头的下划线。举例来说，你想导入themes/_night-sky.scss这个局部文件里的变量，你只需在样式表中写@import "themes/night-sky";。
+- 默认变量值
+    - `!default`:反复声明一个变量，只有最后一处声明有效且它会覆盖前边的值;
+- 嵌套导入
+    - `@import`
+
+##### 4. 静默注释
+- `/*comment*/`
+- `//comment`
+
+##### 5. 混合器Mixin
+- `@mixin`
+    - 如同JavaScript的`function`，[多重继承](https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014318680104044a55f4a9dbf8452caf71e8dc68b75a18000)
+    [组合模式](https://en.wikipedia.org/wiki/Composite_pattern)
+    - `@include`
+    ```css
+    @mixin rounded-corners {
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .notice {
+        background-color: green;
+        border: 2px solid #00aa00;
+        @include rounded-corners;
+    }
+
+    //sass最终生成：
+    .notice {
+        background-color: green;
+        border: 2px solid #00aa00;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    ```
+    传参（在@include中使用`$hover:#color`的形式，同时保证参数数量匹配，而不用记住顺序）、默认参数(在@mixin中定义)
+    ```css
+    @mixin link-colors($normal, $hover:#color, $visited) {
+        color: $normal;
+        &:hover { color: $hover; }
+        &:visited { color: $visited; }
+    }
+
+    a {
+        @include link-colors(
+            $normal: blue,
+            $visited: green,
+            $hover: red
+        );
+    }    
+    ```
+
+##### 6.使用选择器继承来精简CSS
+- `@extend`继承选择器所选的全部样式
+
+
+
+### stylus
+[stylus 中文](http://www.zhangxinxu.com/jq/stylus/)
+
 ### JS程序流程可视化
 [js2flowchart 一个根据JavaScript代码生成漂亮SVG流程图的工具](https://www.ctolib.com/topics-126117.html)
 [demo](https://bogdan-lyashenko.github.io/js-code-to-svg-flowchart/docs/live-editor/index.html)
@@ -1544,3 +1799,7 @@ const router = new VueRouter({
 [待处理](http://www.html5jscss.com/10-ways-cross-domain.html)
 
 [待处理](http://www.html5jscss.com/css-inline-block.html)
+[前端本地文件操作与上传](http://www.10tiao.com/html/59/201712/2651553261/2.html)
+[前端开发中，使用base64图片的弊端是什么](https://www.zhihu.com/question/31155574)
+[自动精灵图工具](https://github.com/cupools/img-sprite)
+[图片优化－ base64 vs 雪碧图](http://www.jianshu.com/p/8d41aab5fba1)
