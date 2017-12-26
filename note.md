@@ -1215,7 +1215,10 @@ HTTP报文→|应用层|→TCP首部→|传输层|→IP数据包→|网络层|�
 - 304：重定向，资源在某处有缓存，可以直接取用，不需要向原始地址发起请求。
 - 500：服务器问题
 
-## 数据结构和算法
+## WebSocket
+[使用 WebSocket 构建实时性应用](https://juejin.im/post/5a3cb04951882525822793f5?utm_medium=fe&utm_source=weixinqun)
+
+# 数据结构和算法
 ### 数组
 
 其他|---
