@@ -27,6 +27,8 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 
 [Css中路径data:image/png;base64的用法详解](http://www.aimks.com/css-path-data-image-png-usage-base64.html)
 
+[瞎折腾：把JS,CSS任意文本文件加密成一张图片](https://juejin.im/entry/5a41b3d66fb9a045154421cb?utm_medium=fe&utm_source=weixinqun)
+
 ## SVG
 [SVG](https://aotu.io/notes/2015/11/20/svg-I-know/)
 
@@ -225,6 +227,7 @@ var      | 定义变                             |
 1. 垂直居中
     1. 父元素高度确定
         1. 单行文本:通过设置height 和 line-height 高度一致来实现的。
+        <script src='http://runjs.cn/gist/11yepad9/all'></script>
             - ```
             <style>
             .container{
@@ -376,6 +379,13 @@ Inline-block和浮动布局的区别？
          ```
 
 ## 布局模板
+
+布局的策略：从左到右，从上到下；
+vertical-align：top
+line-height
+
+
+
 ### flex布局
 [深入理解 flex 布局以及计算](https://www.w3cplus.com/css3/flexbox-layout-and-calculation.html)
 [Flex 布局教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
@@ -399,6 +409,7 @@ glyphicons 矢量图
 >**参考书目** 《JavaScript权威指南》
 >[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/)
 >[es2015](https://babeljs.io/learn-es2015/)
+
 
 ## 数据类型
 
@@ -554,24 +565,53 @@ hasOwnProperty判断自有属性
 原型和原型的好处：
 
 ### 数组(Array)
+#### 数组方法
+（有一个术语，描述方法是否改变自身的，忘了是什么了......)
+
+[array 方法](http://louiszhai.github.io/2017/04/28/array/#some)
+- 改变自身
+- 不改变自身
+- 遍历
+
 
 判断是否是数组的方法是看类属性（是对象的三个属性之一：原型、类、可扩展）
 
 ```js
 //对象&&对象类型
 function isArray(obj) {
-    return Array.isArray(obnction (obj) {
+    return Array.isArray(function (obj) {
         return typeof obj === "object" && Array.prototype.toString.call(obj) === "[object Array]";
     };
 }
 ```
 
+### set
+唯一性
+
+NaN等于自身，而精确相等运算符认为NaN不等于自身
+
 ### 函数(function)
 
 #### 箭头函数Arrow_functions
+
 [Arrow_functions](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 可以被定义，可以被调用，是一种语法，也是一种值，可以被程序操作，可以作为函数的参数。
+Arrow_functions no this or arguments、super、new.target。call apply 因为没有this ，所以无法绑定。
+
+```js
+(function() {
+	console.log(this);
+  return [
+    (() => {
+    	console.log(this.x);
+    }).bind({ x: 'inner' })()
+  ];
+}).call({ x: 'outer' });
+// { x: 'outer' }
+// 因为Arrow——function没有this所以bind是无效的，=》无法改变Arrow里面的this指向
+// outer
+```
 
 #### 自执行匿名函数（Self-executing anonymous function）/立即调用的函数表达式（Immediately-Invoked Function Expression）
 IFE
@@ -587,6 +627,7 @@ IFE
 - 一元运算都是有效的
 
 [运算符性能测试](https://jsperf.com/js-funcion-expression-speed)
+
 ```js
 	(function(){/*code*/})();//****推荐，因为性能
 	!function(){/*code*/}();
@@ -666,6 +707,7 @@ object[__proto__] = new Constructor[prototype]
 使用准则： 
 1. 作为函数调用this指代全局对象（^strict）或者undefined（strict）；
 这个特性倒是可以用来区别当前是否是strict模式： `var isStrict = (function(){return !this})();`
+
 1. 作为方法调用指代调用的对象本身；
 1. 作为构造函数this指代构造对象本身，跟2的方式不同。即`new object.constructor()`中的`this`（调用上下文）并不是object而是constructor()返回的对象；
 1. 作为间接调用call()、apply()，显示指定this。另外也可以理解成上面的三种是第四种的语法糖，因为都可以用第四种表示出来而且没有异议。
@@ -815,12 +857,13 @@ strict模式中 call() 和 apply()的第一个值是this，其他的情况null�
 [创建绑定函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 
 bind() 最简单的用法是创建一个函数，使这个函数不论怎么调用都有同样的 this 值。JavaScript新手经常犯的一个错误是将一个方法从对象中拿出来，然后再调用，希望方法中的 this 是原来的对象。（比如在回调中传入这个方法。）如果不做特殊处理的话，一般会丢失原来的对象。从原来的函数和原来的对象创建一个绑定函数，则能很漂亮地解决这个问题：
-
+                       
 # Promise
-
+[MDN Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7)
 [前端基础进阶（十三）：透彻掌握Promise的使用，读这篇就够了](http://www.jianshu.com/p/fe5f173276bd)
 [在Node.js中使用promise摆脱回调金字塔](http://nya.io/Node-js/promise-in-nodejs-get-rid-of-callback-hell/)
 [q](http://documentup.com/kriskowal/q/)
+jQuery 主要是用 Deferred对象，与Promise A+标准不同。
 
 ```js
     var Q = require('q');
@@ -855,8 +898,10 @@ bind() 最简单的用法是创建一个函数，使这个函数不论怎么调�
 ## 客户端存储技术
 cookie和session的区别
 提醒用户打开cookies的方式
+[前端本地存储讲解](https://juejin.im/entry/5a41b7f4f265da43152427b6?utm_medium=fe&utm_source=weixinqun)
 
 ### cookies
+
 ### Web Storage
 - sessionStorage
 - localStorage 
@@ -1286,6 +1331,21 @@ MixIn混入[多重继承](https://www.liaoxuefeng.com/wiki/0014316089557264a6b34
 - Shell作为唯一的入口。
 - 调用其他模块的接口。
 
+# TaskRunner
+- 开发阶段
+    - 刷新 BrowserSync
+    - 预处理 Sass
+    - 代码分析 ESLint
+    - 持续测试
+
+- 构建阶段
+    - 预处理
+    - 文件串联
+    - 混缩 minification
+    - 持续集成 Continuous Integration Jenkins
+
+
+
 # NodeJS
 ## 模块
 模块=》包=》包管理
@@ -1351,6 +1411,7 @@ app.delete('/user', function (req, res) {
 ```
 ## Yarn[官网](https://yarnpkg.com/zh-Hans/)
 ## cli对比 [migrating-from-npm](https://yarnpkg.com/zh-Hans/docs/migrating-from-npm)
+
 
 ### npm  scripts
 
@@ -1464,6 +1525,7 @@ npm install webpack –g
 ## 相关资料
 [教程](https://cn.vuejs.org/v2/guide/)
 [API](https://cn.vuejs.org/v2/api/)
+[Vue解析](https://github.com/answershuto/learnVue)
 
 ## 术语和概念
 - [Model–view–viewmodel](https://en.wikipedia.org/wiki/Model–view–viewmodel)
@@ -1504,7 +1566,7 @@ npm install webpack –g
 
 ### 计算属性和观察者
 - 计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。
-- 同样的理由，如果只是针对值的计算，首选计算属性；但是如果某值发生变化引起其他的处理程序，比如drawer（举一个例子），还是考虑watch观察者
+- 同样的理由，如果只是针对值的计算，首选计算属性；但是如果某值发生变化引起其他的处理程序，比如drawer（举一个例子），还是考虑watch observer 观察者
 
 ### 条件渲染
 - template作为wrap不会被渲染
@@ -1576,6 +1638,13 @@ const router = new VueRouter({
 });
 ```
 
+### Vuex
+[What is Vuex?](https://vuex.vuejs.org/zh-cn/intro.html)
+
+[mindmap](http://naotu.baidu.com/file/38dd73233fc037ee15d4668494c26761)
+
+[Vuex解析](https://zhuanlan.zhihu.com/p/30560457?utm_source=qq&utm_medium=social)
+
 ### 服务器
 - static.js
 [Node.js静态文件服务器实战](http://www.infoq.com/cn/news/2011/11/tyq-nodejs-static-file-server)
@@ -1611,6 +1680,14 @@ const router = new VueRouter({
 [Visual Studio Code 设置同步到github的插件介绍及使用方法(Settings Sync)](http://www.whidy.net/visual-studio-code-settings-sync-introduction.html)
 
 ## 软件工程
+
+### 前端开发
+### SPA
+- 模块（组件）
+- 视图（布局和渲染MVW）
+- 导航（路由VueRouter）
+- 模块组件通信(Vuex 发布订阅模式)
+- 与服务端通信(ajax、axios)
 
 ### SASS
 #### SASS
@@ -1785,9 +1862,19 @@ const router = new VueRouter({
 ### stylus
 [stylus 中文](http://www.zhangxinxu.com/jq/stylus/)
 
+
+
 ### JS程序流程可视化
 [js2flowchart 一个根据JavaScript代码生成漂亮SVG流程图的工具](https://www.ctolib.com/topics-126117.html)
 [demo](https://bogdan-lyashenko.github.io/js-code-to-svg-flowchart/docs/live-editor/index.html)
+
+
+# Test测试
+[如何对vue.js单文件（.vue）进行单元测试](https://www.zhihu.com/question/50566681/answer/267276949)
+
+[聊一聊前端自动化测试（上）](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226799&idx=1&sn=7b0b7cdf36c768a49e5010a9afa1f14b&chksm=bd495b2b8a3ed23d8f9dd95dc2ef021ae4093e35b2a7b4434eac2cf5e3c8354c284eaff0c236&scene=21#wechat_redirect)
+
+[聊一聊前端自动化测试（下）](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226799&idx=2&sn=53c4bc978fabb5cde0a5c83069de7220&chksm=bd495b2b8a3ed23de7a5b1e07fb80c83f9d5df07a260ea1ae1621531dc96ed1e2fda7b3b6599&scene=21#wechat_redirect)
 
 # 待处理的部分
 
