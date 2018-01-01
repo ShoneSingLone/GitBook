@@ -390,6 +390,7 @@ line-height
 [深入理解 flex 布局以及计算](https://www.w3cplus.com/css3/flexbox-layout-and-calculation.html)
 [Flex 布局教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 [Flex 布局教程 demo](http://static.vgee.cn/static/index.html)
+[FLEX-LAYOUT](https://github.com/Coffcer/flex-layout)
 
 
 [mindmap](http://naotu.baidu.com/file/c629a9abd17ecd60f59bc98dcfe5a4fe)
