@@ -391,6 +391,10 @@ line-height
 [Flex 布局教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 [Flex 布局教程 demo](http://static.vgee.cn/static/index.html)
 
+
+[mindmap](http://naotu.baidu.com/file/c629a9abd17ecd60f59bc98dcfe5a4fe)
+
+
 ### 瀑布流
 [瀑布流布局的实现步步升级（原生JS）](http://www.dengzhr.com/js/405)
 [Web前端实现瀑布流的几种方法](http://www.jianshu.com/p/d4ca937c6f96?from=jiantop.com)
