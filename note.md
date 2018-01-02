@@ -389,8 +389,16 @@ line-height
 ### flex布局
 [深入理解 flex 布局以及计算](https://www.w3cplus.com/css3/flexbox-layout-and-calculation.html)
 [Flex 布局教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+[Flex 布局教程 实例](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
 [Flex 布局教程 demo](http://static.vgee.cn/static/index.html)
 [FLEX-LAYOUT](https://github.com/Coffcer/flex-layout)
+
+ flex分为两个部分：一个是container 用作包裹；另一个是item，被包裹的元素。container可以指定排列的方向（flex-direction）和换行的方式（flex-wrap）。
+ 
+ **flex-direction**属性指定了内部元素是如何在 flex 容器中布局的，定义了主轴的方向(正方向或反方向)。意思就是当`flex-directin:column;`时，justify axis变成了Y轴，可能
+ 
+ 注意到这里的baseline和content的around就可以理解到这两者的区别：content是main和cross上的分部，而align-items就是item内部的布局基准。align又有stretch属性，在cross轴上特有。
+ 尽量是不要自动换行，设计为row和column的方式：指定column。
 
 
 [mindmap](http://naotu.baidu.com/file/c629a9abd17ecd60f59bc98dcfe5a4fe)
