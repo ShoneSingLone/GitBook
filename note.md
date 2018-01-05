@@ -10,6 +10,7 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 
 # HTML
 [MDN-Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
+[300毫秒延迟](https://thx.github.io/mobile/300ms-click-delay#%E5%BD%93%E5%89%8D%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%BB%B6%E8%BF%9F)
 
 ## Web_Components
 [Web_Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
@@ -395,7 +396,7 @@ line-height
 
  flex分为两个部分：一个是container 用作包裹；另一个是item，被包裹的元素。container可以指定排列的方向（flex-direction）和换行的方式（flex-wrap）。
  
- **flex-direction**属性指定了内部元素是如何在 flex 容器中布局的，定义了主轴的方向(正方向或反方向)。意思就是当`flex-directin:column;`时，justify axis变成了Y轴，可能
+ **flex-direction**属性指定了内部元素是如何在 flex 容器中布局的，定义了主轴的方向(正方向或反方向)。意思就是当`flex-directin:column;`时，justify axis变成了Y轴。
  
  注意到这里的baseline和content的around就可以理解到这两者的区别：content是main和cross上的分部，而align-items就是item内部的布局基准。align又有stretch属性，在cross轴上特有。
  尽量是不要自动换行，设计为row和column的方式：指定column。
@@ -1285,6 +1286,10 @@ Unshift=》|《=Push
 《=Shift|Pop=》
 
 后进先出Stack
+
+Stack
+Queen
+Link
 
 
 # Git
