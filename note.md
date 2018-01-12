@@ -11,6 +11,7 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 # HTML
 [MDN-Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
 [300毫秒延迟](https://thx.github.io/mobile/300ms-click-delay#%E5%BD%93%E5%89%8D%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%BB%B6%E8%BF%9F)
+[移动端Web页面适配方案](https://funteas.com/topic/5a4d80ec1f635ce136730e10)
 
 ## Web_Components
 [Web_Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
@@ -36,6 +37,7 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 # CSS
 [divcss学习网站](http://www.divcss5.com/)
 
+[值得参考的css理论：OOCSS、SMACSS与BEM](https://segmentfault.com/a/1190000000704006)
 
 [MDN-Web/CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
 
@@ -91,6 +93,11 @@ HTML每个元素都是大大小小的盒子。
 
 我的理解——主要是分为两种：inline和block。
 在两者的基础特性上，又有其他的组合效果如——inline-block
+
+
+[标准模式与怪异模式对于渲染页面的影响](https://juejin.im/post/5a44aa4d518825146b10d69d?utm_medium=fe&utm_source=weixinqun)
+- boder-box:border+padding+content
+- boder-
 
 ## 行内元素（inline）和块级元素（block）
 
@@ -423,7 +430,9 @@ glyphicons 矢量图
 >**参考书目** 《JavaScript权威指南》
 >[《ECMAScript 6 入门》](http://es6.ruanyifeng.com/)
 >[es2015](https://babeljs.io/learn-es2015/)
+>[19 个常用的 JavaScript 简写方法](https://mp.weixin.qq.com/s?__biz=MzAwNDcyNjI3OA==&mid=2650840838&idx=1&sn=5b8d653fa8b0e1e7d1dc630e844cd2f0&chksm=80d3b46fb7a43d79086e77ce1f4e85d0d110b5426d8af6e942c96d3c5030fde738fde6725879&scene=0#rd)
 
+[ES6展开运算符的6种妙用](https://www.jianshu.com/p/c5230c11781b)
 
 ## 数据类型
 
@@ -1277,6 +1286,8 @@ HTTP报文→|应用层|→TCP首部→|传输层|→IP数据包→|网络层|�
 ## WebSocket
 [使用 WebSocket 构建实时性应用](https://juejin.im/post/5a3cb04951882525822793f5?utm_medium=fe&utm_source=weixinqun)
 
+[WebSocket：5分钟从入门到精通](https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651553461&idx=1&sn=1df66f564e85db96c3ef54d1790598f2&chksm=8025a974b752206280bc284e4d3288a5c357c4ff8bb427b38482e8b04c490a5ee833bb000100&mpshare=1&scene=1&srcid=0108XAs9DBEN2xOygi5rs2pB#rd)
+
 # 数据结构和算法
 ### 数组
 
@@ -1293,6 +1304,7 @@ Link
 
 
 # Git
+[](https://github.com/xirong/my-git)
 Git工作流是很重要的多人协作方式。主要是应用场景。
 
 ## 基本操作
@@ -1325,6 +1337,9 @@ MixIn混入[多重继承](https://www.liaoxuefeng.com/wiki/0014316089557264a6b34
 # Design Patterns设计模式
 
 [《JavaScript设计模式与开发实践》](https://www.amazon.cn/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5-%E6%9B%BE%E6%8E%A2/dp/B01F7IELCW/ref=sr_1_3?s=digital-text&ie=UTF8&qid=1507800630&sr=1-3&keywords=JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
+
+## 代理模式
+[ES6中的代理模式-----Proxy](https://juejin.im/post/5a5227ce6fb9a01c927e85c4)
 
 ## 集合模式
 [集合模式](http://www.cnblogs.com/huangpeng/archive/2011/06/28/2092591.html)
@@ -1657,11 +1672,90 @@ const router = new VueRouter({
 ```
 
 ### Vuex
+#### What？
+Vuex 是状态管理器，用来管理应用的状态。
+
+[JavaScript与有限状态机](http://www.ruanyifeng.com/blog/2013/09/finite-state_machine_for_javascript.html)
 [What is Vuex?](https://vuex.vuejs.org/zh-cn/intro.html)
+[使用coroutine实现状态机（2）](https://zhuanlan.zhihu.com/p/31566664)
+
+
+#### Why？
+就是为了方便，谁用谁知道。
+(如果不知道为什么要用就不要用了。实现类似的功能几乎都要涉及状态机订阅观察者模式啥的。最简单的就是理解成shell的bus)
+
+#### how？
+
+[完全掌握 Vuex 图文视频教程](https://juejin.im/entry/59191b6b0ce4630069f6a3ad#5)
+[Vuex 通俗版教程](https://yeaseonzhang.github.io/2017/03/16/Vuex-通俗版/)
+
+- state
+    - 就是store的data，放状态（数据）的
+- getter
+    - 一般的Vue对象都有computed或者filter，这里的就是对state进行统一的清洗（？可以用这个术语？数据仓库里的）集中的处理,至于各组件要干嘛，可以用各自的computed处理
+- mutation
+    - 唯一推荐修改state的方法，必须是同步
+- action
+    - 与mutation类似，可以是异步
+
+view → action → mutation → state → view → ...
+
+形成闭环，单向清晰、可追溯（可以看到时哪一个组件触发的状态改变，方便维护）
+
+组件取数据的方式可以是computed里的mapState、mapGetters
+
+```js
+import { mapState, mapGetters } form 'vuex';
+export default {
+    // ...
+    computed: {
+        mapState({ ... }),
+        mapGetter({ ... })
+    }
+}
+```
+action比较高级可以异步，调mutation具体做事
+methods → { dispatch → { action → { commit → (mutation) 
+                                    }
+                        }
+        }
+
+
+```js
+import { mapActions ,mapMutations} from 'vuex'
+
+export default {
+  // ...
+  methods: {
+    ...mapMutations({
+    }),
+    ...mapActions([
+      'increment', // 将 `this.increment()` 映射为 `this.$store.dispatch('increment')`
+
+      // `mapActions` 也支持载荷：
+      'incrementBy' // 将 `this.incrementBy(amount)` 映射为 `this.$store.dispatch('incrementBy', amount)`
+    ]),
+    ...mapActions({
+      add: 'increment' // 将 `this.add()` 映射为 `this.$store.dispatch('increment')`
+    })
+  }
+}
+```
+- module
+
+
+[Vuex解析](https://zhuanlan.zhihu.com/p/30560457?utm_source=qq&utm_medium=social)
+
+
+
 
 [mindmap](http://naotu.baidu.com/file/38dd73233fc037ee15d4668494c26761)
 
-[Vuex解析](https://zhuanlan.zhihu.com/p/30560457?utm_source=qq&utm_medium=social)
+
+[使用Vue.js和Vuex实现购物车场景](http://xlbd.me/vue-vuex-shopping-cart/)
+[使用Vue.js和Vuex实现购物车场景 demo-source](https://github.com/xiaoluoboding/vue-demo-collection/tree/master/shopping-cart)
+
+
 
 ### 服务器
 - static.js
@@ -1689,9 +1783,6 @@ const router = new VueRouter({
 [History_API](https://developer.mozilla.org/zh-CN/docs/Web/API/History_API)
 [Why History_API not Hash](https://segmentfault.com/q/1010000010340823)
 [History_API](https://developer.mozilla.org/zh-CN/docs/Web/API/History_API)
-
-## 状态机
-[使用coroutine实现状态机（2）](https://zhuanlan.zhihu.com/p/31566664)
 
 # 开发工具
 ## VS Code
@@ -1894,6 +1985,12 @@ const router = new VueRouter({
 
 [聊一聊前端自动化测试（下）](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226799&idx=2&sn=53c4bc978fabb5cde0a5c83069de7220&chksm=bd495b2b8a3ed23de7a5b1e07fb80c83f9d5df07a260ea1ae1621531dc96ed1e2fda7b3b6599&scene=21#wechat_redirect)
 
+
+[最受欢迎的 5 款 Node.js 端到端测试框架](https://juejin.im/post/58dafcef0ce46300571bb918)
+
+[A modern way to do E2E testing for Vue](https://hackernoon.com/a-modern-way-to-do-e2e-testing-for-vue-js-apps-cebe0a07499c)
+
+
 # 待处理的部分
 
 [待处理](http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/)
@@ -1911,3 +2008,7 @@ const router = new VueRouter({
 [前端开发中，使用base64图片的弊端是什么](https://www.zhihu.com/question/31155574)
 [自动精灵图工具](https://github.com/cupools/img-sprite)
 [图片优化－ base64 vs 雪碧图](http://www.jianshu.com/p/8d41aab5fba1)
+
+[scroll组件](https://juejin.im/post/59b777015188257e764c716f)
+
+[Electron markdown editor](https://github.com/AnotherNote/anote)
