@@ -439,7 +439,20 @@ line-height
 ## @font-face
 glyphicons 矢量图
 
-## 动画
+## 变形 过渡 动画 
+- transform:
+    - rotate
+    - scale
+    - translate
+    - skew
+    - origin
+
+- transition:
+    - property:transform length opcity font color margin border padding 
+    - duration
+    - timing-function linear ease ease-in ease-out ease-in-out cubic-bezier
+    - delay
+
 
 # JavaScript
 
