@@ -31,6 +31,19 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 
 [瞎折腾：把JS,CSS任意文本文件加密成一张图片](https://juejin.im/entry/5a41b3d66fb9a045154421cb?utm_medium=fe&utm_source=weixinqun)
 
+
+### What
+### Why 
+### How
+#### 基础
+- 理解“画布”：指定id width、height
+- 获取canvas对象：let canvas = document.getElementById();
+- 获取二维context：context = canvas.context();(理解成画笔：有moveTo：抬手到哪个位置)
+- 坐标系：↓→递增
+#### 点、线
+直线：moveTo
+
+
 ## SVG
 [SVG](https://aotu.io/notes/2015/11/20/svg-I-know/)
 
@@ -95,7 +108,10 @@ HTML每个元素都是大大小小的盒子。
 在两者的基础特性上，又有其他的组合效果如——inline-block
 
 
+
 [标准模式与怪异模式对于渲染页面的影响](https://juejin.im/post/5a44aa4d518825146b10d69d?utm_medium=fe&utm_source=weixinqun)
+- box-sizing: border-box;content-box;
+
 - boder-box:border+padding+content
 - boder-
 
@@ -883,9 +899,21 @@ bind() 最简单的用法是创建一个函数，使这个函数不论怎么调�
                        
 # Promise
 [MDN Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7)
-[前端基础进阶（十三）：透彻掌握Promise的使用，读这篇就够了](http://www.jianshu.com/p/fe5f173276bd)
+
+[ES6 Promise 用法](https://juejin.im/entry/5a3a113a51882569707821c0?utm_medium=fe&utm_source=weixinqun)
+
 [在Node.js中使用promise摆脱回调金字塔](http://nya.io/Node-js/promise-in-nodejs-get-rid-of-callback-hell/)
 [q](http://documentup.com/kriskowal/q/)
+## What
+## Why
+## How
+- resolve
+- reject
+- all
+- race
+- then
+- catch
+
 jQuery 主要是用 Deferred对象，与Promise A+标准不同。
 
 ```js
