@@ -13,6 +13,18 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 [300毫秒延迟](https://thx.github.io/mobile/300ms-click-delay#%E5%BD%93%E5%89%8D%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%BB%B6%E8%BF%9F)
 [移动端Web页面适配方案](https://funteas.com/topic/5a4d80ec1f635ce136730e10)
 
+## Element
+- .clientHeight
+     ![Element.clientHeight](./media/html/Dimensions-client.png)
+- .offsetHeight
+     ![Element.offsetHeight](./media/html/offsetHeight.png)
+- .offsetHeight
+     ![Element.offsetHeight](./media/html/offsetHeight.png)
+     
+<iframe height='265' scrolling='no' title='scrollHeight 演示Edit' src='//codepen.io/singlone/embed/ZvqymO/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/singlone/pen/ZvqymO/'>scrollHeight 演示Edit</a> by ShoneSingLone (<a href='https://codepen.io/singlone'>@singlone</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+
 ## Web_Components
 [Web_Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
 - [自定义元素](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Custom_Elements)
@@ -24,7 +36,8 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 
 [从HTML Components的衰落看Web Components的危机](https://github.com/xufei/blog/issues/3)
 
-## canvs
+## canvas
+
 [将图片转换base64格式，data:image/png;base64是什么？](http://blog.csdn.net/webxiaoma/article/details/70053444)
 
 [Css中路径data:image/png;base64的用法详解](http://www.aimks.com/css-path-data-image-png-usage-base64.html)
@@ -40,6 +53,7 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 - 获取canvas对象：let canvas = document.getElementById();
 - 获取二维context：context = canvas.context();(理解成画笔：有moveTo：抬手到哪个位置)
 - 坐标系：↓→递增
+
 #### 点、线
 直线：moveTo
 
