@@ -5,6 +5,7 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 2.	NativeScript、React Native 基于原生实现了自己的统一 API；
 3.	推荐前端入门跨平台 App 开发先学 Cordova，最简单、正规，社区最大
 
+[How-To-Ask-Questions-The-Smart-Way](https://billing.virmach.com/clientarea.php?action=productdetails&id=82054)
 ---
 > [HTML+CSS基础课程](https://www.imooc.com/learn/9)
 
@@ -12,6 +13,10 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 [MDN-Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
 [300毫秒延迟](https://thx.github.io/mobile/300ms-click-delay#%E5%BD%93%E5%89%8D%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%BB%B6%E8%BF%9F)
 [移动端Web页面适配方案](https://funteas.com/topic/5a4d80ec1f635ce136730e10)
+
+## Request
+### referrerPolicy
+
 
 ## Element
 - .clientHeight
@@ -867,7 +872,7 @@ function constfunc(v) {return function () {return v; } }
 
 变量作用域
 >作用域链《JavaScript权威指南》3.10.3
- JavaScript是基于词法作用域的语言：通过阅读包含变量定义在内的数行源码就能知道变量的作用域。全局变量在程序中始终都是有定义的。局部变量在声明它的函数体内以及其所嵌套的函数内始终是有定义的。
+JavaScript是基于词法作用域的语言：通过阅读包含变量定义在内的数行源码就能知道变量的作用域。全局变量在程序中始终都是有定义的。局部变量在声明它的函数体内以及其所嵌套的函数内始终是有定义的。
  如果将一个局部变量看做是自定义实现的对象的属性的话，那么可以换个角度来解读变量作用域。每一段JavaScript代码（全局代码或函数）都有一个与之关联的作用域链（scope chain）。这个作用域链是一个对象列表或者链表，这组对象定义了这段代码“作用域中”的变量。当JavaScript需要查找变量x的值的时候（这个过程称做“变量解析”（variable resolution）），它会从链中的第一个对象开始查找，如果这个对象有一个名为x的属性，则会直接使用这个属性的值，如果第一个对象中不存在名为x的属性，JavaScript会继续查找链上的下一个对象。如果第二个对象依然没有名为x的属性，则会继续查找下一个对象，以此类推。如果作用域链上没有任何一个对象含有属性x，那么就认为这段代码的作用域链上不存在x，并最终抛出一个引用错误（ReferenceError）异常。
  在JavaScript的最顶层代码中（也就是不包含在任何函数定义内的代码），作用域链由一个全局对象组成。在不包含嵌套的函数体内，作用域链上有两个对象，第一个是定义函数参数和局部变量的对象，第二个是全局对象。在一个嵌套的函数体内，作用域链上至少有三个对象。理解对象链的创建规则是非常重要的。当定义一个函数时，它实际上保存一个作用域链。当调用这个函数时，它创建一个新的对象来存储它的局部变量，并将这个对象添加至保存的那个作用域链上，同时创建一个新的更长的表示函数调用作用域的“链”。对于嵌套函数来讲，事情变得更加有趣，每次调用外部函数时，内部函数又会重新定义一遍。因为每次调用外部函数的时候，作用域链都是不同的。内部函数在每次定义的时候都有微妙的差别——在每次调用外部函数时，内部函数的代码都是相同的，而且关联这段代码的作用域链也不相同。
 
@@ -1357,10 +1362,257 @@ Stack
 Queen
 Link
 
+# SSH
+
+[解释-Secure Shell](https://zh.wikipedia.org/wiki/Secure_Shell):
+>是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境。SSH通过在网络中创建安全隧道来实现SSH客户端与服务器之间的连接。
+
+# ubuntu开启SSH服务
+
+[Ubuntu环境下SSH的安装及使用](http://blog.csdn.net/netwalk/article/details/12952051)
+
+[Ubuntu开启SSH登录](https://segmentfault.com/a/1190000004686476)
+
+SSH分客户端openssh-client和openssh-server
+如果你只是想登陆别的机器的SSH只需要安装openssh-client
+```shell
+#buntu有默认安装，如果没有则
+sudo apt-get install openssh-client
+```
+如果要使本机开放SSH服务就需要安装openssh-server
+```shell
+sudo apt-get install openssh-server
+```
+确认sshserver是否启动了：
+```shell
+ps -e |grep ssh
+```
+如果看到sshd那说明ssh-server已经启动了。
+如果没有则可以这样启动：sudo /etc/init.d/ssh start 或者 service ssh start
+ssh-server配置文件位于/etc/ssh/sshd_config，在这里可以定义SSH的服务端口，默认端口是22，你可以自己定义成其他端口号，如222。
+然后重启SSH服务：
+sudo 
+/etc/init.d/ssh stop
+sudo /etc/init.d/ssh start
+登陆SSH：
+```shell
+ssh username@host
+```
 
 # Git
 [](https://github.com/xirong/my-git)
-Git工作流是很重要的多人协作方式。主要是应用场景。
+Git工作流是很重要的多人协作方式。学习方式首先是理解应用场景，也就是为什么要用这样的工具，那些时候用，具体怎么用。
+
+[搭建Git服务器](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000)
+
+[在服务器上搭建 Git](https://git-scm.com/book/zh/v1/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E6%9E%B6%E8%AE%BE%E6%9C%8D%E5%8A%A1%E5%99%A8)
+
+
+[windows下git库的ssh连接，使用public key的方法](http://blog.csdn.net/longshenlmj/article/details/9408549)
+
+### 架设服务器
+现在我们过一边服务器端架设 SSH 访问的流程。本例将使用 authorized_keys 方法来给用户授权。我们还将假定使用类似 Ubuntu 这样的标准 Linux 发行版。首先，创建一个名为 'git' 的用户，并为其创建一个 .ssh 目录。
+
+```shell
+$ sudo adduser git
+$ su git
+$ cd
+$ mkdir .ssh
+接下来，把开发者的 SSH 公钥添加到这个用户的 authorized_keys 文件中。假设你通过电邮收到了几个公钥并存到了临时文件里。重复一下，公钥大致看起来是这个样子：
+
+$ cat /tmp/id_rsa.john.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCB007n/ww+ouN4gSLKssMxXnBOvf9LGt4L
+ojG6rs6hPB09j9R/T17/x4lhJA0F3FR1rP6kYBRsWj2aThGw6HXLm9/5zytK6Ztg3RPKK+4k
+Yjh6541NYsnEAZuXz0jTTyAUfrtU3Z5E003C4oxOj6H0rfIF1kKI9MAQLMdpGW1GYEIgS9Ez
+Sdfd8AcCIicTDWbqLAcU4UpkaX8KyGlLwsNuuGztobF8m72ALC/nLF6JLtPofwFBlgc+myiv
+O7TCUSBdLQlgMVOFq1I2uPWQOkOWQAHukEOmfjy2jctxSDBQ220ymjaNsHT4kgtZg2AYYgPq
+dAv8JggJICUvax2T9va5 gsg-keypair
+只要把它们逐个追加到 authorized_keys 文件尾部即可：
+
+$ cat /tmp/id_rsa.john.pub >> ~/.ssh/authorized_keys
+$ cat /tmp/id_rsa.josie.pub >> ~/.ssh/authorized_keys
+$ cat /tmp/id_rsa.jessica.pub >> ~/.ssh/authorized_keys
+现在可以用 --bare 选项运行 git init 来建立一个裸仓库，这会初始化一个不包含工作目录的仓库。
+
+$ cd /opt/git
+$ mkdir project.git
+$ cd project.git
+$ git --bare init
+这时，Join，Josie 或者 Jessica 就可以把它加为远程仓库，推送一个分支，从而把第一个版本的项目文件上传到仓库里了。值得注意的是，每次添加一个新项目都需要通过 shell 登入主机并创建一个裸仓库目录。我们不妨以 gitserver 作为 git 用户及项目仓库所在的主机名。如果在网络内部运行该主机，并在 DNS 中设定 gitserver 指向该主机，那么以下这些命令都是可用的：
+
+# 在 John 的电脑上
+$ cd myproject
+$ git init
+$ git add .
+$ git commit -m 'initial commit'
+$ git remote add origin git@gitserver:/opt/git/project.git
+$ git push origin master
+这样，其他人的克隆和推送也一样变得很简单：
+
+$ git clone git@gitserver:/opt/git/project.git
+$ cd project
+$ vim README
+$ git commit -am 'fix for the README file'
+$ git push origin master
+用这个方法可以很快捷地为少数几个开发者架设一个可读写的 Git 服务。
+
+作为一个额外的防范措施，你可以用 Git 自带的 git-shell 工具限制 git 用户的活动范围。只要把它设为 git 用户登入的 shell，那么该用户就无法使用普通的 bash 或者 csh 什么的 shell 程序。编辑 /etc/passwd 文件：
+
+$ sudo vim /etc/passwd
+在文件末尾，你应该能找到类似这样的行：
+
+git:x:1000:1000::/home/git:/bin/sh
+把 bin/sh 改为 /usr/bin/git-shell （或者用 which git-shell 查看它的实际安装路径）。该行修改后的样子如下：
+
+git:x:1000:1000::/home/git:/usr/bin/git-shell
+现在 git 用户只能用 SSH 连接来推送和获取 Git 仓库，而不能直接使用主机 shell。尝试普通 SSH 登录的话，会看到下面这样的拒绝信息：
+
+$ ssh git@gitserver
+fatal: What do you think I am? A shell?
+C
+
+```
+
+```
+ 在创建用户时，需要为新建用户指定一用户组，如果不指定其用户所属的工作组，自动会生成一个与用户名同名的工作组。创建用户user1的时候指定其所属工作组users，例：useradd –g users user1
+
+
+
+一、创建用户：
+
+1、使用命令 useradd
+
+例：useradd user1——创建用户user1
+    useradd –e 12/30/2009 user2——创建user2,指定有效期2009-12-30到期
+    用户的缺省UID从500向后顺序增加，500以下作为系统保留账号，可以指定UID，
+
+例：useradd –u 600 user3
+
+   
+
+2、使用 passwd 命令为新建用户设置密码
+例：passwd user1
+注意：没有设置密码的用户不能使用。
+
+ 
+
+3、命令 usermod 修改用户账户
+例：将用户 user1的登录名改为  u1，
+usermod –l u1 user1
+例：将用户 user1 加入到 users组中，
+usermod –g users user1
+
+
+例：将用户 user1 目录改为/users/us1
+usermod –d /users/us1 user1
+
+ 
+
+4、使用命令 userdel 删除用户账户
+例：删除用户user2
+userdel user2
+例：删除用户 user3，同时删除他的工作目录
+userdel –r user3
+
+ 
+
+5、查看用户信息
+id命令查看一个用户的UID和GID, 例：查看user4的id
+id user4
+finger命令 ——可以查看用户的主目录、启动shell、用户名、地址、电话等信息
+例：finger user4
+
+ 
+
+ 
+
+二、用户组：
+
+6、命令 groupadd创建用户组
+groupadd –g 888 users
+创建一个组users，其GID为888
+
+ 
+
+7、命令 gpasswd为组添加用户
+只有root和组管理员能够改变组的成员：
+例：把 user1加入users组
+gpasswd –a user1 users
+例：把 user1退出users组
+gpasswd –d user1 users
+
+8、命令groupmod修改组
+groupmod –n user users       修改组名user为users
+
+ 
+
+9、groupdel删除组
+groupdel users    删除组users
+
+
+
+
+
+
+ubuntu和windows一样，可以任意创建或者删除新的用户，windows下比较简单，ubuntu下需要使用命令，不过操作起来不是很繁琐，所以我尽量写的详细一些。
+
+          如何创建ubuntu新用户？
+
+          首先打开终端，输入：sudo adduser username，系统会提示以下信息：
+
+           正在添加用户“username”...
+
+           正在添加新组“username”(1001)...
+
+           正在添加新用户“username”(1001)到组“username”...
+
+           创建主目录“/home/username”...
+
+            正在从“/etc、skel”复制文件...
+
+            输入新的 UNIX 口令：(此处大家注意，不是输入你当前用户的密码，而是输入你要创建新用户的密码)
+
+            重新输入新的 UNIX 口令：(再输一次即可)
+
+            passwd：已成功更新密码
+
+            Changing the user information for username
+            Enter the new value, or press ENTER for the default
+            Full Name []: yangyang (输入新用户的名称)
+            Room Number []:
+            Work Phone []:
+            Home Phone []:
+            Other []:
+这个信息是否正确? [Y/n] y
+
+            到了这一步，新用户已经添加成功了，此时我们可以打 ls /home查看一下，如果显示 username yang，侧代表用户创建成功。
+
+          如何删除ubuntu用户？
+
+          ubuntu删除用户同样是在终端下操作的，需要注意的是，如果要删除的用户当前已登陆，是删除不掉的，必须注销掉当前用户切换为另一个用户下，才能删除。举个例子，刚才我新建立了一个用户为 yang 的用户，例如我现在用用户 yang 登陆了桌面，此时如果我想删除 yang 这个用户，是删除不掉的。正确的操作方法是，我注销掉 yang，然后使用 root 登陆到桌面，再删除 yang 即可。
+
+          删除ubuntu用户的命令比较容易记：sudo userdel username，例如我想删除 yang ，则输入：sudo userdel yang，删除成功后，系统无任何提示。
+
+```
+
+```
+安装git，apt-get install git
+创建git用户和git用户组，分配目录/home/git，然后vim /etc/passwd
+将 ： git:x:1003:1003::/home/git:
+改成：git:x:1003:1003::/home/git:/usr/bin/git-shell
+禁用git用户的shell
+在/home/git下创建.ssh文件夹
+在.ssh下创建authorized_keys文件，如果无效查看/etc/ssh/sshd_config文件一行：（AuthorizedKeysFile
+%h/.ssh/authorized_keys）有没有被注释掉，重启ssh服务，service ssh restart
+
+作者： 紫帆梓 
+链接：http://www.imooc.com/article/4697
+来源：慕课网
+
+```
+
+
+
 
 ## 基本操作
 [Git-Commands](https://aotu.io/notes/2015/11/17/Git-Commands/)
@@ -1466,6 +1718,30 @@ tree -l 2 --ignore 'node_modules/, .git/, .gitignore' -o tree.txt
 //-l: level max display depth of the directory tree.
 //--ignore: ignores directory or file you specify - accepts arrays as comma-delimited strings: 'node_modules/, .git/, .gitignore'
 ```
+
+
+在Node.js中有个字符串解码类，可以通过require('string_decoder')引用后，使用这个模块。字符串解码器StringDecoder可以将缓存Buffer解码为字符串，StringDecoder是buffer.toString()方法的简单实现。在Node.js的child_process、crypto、readline等核心模块中，都引用了这个模块。
+
+
+1. 引用及初始化
+require('string_decoder')引用后，需要通过new关键字创建StringDecoder对象实现。构造函数接受一个encoding参数，可接受的编码格式有：utf8、ucs2、utf16le、base64，默认为utf8。
+
+ var StringDecoder = require('string_decoder').StringDecoder;
+var decoder = new StringDecoder('utf8');
+
+2. StringDecoder类中的方法
+decoder.write(buffer)：返回解码后的字符串
+decoder.end(buffer)：返回Buffer中所有的剩余字节
+decoder.detectIncompleteChar(buffer)：根据编码规则设置有效编码字节
+var StringDecoder = require('string_decoder').StringDecoder;
+var decoder = new StringDecoder('utf8');
+
+var cent = new Buffer([0xC2, 0xA2]);
+console.log(decoder.write(cent));
+
+var euro = new Buffer([0xE2, 0x82, 0xAC]);
+console.log(decoder.write(euro));
+
 
 ### 服务器
 [Node.js静态文件服务器实战](http://www.infoq.com/cn/news/2011/11/tyq-nodejs-static-file-server)
@@ -2026,7 +2302,12 @@ export default {
 ### stylus
 [stylus 中文](http://www.zhangxinxu.com/jq/stylus/)
 
+### head less
+puppeteer
+[puppeteer](http://csbun.github.io/blog/2017/09/puppeteer/)
 
+puppeteer
+puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑定
 
 ### JS程序流程可视化
 [js2flowchart 一个根据JavaScript代码生成漂亮SVG流程图的工具](https://www.ctolib.com/topics-126117.html)
@@ -2044,6 +2325,12 @@ export default {
 [最受欢迎的 5 款 Node.js 端到端测试框架](https://juejin.im/post/58dafcef0ce46300571bb918)
 
 [A modern way to do E2E testing for Vue](https://hackernoon.com/a-modern-way-to-do-e2e-testing-for-vue-js-apps-cebe0a07499c)
+
+
+# Vim
+[Vim 初学者入门指南](https://linux.cn/article-8143-1.html)
+
+[Vim 快捷键速查表](https://linux.cn/article-8144-1.html)
 
 
 # 待处理的部分
