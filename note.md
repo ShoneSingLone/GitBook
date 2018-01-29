@@ -1035,6 +1035,8 @@ getItem、setItem、removeItem、clear
 
 ### WebSQL
 
+
+
 ## Web浏览器中的JavaScript
 
 同一个页面的JavaScript代码引用同一个windows对象，所以是共享的。
@@ -1152,6 +1154,10 @@ document.URL是文档首次载入后保存的静态字符串不会随着hash变�
 ## 字符实体转码的方法
 [Javascript：字符的编码转换和实体转换](https://segmentfault.com/q/1010000000146420)
 [html 实体](http://www.w3school.com.cn/html/html_entities.asp)
+
+```js
+  let msg = $('<textarea />').html(`<%= url %>`).text();
+```
 
 
 ```js
@@ -1359,7 +1365,14 @@ Unshift=》|《=Push
 后进先出Stack
 
 Stack
-Queen
+## Queen
+
+
+<iframe height='265' scrolling='no' title='Queen' src='//codepen.io/singlone/embed/preview/LQYYMz/?height=265&theme-id=dark&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/singlone/pen/LQYYMz/'>Queen</a> by ShoneSingLone (<a href='https://codepen.io/singlone'>@singlone</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+
+
 Link
 
 # SSH
@@ -1410,6 +1423,10 @@ Git工作流是很重要的多人协作方式。学习方式首先是理解应�
 
 [windows下git库的ssh连接，使用public key的方法](http://blog.csdn.net/longshenlmj/article/details/9408549)
 
+```js
+npm install --global gulp-cli
+```
+
 ### 架设服务器
 现在我们过一边服务器端架设 SSH 访问的流程。本例将使用 authorized_keys 方法来给用户授权。我们还将假定使用类似 Ubuntu 这样的标准 Linux 发行版。首先，创建一个名为 'git' 的用户，并为其创建一个 .ssh 目录。
 
@@ -1439,6 +1456,11 @@ $ mkdir project.git
 $ cd project.git
 $ git --bare init
 这时，Join，Josie 或者 Jessica 就可以把它加为远程仓库，推送一个分支，从而把第一个版本的项目文件上传到仓库里了。值得注意的是，每次添加一个新项目都需要通过 shell 登入主机并创建一个裸仓库目录。我们不妨以 gitserver 作为 git 用户及项目仓库所在的主机名。如果在网络内部运行该主机，并在 DNS 中设定 gitserver 指向该主机，那么以下这些命令都是可用的：
+
+[can't push (unpacker error) related to permission issues](https://stackoverflow.com/questions/4025708/git-cant-push-unpacker-error-related-to-permission-issues) ```
+$ cd /**/**.git
+$ sudo chown -R git:git .
+```
 
 # 在 John 的电脑上
 $ cd myproject
@@ -1616,6 +1638,10 @@ ubuntu和windows一样，可以任意创建或者删除新的用户，windows下
 
 ## 基本操作
 [Git-Commands](https://aotu.io/notes/2015/11/17/Git-Commands/)
+
+`git pull = git fetch + merge to local-`
+
+
 ## GitHub
 
 ## Webhook
@@ -1796,6 +1822,7 @@ app.delete('/user', function (req, res) {
 [Gulp入门教程](http://www.jianshu.com/p/fbf9871dc47a)
 [Gulp v4编译Bootstrap-sass v3.3.7](http://www.jianshu.com/p/ac93605e4cf2)
 [gulp-and-babel](http://macr.ae/article/gulp-and-babel.html)
+[译-用gulp来实现web服务器](https://www.jianshu.com/p/e66a5bb96b7e)
 
 ### Webpack
 #### What？
@@ -1872,6 +1899,10 @@ npm install webpack –g
 使用[Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch):
 ---
 ## 函数节流和函数去抖Debouncer
+
+[实例解析防抖动（Debouncing）和节流阀（Throttling）](http://www.alloyteam.com/2012/11/javascript-throttle/)
+
+[Debouncing and Throttling Explained Through Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)
 
 ## 使用原生方法实现拖拽
 
