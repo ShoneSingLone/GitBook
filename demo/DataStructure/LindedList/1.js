@@ -4,7 +4,8 @@ function LindedList() {
         this.next = null;
     }
 
-    let length = 0, head = null'
+    let length = 0,
+        head = null;
 
     let append, insert, remove, removeAt, indexOf, size, isEmpty, toString;
 
