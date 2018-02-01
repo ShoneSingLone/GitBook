@@ -1,21 +1,10 @@
-(() => {
-    {
-        let index;
-        for (index = 0; index < 10; index++) {
-            // console.log(index);
-        }
-        console.log(index);
-    }
+function foo(params) {
+    console.log(a);
+}
 
-    if (true) {
-        var index = 10;
-    }
-    console.log(index);
-})()
-if (true) {
-    let index = "out ";
+function bar() {
+    var a = 'bar';
+    foo();
 }
-for (let index = 0; index < 10; index++) {
-    console.log(index);
-}
-console.log("index", index);
+// var a = 'window';
+bar(); //'window'
