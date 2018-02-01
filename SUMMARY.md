@@ -1,5 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [total](note.md)
+* [note](note.md)
+* [YDK JavaScript](YDK JavaScript.md)
 
