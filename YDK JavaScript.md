@@ -53,4 +53,63 @@ let赋予了JavaScript创建**单纯**的块作用域的能力。（try/catch和
 
 # 1.C this词法
 
+```js
+var obj = {
+    id: "awesome",
+    cool: function coolFn() {
+        console.log(this.id);
+    }
+};
+var id = "not awesome"
+obj.cool(); // 酷
+setTimeout(obj.cool, 100); // 不酷
+```
+` var self = this;`
+```js
+var obj = {
+    count: 0,
+    cool: function coolFn() {
+        var self = this;
+        if (self.count < 1) {
+            setTimeout(function timer() {
+                self.count++;
+                console.log("awesome?");
+            }, 100);
+        }
+    }
+};
+obj.cool(); // 酷吧？
+```
+箭头函数
+```js
+var obj = {
+    count: 0,
+    cool: function coolFn() {
+        if (this.count < 1) {
+            setTimeout(() => { // 箭头函数是什么鬼东西？
+                this.count++;
+                console.log("awesome?");
+            }, 100);
+        }
+    }
+};
+obj.cool(); // 很酷吧?
+```
+`bind()`正确使用this机制
+```js
+var obj = {
+    count: 0,
+    cool: function coolFn() {
+        if (this.count < 1) {
+            setTimeout(function timer() {
+                this.count++; // this 是安全的
+                // 因为bind(..)
+                console.log("more awesome");
+            }.bind(this), 100); // look, bind()!
+        }
+    }
+};
+obj.cool(); // 更酷了。
+```
+
 ES6的箭头函数使用的是词法作用域，所以看定义时的this是谁，就是谁。这是可预测的。

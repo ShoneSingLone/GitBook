@@ -1,10 +1,12 @@
-function foo(params) {
-    console.log(a);
-}
+var obj = {
+    id: "awesome",
+    cool: function coolFn() {
+        console.log(this.id);
+    }
+};
 
-function bar() {
-    var a = 'bar';
-    foo();
+this = {
+    id: "not awesome"
 }
-// var a = 'window';
-bar(); //'window'
+obj.cool(); // 酷
+setTimeout(obj.cool, 100); // 不酷
