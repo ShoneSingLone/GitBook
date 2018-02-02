@@ -779,13 +779,31 @@ object[__proto__] = new Constructor[prototype]
 ### this
 使用准则： 
 1. 作为函数调用this指代全局对象（^strict）或者undefined（strict）；
-这个特性倒是可以用来区别当前是否是strict模式： `var isStrict = (function(){return !this})();`
+
 
 1. 作为方法调用指代调用的对象本身；
 1. 作为构造函数this指代构造对象本身，跟2的方式不同。即`new object.constructor()`中的`this`（调用上下文）并不是object而是constructor()返回的对象；
 1. 作为间接调用call()、apply()，显示指定this。另外也可以理解成上面的三种是第四种的语法糖，因为都可以用第四种表示出来而且没有异议。
+---
+>《你不知道的JavaScript（上卷）》
+- `this` 默认绑定 同上1
+- 隐式绑定
+- 显示绑定
 
->还有更详细的《你不知道的JavaScript（上卷）》待阅读。（挖坑）
+判断this
+现在我们可以根据优先级来判断函数在某个调用位置应用的是哪条规则。可以按照下面的顺序来进行判断：
+1. 函数是否在new 中调用（new 绑定）？如果是的话this 绑定的是新创建的对象。
+ `var bar = new foo() `
+1. 函数是否通过call、apply（显式绑定）或者硬绑定调用？如果是的话，this 绑定的是指定的对象。
+`var bar = foo.call(obj2) `
+1. 函数是否在某个上下文对象中调用（隐式绑定）？如果是的话，this 绑定的是那个上下文对象。
+`var bar = obj1.foo() `
+1. 如果都不是的话，使用默认绑定。如果在严格模式下，就绑定到undefined，否则绑定到全局对象。
+`var bar = foo() `
+这个特性倒是可以用来区别当前是否是strict模式： `var isStrict = (function(){return !this})();`
+
+
+
 
 ```
     function f(argument) {

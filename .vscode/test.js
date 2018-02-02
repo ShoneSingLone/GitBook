@@ -1,12 +1,8 @@
-var obj = {
-    id: "awesome",
-    cool: function coolFn() {
-        console.log(this.id);
-    }
-};
-
-this = {
-    id: "not awesome"
+function foo(a, b) {
+    console.log("this.a", this.a);
+    console.log(a, b);
 }
-obj.cool(); // 酷
-setTimeout(obj.cool, 100); // 不酷
+foo();
+var baz = foo.bind({a:"foo.bind"}, 2);
+foo();
+baz(3);
