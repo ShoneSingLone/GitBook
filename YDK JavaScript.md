@@ -140,7 +140,7 @@ this的指向是执行上下文，即动态的表现。（是否跟多态有关�
 - `this` 默认绑定
 - 隐式绑定
 - 显示绑定
-    - 包裹函数
+    - 包裹函数（硬绑定）
 - new 
     1. 创建（或者说构造）一个全新的对象。
     1. 这个新对象会被执行 **[[原型]]** 连接。
@@ -167,3 +167,11 @@ baz(3);
 
 ---
 不明白这个软绑定是个什么意思
+
+
+# 遍历
+属性名与属性值
+数组的下标即为属性名，通过属性名指向属性值。
+for in 
+
+对象是JavaScript几个基础类型之一（string number boolean object null undefined symbol)有子类型(自有对象：String Number Boolean Function Array Date RegEx Erro)。

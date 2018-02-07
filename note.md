@@ -534,6 +534,9 @@ console.log(Object.prototype.toString.call(null));//[object Null]
 
 1. 不用var是全局变量的属性；可以用delete删除【属性】；不能变量提升
 1. 用var是变量；不可以用delete删除；会变量提升；是局部变量。
+    1.  每个变量下都有一个隐藏属性，configurable,这个属性确定了变量名字能否更改，变量能否被删除。true的话，可以更改，可删除；反之，不能更改，不能删除。
+    2.  在用var 声明变量时，JS解析器会默认把configurable设为false，所以它不能改名字，不能被删掉。
+
 1. `‘use strict’`模式下不使用var会报错。
 
 一个变量的作用域是程序源代码中定义这个变量的区域。全局变量和局部变量
