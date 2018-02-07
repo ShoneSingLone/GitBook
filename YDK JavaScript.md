@@ -168,10 +168,18 @@ baz(3);
 ---
 不明白这个软绑定是个什么意思
 
+# 2.3 对象（需要再领悟）
+文字语法 构造形式
 
-# 遍历
 属性名与属性值
+
 数组的下标即为属性名，通过属性名指向属性值。
+
 for in 
 
-对象是JavaScript几个基础类型之一（string number boolean object null undefined symbol)有子类型(自有对象：String Number Boolean Function Array Date RegEx Erro)。
+对象是JavaScript几个基础类型之一（string number boolean object null undefined symbol)。
+有子类型(自有对象：String Number Boolean Function Array Date RegExp Erro)。会自动转换：字面量就是字面量，带属性的一定是经过了自动转换。
+
+# 2.4 混合对象“类”
+
+
