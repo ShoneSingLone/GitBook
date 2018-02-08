@@ -181,5 +181,7 @@ for in
 有子类型(自有对象：String Number Boolean Function Array Date RegExp Erro)。会自动转换：字面量就是字面量，带属性的一定是经过了自动转换。
 
 # 2.4 混合对象“类”
-
-
+数据结构：封装 数据和相应的行为。
+类是一种设计模式，也是一种封装。
+parent 类和 children 类，是类关系。实例是类的具体实现。
+JavaScript并不是真正的面向对象语言，但是可以模拟类设计模式，ES6的语法是这些模拟方法的语法糖。

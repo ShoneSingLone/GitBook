@@ -2175,6 +2175,9 @@ export default {
 
 ## 软件工程
 
+### Chrome
+[使用 DevTools 的工作区设置持久化](https://developers.google.com/web/tools/setup/setup-workflow?hl=zh-cn#_1)
+
 ### 前端开发
 ### SPA
 - 模块（组件）
