@@ -212,8 +212,126 @@ console.log(aObj.b);
 
 
 # 2.6 行为委托
+有点儿意思，看到委托才有点眉目。幸好Java还有点基础，见多识广才好。（我的意思是要多学，没有对比就没有...）
 
-因为面向对象是复制，所以用重写也没有关系，甚至体现了多态，但是JavaScript不是面向对象语言，没有所谓的复制，所以重写没有太大的意义，不如用另外的名字。委托负责数据，委托目标（原型）负责行为。
 
->委托行为意味着某些对象（XYZ）在找不到属性或者方法引用时会把这个请求委托给另一 个对象（Task）。
-所以脑海里不应该是像Java那样有一个树状结构，而是委托，想给谁就给谁，轻松脱离组织。
+>在软件架构中你可以选择是否使用类和继承设计模式。大多数开发者理所当然地认为类是 唯一（合适）的代码组织方式，但是本章中我们看到了另一种更少见但是更强大的设计模式：行为委托。 行为委托认为对象之间是兄弟关系，互相委托，而不是父类和子类的关系。JavaScript 的  **[[Prototype]]**  机制本质上就是行为委托机制。也就是说，我们可以选择在JavaScript 中努 力实现类机制（参见第4 和第5 章），也可以拥抱更自然的 **[[Prototype]]**  委托机制。 当你只用对象来设计代码时，不仅可以让语法更加简洁，而且可以让代码结构更加清晰。 对象关联（对象之前互相关联）是一种编码风格，它倡导的是直接创建和关联对象，不把 它们抽象成类。对象关联可以用基于 **[[Prototype]]**  的行为委托非常自然地实现。
+
+
+>委托行为意味着某些对象（XYZ）在找不到属性或者方法引用时会把这个请求委托给另一个对象（Task）。
+因为面向对象是复制，所以用重写也没有关系，甚至体现了多态，但是JavaScript不是面向对象语言，没有所谓的复制，所以重写没有太大的意义，不如用另外的名字。而且，委托负责数据，委托目标（原型）负责行为，（伸出手，交出虎符，想给谁就给谁，弓、骑、步，谁拿着就带什么兵）。所以脑海里不应该是像Java那样有一个树状结构。
+
+
+委托和混入的概念能不能混为一谈？
+这里的委托并没有继承关系，从设计上并不受限于parent-Childen这样的关系。
+
+doncise method declaration
+
+init、insert、setup、build都是几个好词。
+```js
+var Widget = {
+    init: function (width, height) {
+        this.width = width || 50;
+        this.height = height || 50;
+        this.$elem = null;
+    },
+    insert: function ($where) {
+        if (this.$elem) {
+            this.$elem.css({
+                width: this.width + "px",
+                height: this.height + "px"
+            }).appendTo($where);
+        }
+    }
+};
+var Button = Object.create(Widget);
+Button.setup = function (width, height, label) {
+    // 委托调用
+    this.init(width, height);
+    this.label = label || "Default";
+    this.$elem = $("<button>").text(this.label);
+};
+Button.build = function ($where) {
+    // 委托调用
+    this.insert($where);
+    this.$elem.click(this.onClick.bind(this));
+};
+Button.onClick = function (evt) {
+    console.log("Button '" + this.label + "' clicked!");
+};
+$(document).ready(function () {
+    var $body = $(document.body);
+    var btn1 = Object.create(Button);
+    btn1.setup(125, 30, "Hello");
+    var btn2 = Object.create(Button);
+    btn2.setup(150, 40, "World");
+    btn1.build($body);
+    btn2.build($body);
+});
+```
+是否使用类和继承设计模式。类并不是 唯一（合适）的代码组织方式，
+
+```js
+var LoginController = {
+    errors: [],
+    getUser: function () {
+        return document.getElementById(
+            "login_username"
+        ).value;
+    },
+    getPassword: function () {
+        return document.getElementById(
+            "login_password"
+        ).value;
+    },
+    validateEntry: function (user, pw) {
+        user = user || this.getUser();
+        pw = pw || this.getPassword();
+        if (!(user && pw)) {
+            return this.failure(
+                "Please enter a username & password!"
+            );
+        } else if (user.length < 5) {
+            return this.failure(
+                "Password must be 5+ characters!"
+            );
+        }
+        // 如果执行到这里说明通过验证
+        return true;
+    },
+    showDialog: function (title, msg) {
+        // 给用户显示标题和消息
+    },
+    failure: function (err) {
+        this.errors.push(err);
+        this.showDialog("Error", "Login invalid: " + err);
+    }
+};
+// 让AuthController 委托LoginController
+var AuthController = Object.create(LoginController);
+AuthController.errors = [];
+AuthController.checkAuth = function () {
+    var user = this.getUser();
+    var pw = this.getPassword();
+    if (this.validateEntry(user, pw)) {
+        this.server("/check-auth", {
+                user: user,
+                pw: pw
+            })
+            .then(this.accepted.bind(this))
+            .fail(this.rejected.bind(this));
+    }
+};
+AuthController.server = function (url, data) {
+    return $.ajax({
+        url: url,
+        data: data
+    });
+};
+AuthController.accepted = function () {
+    this.showDialog("Success", "Authenticated!")
+};
+AuthController.rejected = function (err) {
+    this.failure("Auth Failed: " + err);
+};
+```

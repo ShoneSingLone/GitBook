@@ -2174,6 +2174,12 @@ export default {
 [Visual Studio Code 设置同步到github的插件介绍及使用方法(Settings Sync)](http://www.whidy.net/visual-studio-code-settings-sync-introduction.html)
 
 ## 软件工程
+### separation of concerns（关注点分离原则）
+创建和初始化可以分离
+举例来说，假如你在程序启动时创建了一个实例池，然后一直等到实例被取出并使用时才 执行特定的初始化过程。这个过程中两个函数调用是挨着的，但是完全可以根据需要让它们出现在不同的位置。
+
+### JavaScript是一门面向对象的语言吗？请把是不是换成能不能
+
 
 ### Chrome
 [使用 DevTools 的工作区设置持久化](https://developers.google.com/web/tools/setup/setup-workflow?hl=zh-cn#_1)
