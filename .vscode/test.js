@@ -1,13 +1,4 @@
-let aObj = {
-    get a() {
-        return this._a_;
-    },
-    set a(val) {
-        this._a_ = val * 2;
-    },
-    b: "a"
-}
-
-aObj.a = 1;
-console.log(aObj.a);
-console.log(aObj.b);
+function Foo() { /* .. */ }
+Foo.prototype = function adsf() { /* .. */ }; // 创建一个新原型对象
+var a1 = new Foo();
+console.log(a1.constructor.name);
