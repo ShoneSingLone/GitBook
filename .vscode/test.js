@@ -1,4 +1,8 @@
-function Foo() { /* .. */ }
-Foo.prototype = function adsf() { /* .. */ }; // 创建一个新原型对象
-var a1 = new Foo();
-console.log(a1.constructor.name);
+function typeOf(obj) {
+    console.log(Object.prototype.toString.call(obj));
+}
+
+typeOf(null);
+typeOf(undefined);
+typeOf({});
+typeOf([]);

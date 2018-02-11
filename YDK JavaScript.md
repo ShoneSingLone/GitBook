@@ -335,3 +335,4 @@ AuthController.rejected = function (err) {
     this.failure("Auth Failed: " + err);
 };
 ```
+
