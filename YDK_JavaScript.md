@@ -345,3 +345,11 @@ AuthController.rejected = function (err) {
 ![](./YDK_JavaScript/UNdeclare.png)
 - 类型定义了值的行为特征。 很多开发人员将undefined 和undeclared 混为一谈， 但在JavaScript 中它们是两码事。 undefined 是值的一种。undeclared 则表示变量还没有被声明过。 遗憾的是，JavaScript 却将它们混为一谈，在我们试图访问"undeclared" 变量时这样报 错：ReferenceError: a is not defined， 并且typeof 对undefined 和undeclared 变量都返回 "undefined"。 
 - 变量没有类型，但它们持有的值有类型。（这里要明白所谓的弱类型语言就是语言引擎不要求变量总是持有与其初始值同类型的值。）
+
+# 3.2 值
+- JavaScript 中的数组是通过数字索引的一组任意类型的值。
+    - 想用`var arr = Array.prototype.slice.call( arguments );`将对象转换成数组需要保证arguments必须是类数字下表属性名，并且有length。
+- 字符串和数组类似，但是它们的 行为特征不同，在将字符作为数组来处理时需要特别小心。
+    - indexOf、concat|charAt、charCode
+    - `Array.prototype.`字符借用Array方法（join、map),但是String 是read-only 所以reverse是不能用借用的方法，只能将String先split成Array再join回来。（适用于简单字符串）
+- JavaScript 中的数字包括“整 数”和“浮点型”。 基本类型中定义了几个特殊的值。 null 类型只有一个值null，undefined 类型也只有一个值undefined。所有变量在赋值之 前默认值都是undefined。void 运算符返回undefined。
