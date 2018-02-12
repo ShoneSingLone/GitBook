@@ -347,9 +347,31 @@ AuthController.rejected = function (err) {
 - 变量没有类型，但它们持有的值有类型。（这里要明白所谓的弱类型语言就是语言引擎不要求变量总是持有与其初始值同类型的值。）
 
 # 3.2 值
+
+数组、字符、数字
+
 - JavaScript 中的数组是通过数字索引的一组任意类型的值。
     - 想用`var arr = Array.prototype.slice.call( arguments );`将对象转换成数组需要保证arguments必须是类数字下表属性名，并且有length。
 - 字符串和数组类似，但是它们的 行为特征不同，在将字符作为数组来处理时需要特别小心。
     - indexOf、concat|charAt、charCode
     - `Array.prototype.`字符借用Array方法（join、map),但是String 是read-only 所以reverse是不能用借用的方法，只能将String先split成Array再join回来。（适用于简单字符串）
-- JavaScript 中的数字包括“整 数”和“浮点型”。 基本类型中定义了几个特殊的值。 null 类型只有一个值null，undefined 类型也只有一个值undefined。所有变量在赋值之 前默认值都是undefined。void 运算符返回undefined。
+- JavaScript 中的数字包括“整数”和“浮点型”。
+    - toExponential、toFixed、toPrecision
+    - 浮点不精准，需要Math.abs()
+    - 安全的整数是指JavaScript语言本身能够存储的数值 2^53-1
+- 基本类型中定义了几个特殊的值。
+    - NaN、Infinity 
+    ```js
+    var a = 1 / 0; // Infinity
+    var b = -1 / 0; // -Infinity
+    ```
+  - 由值类型决定传值或传址（除了object以外的基本类型都是传值）
+  - null 类型只有一个值null，undefined 类型也只有一个值undefined。 所有变量在赋值之前默认值都是undefined。
+  - void 运算符返回undefined。
+
+# 3.3 原生函数
+
+- toString()
+- [[Class]]
+- JavaScript 为基本数据类型值提供了封装对象，称为原生函数（如String、Number、Boolean等）。它们为基本数据类型值提供了该子类型所特有的方法和属性（如：String#trim() 和Array#concat(..)）。
+- 对于简单标量基本类型值，比如"abc"，如果要访问它的length 属性或String.prototype 方法，JavaScript 引擎会自动对该值进行封装（即用相应类型的封装对象来包装它）来实现对这些属性和方法的访问。
