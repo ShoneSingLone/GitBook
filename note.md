@@ -1822,6 +1822,15 @@ app.delete('/user', function (req, res) {
   res.send('Got a DELETE request at /user');
 });
 ```
+
+## 上传 下载
+[Nodejs进阶：基于express+multer的文件上传](https://www.cnblogs.com/chyingp/p/express-multer-file-upload.html)
+[使用nodejs+express完成简单的文件上传功能](https://juejin.im/post/5a4263816fb9a045211ef85c)
+
+[FormData 对象的使用](https://developer.mozilla.org/zh-CN/docs/Web/API/FormData/Using_FormData_Objects)
+
+[FileReader.readAsDataURL()](https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readAsDataURL)
+
 ## Yarn[官网](https://yarnpkg.com/zh-Hans/)
 ## cli对比 [migrating-from-npm](https://yarnpkg.com/zh-Hans/docs/migrating-from-npm)
 
@@ -2417,3 +2426,8 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 [scroll组件](https://juejin.im/post/59b777015188257e764c716f)
 
 [Electron markdown editor](https://github.com/AnotherNote/anote)
+
+# JWT
+[八幅漫画理解使用JSON Web Token设计单点登录系统](http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/)
+[前后端分离之JWT用户认证](https://www.jianshu.com/p/180a870a308a)
+[前后端分离的项目，如何解决登录问题](https://my.oschina.net/liuyuantao/blog/875868)
