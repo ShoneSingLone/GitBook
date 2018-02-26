@@ -460,19 +460,38 @@ line-height
 ## @font-face
 glyphicons 矢量图
 
+## 图片和背景
+linear-gradient（角度deg，起始颜色 20%，transparent），多个渐变色可叠加，换不同角度
+radial-gradient（closest-side closest-corner farthest-side farthest-corner)
+
+
 ## 变形 过渡 动画 
 - transform:
     - rotate
     - scale
-    - translate
+    - translate:(X/Y/Z)
     - skew
     - origin
 
 - transition:
-    - property:transform length opcity font color margin border padding 
-    - duration
-    - timing-function linear ease ease-in ease-out ease-in-out cubic-bezier
-    - delay
+    - transition-property:transform length opcity font color margin border padding 
+    - transition-duration:
+    - transition-timing-function: linear ease ease-in ease-out ease-in-out cubic-bezier
+    - transition-delay:
+
+- animation
+    - @keyframes
+    - animation-name：
+    - animation-duration：
+    - animation-timing-function: ease-in-out cubic-bezier
+    - animation-delay:
+    - animation-itration-count：infinite（无限）
+    - animation-direction： alternate(交替轮流)
+    - animation-fill-mode: forwards
+    - animation-play-state: running paused
+
+## 装饰表格和表单
+
 
 
 # JavaScript
@@ -496,6 +515,9 @@ glyphicons 矢量图
     - Number：0八位、0x十六位
     - String：
     - Symbol（ECMAScript 6）
+
+
+[JS数字精度丢失的一些典型问题](http://www.cnblogs.com/snandy/p/4943138.html)
 
 类型 | true|false
 ---|---|---
@@ -1838,6 +1860,11 @@ app.delete('/user', function (req, res) {
 
 [Node.js(Express)上传文件处理中间件 multer](https://itbilu.com/nodejs/npm/N1xidECcZ.html)
 
+[URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+
+[Node Express获取参数的几种方式](http://xuyuan923.github.io/2014/10/10/node-tutorial-req/)
+
+
 ## Yarn[官网](https://yarnpkg.com/zh-Hans/)
 ## cli对比 [migrating-from-npm](https://yarnpkg.com/zh-Hans/docs/migrating-from-npm)
 
@@ -1949,6 +1976,9 @@ npm install webpack –g
 # Axios
 [Axios](https://www.kancloud.cn/yunye/axios/234845)
 [Axios实践](http://www.jianshu.com/p/df464b26ae58)
+[axios 中文文档 翻译](https://segmentfault.com/a/1190000008470355)
+
+get中params和data 的区别与 URLSearchParams的关系
 
 # Vue
 
