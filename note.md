@@ -2468,3 +2468,10 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 [八幅漫画理解使用JSON Web Token设计单点登录系统](http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/)
 [前后端分离之JWT用户认证](https://www.jianshu.com/p/180a870a308a)
 [前后端分离的项目，如何解决登录问题](https://my.oschina.net/liuyuantao/blog/875868)
+
+
+# APP
+content loader
+[react-content-loader](https://github.com/danilowoz/react-content-loader)
+[Skeleton Screen Vue 实现思路](https://cloud.tencent.com/developer/article/1006169)
+[Building Skeleton Screens with CSS Custom Properties](https://css-tricks.com/building-skeleton-screens-css-custom-properties/)
