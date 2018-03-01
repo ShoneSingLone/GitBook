@@ -464,6 +464,10 @@ glyphicons 矢量图
 linear-gradient（角度deg，起始颜色 20%，transparent），多个渐变色可叠加，换不同角度
 radial-gradient（closest-side closest-corner farthest-side farthest-corner)
 
+figure
+img 图
+figcaption 图题
+
 
 ## 变形 过渡 动画 
 - transform:
@@ -491,6 +495,39 @@ radial-gradient（closest-side closest-corner farthest-side farthest-corner)
     - animation-play-state: running paused
 
 ## 装饰表格和表单
+表格是用来展示数据的。
+- table
+    - tr
+        - td
+padding 
+text—align:left right center justfied
+vertical-align:top baseline middle bottom
+
+### 创建边框
+border:针对table的border和th的border效果不一样
+- 去掉双重边框：border-collapse：separator：分开并且边重叠 collapse：
+- 圆角：在border-collapse默认为separator的情况下可以使用圆角否则就不起作用为直角
+- 控制单元格之间的间隙：border-spaceing:用于控制边框间的间隙
+
+### 装饰行和列
+- nth-of-type：子类型选择符
+
+### 装饰表单
+[10 CSS HTML Form Designs](https://www.sanwebe.com/2014/08/css-html-forms-designs)
+
+label 标记通常以下面两种方式中的一种来和表单控件相联系：将表单控件作为标记标签的内容，这样的就是隐式形式，或者为 <label> 标签下的 for 属性命名一个目标表单 id，这样就是显式形式。
+
+```html
+显式的联系：
+<label for="SSN">Social Security Number:</label>
+<input type="text" name="SocSecNum" id="SSN" />
+
+隐式的联系：
+<label>Date of Birth: <input type="text" name="DofB" /></label>
+```
+
+
+
 
 
 

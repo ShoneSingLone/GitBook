@@ -9,15 +9,11 @@
     <title>Closure</title>
     <style>
         li {
-            float: left;
+            display: inline-block;
             margin: 5px 10px;
             list-style: none;
         }
-
-        ul {
-            clear: both;
-        }
-    </style>
+</style>
 </head>
 
 <body>
@@ -39,6 +35,17 @@
             <li v-for="(item,index) in prints4">{{item}}</li>
         </ul>
     </div>
+
+    <table>
+        <colgroup>
+        <col class="first"></colgroup>
+        <tbody>
+            <tr>
+                <th>hehe</th>
+            </tr>
+        </tbody>
+    </colgroup>
+    </table>
     <script>
         let app = new Vue({
             el: '#app',
