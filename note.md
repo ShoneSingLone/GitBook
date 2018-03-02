@@ -16,6 +16,11 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 [300毫秒延迟](https://thx.github.io/mobile/300ms-click-delay#%E5%BD%93%E5%89%8D%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%BB%B6%E8%BF%9F)
 [移动端Web页面适配方案](https://funteas.com/topic/5a4d80ec1f635ce136730e10)
 
+
+[理解HTML5的语义](https://www.adobe.com/devnet/archive/dreamweaver/articles/understanding-html5-semantics.html)
+[mobie-first](https://abookapart.com/products/mobile-first)
+[Making a Case for Mobile First Designs](https://www.sitepoint.com/making-case-mobile-first-designs/)
+
 ## Request
 ### referrerPolicy
 
@@ -526,6 +531,10 @@ label 标记通常以下面两种方式中的一种来和表单控件相联系�
 <label>Date of Birth: <input type="text" name="DofB" /></label>
 ```
 
+通常是一个label和一个input
+label就设定好宽度，右对齐，间隔margin
+input
+
 
 
 
@@ -575,6 +584,9 @@ console.log(Object.prototype.toString.call(null));//[object Null]
 
 
 2.	Object
+
+## 赋值
+[关于连续赋值的坑](https://www.zhihu.com/question/41220520)
 
 ### 变量
 
@@ -1945,6 +1957,9 @@ app.delete('/user', function (req, res) {
 - loader
 - 插件(plugins)
 
+# 
+[基于 Webpack 开发和构建多页面站点](https://github.com/zhaotoday/webpack-multi-page)
+
 #### install
 ```
 npm install webpack –g
@@ -2512,3 +2527,4 @@ content loader
 [react-content-loader](https://github.com/danilowoz/react-content-loader)
 [Skeleton Screen Vue 实现思路](https://cloud.tencent.com/developer/article/1006169)
 [Building Skeleton Screens with CSS Custom Properties](https://css-tricks.com/building-skeleton-screens-css-custom-properties/)
+
