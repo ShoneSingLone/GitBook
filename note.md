@@ -430,6 +430,11 @@ Inline-block和浮动布局的区别？
 
 ## 布局模板
 
+[Layout Generators](http://www.pagecolumn.com/)
+[Templated](https://templated.co/)
+[Layout Gala](https://blog.html.it/layoutgala/index.html)
+
+
 布局的策略：从左到右，从上到下；
 vertical-align：top
 line-height
@@ -586,7 +591,12 @@ console.log(Object.prototype.toString.call(null));//[object Null]
 2.	Object
 
 ## 赋值
+
+LHS RHS
+
 [关于连续赋值的坑](https://www.zhihu.com/question/41220520)
+[JavaScript 连等赋值问题](https://segmentfault.com/q/1010000002637728)
+
 
 ### 变量
 
