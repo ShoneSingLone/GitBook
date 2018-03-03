@@ -222,74 +222,83 @@ var      | 定义变                             |
 
 - 转换：float\display\position
 
-### 居中
-1. 水平居中
-    1. 行内元素：通过给父元素设置 text-align:center
-    1. 块状元素：
-        1. 定宽：满足定宽和块状两个条件的元素是可以通过设置“左右margin”值为“auto”来实现居中的。
-        1. 不定宽：
-            1. 加入 table 标签：table标签的长度自适应性---即不定义其长度也不默认父元素body的长度（table其长度根据其内文本长度决定），因此可以看做一个定宽度块元素，然后再利用定宽度块状居中的margin的方法，使其水平居中。
-            1. 设置 `display: inline` 方法：使block元素变为inline，类似行内元素的方法
-            1. 设置 position:relative 和 left:50%：利用 相对定位 的方式，将元素向左偏移 50% ，即达到居中的目的。
-            ```html
-            <!DOCTYPE HTML>
-            <html>
-            <head>
-            <meta charset="utf-8">
-            <title>不定宽块状元素水平居中</title>
-            <style>
-            .container{
-                float:left;
-                position:relative;
-                left:50%
-            }
-            .container ul{
-                list-style:none; 
-                margin:0;
-                padding:0;
-                position:relative;
-                left:-50%;
-            }
-            .container li{float:left;display:inline;margin-right:8px;}
-            .wrap-center{
-                background:#ccc;
-            }
-            </style>
-            </head>
 
-            <body>
-            <div class="container">
-                <ul>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                </ul>
-            </div>
 
-            <!--下面是代码任务区-->
-            <div class="wrap">
-                <div class="wrap-center">我们来学习一下这种方法。</div>
-            </div>
-            </body>
-            </html>
-            ```
-            ![](./media/FreshPaint-1-2017.11.29-05.21.39.png)
-1. 垂直居中
-    1. 父元素高度确定
-        1. 单行文本:通过设置height 和 line-height 高度一致来实现的。
-        <script src='http://runjs.cn/gist/11yepad9/all'></script>
-            - ```
-            <style>
-            .container{
-                height:100px;
-                line-height:100px;
-                background:#999;
-            }
-            </style>
-            ```
-        1. 多行文本或图片：
-            1. 使用插入 table  (包括tbody、tr、td)标签，同时设置 vertical-align：middle。
-            1. 在 chrome、firefox 及 IE8 以上的浏览器下可以设置块级元素的 display 为 table-cell（设置为表格单元显示），激活 vertical-align 属性，但注意 IE6、7 并不支持这个样式, 兼容性比较差。相当于内置了方法1.
+
+## 
+[使用 CSS overscroll-behavior 控制滚动行为：自定义下拉刷新和溢出效果](https://github.com/dev-reading/fe/blob/master/articles/2017-11-15-overscroll-behavior.md)
+## @font-face
+glyphicons 矢量图
+
+## 图片和背景
+linear-gradient（角度deg，起始颜色 20%，transparent），多个渐变色可叠加，换不同角度
+radial-gradient（closest-side closest-corner farthest-side farthest-corner)
+
+figure
+img 图
+figcaption 图题
+
+
+## 变形 过渡 动画 
+- transform:
+    - rotate
+    - scale
+    - translate:(X/Y/Z)
+    - skew
+    - origin
+
+- transition:
+    - transition-property:transform length opcity font color margin border padding 
+    - transition-duration:
+    - transition-timing-function: linear ease ease-in ease-out ease-in-out cubic-bezier
+    - transition-delay:
+
+- animation
+    - @keyframes
+    - animation-name：
+    - animation-duration：
+    - animation-timing-function: ease-in-out cubic-bezier
+    - animation-delay:
+    - animation-itration-count：infinite（无限）
+    - animation-direction： alternate(交替轮流)
+    - animation-fill-mode: forwards
+    - animation-play-state: running paused
+
+## 装饰表格和表单
+表格是用来展示数据的。
+- table
+    - tr
+        - td
+padding 
+text—align:left right center justfied
+vertical-align:top baseline middle bottom
+
+### 创建边框
+border:针对table的border和th的border效果不一样
+- 去掉双重边框：border-collapse：separator：分开并且边重叠 collapse：
+- 圆角：在border-collapse默认为separator的情况下可以使用圆角否则就不起作用为直角
+- 控制单元格之间的间隙：border-spaceing:用于控制边框间的间隙
+
+### 装饰行和列
+- nth-of-type：子类型选择符
+
+### 装饰表单
+[10 CSS HTML Form Designs](https://www.sanwebe.com/2014/08/css-html-forms-designs)
+
+label 标记通常以下面两种方式中的一种来和表单控件相联系：将表单控件作为标记标签的内容，这样的就是隐式形式，或者为 <label> 标签下的 for 属性命名一个目标表单 id，这样就是显式形式。
+
+```html
+显式的联系：
+<label for="SSN">Social Security Number:</label>
+<input type="text" name="SocSecNum" id="SSN" />
+
+隐式的联系：
+<label>Date of Birth: <input type="text" name="DofB" /></label>
+```
+
+通常是一个label和一个input
+label就设定好宽度，右对齐，间隔margin
+input
 
 
 ### 布局模型
@@ -309,7 +318,7 @@ var      | 定义变                             |
 浮动用来设置文字环绕，也可以用来布局，**bootstrap栅栏系统**是利用浮动设计的。
 
 - [清除浮动](http://nicolasgallagher.com/micro-clearfix-hack/)
-- fix float所产生的塌陷
+- fix float所产生的塌陷/元素下坠
     - [利用:after伪类元素清除](http://www.html-js.com/article/2203)
     - [Why does overflow hidden stop floating elements escaping their container?](https://stackoverflow.com/questions/9193214/why-does-overflow-hidden-stop-floating-elements-escaping-their-container)
     - [BFC 块级格式化上下文](http://web.jobbole.com/83149/)+ [CSS之BFC详解](http://www.html-js.com/article/1866)+[](http://www.10tiao.com/html/59/201712/2651553261/1.html)
@@ -428,7 +437,7 @@ Inline-block和浮动布局的区别？
         </html>
          ```
 
-## 布局模板
+## 布局
 
 [Layout Generators](http://www.pagecolumn.com/)
 [Templated](https://templated.co/)
@@ -439,7 +448,81 @@ Inline-block和浮动布局的区别？
 vertical-align：top
 line-height
 
+### 居中
+1. 水平居中
+    1. 行内元素：通过给父元素设置 text-align:center
+    1. 块状元素：
+        1. 定宽：满足定宽和块状两个条件的元素是可以通过设置“左右margin”值为“auto”来实现居中的。
+        1. 不定宽：
+            1. 加入 table 标签：table标签的长度自适应性---即不定义其长度也不默认父元素body的长度（table其长度根据其内文本长度决定），因此可以看做一个定宽度块元素，然后再利用定宽度块状居中的margin的方法，使其水平居中。
+            1. 设置 `display: inline` 方法：使block元素变为inline，类似行内元素的方法
+            1. 设置 position:relative 和 left:50%：利用 相对定位 的方式，将元素向左偏移 50% ，即达到居中的目的。
+            ```html
+            <!DOCTYPE HTML>
+            <html>
+            <head>
+            <meta charset="utf-8">
+            <title>不定宽块状元素水平居中</title>
+            <style>
+            .container{
+                float:left;
+                position:relative;
+                left:50%
+            }
+            .container ul{
+                list-style:none; 
+                margin:0;
+                padding:0;
+                position:relative;
+                left:-50%;
+            }
+            .container li{float:left;display:inline;margin-right:8px;}
+            .wrap-center{
+                background:#ccc;
+            }
+            </style>
+            </head>
 
+            <body>
+            <div class="container">
+                <ul>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                </ul>
+            </div>
+
+            <!--下面是代码任务区-->
+            <div class="wrap">
+                <div class="wrap-center">我们来学习一下这种方法。</div>
+            </div>
+            </body>
+            </html>
+            ```
+            ![](./media/FreshPaint-1-2017.11.29-05.21.39.png)
+1. 垂直居中
+    1. 父元素高度确定
+        1. 单行文本:通过设置height 和 line-height 高度一致来实现的。
+        <script src='http://runjs.cn/gist/11yepad9/all'></script>
+            - ```
+            <style>
+            .container{
+                height:100px;
+                line-height:100px;
+                background:#999;
+            }
+            </style>
+            ```
+        1. 多行文本或图片：
+            1. 使用插入 table  (包括tbody、tr、td)标签，同时设置 vertical-align：middle。
+            1. 在 chrome、firefox 及 IE8 以上的浏览器下可以设置块级元素的 display 为 table-cell（设置为表格单元显示），激活 vertical-align 属性，但注意 IE6、7 并不支持这个样式, 兼容性比较差。相当于内置了方法1.
+
+
+### 固定
+### 不固定
+#### 浮动
+#### 流式布局
+#### 响应式布局
 
 ### flex布局
 [深入理解 flex 布局以及计算](https://www.w3cplus.com/css3/flexbox-layout-and-calculation.html)
@@ -464,82 +547,6 @@ line-height
 [Web前端实现瀑布流的几种方法](http://www.jianshu.com/p/d4ca937c6f96?from=jiantop.com)
 [Web前端实现瀑布流的几js实现瀑布流的三种方式比较，js瀑布三种方式种方法](http://www.jianshu.com/p/d4ca937c6f96?from=jiantop.com)
 [纯js实现瀑布流布局及ajax动态新增数据  ](https://www.teakki.com/p/5901f3cab819c55a2789c289)
-
-## 
-[使用 CSS overscroll-behavior 控制滚动行为：自定义下拉刷新和溢出效果](https://github.com/dev-reading/fe/blob/master/articles/2017-11-15-overscroll-behavior.md)
-## @font-face
-glyphicons 矢量图
-
-## 图片和背景
-linear-gradient（角度deg，起始颜色 20%，transparent），多个渐变色可叠加，换不同角度
-radial-gradient（closest-side closest-corner farthest-side farthest-corner)
-
-figure
-img 图
-figcaption 图题
-
-
-## 变形 过渡 动画 
-- transform:
-    - rotate
-    - scale
-    - translate:(X/Y/Z)
-    - skew
-    - origin
-
-- transition:
-    - transition-property:transform length opcity font color margin border padding 
-    - transition-duration:
-    - transition-timing-function: linear ease ease-in ease-out ease-in-out cubic-bezier
-    - transition-delay:
-
-- animation
-    - @keyframes
-    - animation-name：
-    - animation-duration：
-    - animation-timing-function: ease-in-out cubic-bezier
-    - animation-delay:
-    - animation-itration-count：infinite（无限）
-    - animation-direction： alternate(交替轮流)
-    - animation-fill-mode: forwards
-    - animation-play-state: running paused
-
-## 装饰表格和表单
-表格是用来展示数据的。
-- table
-    - tr
-        - td
-padding 
-text—align:left right center justfied
-vertical-align:top baseline middle bottom
-
-### 创建边框
-border:针对table的border和th的border效果不一样
-- 去掉双重边框：border-collapse：separator：分开并且边重叠 collapse：
-- 圆角：在border-collapse默认为separator的情况下可以使用圆角否则就不起作用为直角
-- 控制单元格之间的间隙：border-spaceing:用于控制边框间的间隙
-
-### 装饰行和列
-- nth-of-type：子类型选择符
-
-### 装饰表单
-[10 CSS HTML Form Designs](https://www.sanwebe.com/2014/08/css-html-forms-designs)
-
-label 标记通常以下面两种方式中的一种来和表单控件相联系：将表单控件作为标记标签的内容，这样的就是隐式形式，或者为 <label> 标签下的 for 属性命名一个目标表单 id，这样就是显式形式。
-
-```html
-显式的联系：
-<label for="SSN">Social Security Number:</label>
-<input type="text" name="SocSecNum" id="SSN" />
-
-隐式的联系：
-<label>Date of Birth: <input type="text" name="DofB" /></label>
-```
-
-通常是一个label和一个input
-label就设定好宽度，右对齐，间隔margin
-input
-
 
 
 
