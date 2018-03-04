@@ -99,6 +99,7 @@ if `border：none;` 浏览器不会渲染border; 只有宽度，没有样式，�
 
 ## 单位
 [vm rem em](https://zhuanlan.zhihu.com/p/30413803?group_id=906220704115974144)
+[width 100% ](https://www.lyblog.net/detail/286.html)
 
 ```html
 <html style="height: 100%;">
@@ -263,6 +264,11 @@ figcaption 图题
     - animation-direction： alternate(交替轮流)
     - animation-fill-mode: forwards
     - animation-play-state: running paused
+
+
+ [CSS3 逐渐发光的方格边框](http://caibaojian.com/css-light.html)
+ 
+ ![](http://img.caibaojian.com/uploads/2017/03/light.gif)
 
 ## 装饰表格和表单
 表格是用来展示数据的。
@@ -517,6 +523,9 @@ line-height
             1. 使用插入 table  (包括tbody、tr、td)标签，同时设置 vertical-align：middle。
             1. 在 chrome、firefox 及 IE8 以上的浏览器下可以设置块级元素的 display 为 table-cell（设置为表格单元显示），激活 vertical-align 属性，但注意 IE6、7 并不支持这个样式, 兼容性比较差。相当于内置了方法1.
 
+
+[css3-tooltip](http://www.menucool.com/tooltip/css3-tooltip)
+[css3-tooltip](http://caibaojian.com/css3-tooltip.html)
 
 ### 固定
 ### 不固定
