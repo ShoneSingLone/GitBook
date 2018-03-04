@@ -15,8 +15,6 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 [MDN-Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
 [300毫秒延迟](https://thx.github.io/mobile/300ms-click-delay#%E5%BD%93%E5%89%8D%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%BB%B6%E8%BF%9F)
 [移动端Web页面适配方案](https://funteas.com/topic/5a4d80ec1f635ce136730e10)
-
-
 [理解HTML5的语义](https://www.adobe.com/devnet/archive/dreamweaver/articles/understanding-html5-semantics.html)
 [mobie-first](https://abookapart.com/products/mobile-first)
 [Making a Case for Mobile First Designs](https://www.sitepoint.com/making-case-mobile-first-designs/)
@@ -100,6 +98,7 @@ if `border：none;` 浏览器不会渲染border; 只有宽度，没有样式，�
 ## 单位
 [vm rem em](https://zhuanlan.zhihu.com/p/30413803?group_id=906220704115974144)
 [width 100% ](https://www.lyblog.net/detail/286.html)
+[css样式的百分比都相对于谁 ](https://www.zhihu.com/question/36079531)
 
 ```html
 <html style="height: 100%;">
@@ -232,6 +231,24 @@ var      | 定义变                             |
 glyphicons 矢量图
 
 ## 图片和背景
+
+- background-image:url();//相对路径是相对样式表文件而言
+- GIF JEPG PNG8 24 32
+    - 个人理解两个方面：
+        - 动画就是gif alpha图就是png 一般高压缩又色彩丰富就是jpeg **（这个角度就差不多够了）**
+        - GIF PNG8/JPEG PNG24 PNG32 都是png质量更好但是size大，png有alpha渐变（PNG24 alpha只有一种颜色）
+- background-repeat: repeat no-repeat repeat-x repeat-y round space
+### 定位
+- background-position：
+    - 关键字：left center right top bottom ；
+    - 百分比：把指定的背景图比例位置与目标元素相同的比例位置对齐；
+### 固定
+- background-attachment：
+    - fixed scroll
+### 背景的起点和显示区域
+- 
+
+
 linear-gradient（角度deg，起始颜色 20%，transparent），多个渐变色可叠加，换不同角度
 radial-gradient（closest-side closest-corner farthest-side farthest-corner)
 
@@ -1775,6 +1792,10 @@ ubuntu和windows一样，可以任意创建或者删除新的用户，windows下
 
 当使用Git工具完成Push操作后会触发一个事件，这个事件会传播到目标服务器，目标服务器会运行脚本完成部署相关的一些列操作（git pull）
 
+
+## Git workflow.
+[Git workflow. 产品测试发布流程及 gitflow 工作流经验总结](https://github.com/zhaotoday/product-workflow)
+
 ## licence
 
 >[需要知道的开源许可证](http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html)
@@ -1974,7 +1995,7 @@ app.delete('/user', function (req, res) {
 
 #### Why？
 总的来说就是为了工程化。
-我对npm script、Gulp和webpack的理解：JavaScript jQuery 和framework。npm script是最基本的，后两者的工作都能做，但是没有后两者方便。但是正如JavaScript版本的不断演进，特性不断丰富，Gulp优秀的地方不断被原生内化，没有以前那么大的优势。而webpack给出的是一套针对现代前端应用完整的解决方案，体现的是约定优于配置：你不用这套方式当然是可以的，但是既然大家都用这个，就可以有效降低沟通成本，提高生产效率。
+我对npm script、Gulp和webpack的理解：JavaScript jQuery 和framework。npm script是最基本的，后两者的工作都能做，但是没有后两者方便。但是正如JavaScript版本的不断演进，特性不断丰富，Gulp优秀的地方不断被原生内化，没有以前那么大的优势。而webpack给出的是一套针对现代前端应用完整的解决方案，体现的是约定优于配置：不用这套方式当然是可以的，但是既然大家都用这个，就可以有效降低沟通成本，提高生产效率。
 
 #### How？
 四个核心概念
@@ -1983,7 +2004,7 @@ app.delete('/user', function (req, res) {
 - loader
 - 插件(plugins)
 
-# 
+# 基于 Webpack 开发和构建多页面站点
 [基于 Webpack 开发和构建多页面站点](https://github.com/zhaotoday/webpack-multi-page)
 
 #### install
@@ -2263,6 +2284,7 @@ export default {
 
 [使用Vue.js和Vuex实现购物车场景](http://xlbd.me/vue-vuex-shopping-cart/)
 [使用Vue.js和Vuex实现购物车场景 demo-source](https://github.com/xiaoluoboding/vue-demo-collection/tree/master/shopping-cart)
+[基于 vue-cli + iView 的 Vue js 后台管理系统，简洁易扩展](https://www.liruan.cn/docs/iview.html)
 
 
 
