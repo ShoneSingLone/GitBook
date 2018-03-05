@@ -246,7 +246,7 @@ glyphicons 矢量图
 - background-attachment：
     - fixed scroll
 ### 背景的起点和显示区域
-- 
+-
 
 
 linear-gradient（角度deg，起始颜色 20%，transparent），多个渐变色可叠加，换不同角度
@@ -2576,3 +2576,5 @@ content loader
 [Skeleton Screen Vue 实现思路](https://cloud.tencent.com/developer/article/1006169)
 [Building Skeleton Screens with CSS Custom Properties](https://css-tricks.com/building-skeleton-screens-css-custom-properties/)
 
+
+[win10 bash](https://aigeec.com/installing-node-js-on-windows-10-bash/)
