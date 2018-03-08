@@ -414,6 +414,9 @@ false == []; // true -- []是对象，转成''，跟false Boolean值又要转成
 2 == [2]; // true
 "" == [null]; // true
 ```
+
+[[]+{}](https://juejin.im/post/5a9bd5cf51882555784d675b?utm_medium=fe&utm_source=weixinqun)
+
 （实际中，这些代码都没什么意义，绝对不要写这种垃圾代码；只是了解这种机制）
 
 - 抽象关系比较

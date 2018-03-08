@@ -556,6 +556,7 @@ line-height
 [Flex 布局教程 实例](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
 [Flex 布局教程 demo](http://static.vgee.cn/static/index.html)
 [FLEX-LAYOUT](https://github.com/Coffcer/flex-layout)
+[olved-by-flexbox/](https://hufan-akari.github.io/solved-by-flexbox/)
 
  flex分为两个部分：一个是container 用作包裹；另一个是item，被包裹的元素。container可以指定排列的方向（flex-direction）和换行的方式（flex-wrap）。
  
@@ -2038,6 +2039,9 @@ npm install webpack –g
 ## 使用HTTP和HTTPS的区别
 
 ## AMD和CMD
+
+[玩转AMD - 设计思路](http://efe.baidu.com/blog/dissecting-amd-what/)
+
 优劣或者各自的适用场景
 当我们来说加载的时候来说一下浏览器的渲染机制，当我们输入网址之后到底发生了什么。
 ### RequireJS
@@ -2078,6 +2082,52 @@ npm install webpack –g
 [axios 中文文档 翻译](https://segmentfault.com/a/1190000008470355)
 
 get中params和data 的区别与 URLSearchParams的关系
+
+# 服务器
+
+- static.js
+[Node.js静态文件服务器实战](http://www.infoq.com/cn/news/2011/11/tyq-nodejs-static-file-server)
+[node.js 一个简单的页面输出](http://www.cnblogs.com/rubylouvre/archive/2011/11/20/2255083.html)
+
+
+# LeanCloud
+[错误码详解](https://tab.leancloud.cn/docs/error_code.html#)
+
+
+# Data visualization
+[Data visualization](https://en.wikipedia.org/wiki/Data_visualization)
+[ WebGL：打开网页看大片](https://segmentfault.com/a/1190000011633728)
+[D3.js, Three.js and CSS 3D Transforms](http://www.delimited.io/blog/2014/3/14/d3js-threejs-and-css-3d-transforms)
+[30-amazing-examples-webgl](http://www.creativebloq.com/3d/30-amazing-examples-webgl-action-6142954)
+
+# MicroSite
+## MicroSite是什么？
+是我的个人小站。准备做一些可以当作时间胶囊的东西。同时也算是可以记录自己这一些成长的过程吧。
+
+[前端js保存页面为图片下载到本地的坑](http://caibaojian.com/h5-download.html#t11)整体的结构
+
+## 路由
+[History_API](https://developer.mozilla.org/zh-CN/docs/Web/API/History_API)
+[Why History_API not Hash](https://segmentfault.com/q/1010000010340823)
+[History_API](https://developer.mozilla.org/zh-CN/docs/Web/API/History_API)
+
+# 开发工具
+## VS Code
+[Visual Studio Code 设置同步到github的插件介绍及使用方法(Settings Sync)](http://www.whidy.net/visual-studio-code-settings-sync-introduction.html)
+
+## 软件工程
+### separation of concerns（关注点分离原则）
+创建和初始化可以分离
+举例来说，假如你在程序启动时创建了一个实例池，然后一直等到实例被取出并使用时才 执行特定的初始化过程。这个过程中两个函数调用是挨着的，但是完全可以根据需要让它们出现在不同的位置。
+
+### JavaScript是一门面向对象的语言吗？请把是不是换成能不能
+
+
+### Chrome
+[使用 DevTools 的工作区设置持久化](https://developers.google.com/web/tools/setup/setup-workflow?hl=zh-cn#_1)
+
+### 前端开发
+
 
 # Vue
 
@@ -2220,13 +2270,13 @@ Vuex 是状态管理器，用来管理应用的状态。
 [Vuex 通俗版教程](https://yeaseonzhang.github.io/2017/03/16/Vuex-通俗版/)
 
 - state
-    - 就是store的data，放状态（数据）的
+  - 就是store的data，放状态（数据）的
 - getter
-    - 一般的Vue对象都有computed或者filter，这里的就是对state进行统一的清洗（？可以用这个术语？数据仓库里的）集中的处理,至于各组件要干嘛，可以用各自的computed处理
+  - 一般的Vue对象都有computed或者filter，这里的就是对state进行统一的清洗（？可以用这个术语？数据仓库里的）集中的处理,至于各组件要干嘛，可以用各自的computed处理
 - mutation
-    - 唯一推荐修改state的方法，必须是同步
+  - 唯一推荐修改state的方法，必须是同步
 - action
-    - 与mutation类似，可以是异步
+  - 与mutation类似，可以是异步
 
 view → action → mutation → state → view → ...
 
@@ -2287,50 +2337,9 @@ export default {
 [基于 vue-cli + iView 的 Vue js 后台管理系统，简洁易扩展](https://www.liruan.cn/docs/iview.html)
 
 
+# San百度MVVM框架
+[San](https://ecomfe.github.io/san/)
 
-### 服务器
-- static.js
-[Node.js静态文件服务器实战](http://www.infoq.com/cn/news/2011/11/tyq-nodejs-static-file-server)
-[node.js 一个简单的页面输出](http://www.cnblogs.com/rubylouvre/archive/2011/11/20/2255083.html)
-
-
-# LeanCloud
-[错误码详解](https://tab.leancloud.cn/docs/error_code.html#)
-
-
-# Data visualization
-[Data visualization](https://en.wikipedia.org/wiki/Data_visualization)
-[ WebGL：打开网页看大片](https://segmentfault.com/a/1190000011633728)
-[D3.js, Three.js and CSS 3D Transforms](http://www.delimited.io/blog/2014/3/14/d3js-threejs-and-css-3d-transforms)
-[30-amazing-examples-webgl](http://www.creativebloq.com/3d/30-amazing-examples-webgl-action-6142954)
-
-# MicroSite
-## MicroSite是什么？
-	是我的个人小站。准备做一些可以当作时间胶囊的东西。同时也算是可以记录自己这一些成长的过程吧。
-    
-[前端js保存页面为图片下载到本地的坑](http://caibaojian.com/h5-download.html#t11)整体的结构
-
-## 路由
-[History_API](https://developer.mozilla.org/zh-CN/docs/Web/API/History_API)
-[Why History_API not Hash](https://segmentfault.com/q/1010000010340823)
-[History_API](https://developer.mozilla.org/zh-CN/docs/Web/API/History_API)
-
-# 开发工具
-## VS Code
-[Visual Studio Code 设置同步到github的插件介绍及使用方法(Settings Sync)](http://www.whidy.net/visual-studio-code-settings-sync-introduction.html)
-
-## 软件工程
-### separation of concerns（关注点分离原则）
-创建和初始化可以分离
-举例来说，假如你在程序启动时创建了一个实例池，然后一直等到实例被取出并使用时才 执行特定的初始化过程。这个过程中两个函数调用是挨着的，但是完全可以根据需要让它们出现在不同的位置。
-
-### JavaScript是一门面向对象的语言吗？请把是不是换成能不能
-
-
-### Chrome
-[使用 DevTools 的工作区设置持久化](https://developers.google.com/web/tools/setup/setup-workflow?hl=zh-cn#_1)
-
-### 前端开发
 ### SPA
 - 模块（组件）
 - 视图（布局和渲染MVW）
@@ -2523,7 +2532,11 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 [demo](https://bogdan-lyashenko.github.io/js-code-to-svg-flowchart/docs/live-editor/index.html)
 
 
+
 # Test测试
+>《Web前端测试与集成》畅读
+
+
 [如何对vue.js单文件（.vue）进行单元测试](https://www.zhihu.com/question/50566681/answer/267276949)
 
 [聊一聊前端自动化测试（上）](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226799&idx=1&sn=7b0b7cdf36c768a49e5010a9afa1f14b&chksm=bd495b2b8a3ed23d8f9dd95dc2ef021ae4093e35b2a7b4434eac2cf5e3c8354c284eaff0c236&scene=21#wechat_redirect)
