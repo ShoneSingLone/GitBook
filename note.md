@@ -232,6 +232,9 @@ glyphicons 矢量图
 
 ## 图片和背景
 
+[滤镜](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
+filter:blur(5px);模糊
+
 - background-image:url();//相对路径是相对样式表文件而言
 - GIF JEPG PNG8 24 32
     - 个人理解两个方面：
@@ -556,7 +559,7 @@ line-height
 [Flex 布局教程 实例](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
 [Flex 布局教程 demo](http://static.vgee.cn/static/index.html)
 [FLEX-LAYOUT](https://github.com/Coffcer/flex-layout)
-[olved-by-flexbox/](https://hufan-akari.github.io/solved-by-flexbox/)
+[solved-by-flexbox/](https://hufan-akari.github.io/solved-by-flexbox/)
 
  flex分为两个部分：一个是container 用作包裹；另一个是item，被包裹的元素。container可以指定排列的方向（flex-direction）和换行的方式（flex-wrap）。
  
@@ -2339,6 +2342,7 @@ export default {
 
 # San百度MVVM框架
 [San](https://ecomfe.github.io/san/)
+[San - 一个传统的MVVM组件框架](http://efe.baidu.com/blog/san-a-traditional-mvvm-component-framework/)
 
 ### SPA
 - 模块（组件）
