@@ -234,6 +234,7 @@ glyphicons 矢量图
 
 [滤镜](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
 filter:blur(5px);模糊
+[高级CSS filters](https://www.w3cplus.com/css3/advanced-css-filters.html)
 
 - background-image:url();//相对路径是相对样式表文件而言
 - GIF JEPG PNG8 24 32
@@ -547,6 +548,9 @@ line-height
 [css3-tooltip](http://www.menucool.com/tooltip/css3-tooltip)
 [css3-tooltip](http://caibaojian.com/css3-tooltip.html)
 
+
+
+
 ### 固定
 ### 不固定
 #### 浮动
@@ -580,6 +584,9 @@ line-height
 
 
 
+
+
+[多行文本'...'](https://qianduan.group/posts/5a9ff0e80cf6b624d2239cc8)
 
 
 # JavaScript
