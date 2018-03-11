@@ -2600,5 +2600,9 @@ content loader
 [Skeleton Screen Vue 实现思路](https://cloud.tencent.com/developer/article/1006169)
 [Building Skeleton Screens with CSS Custom Properties](https://css-tricks.com/building-skeleton-screens-css-custom-properties/)
 
+# 开发环境
+[Ubuntu on Windows10 跨平台开发环境搭建权威指南](https://mp.weixin.qq.com/s?__biz=MjM5OTMxMzA4NQ==&mid=2655935509&idx=1&sn=e130c7d7fe65538e533aba292e91ae8c&chksm=bc8797c78bf01ed1a5aa641e1fc6d52e9f8db002e243bb2b9b596cc4c7debd5e4ccaf1ae01dc&mpshare=1&scene=1&srcid=0305UovU11yLF6vQsAC115qQ#rd)
+
+[Xshell配置SSH密钥登录Linux服务器](http://blog.csdn.net/ruixinroom/article/details/56017595)
 
 [win10 bash](https://aigeec.com/installing-node-js-on-windows-10-bash/)
