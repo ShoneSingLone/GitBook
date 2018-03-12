@@ -1989,6 +1989,9 @@ app.delete('/user', function (req, res) {
 [使用Node.js创建命令行脚本工具](https://aotu.io/notes/2015/12/23/building-command-line-tools-with-node-js/)
 `npm run <自定义命令>`
 
+原理：
+应该是若非全局安装就是npm的机制（卸载packa.json中 运行npm run）才会在.bin下查找。不然就要加上路径或者加入Path
+
 ### Gulp
 [使用npm scripts替代gulp](https://aotu.io/notes/2016/02/26/use-npm-script-instead-of-gulp/index.html)
 [Gulp get start](http://www.gulpjs.com.cn/docs/getting-started/)
@@ -2594,6 +2597,18 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 [前后端分离的项目，如何解决登录问题](https://my.oschina.net/liuyuantao/blog/875868)
 
 
+let aObj = {
+    get a() {
+        return this._a_++;
+    },
+    set a(val) {
+        this._a_ = val;
+    }
+}
+aObj.a = 4
+console.log(aObj.a < 5 && aObj.a == 5 && aObj.a > 5);
+
+
 # APP
 content loader
 [react-content-loader](https://github.com/danilowoz/react-content-loader)
@@ -2606,3 +2621,8 @@ content loader
 [Xshell配置SSH密钥登录Linux服务器](http://blog.csdn.net/ruixinroom/article/details/56017595)
 
 [win10 bash](https://aigeec.com/installing-node-js-on-windows-10-bash/)
+[Windows10开启Ubuntu子系统简易步骤](https://zhuanlan.zhihu.com/p/34133795)
+
+
+# SEO
+[seo-and-optimize-meta](https://excaliburhan.com/post/seo-and-optimize-meta.html)

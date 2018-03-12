@@ -205,7 +205,7 @@ let aObj = {
     b: "a"
 }
 
-aObj.a = 1;nn
+aObj.a = 1;
 console.log(aObj.a);
 console.log(aObj.b);
 ```
