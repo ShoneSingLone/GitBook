@@ -28,7 +28,9 @@ npm i -D style-loader css-loader
 - css-loader会遍历 CSS 文件，然后找到 url() 表达式然后处理他们;
 - style-loader 会把原来的 CSS 代码插入页面中的一个 style 标签中。
 
-处理顺序是从后到前，所以这就很好理解sass=》css=》style
+处理顺序是从后到前，所以这就很好理解sass=》PostCss=》css=》style
+
+PostCSS不用想得太复杂，能加一个
 
 ## Plugins
 
