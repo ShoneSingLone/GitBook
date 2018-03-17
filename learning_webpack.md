@@ -39,6 +39,7 @@ npm i -D extract-text-webpack-plugin
 ```
 
 >[extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)
+>[html-webpack-plugin](http://www.cnblogs.com/haogj/p/5160821.html)
 
 ## DevServer
 
@@ -47,3 +48,16 @@ npm install --save-dev webpack-dev-server
 ```
 
 >[extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)
+
+## 优化
+
+优化思路：
+
+- 缩小范围：查找文件`resolve` `alias` 指明引用的文件（同时考虑是否可以用Tree Hacking所以不一定都有效）；匹配文件`['ts','js','css']`
+- 只编译改动的，**DLLPlugin**
+- 多进程同时做事，针对大量文件的转换（loader的工作）**HappyPack**
+- 多进程同时做事，针对压缩转化**ParallelUglifyPlugin**
+- 针对不同的环境选用不同的打包策略
+- CDN
+- 提取公共代码common 往CDN推base
+- 压缩和Scope Hoisting有 ```把 x = 'Hello'; y = 'Hello' 转换成 var a = 'Hello'; x = a; y = b```

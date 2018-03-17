@@ -681,7 +681,7 @@ LHS RHS
 ### let的[用法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/let)
 
  新增的块级作用域。
- 
+
 ```js
 function varTest() {
     var x = 1;
@@ -1989,6 +1989,11 @@ app.delete('/user', function (req, res) {
 [使用Node.js创建命令行脚本工具](https://aotu.io/notes/2015/12/23/building-command-line-tools-with-node-js/)
 `npm run <自定义命令>`
 
+[npm 模块安装机制简介](http://www.ruanyifeng.com/blog/2016/01/npm-install.html)
+```bash
+npm install -g npm-cache
+```
+
 原理：
 应该是若非全局安装就是npm的机制（卸载packa.json中 运行npm run）才会在.bin下查找。不然就要加上路径或者加入Path
 
@@ -2623,6 +2628,10 @@ content loader
 [win10 bash](https://aigeec.com/installing-node-js-on-windows-10-bash/)
 [Windows10开启Ubuntu子系统简易步骤](https://zhuanlan.zhihu.com/p/34133795)
 
+## 调试
+[JavaScript Source Map 详解](http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
+
+注意修改地址的方法以及在webpack中的配置。
 
 # SEO
 [seo-and-optimize-meta](https://excaliburhan.com/post/seo-and-optimize-meta.html)
