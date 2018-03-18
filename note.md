@@ -2138,6 +2138,13 @@ get中params和data 的区别与 URLSearchParams的关系
 创建和初始化可以分离
 举例来说，假如你在程序启动时创建了一个实例池，然后一直等到实例被取出并使用时才 执行特定的初始化过程。这个过程中两个函数调用是挨着的，但是完全可以根据需要让它们出现在不同的位置。
 
+## 组件化
+
+[揭秘组件库一二事](https://zhuanlan.zhihu.com/p/34654371)
+
+## search搜索
+[为 Hexo 博客创建本地搜索引擎](https://liam0205.me/2017/09/21/local-search-engine-in-Hexo-site/)
+
 ### JavaScript是一门面向对象的语言吗？请把是不是换成能不能
 
 
@@ -2419,6 +2426,12 @@ content loader
 
 [win10 bash](https://aigeec.com/installing-node-js-on-windows-10-bash/)
 [Windows10开启Ubuntu子系统简易步骤](https://zhuanlan.zhihu.com/p/34133795)
+
+## 代理
+
+[使用 express 轻松实现反向代理服务器](https://segmentfault.com/a/1190000009399953)
+[反向代理为何叫反向代理？](https://www.zhihu.com/question/24723688)
+[正向代理与反向代理的浅解](https://segmentfault.com/a/1190000000762548)
 
 ## 调试
 [JavaScript Source Map 详解](http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
