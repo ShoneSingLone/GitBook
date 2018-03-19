@@ -93,6 +93,16 @@ var Component = Vue.extend({
 
 生命周期的钩子函数类似于.on()的作用，混合对象的钩子将在组件自身钩子之前调用 。而其他属性只会取组件的调用。
 
+## 组件
+
+### 插槽
+
+内容分发。
+[单个插槽](https://cn.vuejs.org/v2/guide/components.html#%E5%8D%95%E4%B8%AA%E6%8F%92%E6%A7%BD)
+
+定义一个APP-layout有几个固定的大模块 但是现在不清楚具体有什么就留出几个插口 后面再将具体的组件接过来。
+[具名插槽](https://cn.vuejs.org/v2/guide/components.html#%E5%85%B7%E5%90%8D%E6%8F%92%E6%A7%BD)
+
 ### 自定义指令
 
 #### 注册

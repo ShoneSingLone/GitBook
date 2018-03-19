@@ -2133,6 +2133,9 @@ get中params和data 的区别与 URLSearchParams的关系
 ## VS Code
 [Visual Studio Code 设置同步到github的插件介绍及使用方法(Settings Sync)](http://www.whidy.net/visual-studio-code-settings-sync-introduction.html)
 
+Vetur的设置，不会报那些乱七八糟的错
+![Vetur的设置，不会报那些乱七八糟的错](./vscode/vetur_config.png)
+
 ## 软件工程
 ### separation of concerns（关注点分离原则）
 创建和初始化可以分离
