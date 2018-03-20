@@ -9,6 +9,7 @@
 [教程](https://cn.vuejs.org/v2/guide/)
 [API](https://cn.vuejs.org/v2/api/)
 [Vue解析](https://github.com/answershuto/learnVue)
+[揭秘组件库一二事](https://zhuanlan.zhihu.com/p/34654371)
 
 ## 术语和概念
 
@@ -31,11 +32,11 @@
     ```
 - 除了 data 属性，Vue 实例暴露了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的属性区分开来
 
-#### 实例API
+### 实例API
 
 - el
 - data
-    - 可以使用【集合模式】例如message可能不止一个
+  - 可以使用【集合模式】例如message可能不止一个
 - template
 - watch
 - methods
@@ -44,7 +45,6 @@
 ### 生命周期lifecycle
 
 ![lifecycle.png](./media/lifecycle.png)
-
 [Vue源码浅析（二）-生命周期](https://www.cnblogs.com/libin-1/p/6845669.html)
 
 ### 模板语法

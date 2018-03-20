@@ -8,6 +8,7 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 3.	推荐前端入门跨平台 App 开发先学 Cordova，最简单、正规，社区最大
 
 [How-To-Ask-Questions-The-Smart-Way](https://billing.virmach.com/clientarea.php?action=productdetails&id=82054)
+
 ---
 > [HTML+CSS基础课程](https://www.imooc.com/learn/9)
 
@@ -22,8 +23,8 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 ## Request
 ### referrerPolicy
 
-
 ## Element
+
 - .clientHeight
      ![Element.clientHeight](./media/html/Dimensions-client.png)
 - .offsetHeight
@@ -2087,9 +2088,51 @@ npm install webpack –g
 ---
 ## 函数节流和函数去抖Debouncer
 
-[实例解析防抖动（Debouncing）和节流阀（Throttling）](http://www.alloyteam.com/2012/11/javascript-throttle/)
+>函数节流Debounce背后的基本思想是指，某些代码不可以在没有间断的情况连续重复执行。第一次调用函数， 创建一个定时器，在指定的时间间隔之后运行代码。当第二次调用该函数时，它会清除前一次的定时器并设置另一个。
 
+只执行最后一次，如果在等待的时间内又调用，则会重置计时。
+```js
+var processor = {
+timeoutId: null,
+//实际进行处理的方法
+performProcessing: function(){
+//实际执行的代码
+},
+//初始处理调用的方法
+process: function(){
+clearTimeout(this.timeoutId);
+var that = this;
+this.timeoutId = setTimeout(function(){
+that.performProcessing();
+}, 100);
+}
+};
+//尝试开始执行
+processor.process();
+```
+
+>
+
+**《高程3》的throttle其实是debounce**
+
+[实例解析防抖动（Debouncing）和节流阀（Throttling）](http://www.alloyteam.com/2012/11/javascript-throttle/)
+[loadash.debounce](https://lodash.com/docs/4.17.5#debounce)
 [Debouncing and Throttling Explained Through Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)
+[Debouncing and Throttling Explained Through Examples](https://www.cnblogs.com/fsjohnhuang/p/4147810.html)
+[the-difference-between-throttle-and-debounce-in-underscorejs](https://blog.coding.net/blog/the-difference-between-throttle-and-debounce-in-underscorejs)
+
+```js
+var throttle = function(delay, action){
+  var last = 0;
+  return function(){
+    var curr = +new Date();
+    if (curr - last > delay){
+      action.apply(this, arguments);
+      last = curr ;
+    }
+  }
+}
+```
 
 ## 使用原生方法实现拖拽
 
