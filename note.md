@@ -653,10 +653,14 @@ LHS RHS
 - 取数赋值跟交换是两种用途：`[a,b] = [b,a]`此为交换
 
 #### 变量作用域
-[变量用var和不用var的区别](https://segmentfault.com/a/1190000000638445)
-[ES6 变量作用域与提升：变量的生命周期详解](https://segmentfault.com/a/1190000010640225)
----
 
+变量提升，函数优先
+
+[变量用var和不用var的区别](https://segmentfault.com/a/1190000000638445)
+
+[ES6 变量作用域与提升：变量的生命周期详解](https://segmentfault.com/a/1190000010640225)
+
+ ---
 
 1. 不用var是全局变量的属性；可以用delete删除【属性】；不能变量提升
 1. 用var是变量；不可以用delete删除；会变量提升；是局部变量。
@@ -666,10 +670,11 @@ LHS RHS
 1. `‘use strict’`模式下不使用var会报错。
 
 一个变量的作用域是程序源代码中定义这个变量的区域。全局变量和局部变量
+这里涉及函数优先：函数表达式优先于var变量被提升。
 关于变量提升还有函数提升：使用定义式则是赋值也提升了，如果使用表达式就如同使用var的变量一样，只是声明提升了而没有赋值，是undefined。
 ```js
-    console.log(a);//[Function: a]
     a();//函数提升
+    console.log(a);//[Function: a]
     var a = "变量已赋值";
     console.log(a);//变量已赋值
     function a(){
@@ -799,7 +804,7 @@ NaN等于自身，而精确相等运算符认为NaN不等于自身
 [Arrow_functions](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 可以被定义，可以被调用，是一种语法，也是一种值，可以被程序操作，可以作为函数的参数。
-Arrow_functions no this or arguments、super、new.target。call apply 因为没有this ，所以无法绑定。
+Arrow_functions no this or arguments、super、new.target。call apply 因为没有this ，无法改变Arrow里面的this指向。
 
 ```js
 (function() {
@@ -952,7 +957,7 @@ JavaScript目前没有对参数类型进行检查，实参与形参可能不相�
 > 现在,JavaScript已经不仅仅是当年只用来验证表单的玩具，而成为一门真正的适用性广泛的语言来完成复杂度较高的应用。静态语言编译时校验的价值就在工程实践中凸显出来，TypeScript适时而起。--woshuode
 
 ### 可变参数**arguments**
-[arguments](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments) 是类数组对象，以数字作为key。通过以下方法转换为真·数组：
+[arguments](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments) 是**类数组**对象，以数字作为key。通过以下方法转换为真·数组：
 主要是使用
 ```js
 let args = Array.prototype.slice.call(arguments); 
@@ -2088,7 +2093,7 @@ npm install webpack –g
 ---
 ## 函数节流和函数去抖Debouncer
 
->函数节流Debounce背后的基本思想是指，某些代码不可以在没有间断的情况连续重复执行。第一次调用函数， 创建一个定时器，在指定的时间间隔之后运行代码。当第二次调用该函数时，它会清除前一次的定时器并设置另一个。
+>函数节流Debounce背后的基本思想是指，某些代码不可以在没有间断的情况连续重复执行。第一次调用函数， 创建一个定时器，在指定的时间间隔之后运行代码。当第二次调用该函数时，它会清除前一次的定时器并设置另一个。**一段时间内执行最后一次调用**
 
 只执行最后一次，如果在等待的时间内又调用，则会重置计时。
 ```js
@@ -2111,15 +2116,7 @@ that.performProcessing();
 processor.process();
 ```
 
->
-
-**《高程3》的throttle其实是debounce**
-
-[实例解析防抖动（Debouncing）和节流阀（Throttling）](http://www.alloyteam.com/2012/11/javascript-throttle/)
-[loadash.debounce](https://lodash.com/docs/4.17.5#debounce)
-[Debouncing and Throttling Explained Through Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)
-[Debouncing and Throttling Explained Through Examples](https://www.cnblogs.com/fsjohnhuang/p/4147810.html)
-[the-difference-between-throttle-and-debounce-in-underscorejs](https://blog.coding.net/blog/the-difference-between-throttle-and-debounce-in-underscorejs)
+>Throttle是**一段时间内被调用多次，但是按节奏执行**
 
 ```js
 var throttle = function(delay, action){
@@ -2133,6 +2130,20 @@ var throttle = function(delay, action){
   }
 }
 ```
+
+
+
+
+>
+
+**《高程3》的throttle其实是debounce**这篇文章 [实例解析防抖动（Debouncing）和节流阀（Throttling）](http://www.alloyteam.com/2012/11/javascript-throttle/)也是将错就错。正确理解可主要参考[Debouncing and Throttling Explained Through Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)。
+
+
+[loadash.debounce](https://lodash.com/docs/4.17.5#debounce)
+[Debouncing and Throttling Explained Through Examples](https://www.cnblogs.com/fsjohnhuang/p/4147810.html)
+[the-difference-between-throttle-and-debounce-in-underscorejs](https://blog.coding.net/blog/the-difference-between-throttle-and-debounce-in-underscorejs)
+
+
 
 ## 使用原生方法实现拖拽
 
@@ -2217,6 +2228,9 @@ Vetur的设置，不会报那些乱七八糟的错
 [Sass 基础教程](http://www.sasschina.com/guide/)
 
 [SassScript](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)
+
+[Sass基础——颜色函数](https://www.w3cplus.com/preprocessor/sass-color-function.html)
+主要是darken函数对hover设计帮助很大。
 
 ---
 #### SASS的使用
