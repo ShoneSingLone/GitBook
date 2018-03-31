@@ -14,10 +14,19 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 
 # HTML
 [MDN-Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
+
+[MDN-Web/API](https://developer.mozilla.org/en-US/docs/web/api)
+
+[MDN-Web/API-zh-CN](https://developer.mozilla.org/zh-CN/docs/Web/API)
+
 [300毫秒延迟](https://thx.github.io/mobile/300ms-click-delay#%E5%BD%93%E5%89%8D%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%BB%B6%E8%BF%9F)
+
 [移动端Web页面适配方案](https://funteas.com/topic/5a4d80ec1f635ce136730e10)
+
 [理解HTML5的语义](https://www.adobe.com/devnet/archive/dreamweaver/articles/understanding-html5-semantics.html)
+
 [mobie-first](https://abookapart.com/products/mobile-first)
+
 [Making a Case for Mobile First Designs](https://www.sitepoint.com/making-case-mobile-first-designs/)
 
 ## Request
@@ -373,7 +382,6 @@ input
 		- `float: left` 将把元素移至左侧，并被其他元素环绕
 		- `overflow: hidden` 将裁切溢出元素
 
-
 Inline-block和浮动布局的区别？
 
 #### 层模型
@@ -385,6 +393,7 @@ Inline-block和浮动布局的区别？
 1. 固定定位(position: fixed)：位置效果使用`background-attachment:fixed`
     - position:fixed;并不只是相对于窗口定位：CSS3的transform会影响定位；
      [相对于父元素的FIXED定位的实现](http://www.cnblogs.com/biyesheng/p/6386176.html)
+
      [相对于父元素的FIXED定位的实现:transform](https://code.w3ctech.com/detail/1305)
     - ```css
         <!DOCTYPE html>
@@ -1086,6 +1095,8 @@ bind() 最简单的用法是创建一个函数，使这个函数不论怎么调�
 # Promise
 [MDN Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7)
 
+[Promise 解析])(https://segmentfault.com/a/1190000000586666)
+
 [ES6 Promise 用法](https://juejin.im/entry/5a3a113a51882569707821c0?utm_medium=fe&utm_source=weixinqun)
 
 [在Node.js中使用promise摆脱回调金字塔](http://nya.io/Node-js/promise-in-nodejs-get-rid-of-callback-hell/)
@@ -1229,6 +1240,13 @@ function loadasyni(url){
     head.appendChild(s);//将script元素插入head标签中
 }
 ```
+
+## 运行时的页面构建过程
+
+[DOM操作成本到底高在哪儿？](https://segmentfault.com/a/1190000014070240)
+
+[构建对象模型](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model#css_cssom)
+
 
 
 ## 事件
@@ -2091,6 +2109,7 @@ npm install webpack –g
 ## Fetch API
 使用[Fetch](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch):
 ---
+
 ## 函数节流和函数去抖Debouncer
 
 >函数节流Debounce背后的基本思想是指，某些代码不可以在没有间断的情况连续重复执行。第一次调用函数， 创建一个定时器，在指定的时间间隔之后运行代码。当第二次调用该函数时，它会清除前一次的定时器并设置另一个。**一段时间内执行最后一次调用**
@@ -2130,10 +2149,6 @@ var throttle = function(delay, action){
   }
 }
 ```
-
-
-
-
 >
 
 **《高程3》的throttle其实是debounce**这篇文章 [实例解析防抖动（Debouncing）和节流阀（Throttling）](http://www.alloyteam.com/2012/11/javascript-throttle/)也是将错就错。正确理解可主要参考[Debouncing and Throttling Explained Through Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)。
@@ -2143,12 +2158,11 @@ var throttle = function(delay, action){
 [Debouncing and Throttling Explained Through Examples](https://www.cnblogs.com/fsjohnhuang/p/4147810.html)
 [the-difference-between-throttle-and-debounce-in-underscorejs](https://blog.coding.net/blog/the-difference-between-throttle-and-debounce-in-underscorejs)
 
-
-
 ## 使用原生方法实现拖拽
 
 
 # Axios
+
 [Axios](https://www.kancloud.cn/yunye/axios/234845)
 [Axios实践](http://www.jianshu.com/p/df464b26ae58)
 [axios 中文文档 翻译](https://segmentfault.com/a/1190000008470355)
@@ -2183,17 +2197,18 @@ get中params和data 的区别与 URLSearchParams的关系
 [Why History_API not Hash](https://segmentfault.com/q/1010000010340823)
 [History_API](https://developer.mozilla.org/zh-CN/docs/Web/API/History_API)
 
-# 开发工具
+
+# 软件工程
+## separation of concerns（关注点分离原则）
+创建和初始化可以分离
+举例来说，假如你在程序启动时创建了一个实例池，然后一直等到实例被取出并使用时才 执行特定的初始化过程。这个过程中两个函数调用是挨着的，但是完全可以根据需要让它们出现在不同的位置。
+
+## 开发工具
 ## VS Code
 [Visual Studio Code 设置同步到github的插件介绍及使用方法(Settings Sync)](http://www.whidy.net/visual-studio-code-settings-sync-introduction.html)
 
 Vetur的设置，不会报那些乱七八糟的错
 ![Vetur的设置，不会报那些乱七八糟的错](./vscode/vetur_config.png)
-
-## 软件工程
-### separation of concerns（关注点分离原则）
-创建和初始化可以分离
-举例来说，假如你在程序启动时创建了一个实例池，然后一直等到实例被取出并使用时才 执行特定的初始化过程。这个过程中两个函数调用是挨着的，但是完全可以根据需要让它们出现在不同的位置。
 
 ## 组件化
 
@@ -2500,3 +2515,7 @@ content loader
 
 # SEO
 [seo-and-optimize-meta](https://excaliburhan.com/post/seo-and-optimize-meta.html)
+
+# 数据库Database
+
+[数据库的最简单实现](http://www.ruanyifeng.com/blog/2014/07/database_implementation.html)
