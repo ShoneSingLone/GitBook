@@ -1247,7 +1247,7 @@ function loadasyni(url){
 
 [构建对象模型](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model#css_cssom)
 
-
+客户端页面指向分为两个阶段
 
 ## 事件
 [preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)
@@ -1389,10 +1389,6 @@ $("button").trigger("click!");
 >[正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
 >[正则表达式的简单应用](http://www.yjs001.cn/web/regex/66051207346118647191.html)
 
-***
-如何匹配{abc：（a*c）=》c }？
-***
-
 ## WHAT
 Regular Expression，是用来查找特定字符串的规则的表达式。（这个表达式描述的是这个查找规则）
 正则表达式是匹配模式，匹配字符||位置。（注意这个关系）
@@ -1400,7 +1396,23 @@ Regular Expression，是用来查找特定字符串的规则的表达式。（�
 ## WHY
 与通配符相比，能灵活准确地查找出特定的字符串。
 ## HOW
+
+如何匹配{abc：/a(.*)c/=》c }？
+
+---
+这个提问就是个不专业的问法：
+
+首先区分匹配结果（包括写死的部分）和捕获结果（捕获使用`()`，这里面的才叫捕获，而`(?:)`指明当前括号的作用是分组）；
+
+- regexp.test返回真假值，表示能不能匹配上；
+- string.replace(regexp/g,function(...args)):args是跟regexp中匹配和捕获有关系，很考究，慎重！
+- match
+  - 简单匹配 没有`g`标识 string.match(regexp);只返回一个匹配结果，第一个[0]是整个匹配结果，后面是捕获结果；
+  - 全局表达式匹配 有`g`标识 string.match(regexp);返回所有匹配结果。**没有**捕获结果。
+- exec：regexp/g.exec(string) 一次返回一个匹配结果，同match简单匹配；可以多次调用，每次返回下一个。(这里的全局标识g很重要)
+
 >"我要找一个 **这样并这样** 的东西，吧啦吧啦..."
+
 
 从三个方面描述匹配规则（**这样并这样**）：
 - 位置
