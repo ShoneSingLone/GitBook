@@ -230,3 +230,6 @@ export default {
 [使用Vue.js和Vuex实现购物车场景](http://xlbd.me/vue-vuex-shopping-cart/)
 [使用Vue.js和Vuex实现购物车场景 demo-source](https://github.com/xiaoluoboding/vue-demo-collection/tree/master/shopping-cart)
 [基于 vue-cli + iView 的 Vue js 后台管理系统，简洁易扩展](https://www.liruan.cn/docs/iview.html)
+
+
+[Vue 页面切换效果之 BubbleTransition](https://juejin.im/entry/5ac877ae6fb9a028b617c33e)
