@@ -1621,13 +1621,12 @@ ssh username@host
 ```
 
 # Git
-[](https://github.com/xirong/my-git)
+[Gitflow](https://github.com/xirong/my-git)
 Git工作流是很重要的多人协作方式。学习方式首先是理解应用场景，也就是为什么要用这样的工具，那些时候用，具体怎么用。
 
 [搭建Git服务器](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000)
 
 [在服务器上搭建 Git](https://git-scm.com/book/zh/v1/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%9A%84-Git-%E6%9E%B6%E8%AE%BE%E6%9C%8D%E5%8A%A1%E5%99%A8)
-
 
 [windows下git库的ssh连接，使用public key的方法](http://blog.csdn.net/longshenlmj/article/details/9408549)
 
@@ -1636,6 +1635,7 @@ npm install --global gulp-cli
 ```
 
 ### 架设服务器
+
 现在我们过一边服务器端架设 SSH 访问的流程。本例将使用 authorized_keys 方法来给用户授权。我们还将假定使用类似 Ubuntu 这样的标准 Linux 发行版。首先，创建一个名为 'git' 的用户，并为其创建一个 .ssh 目录。
 
 ```shell
@@ -1678,42 +1678,52 @@ $ sudo chown -R git:git .
 ```
 
 # 在 John 的电脑上
+
+```shell
 $ cd myproject
 $ git init
 $ git add .
 $ git commit -m 'initial commit'
 $ git remote add origin git@gitserver:/opt/git/project.git
 $ git push origin master
+```
+
 这样，其他人的克隆和推送也一样变得很简单：
 
+```shell
 $ git clone git@gitserver:/opt/git/project.git
 $ cd project
 $ vim README
 $ git commit -am 'fix for the README file'
 $ git push origin master
+```
+
 用这个方法可以很快捷地为少数几个开发者架设一个可读写的 Git 服务。
 
 作为一个额外的防范措施，你可以用 Git 自带的 git-shell 工具限制 git 用户的活动范围。只要把它设为 git 用户登入的 shell，那么该用户就无法使用普通的 bash 或者 csh 什么的 shell 程序。编辑 /etc/passwd 文件：
+```shell
 
 $ sudo vim /etc/passwd
+```
+
 在文件末尾，你应该能找到类似这样的行：
+```shell
 
 git:x:1000:1000::/home/git:/bin/sh
+```
+
 把 bin/sh 改为 /usr/bin/git-shell （或者用 which git-shell 查看它的实际安装路径）。该行修改后的样子如下：
+```shell
 
 git:x:1000:1000::/home/git:/usr/bin/git-shell
+```
 现在 git 用户只能用 SSH 连接来推送和获取 Git 仓库，而不能直接使用主机 shell。尝试普通 SSH 登录的话，会看到下面这样的拒绝信息：
+```shell
 
 $ ssh git@gitserver
 fatal: What do you think I am? A shell?
-C
-
-```
-
 ```
  在创建用户时，需要为新建用户指定一用户组，如果不指定其用户所属的工作组，自动会生成一个与用户名同名的工作组。创建用户user1的时候指定其所属工作组users，例：useradd –g users user1
-
-
 
 一、创建用户：
 
@@ -1781,15 +1791,9 @@ gpasswd –d user1 users
 8、命令groupmod修改组
 groupmod –n user users       修改组名user为users
 
- 
 
 9、groupdel删除组
 groupdel users    删除组users
-
-
-
-
-
 
 ubuntu和windows一样，可以任意创建或者删除新的用户，windows下比较简单，ubuntu下需要使用命令，不过操作起来不是很繁琐，所以我尽量写的详细一些。
 
@@ -1829,10 +1833,8 @@ ubuntu和windows一样，可以任意创建或者删除新的用户，windows下
           ubuntu删除用户同样是在终端下操作的，需要注意的是，如果要删除的用户当前已登陆，是删除不掉的，必须注销掉当前用户切换为另一个用户下，才能删除。举个例子，刚才我新建立了一个用户为 yang 的用户，例如我现在用用户 yang 登陆了桌面，此时如果我想删除 yang 这个用户，是删除不掉的。正确的操作方法是，我注销掉 yang，然后使用 root 登陆到桌面，再删除 yang 即可。
 
           删除ubuntu用户的命令比较容易记：sudo userdel username，例如我想删除 yang ，则输入：sudo userdel yang，删除成功后，系统无任何提示。
-
 ```
 
-```
 安装git，apt-get install git
 创建git用户和git用户组，分配目录/home/git，然后vim /etc/passwd
 将 ： git:x:1003:1003::/home/git:
@@ -1845,11 +1847,6 @@ ubuntu和windows一样，可以任意创建或者删除新的用户，windows下
 作者： 紫帆梓 
 链接：http://www.imooc.com/article/4697
 来源：慕课网
-
-```
-
-
-
 
 ## 基本操作
 [Git-Commands](https://aotu.io/notes/2015/11/17/Git-Commands/)
