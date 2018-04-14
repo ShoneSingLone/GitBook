@@ -25,7 +25,6 @@
   - 请解释*{box-sizing:border-box;}的作用，并说明使用它的好处
   - 浮动元素引起的问题和解决办法？绝对定位和相对定位，元素浮动后的display值
   - link和@import引入css的区别
-  
   - 解释一下css3的flexbox，以及适用场景
   - inline和inline-block的区别
   - 哪些是块级元素那些是行级元素，各有什么特点
@@ -34,7 +33,8 @@
   - 实现两栏布局有哪些方法？
   - css dpi
   - 你知道attribute和property的区别么？
-  自定义的比如说设定data-url，这个data-url就是attribute，无法通过ele.dataUrl获取，但是getAttribute("data-url")就可以；按照HTML5标准，ele.dataset.url也行。
+  自定义的比如说设定data-url，这个data-url就是attribute，无法通过ele.dataUrl获取，但是getAttribute("data-url")就可以；按照HTML5标准，ele.dataset.url也行。而在CSS3中attr可获取attribute data-*的部分
+  [CSS/attr](https://developer.mozilla.org/en-US/docs/Web/CSS/attr)
   - css布局问题？css实现三列布局怎么做？如果中间是自适应又怎么做？
   - 流式布局如何实现，响应式布局如何实现
   - 移动端布局方案
