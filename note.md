@@ -34,13 +34,15 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 
 ## Element
 
+**remenber this!**: `element.scrollHeight - element.scrollTop === element.clientHeight`
+
+ ---
+
 - .clientHeight
      ![Element.clientHeight](./media/html/Dimensions-client.png)
-- .offsetHeight
+- .[offsetHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetHeight)
      ![Element.offsetHeight](./media/html/offsetHeight.png)
-- .offsetHeight
-     ![Element.offsetHeight](./media/html/offsetHeight.png)
-     
+
 <iframe height='265' scrolling='no' title='scrollHeight 演示Edit' src='//codepen.io/singlone/embed/ZvqymO/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/singlone/pen/ZvqymO/'>scrollHeight 演示Edit</a> by ShoneSingLone (<a href='https://codepen.io/singlone'>@singlone</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
@@ -236,7 +238,8 @@ var      | 定义变                             |
 
 
 ## 
-[使用 CSS overscroll-behavior 控制滚动行为：自定义下拉刷新和溢出效果](https://github.com/dev-reading/fe/blob/master/articles/2017-11-15-overscroll-behavior.md)
+- [使用 CSS overscroll-behavior 控制滚动行为：自定义下拉刷新和溢出效果](https://github.com/dev-reading/fe/blob/master/articles/2017-11-15-overscroll-behavior.md)
+- [禁止遮罩层以下屏幕滑动----正解(更新版)](http://www.cnblogs.com/gaohui/p/5819777.html)
 ## @font-face
 glyphicons 矢量图
 
