@@ -32,5 +32,9 @@ DOM + CSSOM ==可见部分==> render Tree（display:none就是不可见，也就
 
 ### 优化optimizing
 
+- 压缩、除去注释、缓存
 - HTML size 尽量小
-  - 压缩、除去注释、
+
+### 分析关键渲染路径性能
+
+[分析关键渲染路径性能](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp#performance-patterns)
