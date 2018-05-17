@@ -555,12 +555,8 @@ line-height
             1. 使用插入 table  (包括tbody、tr、td)标签，同时设置 vertical-align：middle。
             1. 在 chrome、firefox 及 IE8 以上的浏览器下可以设置块级元素的 display 为 table-cell（设置为表格单元显示），激活 vertical-align 属性，但注意 IE6、7 并不支持这个样式, 兼容性比较差。相当于内置了方法1.
 
-
 [css3-tooltip](http://www.menucool.com/tooltip/css3-tooltip)
 [css3-tooltip](http://caibaojian.com/css3-tooltip.html)
-
-
-
 
 ### 固定
 ### 不固定
@@ -577,7 +573,7 @@ line-height
 [solved-by-flexbox/](https://hufan-akari.github.io/solved-by-flexbox/)
 
  flex分为两个部分：一个是container 用作包裹；另一个是item，被包裹的元素。container可以指定排列的方向（flex-direction）和换行的方式（flex-wrap）。
- 
+
  **flex-direction**属性指定了内部元素是如何在 flex 容器中布局的，定义了主轴的方向(正方向或反方向)。意思就是当`flex-directin:column;`时，justify axis变成了Y轴。
  
  注意到这里的baseline和content的around就可以理解到这两者的区别：content是main和cross上的分部，而align-items就是item内部的布局基准。align又有stretch属性，在cross轴上特有。
