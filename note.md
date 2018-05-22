@@ -2503,7 +2503,11 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 
 [Electron markdown editor](https://github.com/AnotherNote/anote)
 
-# JWT
+# 登录
+
+大致上，登录过程用户提供必要信息（登录框的name、password）；验证（后台数据库一类）；保存并返回验证结果。
+
+## JWT
 [八幅漫画理解使用JSON Web Token设计单点登录系统](http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/)
 [前后端分离之JWT用户认证](https://www.jianshu.com/p/180a870a308a)
 [前后端分离的项目，如何解决登录问题](https://my.oschina.net/liuyuantao/blog/875868)
