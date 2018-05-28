@@ -37,31 +37,34 @@ Animate.prototype.start = function (propertyName, endPos, duration, easing) {
     this.duration = duration; // 动画持续事件
     this.easing = tween[easing]; // 缓动算法
     var self = this;
-    var timeId = setInterval(function () { // 启动定时器，开始执行动画
-        if (self.step() === false) { // 如果动画已结束，则清除定时器
-            clearInterval(timeId);
+    var timeId = setInterval((function (self) {
+        return function () { // 启动定时器，开始执行动画
+            if (self.step()) { // 如果动画已结束，则清除定时器
+                clearInterval(timeId);
+            }
         }
-    }, 19);
+    })(this), 19);
 };
 
 Animate.prototype.step = function () {
     var t = +new Date; // 取得当前时间
     if (t >= this.startTime + this.duration) { // (1)
         this.update(this.endPos); // 更新小球的CSS 属性值
-        return false;
+        return true;
     }
     var pos = this.easing(t - this.startTime, this.startPos,
         this.endPos - this.startPos, this.duration);
     // pos 为小球当前位置
     this.update(pos); // 更新小球的CSS 属性值
+    return false;
 };
 
 Animate.prototype.update = function (pos) {
-    this.dom.style[this.propertyName] = pos + 'px';
+    console.log(this.dom.style[this.propertyName] = pos + 'px');
 };
 
 
 var div = document.getElementById('ball');
 var animate = new Animate(div);
-animate.start('left', 500, 1000, 'strongEaseOut');
-// animate.start( 'top', 1500, 500, 'strongEaseIn' );
+animate.start('left', 500, 1000, 'strongEaseIn');
+// animate.start('top', 1500, 1000, 'strongEaseOut');

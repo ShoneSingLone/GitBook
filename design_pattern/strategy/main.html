@@ -7,6 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style lang="">
+        .container {
+            height: 100vh;
+            width: 100vw;
+            text-align: center;
+        }
+
         #ball {
             background: linear-gradient(cyan, transparent), linear-gradient(225deg, magenta, transparent), linear-gradient(45deg, yellow,
             transparent);
@@ -14,12 +20,15 @@
             height: 50px;
             border-radius: 50% 50%;
             text-align: center;
+            position: absolute;
         }
     </style>
 </head>
 
 <body>
-    <div style="position:absolut" id="ball">&nbsp;</div>
+    <div class="container">
+        <div style="position:absolut" id="ball">&nbsp;</div>
+    </div>
     <script src="./main.js"></script>
 </body>
 
