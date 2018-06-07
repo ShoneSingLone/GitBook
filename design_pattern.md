@@ -11,6 +11,14 @@
 
 [jQuery 中的设计模式](http://wiki.jikexueyuan.com/project/javascript-design-patterns/builder-pattern.html)
 
+## 面向对象设计原则
+
+- s( Single-Resposibility Principle ): 单一职责原则
+- o( Open-Closed principle ): 开放封闭原则
+- l( Liskov-Substituion Principle ): 里氏原则
+- i( Interface-Segregation Principle ): 接口隔离原则
+- d( Dependecy-Inversion Principle ): 依赖倒置原则
+
 ## 常用模式
 
 #### 单例模式
@@ -45,8 +53,8 @@ $.each(obj,func):按照一定顺序访问，处理逻辑分离
 
 > It is mainly used to implement distributed event handling systems, in "event driven" software. Most modern languages such as C# have built in "event" constructs which implement the observer pattern components, for easy programming and short code.
 
-subject是一个对象，它自有一个ObserverList（依赖它）属性，当subject的任一状态改变，就调用observerList里observer的某一个方法。
-通常就是就是变成语言里面的“事件系统”
+subject是一个对象，它自有一个ObserverList属性，当subject的任一状态改变，就调用observerList里observer的一个方法。
+通常就是就是编程语言里面的“事件系统”
 
 ```js
 //观察者列表
@@ -194,19 +202,28 @@ var pubsub = {};
 (挖坑)
 express中的use 中间件middleware
 ~~管道模式：promise-them~~
-[责任链模式的一种实现方式](http://www.itminus.com/blog/2017/06/03/Boulevard/DesignPattern/责任链模式的一种实现方式/)
+>[Laravel 中管道设计模式的使用 —— 中间件实现原理探究](http://laravelacademy.org/post/3088.html)
+
+>[编写可维护代码之“中间件模式”](https://zhuanlan.zhihu.com/p/26063036)
+
+>[责任链模式的一种实现方式](http://www.itminus.com/blog/2017/06/03/Boulevard/DesignPattern/责任链模式的一种实现方式/)
 
 #### 中介者模式
+
 Bus总线
-解耦，中间通讯，减少对详见互相引用。Vuex
+解耦，中间通讯，减少对象间互相引用。Vuex
 
-#### 装饰者模式
+#### 装饰者模式 Decorator
 
-#### 状态模式
+不改变对象，运行期间动态添加职责。开闭原则
+
+#### 状态模式 
 
 Vuex
 
-#### 适配者模式
+#### 适配器模式
+
+mpvue 解决接口不一致 开闭原则
 
 #### 集合模式
 [集合模式](http://www.cnblogs.com/huangpeng/archive/2011/06/28/2092591.html)
