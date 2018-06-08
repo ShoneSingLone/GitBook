@@ -15,3 +15,14 @@ introduction[CSS方面的内容]
 (30个你必须记住的CSS选择符) [http://yanhaijing.com/css/2014/01/04/the-30-css-selectors-you-must-memorize/]
 
 width auto 的作用，默认值的影响。
+
+## 布局定位
+
+[CSS布局](http://zh.learnlayout.com/position.html)
+
+[position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position)
+
+盒子模型最主要的定位方式
+position:static relative absolute fixed transform非none
+
+与display：flex
