@@ -1,5 +1,171 @@
 # 知识点汇总
 
+- CSS盒模型
+
+基本概念:标准模型+IE模型 content padding border
+标准模型和IE模型区别
+CSS如何设置这两种模型k
+JS如何设置获取盒模型对应的宽和高
+
+```js
+  dom.style.width/height：获取的是内联样式
+  dom.currentStyle.width/height：兼容性只有IE可以
+  window.getComputedStyle(dom).width/height
+  dom.getBoundingClientRect().width/heigh
+  图片懒加载的时候可以用
+  offsetWidth、height是什么呢？
+```
+
+实例题(根据盒模型解释边距重叠)
+
+- BFC (边距重叠解决方案)
+
+BFC的基本概念
+BFC的原理
+如何创建BFC
+BFC的使用场景
+
+- fix float所产生的塌陷/元素下坠
+    - [利用:after伪类元素清除](http://www.html-js.com/article/2203)
+    - [Why does overflow hidden stop floating elements escaping their container?](https://stackoverflow.com/questions/9193214/why-does-overflow-hidden-stop-floating-elements-escaping-their-container)
+    - [BFC 块级格式化上下文](http://web.jobbole.com/83149/)+ [CSS之BFC详解](http://www.html-js.com/article/1866)+[](http://www.10tiao.com/html/59/201712/2651553261/1.html)
+    **BFC特性**
+		1. 内部的Box会在垂直方向，从顶部开始一个接一个地放置。
+		1. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加
+		1. 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+		1. BFC的区域不会与float box叠加。
+		1. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然。
+		1. 计算BFC的高度时，浮动元素也参与计算。
+		---
+		**作用**
+
+		1. 说的
+		1. 解决margin叠加问题 
+		1. 布局[CSS之BFC详解](http://www.html-js.com/article/1866)
+		1. 用于清除浮动，计算BFC高度.
+		---
+
+		`overflow: hidden;`只是创建BFC的方式之一，比较常用。
+
+		- `display: table` 可能引发响应性问题
+		- `overflow: scroll` 可能产生多余的滚动条
+		- `float: left` 将把元素移至左侧，并被其他元素环绕
+		- `overflow: hidden` 将裁切溢出元素
+
+DOM事件类
+基本概念:
+ DOM事件的级别、0/2/3
+
+- DOM事件模型 
+捕获、冒泡 默认false 冒泡 从内到外；捕获是从外到内 
+- DOM事件流  
+描述DOM事件捕获的具体流程上
+Event对象的常见应用一
+- DOM事件类
+  Event对象的常见应用
+  event.preventDefault()event.stopPropagation()
+  event.stoplmmediatePropagation()
+  event.currentTarget 当前绑定的事件
+  event.target
+  委派代理 添加在祖先元素上，event.target获取呗单击的元素jQuery 委托实现
+-  自定义事件
+addEventListener
+dispatchEvent
+new Event(e) new CustomEvent(e,option):e.option
+
+- HTTP协议类
+
+HTTP协议的主要特点
+HTTP报文的组成部分
+HTTP方法
+POST和GET的区别
+- GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息GET参数通过URL传递，POST放在Request body中
+- GET在浏览器回退时是无害的，而POST会再次提交请求GET产生的URL地址可以被收藏，而POST不可以
+- GET请求会被浏览器主动缓存，而POST不会，除非手动设置
+- GET请求只能进行url编码，而POST支持多种编码方式
+- GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留
+- GET请求在URL中传送的参数是有长度限制的，而POST没有限制
+- 对参数的数据类型，GET只接受ASCII字符，而POST没有限制
+
+HTTP状态码
+- 1xx:指示信息-表示请求已接收，继续处理，2xx:成功-表示请求已被成功接收
+- 3xx:重定向-要完成请求必须进行更进一步的操作
+- 4xx:客户端错误-请求有语法错误或请求无法实现
+- 5xx:服务器错误-服务器未能实现合法的请求 - 
+- 200 OK:  客户端请求成功
+- 206 Partial Content:客户发送了一个带有Range头的GET请求，服务器完成了它 
+- 301 Moved Permanently:所请求的页面已经转移至新的url
+- 302 Found:所请求的页面已经临时转移新的url 
+- 304 Not Modified:客户端有缓冲的文档并发出了一个条件性的请求，服务器告诉客户，原来缓冲的 文档还可以继续使用
+
+什么是持久连接
+
+1.1版本 持久与非持久的区别
+HTTP协议采用“请求-应答”模式，当使用普通模式，即非Keep-Alive模式时，每个请求/应答客户和服务器都要新建一个连接，完成之后立即断开连接(HTTP协议为无连接的协议)
+当使用Keep-Alive模式(又称持久连接、连接重用)时，Keep-Alive 功能使客户端到服务器端的连接持续有效，当出现对服务器的后继请求时，Keep-Alive 功能避免了建立或者重新建立连接
+
+什么是管线化
+应用在什么地方
+  管线化机制通过持久连接完成，仅HTTP/1.1支持此技术
+  只有GET和HEAD请求可以进行管线化，而POST则有所限制
+  初次创建连接时不应启动管线机制，因为对方(服务器) 不一定支持HTTP/1.1版本的协议
+  管线化不会影响响应到来的顺序，  如.上面的例子所示，响应返回的顺序并未改变
+  HTTP/1.1要求服务器端支持管线化，但并不要求服务器端也对响应进行管线化处理，只是要求对于管线化的请求不失败即可
+  由于上面提到的服务器端问题，开启管线化很可能并不会带来大幅度的性能提升，而且很多服务器端和代理程序对管线化的支持并不好，因此现代浏览器如Chrome和Firefox默认并未开启管线
+  化支持
+
+原型链类
+创建对象有几种方法
+原型、构造函数、实例、原型链
+instanceof的原理
+new运算符
+
+通信类
+- 什么是同源策略及限制
+- 前后端如何通信
+- 如何创建Ajax
+- 跨域通信的几种方式
+
+什么是同源策略及限制
+同源策略限制从一个源加载的文档或脚本如何与来自另一一个源的资源进行交互。
+这是一个用于隔离潜在恶意文件的关键的安全机制。
+- Cookie、LocalStorage 和IndexDB无法读取
+- DOM无法获得
+- AJAX请求不能发送
+
+什么是同源策略及限制
+同源策略限制从一个源加载的文档或脚本如何与来自另一一个源的资源进行交互。
+这是一个用于隔离潜在恶意文件的关键的安全机制。
+- Cookie、LocalStorage 和IndexDB无法读取
+- DOM无法获得
+- AJAX请求不能发送
+
+通信类
+前后端如何通信
+- Ajax
+- WebSocket
+- CORS(存疑，这是一种通信方式？)
+
+如何创建Ajax
+- XML HttpRequest对象的工作流程 （兼容性处理）
+- 事件的触发条件
+- 事件的触发顺序
+
+跨域通信的几种方式
+- JSONP
+- Hash
+- postMessage
+- WebSocket
+CORS
+
+源，什么是源？
+限制是什么？
+存储
+DOM
+Ajax
+
+
+
 1.HTML
 
   - HTML5新特性，语义化
@@ -17,7 +183,9 @@
 
 2.CSS
 
-  - 盒模型，box-sizing
+  - 盒模型： 基本概念：标准+IE 区别 如何转换 （CSS如何设置）box-sizing JS 如何获取对应的宽和高《Ninja》P321 offsetHeight、offsetWidth包含元素的padding 同时可以有效确定一个元素的可见性；
+    - 边距重叠原理
+    - 什么是bfc，如何创建bfc？解决什么问题？
   - CSS3新特性，伪类，伪元素，锚伪类
   - CSS实现隐藏页面的方式
   - 如何实现水平居中和垂直居中。
@@ -25,7 +193,6 @@
   - 请解释*{box-sizing:border-box;}的作用，并说明使用它的好处
   - 浮动元素引起的问题和解决办法？绝对定位和相对定位，元素浮动后的display值
   - link和@import引入css的区别
-  
   - 解释一下css3的flexbox，以及适用场景
   - inline和inline-block的区别
   - 哪些是块级元素那些是行级元素，各有什么特点
@@ -34,7 +201,8 @@
   - 实现两栏布局有哪些方法？
   - css dpi
   - 你知道attribute和property的区别么？
-  自定义的比如说设定data-url，这个data-url就是attribute，无法通过ele.dataUrl获取，但是getAttribute("data-url")就可以；按照HTML5标准，ele.dataset.url也行。
+  自定义的比如说设定data-url，这个data-url就是attribute，无法通过ele.dataUrl获取，但是getAttribute("data-url")就可以；按照HTML5标准，ele.dataset.url也行。而在CSS3中attr可获取attribute data-*的部分
+  [CSS/attr](https://developer.mozilla.org/en-US/docs/Web/CSS/attr)
   - css布局问题？css实现三列布局怎么做？如果中间是自适应又怎么做？
   - 流式布局如何实现，响应式布局如何实现
   - 移动端布局方案
@@ -46,7 +214,6 @@
   - CSS 3 如何实现旋转图片（transform: rotate）
   - sass less
   - 对移动端开发了解多少？（响应式设计、Zepto；@media、viewport、JavaScript 正则表达式判断平台。）
-  - 什么是bfc，如何创建bfc？解决什么问题？
   - CSS中的长度单位（px,pt,rem,em,ex,vw,vh,vh,vmin,vmax）
   - CSS 选择器的优先级是怎样的？
   - 雪碧图
@@ -143,7 +310,7 @@
 6.浏览器相关
 
   - 跨域，为什么JS会对跨域做出限制
-  - 前端安全：xss，csrf…
+  - 前端安全：xss （cross site script），csrf…（Cross site request forgery）
   - 浏览器怎么加载页面的？script脚本阻塞有什么解决方法？defer和async的区别？
   - 浏览器强缓存和协商缓存
   - 浏览器的全局变量有哪些

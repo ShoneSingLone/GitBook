@@ -19,3 +19,10 @@
 - SDK
 - CLI
 - IDE
+
+### 
+
+借鉴了React 组件化和State的思想
+
+- Stateless widgets are immutable, meaning that their properties can’t change—all values are final.
+- Stateful widgets maintain state that might change during the lifetime of the widget. 
