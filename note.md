@@ -1209,9 +1209,9 @@ getItem、setItem、removeItem、clear
 
 ### WebSQL
 
+## 浏览器机制
 
-
-## Web浏览器中的JavaScript
+[HTTP 缓存](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-cn)
 
 同一个页面的JavaScript代码引用同一个windows对象，所以是共享的。
 JavaScript的执行顺序分为两个阶段：
