@@ -1221,8 +1221,10 @@ JavaScript的执行顺序分为两个阶段：
 
 可能涉及到浏览器的渲染过程：[深入理解浏览器渲染原理](http://note.youdao.com/noteshare?id=96f2ec5cc1ca98721f5041d3849084ac&sub=0E95A3E2019C47F4976FA9F44E12850C)
 
+[构建对象模型](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/constructing-the-object-model#css_cssom)
+
 HTML解析器遇到`<script>`时就会先解析script。
-`<script>`有两个属性 [defer 和async](http://ued.ctrip.com/blog/script-defer-and-async.html)
+`<script>`有两个属性 [defer 和async](https://segmentfault.com/q/1010000000640869)
 相同点：
 
 - 加载文件时不阻塞页面渲染
@@ -1231,7 +1233,7 @@ HTML解析器遇到`<script>`时就会先解析script。
 - 有脚本的onload的事件回调
 
 区别点：
-
+![efer-and-async-different](./note/defer-and-async.jpg)
 - html的版本html4.0中定义了defer；html5.0中定义了async
 - 执行时刻： 
     - 每一个async属性的脚本都在它下载结束之后立刻执行，同时会在window的load事件之前执行。所以就有可能出现脚本执行顺序被打乱的情况；

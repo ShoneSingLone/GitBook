@@ -165,6 +165,91 @@ DOM
 Ajax
 
 
+渲染机制类
+重排Reflow
+定义
+DOM结构中的各个元素都有自己的盒子(模型)，这些都需要浏览器根据各种样式来计算并根据计算结果将元素
+放到它该出现的位置，这个过程称之为reflow
+触发Reflow
+当你增加、删除、修改DOM结点时，会导致Reflow或Repaint
+当你移动DOM的位置，或是搞个动画的时候
+当你修改CSS样式的时候
+当你Resize窗口的时候(移动端没有这个问题)，或是滚动的时候
+当你修改网页的默认字体时
+
+渲染机制类
+重绘Repaint
+定义
+当各种盒子的位置、大小以及其他属性，例如颜色、字体大小等都确定下来后，浏览器于是便把这些元素都按照
+各自的特性绘制了一遍，于是页面的内容出现了，这个过程称之为repaint
+触发Repaint
+DOM改幼
+CSS改动
+
+  渲染机制类什么是DOCTYPE及作用
+  什么是DOCTYPE及作用
+  DTD (document type definition，文档类型定义)是一系列的语法规则，用来定义XML或(X)HTML的文件类型。浏览器会使用它来判断文档类型，决定使 用何种协议来解析，以及切换浏览器模式
+  DOCTYPE是用来声明文档类型和DTD规范的，一个主要的用途便是文件的合法性验证。如果文件代码不合法，那么浏览器解析时便会出一-些差错
+
+
+渲染机制类什么是DOCTYPE及作用
+HTML 5
+  <!DOCT YPE html>
+HTML 4.01 Strict  该DTD包含所有HTML元素和属性，但不包括展示性的和弃用的元素(比如font)
+  < <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""[图片]http://www.w3.org/TR/html4/strict.dtd">
+HTML 4.01 Transitional该DTD包含所有HTML元素和属性，包括展示性的和弃用的元素(比如font)
+  <!DOCTYPE HTML PUBL .IC "-//W3C//DTD HTML 4.01 Transitional//EN""[图片]http://www.w3.org/TR/html4/loose.dtd">
+
+重绘Repaint
+定义
+当各种盒子的位置、大小以及其他属性，例如颜色、字体大小等都确定下来后，浏览器于是便把这些元素都按照
+各自的特性绘制了- -遍，于是页面的内容出现了，这个过程称之为repaint
+触发Repaint
+DOM改动
+CSS改动
+
+JS运行机制
+
+  理解JS的单线程的概念
+  理解任务队列
+  理解Event Loop
+  理解哪些语句会放入异步任务队列
+  理解语句放入异步任务队列的时机
+
+提升页面性能的方法有哪些?
+1、资源压缩合并，减少HTTP请求
+2、非核心代码异步加载. 一异步 加载的方式一异步 加载的区别
+3、利用浏览器缓存一缓存的分类  缓存的原理
+4、使用CDN 
+5、预解析DNS
+
+```js
+  <meta http-equiv= ="x-dns-prefetch-control" content: ="on">
+  <link rel="dns-prefetch" href="//host_ name_ to_ [图片]prefetch.com">
+```
+
+页面性能类
+异步加载
+1、异步加载的方式
+1)动态脚本加载
+2) defer
+3) async
+2、异步加载的区别
+1) defer是在HTML 解析完之后才会执行，如果是多个，按照加载的顺序依次执行
+2) async是 在加载完之后立即执行，如果是多个，执行顺序和加载顺序无关
+
+1、缓存的分类
+1)强缓存
+Expires Expires:Thu, 21 Jan 2017 23:39:02 GMT
+Cache-Control Cache-Control:max-age: =3600
+2)协商缓存
+L ast-Modified lf-Modified-Since
+Last-Modified: Wed, 26 Jan 2017 00:35:11 GMT
+Etag
+lf-None-Match
+
+
+
 
 1.HTML
 
@@ -311,6 +396,10 @@ Ajax
 
   - 跨域，为什么JS会对跨域做出限制
   - 前端安全：xss （cross site script），csrf…（Cross site request forgery）
+  CSRF防御措施
+。Token验证
+。Referer验证
+。隐藏令牌
   - 浏览器怎么加载页面的？script脚本阻塞有什么解决方法？defer和async的区别？
   - 浏览器强缓存和协商缓存
   - 浏览器的全局变量有哪些
