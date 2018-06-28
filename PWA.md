@@ -20,7 +20,7 @@
 
  >javaScript 都是运行在一个单一主线程上的，在同一时间内只能做一件事情。随着 Web 业务不断复杂，我们逐渐在 js 中加了很多耗资源、耗时间的复杂运算过程，这些过程导致的性能问题在 WebApp 的复杂化过程中更加凸显出来。 Web Worker不给力，因为还是没有永久缓存。
  
- H5提出的**Web Worker**（ postMessage onMessage）本来是设计解决缓存问题，不过没有根治，反倒用于跨域。Anyway，没解决痛点。 故，提出了更优解决方案——Service Worker。
+ H5提出的**AppCache**没解决痛点。 故，提出了更优解决方案——Service Worker。
 - 一个独立的 worker 线程，独立于当前网页进程，有自己独立的 worker context。
 - 一旦被 install，就永远存在，除非被手动 unregister
 - 用到的时候可以直接唤醒，不用的时候自动睡眠
