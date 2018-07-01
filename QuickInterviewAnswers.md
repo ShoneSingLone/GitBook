@@ -91,12 +91,18 @@ HTTP状态码
 - 1xx:指示信息-表示请求已接收，继续处理，2xx:成功-表示请求已被成功接收
 - 3xx:重定向-要完成请求必须进行更进一步的操作
 - 4xx:客户端错误-请求有语法错误或请求无法实现
+  - 429 Too many requests
+  - 400 Invalid request
+  - 404 Not Found 订阅过期，需要在服务端删除保存的推送订阅对象
+  - 410 Gone 订阅失效，需要在服务端删除保存的推送订阅对象，并调用推送订阅对象的unsubscribe()方法
+  - 413 Payload size too large
 - 5xx:服务器错误-服务器未能实现合法的请求 - 
 - 200 OK:  客户端请求成功
 - 206 Partial Content:客户发送了一个带有Range头的GET请求，服务器完成了它 
 - 301 Moved Permanently:所请求的页面已经转移至新的url
 - 302 Found:所请求的页面已经临时转移新的url 
 - 304 Not Modified:客户端有缓冲的文档并发出了一个条件性的请求，服务器告诉客户，原来缓冲的 文档还可以继续使用
+
 
 什么是持久连接
 
