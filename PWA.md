@@ -269,11 +269,48 @@ form.addEventListener('submit', function (e) {
     });
 ```
 
+#### [搜索优化](https://lavas.baidu.com/pwa/discovery/search-optimization)
+
+- 确定网页的网址结构。
+- 自适应设计是最受推崇的设计方法。
+- 为独立的桌面版本/移动版本网站使用 rel='canonical' + rel='alternate'。
+- 为动态提供独立桌面版本/移动版本 HTML 的单个网址使用 Vary HTTP 标头。
+- 为您想仅限知晓网址的人访问的页面使用 noindex。
+- 为您想保持私有状态的页面使用相关身份验证机制。
+
+noindex robot.txt都是SEO方面的东西，可以了解一下
+
 ## Lavas
+
+自动根据文件目录生成对应的路由
 
 ### 安装
 
-```js
+```bash
 npm install lavas -g
+lavas init
+npm install
+lavas dev
 ```
+
+### 目录结构
+
+lavas-project
+├── assets/
+├── components/
+├── core/
+├── middlewares/
+├── node_modules/
+├── pages/
+├── static/
+├── store/
+├── lavas.config.js
+├── server.dev.js, server.prod.js
+├── .babelrc, .editorconfig, .fecsignore, .fecsrc, .gitignore
+└── LINCENSE, package.json, README.md
+
+- /assets 里的内容会被 webpack 构建到生成目录的文件中，不再会单独以文件形式存在。因此 iconfont 放置在 /assets 中
+- /static 里的内容会被原样复制到生成目录中，会以独立的文件形式存在。因此 PWA 用到的 manifest.json 和一系列图标等都放置在 /static 中。
+
+都是静态文件，但是assets是如iconfont可以内联在HTML中，manifest.json是单独存在
 
