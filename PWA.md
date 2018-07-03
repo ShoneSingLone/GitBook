@@ -8,7 +8,7 @@
 
 [service-worker](https://lavas.baidu.com/pwa/offline-and-cache-loading/service-worker/service-worker-introduction)
 
-## HTTPS
+- [](HTTPS)
 
 ## Service Worker
 
@@ -28,25 +28,27 @@
 - 离线内容开发者可控
 - 能向客户端推送消息
 - 不能直接操作 DOM
-- 必须在 HTTPS 环境下才能工作
+- [必须在](HTTPS 环境下才能工作)
 - 异步实现，内部大都是通过 Promise 实现
 
 ### HOW
 
-- 判断能不能用，一般的兼容性还是必要；
-- 如果能用就在window load之后注册；
+`service worker` 就是一个中间代理，代理所有的资源请求，判断是否有必要从服务器获取，而这个代理的规则就是通过`register`注册的`sw.js`文件。
+`manifest.json`描述的是作为类原生应用该有的一些行为属性。
+其他的都是渐进增强的要求（HTTPS）
+
 
 ```js
+// - 判断能不能用，一般的兼容性还是必要；
 if ('serviceWorker' in navigator) {
+    // - 如果能用就在window load之后注册；
     window.addEventListener('load', function () {
         navigator.serviceWorker.register('/sw.js', {scope: '/'})
             .then(function (registration) {
-
                 // 注册成功
                 console.log('ServiceWorker registration successful with scope: ', registration.scope);
             })
             .catch(function (err) {
-
                 // 注册失败:(
                 console.log('ServiceWorker registration failed: ', err);
             });
@@ -156,7 +158,9 @@ this.addEventListener('install', function (event) {
     "theme_color": "blue",
     "display": "standalone"
 }
+
 ```
+
 `scope`暂时不做细究
 
 #### 改善应用体验
@@ -274,7 +278,7 @@ form.addEventListener('submit', function (e) {
 - 确定网页的网址结构。
 - 自适应设计是最受推崇的设计方法。
 - 为独立的桌面版本/移动版本网站使用 rel='canonical' + rel='alternate'。
-- 为动态提供独立桌面版本/移动版本 HTML 的单个网址使用 Vary HTTP 标头。
+- [为动态提供独立桌面版本/移动版本 HTML 的单个网址使用 Vary](HTTP 标头。)
 - 为您想仅限知晓网址的人访问的页面使用 noindex。
 - 为您想保持私有状态的页面使用相关身份验证机制。
 
@@ -295,6 +299,7 @@ lavas dev
 
 ### 目录结构
 
+```bash
 lavas-project
 ├── assets/
 ├── components/
@@ -308,9 +313,80 @@ lavas-project
 ├── server.dev.js, server.prod.js
 ├── .babelrc, .editorconfig, .fecsignore, .fecsrc, .gitignore
 └── LINCENSE, package.json, README.md
-
+```
 - /assets 里的内容会被 webpack 构建到生成目录的文件中，不再会单独以文件形式存在。因此 iconfont 放置在 /assets 中
 - /static 里的内容会被原样复制到生成目录中，会以独立的文件形式存在。因此 PWA 用到的 manifest.json 和一系列图标等都放置在 /static 中。
 
-都是静态文件，但是assets是如iconfont可以内联在HTML中，manifest.json是单独存在
+都是静态文件，但是assets是如iconfont可以内联在HTML中，manifest.json是单独存在。
 
+- components 粒度较小的组件，比如多次在其他的组建中被引用。UpdataToast、ProgressBar
+- core 一些配置信息
+- middlewares 自定义的中间件
+- pages 特定规则生成router
+- store Vuex状态管理
+- lavas.config.js
+
+### [Lavas 命令介绍](https://lavas.baidu.com/guide/v2/basic/cli)
+
+- lavas init:脚手架
+- lavas build: **=>** `/dist` (lavas.config.js)
+- lavas dev: develop mode **（为了防止 Service Worker 的缓存对频繁改动的开发调试阶段产生影响，使用 lavas dev 启动的调试服务器不会注册 Service Worker。）**
+- lavas start:build 之后预览线上效果，**Service Worker会注册**。
+- lavas static:使用 Lavas 内置的静态服务器以当前目录为基准启动。
+
+### [构建配置](https://lavas.baidu.com/guide/v2/advanced/build-config)
+
+引申问题：[process.env.NODE_ENV在哪儿设置](https://cnodejs.org/topic/57a409657a922d6f358cd22d)
+process.env其实是读取系统环境，可以通过cross-env来设置： [使用cross-env解决跨平台设置NODE_ENV的问题](https://segmentfault.com/a/1190000005811347)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### [vue-meta](https://github.com/declandewet/vue-meta)
+
+[vue-meta](https://segmentfault.com/a/1190000012849210)
+
+- [Vue-Blu ](https://chenz24.github.io/vue-blu/#/)
+- [Vue Material](http://vuematerial.io/#/)
+- [Vuetify](https://vuetifyjs.com/)
+- [Bootstrap-Vue](https://bootstrap-vue.js.org/)
+- [Quasar](http://quasar-framework.org/)
+- [Element](http://element.eleme.io/#/en-US)
+- [Mint UI](http://mint-ui.github.io/#!/en)
+- [VueStrap](http://yuche.github.io/vue-strap/)
+- [Vue Mobile](https://github.com/vum-team/vum)
+- [Vux](https://vux.li/#/)
+- [vue-carbon](https://myronliu347.github.io/vue-carbon/#!/)

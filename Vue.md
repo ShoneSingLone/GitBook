@@ -144,9 +144,9 @@ const router = new VueRouter({
 });
 ```
 
-### Vuex
+## Vuex
 
-#### What？
+### What？
 
 Vuex 是状态管理器，用来管理应用的状态。
 
@@ -154,12 +154,12 @@ Vuex 是状态管理器，用来管理应用的状态。
 [What is Vuex?](https://vuex.vuejs.org/zh-cn/intro.html)
 [使用coroutine实现状态机（2）](https://zhuanlan.zhihu.com/p/31566664)
 
-#### Why
+### Why
 
 就是为了方便，谁用谁知道。
 (如果不知道为什么要用就不要用了。实现类似的功能几乎都要涉及状态机订阅观察者模式啥的。最简单的就是理解成shell的bus)
 
-#### how？
+### how？
 
 [完全掌握 Vuex 图文视频教程](https://juejin.im/entry/59191b6b0ce4630069f6a3ad#5)
 [Vuex 通俗版教程](https://yeaseonzhang.github.io/2017/03/16/Vuex-通俗版/)
@@ -233,3 +233,7 @@ export default {
 
 
 [Vue 页面切换效果之 BubbleTransition](https://juejin.im/entry/5ac877ae6fb9a028b617c33e)
+
+## SSR
+
+[服务器端渲染 vs 预渲染(SSR vs Prerendering)](https://ssr.vuejs.org/zh/#服务器端渲染-vs-预渲染-ssr-vs-prerendering)G

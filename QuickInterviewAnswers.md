@@ -1,7 +1,6 @@
 # 知识点汇总
 
 - CSS盒模型
-
 基本概念:标准模型+IE模型 content padding border
 标准模型和IE模型区别
 CSS如何设置这两种模型k
@@ -122,8 +121,9 @@ HTTP协议采用“请求-应答”模式，当使用普通模式，即非Keep-A
 
 原型链类
 创建对象有几种方法
+
 原型、构造函数、实例、原型链
-instanceof的原理
+instanceof的原理 ：检查右边的函数原型是否存在于操作符左边的对象的原型链上。
 new运算符
 
 通信类
@@ -305,7 +305,7 @@ lf-None-Match
   - padding百分比是相对于父级宽度还是自身的宽度
   - css3动画，transition和animation的区别，animation的属性，加速度，重力的模拟实现
   - CSS 3 如何实现旋转图片（transform: rotate）
-  - sass less
+  - sass less stylus
   - 对移动端开发了解多少？（响应式设计、Zepto；@media、viewport、JavaScript 正则表达式判断平台。）
   - CSS中的长度单位（px,pt,rem,em,ex,vw,vh,vh,vmin,vmax）
   - CSS 选择器的优先级是怎样的？
@@ -314,14 +314,14 @@ lf-None-Match
   - 媒体查询的原理是什么？
   - CSS 的加载是异步的吗？表现在什么地方？
   - 常遇到的浏览器兼容性问题有哪些？常用的hack的技巧
-  - 外边距合并
+  - 外边距合并 BFC
   - 解释一下“::before”和“:after”中的双冒号和单冒号的区别-
 
 3.JS
   - js的基本类型有哪些？引用类型有哪些？null和undefined的区别。
   - 如何判断一个变量是Array类型？如何判断一个变量是Number类型？（都不止一种）
   - Object是引用类型嘛？引用类型和基本类型有什么区别？哪个是存在堆哪一个是存在栈上面的？
-  - JS常见的dom操作api
+  - JS常见的dom操作api 增删查改
   - 解释一下事件冒泡和事件捕获
   - 事件委托（手写例子），事件冒泡和捕获，如何阻止冒泡？如何组织默认事件？
   - 对闭包的理解？什么时候构成闭包？闭包的实现方法？闭包的优缺点？
@@ -330,9 +330,9 @@ lf-None-Match
   - 显示原型和隐式原型，手绘原型链，原型链是什么？为什么要有原型链
   - 创建对象的多种方式
   - 实现继承的多种方式和优缺点
-  - new 一个对象具体做了什么
+  - new 一个对象具体做了什么 
   - 手写Ajax，XMLHttpRequest
-  - 变量提升
+  - 变量提升 
   - 举例说明一个匿名函数的典型用例
   - 指出JS的宿主对象和原生对象的区别，为什么扩展JS内置对象不是好的做法？有哪些内置对象和内置函数？
   - attribute和property的区别
@@ -371,7 +371,7 @@ lf-None-Match
   - 谈一谈 promise
   - 所有的 ES6 特性你都知道吗？如果遇到一个东西不知道是 ES6 还是 ES5, 你该怎么区分它
   - es6的继承和es5的继承有什么区别
-  - promise封装ajax
+  - promise封装ajax 
   - let const的优点
   - es6 generator 是什么，async/await 实现原理
   - ES6和node的commonjs模块化规范区别
