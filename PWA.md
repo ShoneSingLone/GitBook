@@ -304,8 +304,7 @@ lavas-project
 ├── assets/
 ├── components/
 ├── core/
-├── middlewares/
-├── node_modules/
+在``├── node_modules/文件夹下添加即可，类似于管道，会依次执行
 ├── pages/
 ├── static/
 ├── store/
@@ -339,18 +338,62 @@ lavas-project
 引申问题：[process.env.NODE_ENV在哪儿设置](https://cnodejs.org/topic/57a409657a922d6f358cd22d)
 process.env其实是读取系统环境，可以通过cross-env来设置： [使用cross-env解决跨平台设置NODE_ENV的问题](https://segmentfault.com/a/1190000005811347)
 
+### [错误处理](https://lavas.baidu.com/guide/v2/advanced/error-handler)
+
+/pages/Error.vue
+
+404主要是靠error参数是否为空来判断，需要自己来确定，而且对于回滚需要自己来处理（回到没有出错的最近的页面。直接`后退`铁定是之前出错页面，然后又会回到error页面，形成一个死循环）。
+
+### [core](https://lavas.baidu.com/guide/v2/advanced/core)
+
+[Skeleton.vue](https://zhuanlan.zhihu.com/p/28465598)骨架屏，提升用户体验
+
+### [中间件](https://lavas.baidu.com/guide/v2/advanced/middleware)
 
 
+在`/middlewares`文件夹， 声明有两种方式：
+传入的context具体查文档
 
+- 全局
+    ```js
+    // lavas.config.js
+    {
+        middleware: {
+            all: [], // 同时运行在客户端和服务端
+            client: ['my-first-middleware'], // 仅客户端
+            server: [] // 仅服务端
+        }
+    }
+    ```
 
+- 组件
+    ```js
+    // MyComponent.vue
+    <script>
+    export default {
+        name: 'my-component',
+        data() {},
+        middleware: ['my-first-middleware'],
+        // 省略其他属性
+    };
+    </script>
+    ```
 
+### [路由配置项](https://lavas.baidu.com/guide/v2/advanced/router)
 
+对应的是Vuex的配置
 
+```js
+router: {
+    mode: 'history',
+    base: '/',
+    // ...
+}
+```
 
+在 SSR 模式下不支持 hash。
 
-
-
-
+#### 页面切换动画
 
 
 

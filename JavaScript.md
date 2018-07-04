@@ -704,14 +704,17 @@ jsonp是什么？
 show me the code 
 
 ## CORS跨域资源共享
+
 [Access_control_CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
 
 ## BOM
+
 Browser Object Model
 
-window.open(url,target[_self,_parent,_top,_blank],,boolean)
-
 ### window 浏览器实例
+
+- window.open(url,target[_self,_parent,_top,_blank],,boolean)
+
 Location和Navigation
 window对象和document的location对象引用的都是Location对象
 document.URL是文档首次载入后保存的静态字符串不会随着hash变短改变；而Location会改变。=》URL是一个字符串，而location是一个对象，包含其他的属性。例如： `location.toString()===location.href //=>true`
@@ -839,118 +842,6 @@ submit\click
 $("button").trigger("click!");
 ```
 
-
-# 正则表达式
->[正则表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)
->[正则表达式30分钟入门教程](http://deerchao.net/tutorials/regex/regex.htm)
->[正则表达式的简单应用](http://www.yjs001.cn/web/regex/66051207346118647191.html)
-
-## WHAT
-Regular Expression，是用来查找特定字符串的规则的表达式。（这个表达式描述的是这个查找规则）
-正则表达式是匹配模式，匹配字符||位置。（注意这个关系）
-
-## WHY
-与通配符相比，能灵活准确地查找出特定的字符串。
-## HOW
-
-如何匹配{abc：/a(.*)c/=》c }？
-
----
-这个提问就是个不专业的问法：
-
-首先区分匹配结果（包括写死的部分）和捕获结果（捕获使用`()`，这里面的才叫捕获，而`(?:)`指明当前括号的作用是分组）；
-
-- regexp.test返回真假值，表示能不能匹配上；
-- string.replace(regexp/g,function(...args)):args是跟regexp中匹配和捕获有关系，很考究，慎重！
-- match
-  - 简单匹配 没有`g`标识 string.match(regexp);只返回一个匹配结果，第一个[0]是整个匹配结果，后面是捕获结果；
-  - 全局表达式匹配 有`g`标识 string.match(regexp);返回所有匹配结果。**没有**捕获结果。
-- exec：regexp/g.exec(string) 一次返回一个匹配结果，同match简单匹配；可以多次调用，每次返回下一个。(这里的全局标识g很重要)
-
->"我要找一个 **这样并这样** 的东西，吧啦吧啦..."
-
-
-从三个方面描述匹配规则（**这样并这样**）：
-- 位置
-- 字符
-- 数量
-
- ![如何描述](http://upload-images.jianshu.io/upload_images/2333173-3310351ef6934fb6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-[原图](http://naotu.baidu.com/file/1aecbf1ac0a61154a6ec8a5a9f62d1c7?token=0771c8b6cc1fc0c4)
-
-**“在什么位置查找多少数量的什么字符。”**
-使用正则表达式的语法来表达如是的语句，成矣。
-
-## 1.正则表达式基本语法
-
-#### 位置 
-代码/语法|说明
----|---
-\b|word start or end
-^|string start
-$|string end
-
-### 零宽断言：
-
-||零宽度正预测|零宽度负回顾|
-|---|---|--
-|先行断言|(?=exp)someword|(?!=exp)someword
-||**(?=exp)someword**：查找exp，且后面是someword|**(?！=exp)someword**：查找exp，且后面**不**是someword
-|后发断言|(?<=exp)someword|(?!<=exp)someword
-||**(?<=exp)someword**：查找exp，且前面是someword|**(?！<=exp)someword**：查找exp，且前面**不**是someword
-**怎么理解(?<=\s)\d+(?=\s)最后的(?=\s)?**
-
-#### 字符
-代码/语法| 说明
----|---
-.|any character
-\w|word num underline
-\s|blank ：space
-\d|digit ：any of the numbers from 0 to 9 
-[]|collection
-**注意：大写字母与此相反，如\D表示不是数字。**
-
-
-#### 数量
-代码/语法| 说明
----|---
-* | 0 or more
-+ | 1 or more
-? | 0 or at most 1
-{n}|n 
-{n,m}|between n and m include
-{n,}|n or more
-
-### 其他
-
-#### mate character元字符
-元字符代表一类:\d=[0-9]；非元字符代表本身:\(\)=>()。
-#### 分支条件 |
-
-#### 分组节（）
-(){1,3}：()里的部分重复1或3次。
-#### 向后引用
-使用()可以指定一个子表达式，按从左至右的顺序会自动编号，0号是整个Sting。
-- 组号分配过程。
-- ？这里的分组是否与JavaScript中的match方法有联系
->我们已经讨论了前两种语法。第三个(?:exp)不会改变正则表达式的处理方式，只是这样的组匹配的内容不会像前两种那样被捕获到某个组里面，也不会拥有组号。“我为什么会想要这样做？”——好问题，你觉得为什么呢？
-
-误：两个文本的替换可以匹配具体的内容FP_&1_&2 ，其中&1和&2即可指定具体的替换位置
-
-#### 反义
-大写和^。
-
-#### 贪婪与懒惰
-尽可能匹配最长的String与竟可能匹配少String：
-?的使用法。
-
-在大量使用嵌套的字符中需要思量。（常见的便是HTML文件中的<>嵌套，常用的规则利用)
-```
-(?<=<(\w)>).*(?=<\/\1)
-```
-
-#### 转义
-反斜杠\就是转义
 
 # 1.1 作用域
 

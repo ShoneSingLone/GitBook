@@ -236,4 +236,4 @@ export default {
 
 ## SSR
 
-[服务器端渲染 vs 预渲染(SSR vs Prerendering)](https://ssr.vuejs.org/zh/#服务器端渲染-vs-预渲染-ssr-vs-prerendering)G
+[服务器端渲染 vs 预渲染(SSR vs Prerendering)](https://ssr.vuejs.org/zh/#服务器端渲染-vs-预渲染-ssr-vs-prerendering)
