@@ -1,4 +1,61 @@
+<!-- TOC -->
+
+- [Tips](#tips)
+- [CSS](#css)
+    - [继承](#继承)
+    - [层叠](#层叠)
+    - [单位](#单位)
+    - [文字排版](#文字排版)
+    - [盒子模型（box）](#盒子模型box)
+    - [行内元素（inline）和块级元素（block）](#行内元素inline和块级元素block)
+        - [inline](#inline)
+        - [block](#block)
+            - [宽度和高度](#宽度和高度)
+        - [inline-block](#inline-block)
+- [](#)
+    - [@font-face](#font-face)
+    - [图片和背景](#图片和背景)
+        - [定位](#定位)
+        - [固定](#固定)
+        - [背景的起点和显示区域](#背景的起点和显示区域)
+    - [变形 过渡 动画](#变形-过渡-动画)
+    - [装饰表格和表单](#装饰表格和表单)
+        - [创建边框](#创建边框)
+        - [装饰行和列](#装饰行和列)
+        - [装饰表单](#装饰表单)
+        - [布局模型](#布局模型)
+            - [流动模型（Flow）/ 标准文档流](#流动模型flow-标准文档流)
+            - [浮动模型 (Float)](#浮动模型-float)
+            - [层模型](#层模型)
+    - [布局](#布局)
+        - [居中](#居中)
+        - [固定](#固定-1)
+        - [不固定](#不固定)
+            - [浮动](#浮动)
+            - [流式布局](#流式布局)
+            - [响应式布局](#响应式布局)
+        - [flex布局](#flex布局)
+        - [瀑布流](#瀑布流)
+- [Network 网络](#network-网络)
+    - [HTTP](#http)
+        - [TCP/IP协议族](#tcpip协议族)
+            - [分层](#分层)
+            - [与HTTP关系密切的协议](#与http关系密切的协议)
+    - [状态码](#状态码)
+    - [WebSocket](#websocket)
+- [数据结构和算法](#数据结构和算法)
+        - [数组](#数组)
+    - [Queen](#queen)
+- [SSH](#ssh)
+- [ubuntu开启SSH服务](#ubuntu开启ssh服务)
+- [Git](#git)
+        - [架设服务器](#架设服务器)
+- [在 John 的电脑上](#在-john-的电脑上)
+
+<!-- /TOC -->
+
 # Tips
+
 
 [Code Pen MyTemplate](https://codepen.io/singlone/pen/JpjjwJ)
 
@@ -12,76 +69,6 @@ Weex 在 WebKit 与原生上实现了一个抽象层；
 ---
 > [HTML+CSS基础课程](https://www.imooc.com/learn/9)
 
-# HTML
-[MDN-Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
-
-[MDN-Web/API](https://developer.mozilla.org/en-US/docs/web/api)
-
-[MDN-Web/API-zh-CN](https://developer.mozilla.org/zh-CN/docs/Web/API)
-
-[300毫秒延迟](https://thx.github.io/mobile/300ms-click-delay#%E5%BD%93%E5%89%8D%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E5%BB%B6%E8%BF%9F)
-
-[移动端Web页面适配方案](https://funteas.com/topic/5a4d80ec1f635ce136730e10)
-
-[理解HTML5的语义](https://www.adobe.com/devnet/archive/dreamweaver/articles/understanding-html5-semantics.html)
-
-[mobie-first](https://abookapart.com/products/mobile-first)
-
-[Making a Case for Mobile First Designs](https://www.sitepoint.com/making-case-mobile-first-designs/)
-
-## Request
-### referrerPolicy
-
-## Element
-
-**remenber this!**: `element.scrollHeight - element.scrollTop === element.clientHeight`
-
- ---
-
-- .clientHeight
-     ![Element.clientHeight](./media/html/Dimensions-client.png)
-- .[offsetHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetHeight)
-     ![Element.offsetHeight](./media/html/offsetHeight.png)
-
-<iframe height='265' scrolling='no' title='scrollHeight 演示Edit' src='//codepen.io/singlone/embed/ZvqymO/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/singlone/pen/ZvqymO/'>scrollHeight 演示Edit</a> by ShoneSingLone (<a href='https://codepen.io/singlone'>@singlone</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-
-## Web_Components
-[Web_Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
-- [自定义元素](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Custom_Elements)
-- [HTML模板](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template)
-- [影子DOM](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Shadow_DOM)
-    - 
-    >[Shadow-DOM](https://aotu.io/notes/2016/06/24/Shadow-DOM/index.html)
-- [HTML导入](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/HTML_Imports)
-
-[从HTML Components的衰落看Web Components的危机](https://github.com/xufei/blog/issues/3)
-
-## canvas
-
-[将图片转换base64格式，data:image/png;base64是什么？](http://blog.csdn.net/webxiaoma/article/details/70053444)
-
-[Css中路径data:image/png;base64的用法详解](http://www.aimks.com/css-path-data-image-png-usage-base64.html)
-
-[瞎折腾：把JS,CSS任意文本文件加密成一张图片](https://juejin.im/entry/5a41b3d66fb9a045154421cb?utm_medium=fe&utm_source=weixinqun)
-
-
-### What
-### Why 
-### How
-#### 基础
-- 理解“画布”：指定id width、height
-- 获取canvas对象：let canvas = document.getElementById();
-- 获取二维context：context = canvas.context();(理解成画笔：有moveTo：抬手到哪个位置)
-- 坐标系：↓→递增
-
-#### 点、线
-直线：moveTo
-
-
-## SVG
-[SVG](https://aotu.io/notes/2015/11/20/svg-I-know/)
 
 # CSS
 [divcss学习网站](http://www.divcss5.com/)
@@ -562,9 +549,13 @@ line-height
 ### 不固定
 #### 浮动
 #### 流式布局
+
 #### 响应式布局
 
+响应式与自适应semantic,都要用媒体查询，但是响应式是根据一套HTML结构来设计不同的样式，而自适应是可以根据不同的结构设计对应的样式。响应式可遭罪了，绞尽脑汁，在设计结构的时候就要考虑到不同的展示样式。自适应一套结构一套样式，看起来费劲，实际做起来的就是上了高速公路，直达。修改起来也是松耦合，相互之间不影响，比起响应式的过度设计不知道高到哪里去了。Bootstrap那种响应式的就当学习和一般搭搭架子用用...
+
 ### flex布局
+
 [深入理解 flex 布局以及计算](https://www.w3cplus.com/css3/flexbox-layout-and-calculation.html)
 [Flex 布局教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 [Flex 布局教程 实例](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
@@ -1113,6 +1104,7 @@ npm install -g npm-cache
 应该是若非全局安装就是npm的机制（卸载packa.json中 运行npm run）才会在.bin下查找。不然就要加上路径或者加入Path
 
 ### Gulp
+
 [使用npm scripts替代gulp](https://aotu.io/notes/2016/02/26/use-npm-script-instead-of-gulp/index.html)
 [Gulp get start](http://www.gulpjs.com.cn/docs/getting-started/)
 [Gulp入门教程](http://www.jianshu.com/p/fbf9871dc47a)
@@ -1121,17 +1113,21 @@ npm install -g npm-cache
 [译-用gulp来实现web服务器](https://www.jianshu.com/p/e66a5bb96b7e)
 
 ### Webpack
+
 #### What？
+
 [官网](https://doc.webpack-china.org/concepts/)
 [Webpack from First Principles](https://www.youtube.com/watch?v=WQue1AN93YU)
 
 >webpack 是一个现代 JavaScript 应用程序的模块打包器(module bundler)。
 
 #### Why？
+
 总的来说就是为了工程化。
 我对npm script、Gulp和webpack的理解：JavaScript jQuery 和framework。npm script是最基本的，后两者的工作都能做，但是没有后两者方便。但是正如JavaScript版本的不断演进，特性不断丰富，Gulp优秀的地方不断被原生内化，没有以前那么大的优势。而webpack给出的是一套针对现代前端应用完整的解决方案，体现的是约定优于配置：不用这套方式当然是可以的，但是既然大家都用这个，就可以有效降低沟通成本，提高生产效率。
 
 #### How？
+
 四个核心概念
 - 入口(entry)
 - 输出(output)
@@ -1139,14 +1135,21 @@ npm install -g npm-cache
 - 插件(plugins)
 
 # 基于 Webpack 开发和构建多页面站点
+
 [基于 Webpack 开发和构建多页面站点](https://github.com/zhaotoday/webpack-multi-page)
 
-#### install
-```
+## install
+
+```bash
+
 npm install webpack –g
+
 ```
+
 [Loading-CSS](https://fakefish.github.io/react-webpack-cookbook/Loading-CSS.html)
-#### Webpack Hot Module Replacement
+
+### Webpack Hot Module Replacement
+
 [Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007?group_id=911546876953591808)
 
 ## I/O 的同步与异步
