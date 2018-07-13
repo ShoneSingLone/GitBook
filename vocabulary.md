@@ -1,6 +1,7 @@
 
 # HTML5
 
+- Welcome to Dart 2! Still using Dart 1.x? See the archived site or the [migration](#迁移) guide.
 - Structuring Pages with [Semantic](#语义) Elements
 - As a specification, IndexedDB is currently a Candidate Recommendation.
 - You can even just push raw HTML files to GitHub Pages and it will build your site.

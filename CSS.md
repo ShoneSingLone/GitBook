@@ -1,5 +1,3 @@
-introduction[CSS方面的内容]
-
 # CSS学习笔记
 
 ## 参考资料
