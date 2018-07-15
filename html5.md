@@ -164,6 +164,9 @@ vedio.ontimeupdate = function progressUpdate(e){...}
 <dd>//可以同details与figure- -同使用,汇总细节，dialog也可用
 <hr>//重新定义用户界面的菜单,配合commond或者menuitem使用
 <small>//表示重要性而不是强调符号
+<hr>//主题结束
+<menu>//
+<strong>//强调
 ```
 
 # HTML

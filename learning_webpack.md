@@ -7,39 +7,134 @@
 - >[关于webpack-dev-server的几个问题](https://segmentfault.com/q/1010000007434045)
 - >[npm scripts 使用指南](http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html)
 
-## 安装
+## 基本的概念
 
-```js
-npm i -D webpack
-npm install webpack-cli -D
-```
+基本模型： 输入entry=>处理=>输出output
 
-## loaders
+处理又分为非js文件由loader转换
+断码片段拼接、压缩......一些列的处理由plugins完成
+
+### loaders
 
 >[loaders](https://webpack.js.org/concepts/#loaders)
 module 就是一个映射关系：test 正则表达式陪陪需要转换的文件；use 指定loader来处理这个文件。
 
 参数可以是Object，也可以直接写 [inline形式](https://webpack.js.org/concepts/loaders/#inline): ! as seprator
 
-```js
-npm i -D style-loader css-loader
-```
-
-- css-loader会遍历 CSS 文件，然后找到 url() 表达式然后处理他们;
-- style-loader 会把原来的 CSS 代码插入页面中的一个 style 标签中。
-
 处理顺序是从后到前，所以这就很好理解sass=》PostCss=》css=》style
 
-PostCSS不用想得太复杂，能加一个
-
-## Plugins
+## 安装
 
 ```js
-npm i -D extract-text-webpack-plugin
+npm i -D webpack webpack-cli
 ```
 
+webpack是处理核心,webpack-cli可以利用npm script在代码中调用。根据npm scrip运行机制，会在node_modules/bin目录下优先查找匹配的命令。
+
+[webpack cli](https://webpack.js.org/api/cli/)
+
+```bash
+webpack entry -o output
+touch webpack.config.js
+webpack --config webpack.config.js
+```
+
+```js
+const path = require('path');
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    }
+};
+```
+
+```bash
+npm i -D style-loader css-loader postcss-loader autoprefixer sass-node sass-loader
+```
+
+```js
+module.exports = {
+    module: {
+        rules: [{
+            test: /\.css$/,
+            use: [
+                "style-loader", // creates style nodes from JS strings
+                "css-loader", // translates CSS into CommonJS
+                "postcss-loader",
+            ]
+        }, {
+            test: /\.scss$/,
+            use: [
+                "style-loader", // creates style nodes from JS strings
+                "css-loader", // translates CSS into CommonJS
+                "postcss-loader",
+                "sass-loader" // compiles Sass to CSS
+            ]
+        }, {
+            test: /\.(png|svg|jpg|gif|ico)$/,
+            use: [
+                'file-loader'
+            ]
+        }]
+    }
+}
+```
+
+- sass
+- [postcss-loader](https://github.com/postcss/postcss-loader)
+  - autoprefixer
+
+```js
+// postcss.config.js
+module.exports = {
+    plugins: [
+        require('autoprefixer')({
+            browsers: [
+                "> 0.01%"
+            ]
+        })
+    ]
+}
+```
+
+- style-loader 会把原来的 CSS 代码插入页面中的一个 style 标签中。
+- css-loader会遍历 CSS 文件，找到 url() 表达式,然后处理;
+
+```js
+npm i -D html-webpack-plugin extract-text-webpack-plugin clean-webpack-plugin
+```
+
+```js
+//webpack.config.js
+plugins: [
+    new CleanWebpackPlugin(['dist']),//清空输出文件夹
+    new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: path.join(__dirname, 'src/template.index.html'),
+    title: "Output Management",
+    inject: true
+})],
+```
+配合模板
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+  </body>
+</html>
+```
+
+>[html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
+
 >[extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)
->[html-webpack-plugin](http://www.cnblogs.com/haogj/p/5160821.html)
 
 ## DevServer
 
