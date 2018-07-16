@@ -9,10 +9,12 @@
 
 ## 基本的概念
 
-基本模型： 输入entry=>处理=>输出output
+基本模型： 1-2-1
+- 输入**entry**=>处理=>输出**output**
 
-处理又分为非js文件由loader转换
-断码片段拼接、压缩......一些列的处理由plugins完成
+处理：
+- 非js文件由**loader**转换；
+- 断码片段拼接、压缩......一些列的处理由**plugins**完成
 
 ### loaders
 
@@ -21,7 +23,7 @@ module 就是一个映射关系：test 正则表达式陪陪需要转换的文�
 
 参数可以是Object，也可以直接写 [inline形式](https://webpack.js.org/concepts/loaders/#inline): ! as seprator
 
-处理顺序是从后到前，所以这就很好理解sass=》PostCss=》css=》style
+[]数组处理逻辑是栈，后入先出，所以这就很好理解sass=》PostCss=》css=》style
 
 ## 安装
 
@@ -136,13 +138,45 @@ plugins: [
 
 >[extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)
 
-## DevServer
+## 开发
+
+[devtool](https://webpack.docschina.org/configuration/devtool)查看源码
 
 ```js
+// webpack.config.js
+devtool: 'inline-source-map',
+```
+
+### DevServer
+
+在代码发生变化后自动编译代码：
+
+1. webpack's Watch Mode
+1. webpack-dev-server
+1. webpack-dev-middleware
+
+
+
+```bash
 npm install --save-dev webpack-dev-server
 ```
 
->[extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)
+```js
+// webpack.config.js
+    devServer: {
+        contentBase: './dist'
+    },
+// package.json
+webpack-dev-server 
+```
+
+[webpack-dev-server相关配置项](https://webpack.docschina.org/configuration/dev-server)
+
+`webpack-dev-server ≈ webpack-dev-middleware + express`主要是配合已有服务端使用
+
+以上只是当文件变化时，全部重新编译，不用手工刷新，但是还是很慢。
+而[HMR](https://webpack.docschina.org/guides/hot-module-replacement/)是解决这个**慢**：尽量只编译改动的地方，并替换。从上到下，如果是root节点，自然就是有依赖的全走一遍，慢；但若只是leaf节点，影响小，自然就快了。所以从这个角度来认同组件化细分模块，也是有此好处的。
+
 
 ## 优化
 
