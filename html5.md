@@ -12,8 +12,6 @@ Audio、Video、 Canvas、 webgl等等.....
 
 ## 语义标签
 
-
-
 ```html
 
 <!DOCTYPE html>
@@ -53,7 +51,8 @@ Audio、Video、 Canvas、 webgl等等.....
 ```
 
 audio/video : can't use `<audio/>` **must** have pair start and end
-- src 
+
+- src
 - **controls**:是否显示原生的控制界面
 - reload
   - auto default 后台下载（实际跟浏览器有关）
@@ -113,7 +112,7 @@ vedio.ontimeupdate = function progressUpdate(e){...}
 <progress>//状态标签(任务过程:安装、加载)
 
 /* 列表标签 */
-<datalist>//为input标记定义-个下拉列表,配合option 
+<datalist>//为input标记定义-个下拉列表,配合option
 <details>//标记定义一个元素的详细内容, 配合summary
 <menu>//命令列表(目前所有主流浏览器都不支持)
 <menuitem>//menu命令列表标签(只有FireFox8.0+支持)
@@ -169,7 +168,8 @@ vedio.ontimeupdate = function progressUpdate(e){...}
 <strong>//强调
 ```
 
-# HTML
+## HTML
+
 [MDN-Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
 
 [MDN-Web/API](https://developer.mozilla.org/en-US/docs/web/api)
@@ -187,16 +187,17 @@ vedio.ontimeupdate = function progressUpdate(e){...}
 [Making a Case for Mobile First Designs](https://www.sitepoint.com/making-case-mobile-first-designs/)
 
 ## Request
+
 ### referrerPolicy
 
 ## Web_Components
 
 [Web_Components](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components)
+
 - [自定义元素](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Custom_Elements)
 - [HTML模板](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/template)
 - [影子DOM](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/Shadow_DOM)
-    - 
-    >[Shadow-DOM](https://aotu.io/notes/2016/06/24/Shadow-DOM/index.html)
+  - >[Shadow-DOM](https://aotu.io/notes/2016/06/24/Shadow-DOM/index.html)
 - [HTML导入](https://developer.mozilla.org/zh-CN/docs/Web/Web_Components/HTML_Imports)
 
 [从HTML Components的衰落看Web Components的危机](https://github.com/xufei/blog/issues/3)
@@ -209,7 +210,6 @@ vedio.ontimeupdate = function progressUpdate(e){...}
 
 [瞎折腾：把JS,CSS任意文本文件加密成一张图片](https://juejin.im/entry/5a41b3d66fb9a045154421cb?utm_medium=fe&utm_source=weixinqun)
 
-
-
 ## SVG
+
 [SVG](https://aotu.io/notes/2015/11/20/svg-I-know/)
