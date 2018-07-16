@@ -175,7 +175,22 @@ webpack-dev-server
 `webpack-dev-server ≈ webpack-dev-middleware + express`主要是配合已有服务端使用
 
 以上只是当文件变化时，全部重新编译，不用手工刷新，但是还是很慢。
-而[HMR](https://webpack.docschina.org/guides/hot-module-replacement/)是解决这个**慢**：尽量只编译改动的地方，并替换。从上到下，如果是root节点，自然就是有依赖的全走一遍，慢；但若只是leaf节点，影响小，自然就快了。所以从这个角度来认同组件化细分模块，也是有此好处的。
+而[HMR](https://webpack.docschina.org/guides/hot-module-replacement/)是解决这个**慢**：尽量只编译改动的地方，并替换。从上到下，如果是root节点，自然就是有依赖的全走一遍，慢；但若只是leaf节点，影响小，自然就快了。~~所以从这个角度来认同组件化细分模块，也是有此好处的。~~
+
+```js
+const {
+    NamedModulesPlugin,//以便更容易查看要修补(patch)的依赖。
+    HotModuleReplacementPlugin//
+} = require('webpack');
+```
+
+## 生产环境构建
+
+针对不同的开发发布需求使用不同的构建步骤（打包策略）：在开发环境中，我们需要具有强大的、具有实时重新加载(live reloading)或热模块替换(hot module replacement)能力的 source map 和 localhost server。而在生产环境中，我们的目标则转向于关注更小的 bundle，更轻量的 source map，以及更优化的资源，以改善加载时间。
+
+```bash
+npm install --save-dev webpack-merge
+```
 
 ## 优化
 
@@ -189,3 +204,22 @@ webpack-dev-server
 - CDN
 - 提取公共代码common 往CDN推base
 - 压缩和Scope Hoisting有 ```把 x = 'Hello'; y = 'Hello' 转换成 var a = 'Hello'; x = a; y = b```
+
+### tree shaking and mode and
+
+有些代码写了，但是没有在实际运行中应用，讲道理是可以不打包到最终的发布代码中的。一般只要是通过`import`、`export`使用的项目很容易把这一部分代码标记出来。
+而`sideEffects`是类似白名单的作用，显示标记该引用不管有没有用都需要引入。 Tree-shaking 是无用代码移除（DCE, dead code elimination）的一个方法，但和传统的方法不太一样。Tree-shaking 找到需要的代码，灌入最终的结果；传统 DCE 找到执行不到的代码，从 AST 里清除。
+
+```js
+ "sideEffects": [
+    "*.css"
+  ]
+```
+
+### [代码分离](https://webpack.docschina.org/guides/code-splitting/)
+
+直接在entry引入会导致同样的引用被重复打包。
+[split-chunks-plugin](https://webpack.docschina.org/plugins/split-chunks-plugin/)插件可以将公共的依赖模块提取到已有的入口 chunk 中，或者提取到一个新生成的 chunk。
+
+[webpack 4: Code Splitting, chunk graph and the splitChunks optimization](https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366)
+
