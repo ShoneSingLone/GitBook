@@ -205,6 +205,12 @@ npm install --save-dev webpack-merge
 - 提取公共代码common 往CDN推base
 - 压缩和Scope Hoisting有 ```把 x = 'Hello'; y = 'Hello' 转换成 var a = 'Hello'; x = a; y = b```
 
+### 权衡根据[Webpack Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
+
+```bash
+npm install --save-dev webpack-bundle-analyzer
+```
+
 ### tree shaking and mode and
 
 有些代码写了，但是没有在实际运行中应用，讲道理是可以不打包到最终的发布代码中的。一般只要是通过`import`、`export`使用的项目很容易把这一部分代码标记出来。
@@ -223,3 +229,47 @@ npm install --save-dev webpack-merge
 
 [webpack 4: Code Splitting, chunk graph and the splitChunks optimization](https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366)
 
+[ExtractTextWebpackPlugin](https://webpack.docschina.org/plugins/extract-text-webpack-plugin/)
+
+[ExtractTextWebpackPlugin-github](https://github.com/webpack-contrib/extract-text-webpack-plugin)
+**注意**版本是否匹配 webpack 4.0
+`npm install --save-dev extract-text-webpack-plugin@next`
+
+```js
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          //如果需要，可以在 sass-loader 之前将 resolve-url-loader 链接进来
+          use: ['css-loader', 'sass-loader']
+        })
+      }
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin('style.css')
+    //如果想要传入选项，你可以这样做：
+    //new ExtractTextPlugin({
+    //  filename: 'style.css'
+    //})
+  ]
+}
+```
+
+### lazy-loading
+
+```js
+btn.onclick = (event) => {
+    console.time("getPrintMe");
+    return import ( /* webpackChunkName: "print" */ './print').then(module => {
+        // console.log(Object.prototype.toString.call(module)); //[object Module]
+        module.printMe(event);
+        console.timeEnd("getPrintMe");
+    }).catch(error => 'An error occurred while loading the component');
+};
+```
