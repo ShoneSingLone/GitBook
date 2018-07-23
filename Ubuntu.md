@@ -68,4 +68,67 @@ uname -a
 编辑权限
 `sudo visudo`
 
-SSH 
+SSH
+ssh eval "$(ssh-agent -s)"
+
+## 增强服务器安全等级
+
+sudo vi /etc/ssh/sshd-config
+
+port 1024~65536
+
+服务器的要求 持续、对外
+
+终端启动命令的生命周期
+
+pm2进程守卫
+
+Nginx 端口代理 负载平衡
+
+## MongoDB
+
+`/etc/init.d/`
+
+```bash
+$ touch mongod
+$ chmod 777 mongod
+```
+
+```config
+#!/bin/bash
+#chkconfig: 2345 80 90
+#description: mongodb
+start() {
+ /usr/local/mongodb/bin/mongod --config /usr/local/mongodb/mongo
+d.conf
+}
+ 
+stop() {
+      /usr/local/mongodb/bin/mongod --config /usr/local/mongodb/
+mongod.conf --shutdown
+}
+case "$1" in
+  start)
+ start
+ ;;
+ 
+stop)
+ stop
+ ;;
+ 
+restart)
+ stop
+ start
+ ;;
+  *)
+ echo
+$"Usage: $0 {start|stop|restart}"
+ exit 1
+ ```
+
+service mongod start/stop/restart
+netstat -lanp | grep "27017"
+
+改端口 sudo vi /etc/mongod.config
+
+本地dump 备份 打包上传 部署
