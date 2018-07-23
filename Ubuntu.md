@@ -45,3 +45,27 @@ auto mount when reboot
 ```bash
 echo "/swapfile swap swap defaults 0 0" >> /etc/fstab
 ```
+
+查询64位的操作系统
+
+```bash
+uname -a
+```
+
+不要使用root角色（拥有最高权限）操作，最好设置相应的用户。
+`adduser dba`
+
+提升用户权限组
+`gpasswd[-a user][-d user][-A user,...][-M user,...][-r][-R]groupname`
+
+-a：添加用户到组
+-d：从组删除用户
+-A：指定管理员
+-M：指定组成员和-A的用途差不多
+-r：删除密码
+-R：限制用户登入组，只有组中的成员才可以用newgrp加入该组
+
+编辑权限
+`sudo visudo`
+
+SSH 

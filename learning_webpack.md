@@ -273,3 +273,19 @@ btn.onclick = (event) => {
     }).catch(error => 'An error occurred while loading the component');
 };
 ```
+
+### shimming（垫补）
+
+使用全局 polyfill
+最好是懒加载，我觉得，检测功能，如果没有就懒加载。
+
+```bash
+npm install babel-cli
+npm i -D babel-loader babel-core babel-preset-latest babel-preset-stage-2
+
+npm install --save-dev babel-plugin-transform-runtime npm install --save babel-runtime
+```
+
+loader基础
+core编程方式调用babel的能力
+babel-preset-latest 预设就是要转成的样子
