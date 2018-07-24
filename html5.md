@@ -168,6 +168,26 @@ vedio.ontimeupdate = function progressUpdate(e){...}
 <strong>//强调
 ```
 
+### Input
+
+text/password
+email/url/number/range/Date picker/search/color/tel
+
+### 表単属性
+
+autocomplete/autofocus/ multiple/placeholder/required
+
+### 链接属性
+
+<link>的sizes属性/ 
+<base>的target属性/
+超链接<a>
+
+### 其他属性
+
+script/ol/html/style
+
+
 ## HTML
 
 [MDN-Web/HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
