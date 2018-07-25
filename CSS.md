@@ -2,7 +2,8 @@
 
 ## 参考资料
 
-[《CSS世界》]()
+1. [《CSS世界》](https://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/)
+1. [30个你必须记住的CSS选择符](http://yanhaijing.com/css/2014/01/04/the-30-css-selectors-you-must-memorize)
 
 ## 我所认识的CSS
 
@@ -10,7 +11,7 @@
 
 ## 选择符
 
-[30个你必须记住的CSS选择符](http://yanhaijing.com/css/2014/01/04/the-30-css-selectors-you-must-memorize)
+
 
 width auto 的作用，默认值的影响。
 
@@ -79,9 +80,45 @@ style id class :: *
 
 ### 圆角
 
-border-radius
+[border-radius](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius)
+顺序、值 、`/`
 
-### 盒影音
+### 盒阴影
+
+[box-shadow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow)
+
+- inset
+- offset-x、 offset-y
+- blur-radius 是否模糊，只能为正值
+- spread-radius 
+- color
+
+### 边界图片
+
+[border-image](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-image)
+
+## 背景与渐变
+
+### 背景
+
+- background-clip:padding-box|border-box|content-box
+- background-origin:padding-box|border-box|content-box
+- background-size:length|percentage|cover|contain
+- background-image:url()
+- background:color position size repeat origin clip attachment image
+
+### 渐变
+
+- linear-gradient(direction,color-stop1,color-stop2,...)
+
+```css
+background: linear-gradient(cyan, transparent), 
+            linear-gradient(225deg, magenta, transparent), 
+            linear-gradient(45deg, yellow, transparent);
+```
+
+- [radial-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/radial-gradient)(direction,color-stop1,color-stop2,...)
+
 
 ## 布局定位
 
