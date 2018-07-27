@@ -119,6 +119,58 @@ background: linear-gradient(cyan, transparent),
 
 - [radial-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/radial-gradient)(direction,color-stop1,color-stop2,...)
 
+## Transform
+
+- rotate( angle deg):正数顺时针
+- translate(x,y)：移动
+  - translateX()
+  - translateY()
+- scale(x,y):缩放
+  - scaleX()
+  - scaleY()
+- [skew](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/skew):斜拉
+  - skewX()
+  - skewY()
+- [matrix](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/matrix)
+  - [IE矩阵滤镜Matrix旋转与缩放及结合transform的拓展](https://www.zhangxinxu.com/wordpress/2011/03/ie矩阵滤镜matrix下旋转与缩放及结合transform的拓展/)
+  - [理解CSS3 transform中的Matrix(矩阵)](https://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-矩阵/)
+
+## Transition
+
+- tansition-property:none|all|property
+- tansition-duration:
+- tansition-timing-function:ease|linear|ease-in|ease-out|ease-in-out|step-start|step-end|cubic-bezier()
+  - linear :线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0)
+  - ease :平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0)
+  - ease-in :由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0)
+  - ease-out :由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0)
+  - ease-in-out :由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)
+- tansition-delay
+
+## 动画（animation）
+
+- animation-name:keyframename|none;
+- animation-duration:
+- animation-timing-function:ease|linear|ease-in|ease-out|ease-in-out|step-start|step-end|cubic-bezier()
+  - linear :线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0)
+  - ease :平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0)
+  - ease-in :由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0)
+  - ease-out :由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0)
+  - ease-in-out :由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)
+- animation-delay:
+- animation-iteration-count:infinite|(number);
+- animation-direction:normal|reverse|alternate|alternate-reverse|initial|inherit;
+- animation-fill-mode:none|forwards|backwards|both|initial|inherit;
+- animation-play-state:paused|running
+
+```css
+@keyframes animationname{
+  keyframes-selector{
+    css-styles;
+  }
+}
+```
+
 
 ## 布局定位
 

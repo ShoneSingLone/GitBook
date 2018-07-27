@@ -285,8 +285,13 @@ hasOwnProperty判断自有属性
 
 
 ### 数组(Array)
+
 #### 数组方法
-（有一个术语，描述方法是否改变自身的，忘了是什么了......)
+
+ map forEach 的区别 有么有返回值、返回的是什么（有一个术语，描述function是否改变自身array，忘了是什么了......)
+
+[Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()](https://www.cnblogs.com/xiao-hong/p/3194027.html)
+
 
 [array 方法](http://louiszhai.github.io/2017/04/28/array/#some)
 - 改变自身

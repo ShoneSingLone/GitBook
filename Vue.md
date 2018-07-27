@@ -121,6 +121,7 @@ var Component = Vue.extend({
 [自定义 input 类型](https://cn.vuejs.org/v2/guide/components.html#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E7%BB%84%E4%BB%B6)
 
 #### 踩过的坑
+
 组件需在使用前声明，并没有类似变量提升的机制。
 - router
     1. children 使用的是数组 []
