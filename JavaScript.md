@@ -1,92 +1,3 @@
-<!-- TOC -->
-
-- [JavaScript](#javascript)
-    - [数据类型](#数据类型)
-        - [ECMAScript 6定义了7种数据类型](#ecmascript-6定义了7种数据类型)
-    - [赋值](#赋值)
-        - [变量](#变量)
-            - [解构赋值](#解构赋值)
-            - [变量作用域](#变量作用域)
-        - [let的[用法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/let)](#let的用法httpsdevelopermozillaorgzh-cndocswebjavascriptreferencestatementslet)
-    - [表达式和运算符](#表达式和运算符)
-        - [$$ and ||](#-and-)
-        - [语句](#语句)
-    - [对象](#对象)
-    - [属性](#属性)
-    - [ES6 计算属性名语法](#es6-计算属性名语法)
-        - [对象的创建](#对象的创建)
-        - [数组(Array)](#数组array)
-            - [数组方法](#数组方法)
-        - [set](#set)
-        - [函数(function)](#函数function)
-            - [箭头函数Arrow_functions](#箭头函数arrow_functions)
-            - [自执行匿名函数（Self-executing anonymous function）/立即调用的函数表达式（Immediately-Invoked Function Expression）](#自执行匿名函数self-executing-anonymous-function立即调用的函数表达式immediately-invoked-function-expression)
-            - [prototype 和__proto__的区别是什么？](#prototype-和__proto__的区别是什么)
-        - [this](#this)
-        - [可变参数和默认值](#可变参数和默认值)
-        - [可变参数**arguments**](#可变参数arguments)
-        - [默认值](#默认值)
-        - [将对象作为实参](#将对象作为实参)
-        - [闭包Closure](#闭包closure)
-    - [泛函数](#泛函数)
-        - [可调用对象](#可调用对象)
-        - [Function()构造函数](#function构造函数)
-        - [call() 、apply() 和bind()](#call-apply-和bind)
-- [Promise](#promise)
-    - [What](#what)
-    - [Why](#why)
-    - [How](#how)
-    - [客户端存储技术](#客户端存储技术)
-        - [cookies](#cookies)
-        - [Web Storage](#web-storage)
-        - [indexedDB](#indexeddb)
-        - [WebSQL](#websql)
-    - [浏览器机制](#浏览器机制)
-    - [运行时的页面构建过程](#运行时的页面构建过程)
-        - [事件](#事件)
-    - [BookmarkLet](#bookmarklet)
-    - [iframe](#iframe)
-- [跨域的问题](#跨域的问题)
-    - [CORS跨域资源共享](#cors跨域资源共享)
-    - [BOM](#bom)
-        - [window 浏览器实例](#window-浏览器实例)
-        - [location对象](#location对象)
-    - [DOM](#dom)
-    - [Element](#element)
-            - [整体的思路：](#整体的思路)
-- [jQuery](#jquery)
-    - [](#)
-    - [字符实体转码的方法](#字符实体转码的方法)
-    - [[插件](#jquery-plugin)](#插件jquery-plugin)
-    - [Events](#events)
-        - [.on()](#on)
-        - [.trigger()](#trigger)
-        - [.closest()](#closest)
-        - [.detach()](#detach)
-        - [自定义事件](#自定义事件)
-- [1.1 作用域](#11-作用域)
-- [1.2 词法作用域](#12-词法作用域)
-- [1.3 函数作用域和块作用域](#13-函数作用域和块作用域)
-- [1.4 提升](#14-提升)
-- [1.5 作用域和闭包](#15-作用域和闭包)
-- [1.A 动态作用域](#1a-动态作用域)
-- [1.B 块作用域的替代方案](#1b-块作用域的替代方案)
-- [1.C this词法](#1c-this词法)
-- [2.1 关于this](#21-关于this)
-- [2.2 this全面解析](#22-this全面解析)
-- [2.3 对象（需要再领悟）](#23-对象需要再领悟)
-- [2.4 混合对象“类”](#24-混合对象类)
-- [2.5 原型](#25-原型)
-- [2.6 行为委托](#26-行为委托)
-- [3.1 类型](#31-类型)
-- [3.2 值](#32-值)
-- [3.3 原生函数](#33-原生函数)
-- [3.4 强制类型转换](#34-强制类型转换)
-- [3.5 语法](#35-语法)
-- [原则](#原则)
-
-<!-- /TOC -->
-
 # JavaScript
 
 >**参考书目** 《JavaScript权威指南》
@@ -99,16 +10,18 @@
 ## 数据类型
 
 ### ECMAScript 6定义了7种数据类型
+
 >[JavaScript数据类型和数据结构](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures)
 
-1.	原始类型（值本身无法被改变）（primitive value）
-    - Boolean：0、NaN、undefined、null、””表示false，否则是true
-    - Null：未初始化的Object
-    - Undefined：未初始化的原始类型
-    - Number：0八位、0x十六位
-    - String：
-    - Symbol（ECMAScript 6）
+### 原始类型（值本身无法被改变）（primitive value）
 
+- boolean：0、nan、undefined、null、""表示false，否则是true
+- null：未初始化的object
+- undefined：未初始化的原始类型
+- number：0八位、0x十六位
+  - NaN `NaN !==NaN :` true
+- string：
+- Symbol（ECMAScript 6）
 
 [JS数字精度丢失的一些典型问题](http://www.cnblogs.com/snandy/p/4943138.html)
 
@@ -129,9 +42,73 @@ console.log(Object.prototype.toString.call(null));//[object Null]
 
 ```
 
+### Object
 
-2.	Object
-内置对象
+[内置对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects)
+
+- Number
+  - parseInt(string):参数的进制
+  - parseFloat(string)
+- [String](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String)
+  - toString()
+  - String()
+- [Math](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math)
+  - Math.floor(x): 返回小于x的最大整数。
+  - Math.floor(x): 返回小于x的最大整数。
+- [RegExp](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- [Date](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+## 表达式和运算符
+
+>[表达式和运算符](https://juejin.im/post/58116ca467f3560057d58bee)
+>[JavaScript 需要句末加";"吗？](https://www.zhihu.com/question/20298345)
+
+### 表达式
+
+- 原始表达式：常量、变量、保留字。
+- 对象、数组初始化表达式：`var obj={a:1,b:2};`
+- 函数定义表达式：`var fn=function(){}`
+- 属性访问表达式：`Bruce.firstName`
+- 调用表达式：`alert('hello');`
+- 对象创建表达式：`new object();`
+
+### 运算符
+
+#### 算数
+
+`+ - * / %`
+
+#### 逻辑
+
+##### $$ and ||
+
+```js
+$("#btshow").click(function (e) {
+    /*
+    《JavaScript权威指南》p80：
+        &&短路运算符 和||返回的是变量本身，但是因为JavaScript可以自动转换Boolean值，所以常用来判断真假值。
+        A && B 
+        - if A=false => A, =>C
+        - if A=true => B,{
+                        - if B = true => B
+                        - if B = false => C 
+                        }
+    */
+    var isA = !!($._data);
+    var isB = !!($._data($(document)[0], "events"));
+    var isC = !!($.data($(document)[0], "events"));
+
+    var _arr_events = $._data && $._data($(document)[0], "events.data($(document)[0], "events")';
+    for (key in _arr_events) {
+        show(key + "事件数量：" + _arr_events[key].length);
+    }
+})
+```
+
+
+## 比较
+
+## 三元
 
 ## 赋值
 
@@ -139,6 +116,18 @@ LHS RHS
 
 [关于连续赋值的坑](https://www.zhihu.com/question/41220520)
 [JavaScript 连等赋值问题](https://segmentfault.com/q/1010000002637728)
+
+### 语句
+
+for in针对的是普通对象，有一下弊端：
+
+- key是字符串而不是数字
+- 会遍历自有属性，顺着原型链
+- 可能是随机的而不是按照所谓Array的方式
+
+for of针对这些做了极大的优化 
+
+- 更适合遍历数组
 
 
 ### 变量
@@ -162,10 +151,10 @@ LHS RHS
 
 1. 不用var是全局变量的属性；可以用delete删除【属性】；不能变量提升
 1. 用var是变量；不可以用delete删除；会变量提升；是局部变量。
-    1.  每个变量下都有一个隐藏属性，configurable,这个属性确定了变量名字能否更改，变量能否被删除。true的话，可以更改，可删除；反之，不能更改，不能删除。
-    2.  在用var 声明变量时，JS解析器会默认把configurable设为false，所以它不能改名字，不能被删掉。
+1. 每个变量下都有一个隐藏属性，configurable,这个属性确定了变量名字能否更改，变量能否被删除。true的话，可以更改，可删除；反之，不能更改，不能删除。 
+1. 在用var 声明变量时，JS解析器会默认把configurable设为false，所以它不能改名字，不能被删掉。
 
-1. `‘use strict’`模式下不使用var会报错。
+1. `'use strict'`模式下不使用var会报错。
 
 一个变量的作用域是程序源代码中定义这个变量的区域。全局变量和局部变量
 这里涉及函数优先：函数表达式优先于var变量被提升。
@@ -205,42 +194,6 @@ function letTest() {
     console.log(x);  // 1
 }
 ```
-
-## 表达式和运算符
->[表达式和运算符](https://juejin.im/post/58116ca467f3560057d58bee)
-
-### $$ and ||
-```js
-$("#btshow").click(function (e) {
-    /*
-    《JavaScript权威指南》p80：
-        &&短路运算符 和||返回的是变量本身，但是因为JavaScript可以自动转换Boolean值，所以常用来判断真假值。
-        A && B 
-        - if A=false => A, =>C
-        - if A=true => B,{
-                        - if B = true => B
-                        - if B = false => C 
-                        }
-    */
-    var isA = !!($._data);
-    var isB = !!($._data($(document)[0], "events"));
-    var isC = !!($.data($(document)[0], "events"));
-
-    var _arr_events = $._data && $._data($(document)[0], "events.data($(document)[0], "events")';
-    for (key in _arr_events) {
-        show(key + "事件数量：" + _arr_events[key].length);
-    }
-})
-```
-
-### 语句
-
-for in针对的是普通对象，有一下弊端：
-- key是字符串而不是数字
-- 会遍历自有属性，顺着原型链
-- 可能是随机的而不是按照所谓Array的方式
-for of针对这些做了极大的优化 
-- 更适合遍历数组
 
 ## 对象
 
@@ -872,7 +825,8 @@ let testArg = (new URLSearchParams(location.search)).get("test");
 - 下
 - 改变
 - Create
-- Update
+- Up[date]()
+- Up[date]()
 - Delete
 
 - 理解树形结构

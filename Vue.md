@@ -238,3 +238,18 @@ export default {
 ## SSR
 
 [服务器端渲染 vs 预渲染(SSR vs Prerendering)](https://ssr.vuejs.org/zh/#服务器端渲染-vs-预渲染-ssr-vs-prerendering)
+
+## Vue router
+
+### 自己实现锚点定位
+
+本来可以使用history模式，如果不用，也可以尝试下面的方法
+
+```js
+methods: {
+    goAnchor(selector) {
+        var anchor = this.$el.querySelector(selector)
+        document.body.scrollTop = anchor.offsetTop
+    }
+}
+```
