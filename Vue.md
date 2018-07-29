@@ -232,7 +232,6 @@ export default {
 [使用Vue.js和Vuex实现购物车场景 demo-source](https://github.com/xiaoluoboding/vue-demo-collection/tree/master/shopping-cart)
 [基于 vue-cli + iView 的 Vue js 后台管理系统，简洁易扩展](https://www.liruan.cn/docs/iview.html)
 
-
 [Vue 页面切换效果之 BubbleTransition](https://juejin.im/entry/5ac877ae6fb9a028b617c33e)
 
 ## SSR
@@ -242,6 +241,8 @@ export default {
 ## Vue router
 
 ### 自己实现锚点定位
+
+[单页面官网-平滑过渡到指的锚点](https://segmentfault.com/a/1190000010854244)
 
 本来可以使用history模式，如果不用，也可以尝试下面的方法
 

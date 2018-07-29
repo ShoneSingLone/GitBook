@@ -52,11 +52,28 @@ console.log(Object.prototype.toString.call(null));//[object Null]
 - [String](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String)
   - toString()
   - String()
+  - [str.charAt(index)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+  - [str.charCodeAt(index)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt)
+  - [String.fromCharCode(num1, ..., numN)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode) **String类方法**
+  - [str.indexOf(searchValue[, fromIndex])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
+  - [str.match(regexp)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+  - [str.split([separator[, limit]])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+  - [str.substr(;ustart[, length])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+  - [str.substr(start[, length])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+  - [str.substring(indexStart[, indexEnd])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+  - [str.toLowerCase()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase): 会将调用该方法的字符串值转为小写形式，并返回。toLowerCase 不会影响字符串本身的值。
+  - [str.toUpperCase()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase): 将调用该方法的字符串值转换为大写形式，并返回。toUpperCase 方法不影响字符串本身的值。
+  - [str.trim()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/Trim): 方法并不影响原字符串本身，它返回的是一个新的字符串。
+  - [str.slice(beginSlice[, endSlice])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
+  - 
+  - 
 - [Math](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math)
   - Math.floor(x): 返回小于x的最大整数。
   - Math.floor(x): 返回小于x的最大整数。
 - [RegExp](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 - [Date](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
+  - getDay():**Sunday - Saturday : 0 - 6**
 
 ## 表达式和运算符
 
@@ -79,6 +96,8 @@ console.log(Object.prototype.toString.call(null));//[object Null]
 `+ - * / %`
 
 #### 逻辑
+
+与或非 短路 返回的值是否Boolean
 
 ##### $$ and ||
 
@@ -105,10 +124,13 @@ $("#btshow").click(function (e) {
 })
 ```
 
-
 ## 比较
 
+大于小于等不等
+
 ## 三元
+
+?:
 
 ## 赋值
 
@@ -116,6 +138,13 @@ LHS RHS
 
 [关于连续赋值的坑](https://www.zhihu.com/question/41220520)
 [JavaScript 连等赋值问题](https://segmentfault.com/q/1010000002637728)
+
+### 解构赋值
+
+>[概念：XOR_swap](https://en.wikipedia.org/wiki/XOR_swap)
+
+- 表明原变量的类型，属性名字、顺序要一致
+- 取数赋值跟交换是两种用途：`[a,b] = [b,a]`此为交换
 
 ### 语句
 
@@ -129,15 +158,7 @@ for of针对这些做了极大的优化
 
 - 更适合遍历数组
 
-
 ### 变量
-
-#### 解构赋值
-
->[概念：XOR_swap](https://en.wikipedia.org/wiki/XOR_swap)
-
-- 表明原变量的类型，属性名字、顺序要一致
-- 取数赋值跟交换是两种用途：`[a,b] = [b,a]`此为交换
 
 #### 变量作用域
 
@@ -159,6 +180,7 @@ for of针对这些做了极大的优化
 一个变量的作用域是程序源代码中定义这个变量的区域。全局变量和局部变量
 这里涉及函数优先：函数表达式优先于var变量被提升。
 关于变量提升还有函数提升：使用定义式则是赋值也提升了，如果使用表达式就如同使用var的变量一样，只是声明提升了而没有赋值，是undefined。
+
 ```js
     a();//函数提升
     console.log(a);//[Function: a]
@@ -171,6 +193,7 @@ for of针对这些做了极大的优化
     console.log(a);//3
     a();//报错：a is not a function
 ```
+
 ### let的[用法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/let)
 
  新增的块级作用域。
@@ -553,19 +576,24 @@ strict模式中 call() 和 apply()的第一个值是this，其他的情况null�
 [创建绑定函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 
 bind() 最简单的用法是创建一个函数，使这个函数不论怎么调用都有同样的 this 值。JavaScript新手经常犯的一个错误是将一个方法从对象中拿出来，然后再调用，希望方法中的 this 是原来的对象。（比如在回调中传入这个方法。）如果不做特殊处理的话，一般会丢失原来的对象。从原来的函数和原来的对象创建一个绑定函数，则能很漂亮地解决这个问题：
-                       
-# Promise
+
+## Promise
+
 [MDN Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7)
 
-[Promise 解析])(https://segmentfault.com/a/1190000000586666)
+[Promise 解析](https://segmentfault.com/a/1190000000586666)
 
 [ES6 Promise 用法](https://juejin.im/entry/5a3a113a51882569707821c0?utm_medium=fe&utm_source=weixinqun)
 
 [在Node.js中使用promise摆脱回调金字塔](http://nya.io/Node-js/promise-in-nodejs-get-rid-of-callback-hell/)
 [q](http://documentup.com/kriskowal/q/)
+
 ## What
+
 ## Why
+
 ## How
+
 - resolve
 - reject
 - all
