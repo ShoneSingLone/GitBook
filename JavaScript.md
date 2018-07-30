@@ -124,15 +124,15 @@ $("#btshow").click(function (e) {
 })
 ```
 
-## 比较
+#### 比较
 
 大于小于等不等
 
-## 三元
+#### 三元
 
-?:
+`?:`
 
-## 赋值
+#### 赋值
 
 LHS RHS
 
@@ -148,15 +148,42 @@ LHS RHS
 
 ### 语句
 
-for in针对的是普通对象，有一下弊端：
+- 条件
+- 分支
+- [循环](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Loops_and_iteration)
+  - for 语句
+  - do...while 语句
+  - while 语句
+  - labeled 语句
+  - break 语句
+  - continue 语句
+  - for...in 语句 *需要再学习一下，注意区别（挖坑）
+  - for...of 语句 *
+
+  continue label break
+
+`for...in`针对的是普通对象，
 
 - key是字符串而不是数字
 - 会遍历自有属性，顺着原型链
 - 可能是随机的而不是按照所谓Array的方式
 
-for of针对这些做了极大的优化 
+`for...of`更适合遍历数组
+for...in 循环遍历的结果是数组**元素的下标**， for...of 遍历的结果是**元素的值**：
 
-- 更适合遍历数组
+```js
+let arr = [3, 5, 7];
+arr["3"] = "third"
+arr["fourth"] = "fourth"
+
+for (let i in arr) {
+   console.log(i); // 0 1 2 3 fourth
+}
+
+for (let i of arr) {
+   console.log(i); // 3 5 7 third
+}
+```
 
 ### 变量
 
@@ -287,9 +314,10 @@ function isArray(obj) {
 ```
 
 ### set
+
 唯一性
 
-NaN等于自身，而精确相等运算符认为NaN不等于自身
+NaN等于自身，而精确相等运算符认为NaN不等于自身`NaN !==NaN`为true。
 
 ### 函数(function)
 
@@ -302,10 +330,10 @@ Arrow_functions no this or arguments、super、new.target。call apply 因为没
 
 ```js
 (function() {
-	console.log(this);
+  console.log(this);
   return [
     (() => {
-    	console.log(this.x);
+      console.log(this.x);
     }).bind({ x: 'inner' })()
   ];
 }).call({ x: 'outer' });
@@ -315,14 +343,13 @@ Arrow_functions no this or arguments、super、new.target。call apply 因为没
 ```
 
 #### 自执行匿名函数（Self-executing anonymous function）/立即调用的函数表达式（Immediately-Invoked Function Expression）
-IFE
 
-[JavaScript匿名函数与自执行] (http://www.jcodecraeer.com/a/jquery_js_ajaxjishu/2012/0628/290.html)
+[JavaScript匿名函数与自执行](http://www.jcodecraeer.com/a/jquery_js_ajaxjishu/2012/0628/290.html)
+
 - 匿名函数的作用创建闭包和减少全局变量（防止污染命名空间）
-
 [深入理解JavaScript系列（4）：立即调用的函数表达式。](http://www.cnblogs.com/TomXu/archive/2011/12/31/2289423.html)
-- 表达式和function声明，表达式是一个引用，没有立即执行。
 
+- 表达式和function声明，表达式是一个引用，没有立即执行。
 - 让一个函数声明语句变成了一个表达式。
 - 任何消除函数声明和函数表达式间歧义的方法，都可以被解析器正确识别
 - 一元运算都是有效的
@@ -330,19 +357,22 @@ IFE
 [运算符性能测试](https://jsperf.com/js-funcion-expression-speed)
 
 ```js
-	(function(){/*code*/})();//****推荐，因为性能
-	!function(){/*code*/}();
-	+function(){/*code*/}();
+(function(){/*code*/})();//****推荐，因为性能
+!function(){/*code*/}();
++function(){/*code*/}();
 ```
 
 #### prototype 和__proto__的区别是什么？
+
 > Mozilla’s implementation of JavaScript has (since the early days of Netscape) exposed the prototype attribute through the specially named __proto__ property, and you can use this property to directly query or set the prototype of any object. Using __proto__ Core JavaScript is not portable: it has not been (and probably never will be) implemented by IE or Opera, although it is currently supported by Safari and Chrome. Versions of Firefox that implement ECMAScript 5 still support __proto__, but restrict its ability to change the prototype of nonextensible objects.
 
 constructor function有prototype，使用new 关键字返回的实例对象有__proto__：
+
 ```js
 //(错误Code表示)
 object[__proto__] = new Constructor[prototype]
 ```
+
 指向的是同一个对象，**但是**不建议直接使用object的__proto__来修改constructor function的prototype。
 
 ```js
@@ -430,10 +460,7 @@ object[__proto__] = new Constructor[prototype]
 `var bar = foo() `
 这个特性倒是可以用来区别当前是否是strict模式： `var isStrict = (function(){return !this})();`
 
-
-
-
-```
+```JS
     function f(argument) {
         console.log(this);
     }
@@ -446,23 +473,29 @@ object[__proto__] = new Constructor[prototype]
     obj.f();
     obj.f.call(obj);
 ```
+
 ### 可变参数和默认值
+
 JavaScript目前没有对参数类型进行检查，实参与形参可能不相符，TypeScript用于解决这样的问题。
 > 现在,JavaScript已经不仅仅是当年只用来验证表单的玩具，而成为一门真正的适用性广泛的语言来完成复杂度较高的应用。静态语言编译时校验的价值就在工程实践中凸显出来，TypeScript适时而起。--woshuode
 
 ### 可变参数**arguments**
+
 [arguments](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/arguments) 是**类数组**对象，以数字作为key。通过以下方法转换为真·数组：
 主要是使用
+
 ```js
 let args = Array.prototype.slice.call(arguments); 
 or
 let args = Array.from(arguments);
 let args = [...arguments];
 ```
+
 ES6的新方法
+
 ```js
             function containsAll(haystack, ...needles) {
-                for (var needle of needles) {
+                for (let needle of needles) {
                     if (haystack.indexOf(needle) === -1) {
                         return false;
                     }
