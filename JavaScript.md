@@ -58,6 +58,7 @@ console.log(Object.prototype.toString.call(null));//[object Null]
   - [str.indexOf(searchValue[, fromIndex])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
   - [str.match(regexp)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)
   - [str.split([separator[, limit]])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+  - [str.replace(regexp|substr, newSubStr|function)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
   - [str.substr(;ustart[, length])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
   - [str.substr(start[, length])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
   - [str.substring(indexStart[, indexEnd])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
@@ -66,14 +67,65 @@ console.log(Object.prototype.toString.call(null));//[object Null]
   - [str.trim()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/Trim): 方法并不影响原字符串本身，它返回的是一个新的字符串。
   - [str.slice(beginSlice[, endSlice])](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
 - [Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
-  - 
-  - 
+  - [indexOf()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+  - [push()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+  - [pop()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+  - [shift()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+  - [unshift()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+  - [sort()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+  - [reverse()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+  - [find()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+  - [every()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+  - [some()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+  - [filter()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)**原始数组不会被修改**
+  - [join()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/join)**原始数组不会被修改**
+  - [slice()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)**原始数组不会被修改**
+  - [forEach()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+    - 如果数组在迭代时被修改了，则其他元素会被跳过。
+    - forEach() 总是返回 undefined值,为每个数组元素执行callback函数；
+  - [map()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map)**原始数组不会被修改**
+  - [reduce()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)**原始数组不会被修改**
 - [Math](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math)
-  - Math.floor(x): 返回小于x的最大整数。
-  - Math.floor(x): 返回小于x的最大整数。
+  - [Math.max(x)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/max)
+  - [Math.min(x)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/min)
+  - [Math.floor(x)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/floor): 返回小于或等于一个给定数字的最大整数。**向下取整**
+  - [Math.ceil(x)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil): 函数返回大于或等于一个给定数字的最小整数。**向上取整**
+  - [Math.abs(x)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/abs): 绝对值
+  - [Math.round(x)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/round): 函数返回一个数字四舍五入后最接近的整数。
+  - [Math.random(x)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/round): 
+    - 得到一个两数之间的随机数：
+    ```js
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+    ```
+    - 得到一个两数之间的随机整数：
+    ```js
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+    }
+    ```
+    - 得到一个两数之间的随机整数，包括两个数在内：
+    ```js
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+    }
+    ```
 - [RegExp](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 - [Date](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
-  - getDay():**Sunday - Saturday : 0 - 6**
+  - new Date():当前日期|毫秒数|年月日时分秒
+  - [getFullYear()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear)
+  - [getMonth()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth)
+  - [getDate()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate)
+  - [getDay()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay)
+  - [getHours()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours)
+  - [getMinutes()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes)
+  - [getSeconds()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getSeconds)
+  - [getTime()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime)
 
 ## 表达式和运算符
 
@@ -280,9 +332,9 @@ hasOwnProperty判断自有属性
 这个叫法起源于Zope框架，大家在修正Zope的Bug的时候经常在程序后面追加更新部分，这些被称作是“杂牌军补丁(guerilla patch)”，后来guerilla就渐渐的写成了gorllia((猩猩)，再后来就写了monkey(猴子)，所以猴子补丁的叫法是这么莫名其妙的得来的。
 猴子补丁主要有以下几个用处：
 
-1.	在运行时替换方法、属性等
-2.	在不修改第三方代码的情况下增加原来不支持的功能
-3.	在运行时为内存中的对象增加patch而不是在磁盘的源代码中增加
+1. 在运行时替换方法、属性等
+2. 在不修改第三方代码的情况下增加原来不支持的功能
+3. 在运行时为内存中的对象增加patch而不是在磁盘的源代码中增加
 
 原型和原型的好处：
 
@@ -295,8 +347,8 @@ hasOwnProperty判断自有属性
 
 [Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()](https://www.cnblogs.com/xiao-hong/p/3194027.html)
 
-
 [array 方法](http://louiszhai.github.io/2017/04/28/array/#some)
+
 - 改变自身
 - 不改变自身
 - 遍历
