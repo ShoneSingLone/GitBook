@@ -614,11 +614,13 @@ JavaScript是基于词法作用域的语言：通过阅读包含变量定义在�
 >这里借用数学的概念，简单来说，泛函就是定义域是一个函数，而值域是一个函数，推广开来， 泛函就是从任意的向量空间到标量的映射。 泛函也是一种“函数”，它的独立变量一般不是通常函数的“自变量”，而是通常函数本身。泛函是函数的函数。 泛函的英文是 Functional， 所以也可以把函数式编程(Functional Programming)称为泛函编程（对应在函数式编程中也把泛函称为高阶函数(higher-order function) (HOF)的）。
 
 ### 可调用对象
+
 >《JavaScript权威指南》8.7.7
 
 函数都可以被调用，但是被调用的不都是函数，也有可能是可调用对象。例如客户端方法：`Window.alert() `和 `Document.getElementById();`是为可调用的宿主对象。但是快被废弃了，所以没什么强调的必要。
 
 ### Function()构造函数
+
 注意new Function(arg[,arg[,…]],body)构造函数的函数体代码的编译总是会在顶层函数执行，也就是全局作用域。
 
 ### call() 、apply() 和bind() 
@@ -870,6 +872,44 @@ show me the code
 
 [Access_control_CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
 
+## DOM
+
+[DOM探索之基础详解篇](https://github.com/jawil/blog/issues/9)
+
+- get和querySelectorAll()
+- querySelector();
+- ParentNode\childNodes\firstChild\lastChild\nextSibling\previousSibling
+- document.getElementById:{}
+- document.getElementByTags:[]
+- document.getElementByCallName:[]
+- document.createElement
+- ele.appendChild()
+- ele.style.styleName = styleValue
+- ele.innerHTML
+- ele.className
+- ele.getAttribute
+- ele.setAttribute
+- ele.removeAttribute
+
+### [Events](https://developer.mozilla.org/zh-CN/docs/Web/Events)
+
+- onload :页面加载时触发
+- onclick :鼠标点击时触发
+- onmouseover :鼠标滑过时触发
+- onmouseout :鼠标离开时触发
+- onfoucs :获得焦点时触发
+- onblur :失去焦点时触发
+- onchange :域的内容改变时发生
+- onsubmit :表单中的确认按钮被点击时发生
+- onmousedown :鼠标按钮在元素上按下时触发
+- onmousemove :在鼠标指针移动时发生
+- onmouseup :在元素上松开鼠标按钮时触发
+- onresize :当调整浏览器窗口的大小时触发
+- onscroll :拖动滚动条滚动时触发
+- onkeydown : 在用户按下一个键盘按键时发生
+- onkeypress :在键盘按键被按下并释放一个键时发生
+- onkeyup :在键盘按键被松开时发生
+
 ## BOM
 
 Browser Object Model
@@ -878,14 +918,15 @@ Browser Object Model
 
 - window.open(url,target[_self,_parent,_top,_blank],,boolean)
 
-Location和Navigation
+### Location和[Navigation](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/navigator)
+
 window对象和document的location对象引用的都是Location对象
 document.URL是文档首次载入后保存的静态字符串不会随着hash变短改变；而Location会改变。=》URL是一个字符串，而location是一个对象，包含其他的属性。例如： `location.toString()===location.href //=>true`
 按照普通的资源定位符protocol/host/hostname/port/pathname/search/hash
 
 **未成标准的URLArguments获取函数**[URLSearchParams()](https://developer.mozilla.org/zh-CN/docs/Web/API/URLSearchParams/URLSearchParams)
 
-### location对象
+### [location](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/location)
 
  window.location and document.location引用的是同一个对象
 
@@ -906,9 +947,15 @@ let testArg = (new URLSearchParams(location.search)).get("test");
 >“:”, “/”, “;”，“?”是当作分隔符的保留字符。
 ![一张图看懂encodeURI、encodeURIComponent、decodeURI、decodeURIComponent的区别.png](./JavaScript/encodeURI.png)
 
+### [navigation](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/navigator)
 
+UserAgent
 
-## DOM
+### history
+
+history.go(-1|0|1)
+
+### screen
 
 ## Element
 
@@ -923,104 +970,6 @@ let testArg = (new URLSearchParams(location.search)).get("test");
 
 <iframe height='265' scrolling='no' title='scrollHeight 演示Edit' src='//codepen.io/singlone/embed/ZvqymO/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/singlone/pen/ZvqymO/'>scrollHeight 演示Edit</a> by ShoneSingLone (<a href='https://codepen.io/singlone'>@singlone</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
-
-
-[DOM探索之基础详解篇](https://github.com/jawil/blog/issues/9)
-
-
-#### 整体的思路：
-- 选择
-    - 选择方式
-        - 几个get和querySelectorAll()、querySelector();
-    - ParentNode\childNodes\firstChild\lastChild\nextSibling\previousSibling
-- 上
-- 中
-- 下
-- 改变
-- Create
-- Up[date]()
-- Up[date]()
-- Delete
-
-- 理解树形结构
-    1. Node对象
-    1. NodeType
-    1. var type = node.nodeType;
-
-- 对应的数字编号
-    - 1.Element
-    - 2.Attribute
-    - 3.Text
-
-属性
-有些特殊的，比如在JavaScript中是保留字`for——htmlFor`；`class——className`
-
-# jQuery
-[jquery.com](http://jquery.com/download/)
-
-## 
-[jQuery 源码系列（九）回溯机制](https://segmentfault.com/a/1190000008468456)
-
-## 字符实体转码的方法
-[Javascript：字符的编码转换和实体转换](https://segmentfault.com/q/1010000000146420)
-[html 实体](http://www.w3school.com.cn/html/html_entities.asp)
-
-```js
-  let msg = $('<textarea />').html(`<%= url %>`).text();
-```
-
-
-```js
-    //Html编码获取Html转义实体  
-    function htmlEncode(value) {
-        return $('<pre/>').text(value).html();
-    }
-    //Html解码获取Html实体  
-    function htmlDecode(value) {
-        return $('<pre/>').html(value).text();
-    } 
-```
-
-## [插件](#jquery-plugin)
-
-[ How to write jQuery plugin](http://i5ting.github.io/i5ting_ztree_toc/build/jquery.plugin.html)
-
-
-## Events
-
-### .on()
-
-`jQuery().on( events [, selector ] [, data ], handler )`
-> 事件命名空间 An event name can be qualified by event namespaces that simplify removing or triggering the event. 
-
-```js
-    .on("click.simple");
-    .off("click.simple");
-```
-
-委托代理的原理是：事件注册在jQuery()对象上，当触发事件时，再通过selector处理。
-涉及**享元模式**：只注册到一个对象上，提高了效率和页面性能，解决的动态添加元素导致不能触发的bug。
-
-### .trigger()
-
-submit\click
-
-### .closest()
->Description: For each element in the set, get the first element that matches the selector by testing the element itself and traversing up through its ancestors in the DOM tree.
-
-### .detach()
->Description: Remove the set of matched elements from the DOM.The .detach() method is the same as .remove(), except that .detach() keeps all jQuery data associated with the removed elements. This method is useful when removed elements are to be reinserted into the DOM at a later time.
-
-
-### 自定义事件
-发布-订阅者/观察者模式
-
-
-在事件类型后添加一个感叹号`!`就可以触发没有命名空间的事件处理程序:
-```JS
-$("button").trigger("click!");
-```
-
 
 # 1.1 作用域
 
@@ -1314,6 +1263,7 @@ $(document).ready(function () {
     btn2.build($body);
 });
 ```
+
 是否使用类和继承设计模式。类并不是 唯一（合适）的代码组织方式，
 
 ```js
