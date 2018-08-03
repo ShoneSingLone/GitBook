@@ -338,7 +338,6 @@ hasOwnProperty判断自有属性
 
 原型和原型的好处：
 
-
 ### 数组(Array)
 
 #### 数组方法
@@ -352,7 +351,6 @@ hasOwnProperty判断自有属性
 - 改变自身
 - 不改变自身
 - 遍历
-
 
 判断是否是数组的方法是看类属性（是对象的三个属性之一：原型、类、可扩展）
 
@@ -487,7 +485,8 @@ object[__proto__] = new Constructor[prototype]
 ```
 
 ### this
-使用准则： 
+
+使用准则：
 1. 作为函数调用this指代全局对象（^strict）或者undefined（strict）；
 
 
@@ -568,12 +567,15 @@ a = b| "";
 ```
 
 ES6的新方法：
+
 ```js
 function animalSentence(animals2 = "tigers", animals3 = "bears") {
                 return `Lions and ${animals2} and ${animals3}! Oh my!`;
             }
 ```
+
 ### 将对象作为实参
+
 好处是不用记得顺序，坏处是要记得形参的名字
 
 ### 闭包Closure
@@ -585,6 +587,7 @@ function animalSentence(animals2 = "tigers", animals3 = "bears") {
 **Lexical scoping 词法作用域**
 函数定义时就决定了变量作用域，而不是在函数调用时。
 参数和局部变量，嵌套的，全局变量
+
 ```js
 var scope = "global scope";//全局变量
 function checkscope() {
@@ -597,6 +600,7 @@ checkscope()()//返回值是什么?
 
 常常出现的错误在于，for循环中保存通过var声明的counter值，因为共享的是同一个counter，所以保存的是循环的最后一个值。
 而使用块级作用域声明let或者使用闭包可以保存每一个counter值：
+
 ```js
 function constfunc(v) {return function () {return v; } }
 ```
@@ -659,7 +663,7 @@ console.log(boundGetX()); // 返回 33
 ```
 
 strict模式中 call() 和 apply()的第一个值是this，其他的情况null和undefined是全局对象，或者包装对象（wrapper object）。
-	
+
 [创建绑定函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 
 bind() 最简单的用法是创建一个函数，使这个函数不论怎么调用都有同样的 this 值。JavaScript新手经常犯的一个错误是将一个方法从对象中拿出来，然后再调用，希望方法中的 this 是原来的对象。（比如在回调中传入这个方法。）如果不做特殊处理的话，一般会丢失原来的对象。从原来的函数和原来的对象创建一个绑定函数，则能很漂亮地解决这个问题：
@@ -717,10 +721,10 @@ jQuery 主要是用 Deferred对象，与Promise A+标准不同。
         .then(console.log,console.error);
 ```
 
-1.	Promise是什么？有什么作用？适用于哪些场景？如何使用？原理是什么？
-
+1. Promise是什么？有什么作用？适用于哪些场景？如何使用？原理是什么？
 
 ## 客户端存储技术
+
 cookie和session的区别
 提醒用户打开cookies的方式
 [前端本地存储讲解](https://juejin.im/entry/5a41b7f4f265da43152427b6?utm_medium=fe&utm_source=weixinqun)
@@ -728,13 +732,14 @@ cookie和session的区别
 ### cookies
 
 ### Web Storage
+
 - sessionStorage
-- localStorage 
+- localStorage
 
 getItem、setItem、removeItem、clear
 
-
 ### indexedDB
+
 1. 检测浏览器是否支持
 1. 创建DB
     1. 创建objectStore理解为=>table
@@ -742,10 +747,12 @@ getItem、setItem、removeItem、clear
 1. 事务
 1. 游标
     1. 游标范围
+
 ---
+
 - isOK(){return ("indexedDB" in window);}
 - open (name,version)
-    - upgradeneeded\onsuccess\onerro
+  - upgradeneeded\onsuccess\onerro
 - e.target.result
     - thisDB.objectStoreNames.contains()
     - thisDB.createObjectStore()

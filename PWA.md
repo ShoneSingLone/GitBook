@@ -12,6 +12,8 @@
 
 ## Service Worker
 
+[服务工作线程生命周期](https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle?hl=zh-cn#top_of_page)
+
 ### WHAT
 
 >一个 HTML5 API ，主要用来做持久的离线缓存。
@@ -19,7 +21,7 @@
 ### WHY
 
  >javaScript 都是运行在一个单一主线程上的，在同一时间内只能做一件事情。随着 Web 业务不断复杂，我们逐渐在 js 中加了很多耗资源、耗时间的复杂运算过程，这些过程导致的性能问题在 WebApp 的复杂化过程中更加凸显出来。 Web Worker不给力，因为还是没有永久缓存。
- 
+
  H5提出的**AppCache**没解决痛点。 故，提出了更优解决方案——Service Worker。
 - 一个独立的 worker 线程，独立于当前网页进程，有自己独立的 worker context。
 - 一旦被 install，就永远存在，除非被手动 unregister
@@ -36,7 +38,6 @@
 `service worker` 就是一个中间代理，代理所有的资源请求，判断是否有必要从服务器获取，而这个代理的规则就是通过`register`注册的`sw.js`文件。sw.js经过注册，安装，激活才能开始持久化资源。
 `manifest.json`描述的是作为类原生应用该有的一些行为属性。
 其他的都是渐进增强的要求（HTTPS）
-
 
 ```js
 // - 判断能不能用，一般的兼容性还是必要；
@@ -55,6 +56,7 @@ if ('serviceWorker' in navigator) {
     });
 }
 ```
+
 Service Worker 是独立的，称为worker context，不过当然也无法操作DOM。[Cache API](https://developer.mozilla.org/zh-CN/docs/Web/API/Cache)注意一下。
 
 ```js
@@ -89,7 +91,6 @@ self.addEventListener('fetch', function(event) {
   console.log('Handling fetch event for', event.request.url);
 
   event.respondWith(
-    
     // Opens Cache objects that start with 'font'.
     caches.open(CURRENT_CACHES['font']).then(function(cache) {
       return cache.match(event.request).then(function(response) {
@@ -97,9 +98,8 @@ self.addEventListener('fetch', function(event) {
           console.log(' Found response in cache:', response);
 
           return response;
-        } 
+        }
       }).catch(function(error) {
-        
         // Handles exceptions that arise from match() or fetch().
         console.error('  Error in fetch handler:', error);
 
@@ -112,6 +112,7 @@ self.addEventListener('fetch', function(event) {
 
 service worker install事件event有waitUntil事件
 caches open db_name 返回 cache cache有add
+
 ```js
 // 监听 service worker 的 install 事件
 this.addEventListener('install', function (event) {
@@ -313,6 +314,7 @@ lavas-project
 ├── .babelrc, .editorconfig, .fecsignore, .fecsrc, .gitignore
 └── LINCENSE, package.json, README.md
 ```
+
 - /assets 里的内容会被 webpack 构建到生成目录的文件中，不再会单独以文件形式存在。因此 iconfont 放置在 /assets 中
 - /static 里的内容会被原样复制到生成目录中，会以独立的文件形式存在。因此 PWA 用到的 manifest.json 和一系列图标等都放置在 /static 中。
 
@@ -347,12 +349,13 @@ process.env其实是读取系统环境，可以通过cross-env来设置： [使�
 ### [core](https://lavas.baidu.com/guide/v2/advanced/core)
 
 [Skeleton.vue](https://zhuanlan.zhihu.com/p/28465598)骨架屏，提升用户体验
+[一种自动化生成骨架屏的方案](https://github.com/Jocs/jocs.github.io/issues/22)骨架屏，提升用户体验
+[前后端渲染之争](https://github.com/camsong/blog/issues/8)骨架屏，提升用户体验
 
 ### [中间件](https://lavas.baidu.com/guide/v2/advanced/middleware)
 
 面向切面编程，每次都要检查，类似express 的next
 登录的检查
-
 
 在`/middlewares`文件夹， 声明有两种方式：
 传入的context具体查文档
@@ -402,40 +405,13 @@ router: {
 
 ### [Vuex 状态树](https://lavas.baidu.com/guide/v2/advanced/store)
 
-### 
-
 [workbox](https://developers.google.com/web/tools/workbox/guides/get-started)快速生成servicework.js
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### [vue-meta](https://github.com/declandewet/vue-meta)
 
 [vue-meta](https://segmentfault.com/a/1190000012849210)
 
-- [Vue-Blu ](https://chenz24.github.io/vue-blu/#/)
+- [Vue-Blu](https://chenz24.github.io/vue-blu/#/)
 - [Vue Material](http://vuematerial.io/#/)
 - [Vuetify](https://vuetifyjs.com/)
 - [Bootstrap-Vue](https://bootstrap-vue.js.org/)

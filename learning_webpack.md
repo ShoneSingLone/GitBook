@@ -56,7 +56,7 @@ module.exports = {
 ```
 
 ```bash
-npm i -D style-loader css-loader postcss-loader autoprefixer sass-node sass-loader
+npm i -D style-loader css-loader postcss-loader autoprefixer node-sass sass-loader
 ```
 
 ```js
