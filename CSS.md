@@ -326,8 +326,6 @@ background: linear-gradient(cyan, transparent),
 }
 ```
 
-## 排版与布局
-
 ## 文字排版
 
 “文字”有什么？
@@ -346,11 +344,26 @@ background: linear-gradient(cyan, transparent),
 
 ## 布局
 
+元素有三种布局模型：
+
 - [Layout Generators](http://www.pagecolumn.com/)
 - [Templated](https://templated.co/)
 - [Layout Gala](https://blog.html.it/layoutgala/index.html)
 - [CSS布局](http://zh.learnlayout.com/position.html)
 - [position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position)
+
+1. 流动模型（Flow）/ 标准文档流
+1. 浮动模型 (Float)
+1. 层模型（Layer）
+
+### 一般流程
+
+1. 设计图
+1. 找出盒子
+1. 区别 block inline，选择恰当的盒子
+1. 背景图片与图片的选用策略
+1. 复用，但是不要过渡设计
+1. 分层的应用 z-index position
 
 盒子模型最主要的定位方式
 position:static relative absolute fixed transform非none
@@ -360,6 +373,100 @@ position:static relative absolute fixed transform非none
 布局的策略：从左到右，从上到下；
 vertical-align：top
 line-height
+
+### 流动模型（Flow）/ 标准文档流
+
+1. 块状元素都会在所处的包含块内自上而下按顺序垂直延伸分布
+1. 内联元素都会在所处的包含元素内从左到右水平分布显示。
+
+### 浮动模型 (Float)
+
+浮动使之脱离标准文档流。效果类似inline-block且无元素间间距。
+浮动用来设置文字环绕，也可以用来布局，**bootstrap栅栏系统**是利用浮动设计的。
+
+- [清除浮动](http://nicolasgallagher.com/micro-clearfix-hack/)
+- fix float所产生的塌陷/元素下坠
+  - [利用:after伪类元素清除](http://www.html-js.com/article/2203)
+  - [Why does overflow hidden stop floating elements escaping their container?](https://stackoverflow.com/questions/9193214/why-does-overflow-hidden-stop-floating-elements-escaping-their-container)
+    - [BFC 块级格式化上下文](http://web.jobbole.com/83149/)+ [CSS之BFC详解](http://www.html-js.com/article/1866)+[](http://www.10tiao.com/html/59/201712/2651553261/1.html)
+    **BFC特性**
+    1. 内部的Box会在垂直方向，从顶部开始一个接一个地放置。
+    1. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加
+    1. 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+    1. BFC的区域不会与float box叠加。
+    1. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然。
+    1. 计算BFC的高度时，浮动元素也参与计算。
+
+---
+
+作用:
+
+    1. 说的
+    1. 解决margin叠加问题
+    1. 布局[CSS之BFC详解](http://www.html-js.com/article/1866)
+    1. 用于清除浮动，计算BFC高度.
+---
+
+`overflow: hidden;`只是创建BFC的方式之一，比较常用。
+
+- `display: table` 可能引发响应性问题
+- `overflow: scroll` 可能产生多余的滚动条
+- `float: left` 将把元素移至左侧，并被其他元素环绕
+- `overflow: hidden` 将裁切溢出元素
+
+Inline-block和浮动布局的区别？
+
+#### 层模型
+
+1. 绝对定位(position: absolute)
+    - 将元素从文档流中拖出来，然后使用left、right、top、bottom属性相对于其最接近的一个具有定位属性的父包含块进行绝对定位。如果不存在这样的包含块，则相对于body元素，即相对于浏览器窗口。
+1. 相对定位(position: relative)
+    - 通过left、right、top、bottom属性确定元素在正常文档流中的偏移位置。
+1. 固定定位(position: fixed)：位置效果使用`background-attachment:fixed`
+    - position:fixed;并不只是相对于窗口定位：CSS3的transform会影响定位；
+    - [相对于父元素的FIXED定位的实现](http://www.cnblogs.com/biyesheng/p/6386176.html)
+    - [相对于父元素的FIXED定位的实现:transform](https://code.w3ctech.com/detail/1305)
+
+<iframe height='265' scrolling='no' title='相对于父元素的FIXED定位的实现' src='//codepen.io/singlone/embed/MBXdWP/?height=265&theme-id=0&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/singlone/pen/MBXdWP/'>相对于父元素的FIXED定位的实现</a> by ShoneSingLone (<a href='https://codepen.io/singlone'>@singlone</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+## 固定
+
+### 不固定
+
+#### 浮动
+
+#### 流式布局
+
+#### 响应式布局
+
+响应式与自适应semantic,都要用媒体查询，但是响应式是根据一套HTML结构来设计不同的样式，而自适应是可以根据不同的结构设计对应的样式。响应式可遭罪了，绞尽脑汁，在设计结构的时候就要考虑到不同的展示样式。自适应一套结构一套样式，看起来费劲，实际做起来的就是上了高速公路，直达。修改起来也是松耦合，相互之间不影响，比起响应式的过度设计不知道高到哪里去了。Bootstrap那种响应式的就当学习和一般搭搭架子用用...
+
+### flex布局
+
+[深入理解 flex 布局以及计算](https://www.w3cplus.com/css3/flexbox-layout-and-calculation.html)
+[Flex 布局教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+[Flex 布局教程 实例](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
+[Flex 布局教程 demo](http://static.vgee.cn/static/index.html)
+[FLEX-LAYOUT](https://github.com/Coffcer/flex-layout)
+[solved-by-flexbox/](https://hufan-akari.github.io/solved-by-flexbox/)
+
+ flex分为两个部分：一个是container 用作包裹；另一个是item，被包裹的元素。container可以指定排列的方向（flex-direction）和换行的方式（flex-wrap）。
+
+ **flex-direction**属性指定了内部元素是如何在 flex 容器中布局的，定义了主轴的方向(正方向或反方向)。意思就是当`flex-directin:column;`时，justify axis变成了Y轴。
+
+ 注意到这里的baseline和content的around就可以理解到这两者的区别：content是main和cross上的分部，而align-items就是item内部的布局基准。align又有stretch属性，在cross轴上特有。
+ 尽量是不要自动换行，设计为row和column的方式：指定column。
+
+[mindmap](http://naotu.baidu.com/file/c629a9abd17ecd60f59bc98dcfe5a4fe)
+
+### 瀑布流
+
+- [瀑布流布局的实现步步升级（原生JS）](http://www.dengzhr.com/js/405)
+- [Web前端实现瀑布流的几种方法](http://www.jianshu.com/p/d4ca937c6f96?from=jiantop.com)
+- [Web前端实现瀑布流的几js实现瀑布流的三种方式比较，js瀑布三种方式种方法](http://www.jianshu.com/p/d4ca937c6f96?from=jiantop.com)
+- [纯js实现瀑布流布局及ajax动态新增数据](https://www.teakki.com/p/5901f3cab819c55a2789c289)
+- [多行文本'...'](https://qianduan.group/posts/5a9ff0e80cf6b624d2239cc8)
 
 ### 居中
 
@@ -483,104 +590,3 @@ label 标记通常以下面两种方式中的一种来和表单控件相联系�
 通常是一个label和一个input
 label就设定好宽度，右对齐，间隔margin
 input
-
-### 布局模型
-
-元素有三种布局模型：
-
-1. 流动模型（Flow）/ 标准文档流
-1. 浮动模型 (Float)
-1. 层模型（Layer）
-
-#### 流动模型（Flow）/ 标准文档流
-
-1. 块状元素都会在所处的包含块内自上而下按顺序垂直延伸分布
-1. 内联元素都会在所处的包含元素内从左到右水平分布显示。
-
-#### 浮动模型 (Float)
-
-浮动使之脱离标准文档流。效果类似inline-block且无元素间间距。
-浮动用来设置文字环绕，也可以用来布局，**bootstrap栅栏系统**是利用浮动设计的。
-
-- [清除浮动](http://nicolasgallagher.com/micro-clearfix-hack/)
-- fix float所产生的塌陷/元素下坠
-  - [利用:after伪类元素清除](http://www.html-js.com/article/2203)
-  - [Why does overflow hidden stop floating elements escaping their container?](https://stackoverflow.com/questions/9193214/why-does-overflow-hidden-stop-floating-elements-escaping-their-container)
-    - [BFC 块级格式化上下文](http://web.jobbole.com/83149/)+ [CSS之BFC详解](http://www.html-js.com/article/1866)+[](http://www.10tiao.com/html/59/201712/2651553261/1.html)
-    **BFC特性**
-    1. 内部的Box会在垂直方向，从顶部开始一个接一个地放置。
-    1. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加
-    1. 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
-    1. BFC的区域不会与float box叠加。
-    1. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然。
-    1. 计算BFC的高度时，浮动元素也参与计算。
-    ---
-
-**作用**
-
-    1. 说的
-    1. 解决margin叠加问题
-    1. 布局[CSS之BFC详解](http://www.html-js.com/article/1866)
-    1. 用于清除浮动，计算BFC高度.
-    ---
-
-    `overflow: hidden;`只是创建BFC的方式之一，比较常用。
-
-    - `display: table` 可能引发响应性问题
-    - `overflow: scroll` 可能产生多余的滚动条
-    - `float: left` 将把元素移至左侧，并被其他元素环绕
-    - `overflow: hidden` 将裁切溢出元素
-
-Inline-block和浮动布局的区别？
-
-#### 层模型
-
-1. 绝对定位(position: absolute)
-    - 将元素从文档流中拖出来，然后使用left、right、top、bottom属性相对于其最接近的一个具有定位属性的父包含块进行绝对定位。如果不存在这样的包含块，则相对于body元素，即相对于浏览器窗口。
-1. 相对定位(position: relative)
-    - 通过left、right、top、bottom属性确定元素在正常文档流中的偏移位置。
-1. 固定定位(position: fixed)：位置效果使用`background-attachment:fixed`
-    - position:fixed;并不只是相对于窗口定位：CSS3的transform会影响定位；
-    - [相对于父元素的FIXED定位的实现](http://www.cnblogs.com/biyesheng/p/6386176.html)
-    - [相对于父元素的FIXED定位的实现:transform](https://code.w3ctech.com/detail/1305)
-
-<iframe height='265' scrolling='no' title='相对于父元素的FIXED定位的实现' src='//codepen.io/singlone/embed/MBXdWP/?height=265&theme-id=0&default-tab=css,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/singlone/pen/MBXdWP/'>相对于父元素的FIXED定位的实现</a> by ShoneSingLone (<a href='https://codepen.io/singlone'>@singlone</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-## 固定
-
-### 不固定
-
-#### 浮动
-
-#### 流式布局
-
-#### 响应式布局
-
-响应式与自适应semantic,都要用媒体查询，但是响应式是根据一套HTML结构来设计不同的样式，而自适应是可以根据不同的结构设计对应的样式。响应式可遭罪了，绞尽脑汁，在设计结构的时候就要考虑到不同的展示样式。自适应一套结构一套样式，看起来费劲，实际做起来的就是上了高速公路，直达。修改起来也是松耦合，相互之间不影响，比起响应式的过度设计不知道高到哪里去了。Bootstrap那种响应式的就当学习和一般搭搭架子用用...
-
-### flex布局
-
-[深入理解 flex 布局以及计算](https://www.w3cplus.com/css3/flexbox-layout-and-calculation.html)
-[Flex 布局教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
-[Flex 布局教程 实例](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
-[Flex 布局教程 demo](http://static.vgee.cn/static/index.html)
-[FLEX-LAYOUT](https://github.com/Coffcer/flex-layout)
-[solved-by-flexbox/](https://hufan-akari.github.io/solved-by-flexbox/)
-
- flex分为两个部分：一个是container 用作包裹；另一个是item，被包裹的元素。container可以指定排列的方向（flex-direction）和换行的方式（flex-wrap）。
-
- **flex-direction**属性指定了内部元素是如何在 flex 容器中布局的，定义了主轴的方向(正方向或反方向)。意思就是当`flex-directin:column;`时，justify axis变成了Y轴。
-
- 注意到这里的baseline和content的around就可以理解到这两者的区别：content是main和cross上的分部，而align-items就是item内部的布局基准。align又有stretch属性，在cross轴上特有。
- 尽量是不要自动换行，设计为row和column的方式：指定column。
-
-[mindmap](http://naotu.baidu.com/file/c629a9abd17ecd60f59bc98dcfe5a4fe)
-
-### 瀑布流
-
-- [瀑布流布局的实现步步升级（原生JS）](http://www.dengzhr.com/js/405)
-- [Web前端实现瀑布流的几种方法](http://www.jianshu.com/p/d4ca937c6f96?from=jiantop.com)
-- [Web前端实现瀑布流的几js实现瀑布流的三种方式比较，js瀑布三种方式种方法](http://www.jianshu.com/p/d4ca937c6f96?from=jiantop.com)
-- [纯js实现瀑布流布局及ajax动态新增数据](https://www.teakki.com/p/5901f3cab819c55a2789c289)
-- [多行文本'...'](https://qianduan.group/posts/5a9ff0e80cf6b624d2239cc8)
