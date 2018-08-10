@@ -970,10 +970,17 @@ history.go(-1|0|1)
 
  ---
 
+- [clientHeight](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight)
+- [offsetHeight](https://developer.mozilla.org/en-US/docs/Web/API/Element/offsetHeight)
+- [offsetTop](https://developer.mozilla.org/en-US/docs/Web/API/Element/offsetTop)
+- [scrollHeight](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight)
+- [scrollTop](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop)
+
 - .clientHeight
      ![Element.clientHeight](./media/html/Dimensions-client.png)
 - .[offsetHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetHeight)
      ![Element.offsetHeight](./media/html/offsetHeight.png)
+- [Element.scrollIntoView()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollIntoView)方法让当前的元素滚动到浏览器窗口的可视区域内。
 
 <iframe height='265' scrolling='no' title='scrollHeight 演示Edit' src='//codepen.io/singlone/embed/ZvqymO/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/singlone/pen/ZvqymO/'>scrollHeight 演示Edit</a> by ShoneSingLone (<a href='https://codepen.io/singlone'>@singlone</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
