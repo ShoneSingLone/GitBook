@@ -455,15 +455,30 @@ console.log(decoder.write(euro));
 [Node.js静态文件服务器实战](http://www.infoq.com/cn/news/2011/11/tyq-nodejs-static-file-server)
 [node.js 一个简单的页面输出](http://www.cnblogs.com/rubylouvre/archive/2011/11/20/2255083.html)
 
+[API 设计](https://docs.microsoft.com/zh-cn/azure/architecture/best-practices/api-design#define-operations-in-terms-of-http-methods)
+
+涉及到什么样的数据(数据结构)
+对数据进行怎样的操作（算法）
 
 ### Express
+
 - [Express上手](https://mp.weixin.qq.com/s/Q2AF4t-GMzwErxXp_WDtLw)
 - 安装
+
+```js
+
+npm install express express-generator -D
+npm install express-generator(就是脚手架)
+
 ```
-npm install express --save
-```
+- 引入http服务模块
+- http生成server
+- server监听端口
+
+
 - 路由
 ```js
+
 // 对网站首页的访问返回 "Hello World!" 字样
 app.get('/', function (req, res) {
   res.send('Hello World!');
@@ -480,9 +495,11 @@ app.put('/user', function (req, res) {
 app.delete('/user', function (req, res) {
   res.send('Got a DELETE request at /user');
 });
+
 ```
 
 ## 上传 下载
+
 [Nodejs进阶：基于express+multer的文件上传](https://www.cnblogs.com/chyingp/p/express-multer-file-upload.html)
 
 [使用nodejs+express完成简单的文件上传功能](https://juejin.im/post/5a4263816fb9a045211ef85c)

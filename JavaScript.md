@@ -1454,4 +1454,10 @@ false == []; // true -- []是对象，转成''，跟false Boolean值又要转成
 - 回调函数
 
 # 原则
+
 - unobtrusive JavaScript（非入侵式）
+
+[export](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/export)
+[async_function](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function)
+[await](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/await)
+[Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)

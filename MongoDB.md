@@ -1,16 +1,31 @@
-collection table
-ducument row
-filed column
+# note
+
+nosql
+
+[manual](https://docs.mongodb.com/manual/)
+table=>collection
+row=>document
+column=>filed
+
+use db(有就用，没有就加)=>db
+db.createCollection(name, options)
+
+db[dbname].insert(document(object))
+db[dbname].find().pretty()
+db[dbname].findOne()
+db[dbname].update(query,option)
+db[dbname].updateOne()
+db[dbname].remove(query,option)
+db[dbname].removeOne(query,option)
+
+key value
+
 
 db
 show dbs
 use [dbname]
-db.[dbname].insert({"name":"name"});
 show tables
 db.runoob.drop()
-
-db.createCollection(name, options)
-
 
 
 字段|	类型|	描述
@@ -28,3 +43,74 @@ db.[collectionName].drop()
 db.[collectionName].insert(documnet)
 
 db.[collectionName].find()/(select column from table)
+
+## Linux 部署
+
+`/etc/init.d/`
+
+```bash
+
+$ touch mongod
+$ chmod 777 mongod
+```
+
+```config
+#!/bin/bash
+#chkconfig: 2345 80 90
+#description: mongodb
+start() {
+ /usr/local/mongodb/bin/mongod --config /usr/local/mongodb/mongo
+d.conf
+}
+ 
+stop() {
+      /usr/local/mongodb/bin/mongod --config /usr/local/mongodb/
+mongod.conf --shutdown
+}
+case "$1" in
+  start)
+ start
+ ;;
+ 
+stop)
+ stop
+ ;;
+ 
+restart)
+ stop
+ start
+ ;;
+  *)
+ echo
+$"Usage: $0 {start|stop|restart}"
+ exit 1
+
+```
+
+service mongod start/stop/restart
+netstat -lanp | grep "27017"
+mongod -f mongod.conf
+
+改端口 sudo vi /etc/mongod.config
+
+## 添加用户 增加安全性
+
+[db.createUser](https://docs.mongodb.com/manual/reference/method/db.createUser/)
+
+mongo url 
+
+show dbs
+use admin
+
+- 创建用户，可选则指定数据库
+
+db.createUser({user:"username",pwd:"pwd",roles:["root"]})
+
+- 只管相关的数据库（collection）
+
+use myproject
+db.createUser({user:"username",pwd:"pwd",roles:[{role:"dbOwner",db:"myproject"]})
+
+- 验证
+
+db.auth("username","pwd")

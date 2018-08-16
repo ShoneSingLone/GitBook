@@ -85,52 +85,6 @@ pm2进程守卫
 
 Nginx 端口代理 负载平衡
 
-## MongoDB
-
-`/etc/init.d/`
-
-```bash
-$ touch mongod
-$ chmod 777 mongod
-```
-
-```config
-#!/bin/bash
-#chkconfig: 2345 80 90
-#description: mongodb
-start() {
- /usr/local/mongodb/bin/mongod --config /usr/local/mongodb/mongo
-d.conf
-}
- 
-stop() {
-      /usr/local/mongodb/bin/mongod --config /usr/local/mongodb/
-mongod.conf --shutdown
-}
-case "$1" in
-  start)
- start
- ;;
- 
-stop)
- stop
- ;;
- 
-restart)
- stop
- start
- ;;
-  *)
- echo
-$"Usage: $0 {start|stop|restart}"
- exit 1
- ```
-
-service mongod start/stop/restart
-netstat -lanp | grep "27017"
-
-改端口 sudo vi /etc/mongod.config
-
 本地dump 备份 打包上传 部署
 
 生产环境所需要素
@@ -140,3 +94,8 @@ netstat -lanp | grep "27017"
 ◆安装配置数据库
 ◆域名备案
 ◆项目远程部署发布与更新
+
+ ln是linux中一个非常重要命令。它的功能是为某一个文件在另外一个位置建立一个同不的链接;
+这个命令最常用的参数是-s,具体用法是：
+
+ln -s 源文件 目标文件。
