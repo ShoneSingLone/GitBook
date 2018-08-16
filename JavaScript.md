@@ -122,7 +122,7 @@ console.log(Object.prototype.toString.call(null));//[object Null]
   - [getMonth()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth)
   - [getDate()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate)
   - [getDay()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay)
-  - [getHours()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours)
+  - [getHours()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours)根据本地时间，返回一个指定的日期对象的小时。返回一个0 到 23之间的整数值。
   - [getMinutes()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes)
   - [getSeconds()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getSeconds)
   - [getTime()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime)
@@ -345,6 +345,7 @@ hasOwnProperty判断自有属性
  map forEach 的区别 有么有返回值、返回的是什么（有一个术语，描述function是否改变自身array，忘了是什么了......)
 
 [Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()](https://www.cnblogs.com/xiao-hong/p/3194027.html)
+[JavaScript数组所有API全解密](http://louiszhai.github.io/2017/04/28/array/?from=timeline)
 
 [array 方法](http://louiszhai.github.io/2017/04/28/array/#some)
 
@@ -975,6 +976,7 @@ history.go(-1|0|1)
 - [offsetTop](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/offsetTop)
 - [scrollHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollHeight)
 - [scrollTop](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollTop)
+- [clientHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/clientHeight)
 
 - .clientHeight
      ![Element.clientHeight](./media/html/Dimensions-client.png)
@@ -1080,7 +1082,9 @@ var obj = {
 };
 obj.cool(); // 酷吧？
 ```
-箭头函数
+
+- [箭头函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
 ```js
 var obj = {
     count: 0,

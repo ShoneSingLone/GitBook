@@ -25,41 +25,47 @@ BFC的原理
 BFC的使用场景
 
 - fix float所产生的塌陷/元素下坠
-    - [利用:after伪类元素清除](http://www.html-js.com/article/2203)
-    - [Why does overflow hidden stop floating elements escaping their container?](https://stackoverflow.com/questions/9193214/why-does-overflow-hidden-stop-floating-elements-escaping-their-container)
-    - [BFC 块级格式化上下文](http://web.jobbole.com/83149/)+ [CSS之BFC详解](http://www.html-js.com/article/1866)+[](http://www.10tiao.com/html/59/201712/2651553261/1.html)
-    **BFC特性**
-		1. 内部的Box会在垂直方向，从顶部开始一个接一个地放置。
-		1. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加
-		1. 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
-		1. BFC的区域不会与float box叠加。
-		1. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然。
-		1. 计算BFC的高度时，浮动元素也参与计算。
-		---
-		**作用**
+  - [利用:after伪类元素清除](http://www.html-js.com/article/2203)
+  - [Why does overflow hidden stop floating elements escaping their container?](https://stackoverflow.com/questions/9193214/why-does-overflow-hidden-stop-floating-elements-escaping-their-container)
+  - [BFC 块级格式化上下文](http://web.jobbole.com/83149/)+ [CSS之BFC详解](http://www.html-js.com/article/1866)+[](http://www.10tiao.com/html/59/201712/2651553261/1.html)
+  **BFC特性**
+  1. 内部的Box会在垂直方向，从顶部开始一个接一个地放置。
+  1. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加
+  1. 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+  1. BFC的区域不会与float box叠加。
+  1. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然。
+  1. 计算BFC的高度时，浮动元素也参与计算。
 
-		1. 说的
-		1. 解决margin叠加问题 
-		1. 布局[CSS之BFC详解](http://www.html-js.com/article/1866)
-		1. 用于清除浮动，计算BFC高度.
-		---
+  ---
+  
+  作用
 
-		`overflow: hidden;`只是创建BFC的方式之一，比较常用。
+  1. 说的
+  1. 解决margin叠加问题 
+  1. 布局[CSS之BFC详解](http://www.html-js.com/article/1866)
+  1. 用于清除浮动，计算BFC高度.
+  ---
 
-		- `display: table` 可能引发响应性问题
-		- `overflow: scroll` 可能产生多余的滚动条
-		- `float: left` 将把元素移至左侧，并被其他元素环绕
-		- `overflow: hidden` 将裁切溢出元素
+  `overflow: hidden;`只是创建BFC的方式之一，比较常用。
+
+  - `display: table` 可能引发响应性问题
+  - `overflow: scroll` 可能产生多余的滚动条
+  - `float: left` 将把元素移至左侧，并被其他元素环绕
+  - `overflow: hidden` 将裁切溢出元素
 
 DOM事件类
 基本概念:
  DOM事件的级别、0/2/3
 
 - DOM事件模型 
-捕获、冒泡 默认false 冒泡 从内到外；捕获是从外到内 
-- DOM事件流  
+
+捕获、冒泡 默认false 冒泡 从内到外；捕获是从外到内
+
+- DOM事件流
+
 描述DOM事件捕获的具体流程上
 Event对象的常见应用一
+
 - DOM事件类
   Event对象的常见应用
   event.preventDefault()event.stopPropagation()
@@ -67,7 +73,9 @@ Event对象的常见应用一
   event.currentTarget 当前绑定的事件
   event.target
   委派代理 添加在祖先元素上，event.target获取呗单击的元素jQuery 委托实现
--  自定义事件
+
+- 自定义事件
+
 addEventListener
 dispatchEvent
 new Event(e) new CustomEvent(e,option):e.option
@@ -101,7 +109,6 @@ HTTP状态码
 - 301 Moved Permanently:所请求的页面已经转移至新的url
 - 302 Found:所请求的页面已经临时转移新的url 
 - 304 Not Modified:客户端有缓冲的文档并发出了一个条件性的请求，服务器告诉客户，原来缓冲的 文档还可以继续使用
-
 
 什么是持久连接
 
@@ -272,7 +279,7 @@ lf-None-Match
   - css js放置位置和原因
   - 什么是渐进式渲染
   - html模板语言
-  - meta viewport原理-
+  - meta viewport原理
 
 2.CSS
 
@@ -440,7 +447,7 @@ lf-None-Match
 8.模块化
 
   - 对AMD,CMD,CommonJS有没有了解?
-  - 为什么要模块化？不用的时候和用RequireJs的时候代码大概怎么写？
+  - 为什么要模块化？不用的时候和用RequireJs的时候代码大概怎么写？`
   - 说说有哪些模块化的库，有了解过模块化的发展的历史吗？
   - 分别说说同步和异步模块化的应用场景，说下AMD异步模块化实现的原理？
   - 如何将项目里面的所有的require的模块语法换成import的ES6的语法？

@@ -10,6 +10,9 @@
 [API](https://cn.vuejs.org/v2/api/)
 [Vue解析](https://github.com/answershuto/learnVue)
 [揭秘组件库一二事](https://zhuanlan.zhihu.com/p/34654371)
+[Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)
+[Vue技术内幕](http://hcysun.me/vue-design/)
+[尤雨溪](https://weibo.com/arttechdesign?profile_ftype=1&is_all=1#_0)
 
 ## 术语和概念
 
@@ -31,6 +34,9 @@
     }
     ```
 - 除了 data 属性，Vue 实例暴露了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的属性区分开来
+
+$mount()
+render
 
 ### 实例API
 
@@ -243,10 +249,17 @@ export default {
 ### 自己实现锚点定位
 
 [单页面官网-平滑过渡到指的锚点](https://segmentfault.com/a/1190000010854244)
+[scrollTo](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollTo)
 
 本来可以使用history模式，如果不用，也可以尝试下面的方法
 
 ```js
+// 设置滚动行为改为平滑的滚动
+window.scrollTo({ 
+    top: 1000, 
+    behavior: "smooth" 
+});
+......
 methods: {
     goAnchor(selector) {
         var anchor = this.$el.querySelector(selector)

@@ -374,7 +374,10 @@ position:static relative absolute fixed transform非none
 vertical-align：top
 line-height
 
-### 流动模型（Flow）/ 标准文档流
+## 流 （Flow）
+
+IE 8，对应CSS2.1，比较完正的部分。
+标准文档流， “流”是基本的定位和布局机制：div、span就是俩代表，具有“自适应”：
 
 1. 块状元素都会在所处的包含块内自上而下按顺序垂直延伸分布
 1. 内联元素都会在所处的包含元素内从左到右水平分布显示。
