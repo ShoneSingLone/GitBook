@@ -114,3 +114,22 @@ db.createUser({user:"username",pwd:"pwd",roles:[{role:"dbOwner",db:"myproject"]}
 - 验证
 
 db.auth("username","pwd")
+
+## node middle ware
+
+[mongoose](https://mongoosejs.com/docs/guide.html)
+[model 自动加s的问题](https://mongoosejs.com/docs/api.html#mongoose_Mongoose-model)
+
+就是一定要写collection，并且与数据库的名字保持一致就不会有问题了
+
+```js
+exports.goods = mongoose.model('', new Schema({
+    "id": {
+        type: String
+    },
+    "image": String,
+    "name": String,
+    "price": Number,
+    "source": String
+}), "goods")//看这里，看这里
+```

@@ -456,6 +456,11 @@ console.log(decoder.write(euro));
 [node.js 一个简单的页面输出](http://www.cnblogs.com/rubylouvre/archive/2011/11/20/2255083.html)
 
 [API 设计](https://docs.microsoft.com/zh-cn/azure/architecture/best-practices/api-design#define-operations-in-terms-of-http-methods)
+[RESTful API 设计指南](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
+
+#### RESTful
+
+
 
 涉及到什么样的数据(数据结构)
 对数据进行怎样的操作（算法）
@@ -477,6 +482,8 @@ npm install express-generator(就是脚手架)
 
 
 - 路由
+
+
 ```js
 
 // 对网站首页的访问返回 "Hello World!" 字样
@@ -497,6 +504,13 @@ app.delete('/user', function (req, res) {
 });
 
 ```
+
+[Node Express获取参数的几种方式](http://xuyuan923.github.io/2014/10/10/node-tutorial-req/)
+
+1. 对于path中的变量，均可以使用req.params.xxxxx方法
+1. 对于get请求的?xxxx=,使用req.query.xxxxx方法
+1. 对于post请求中的变量，使用req.body.xxxxx方法:req.body在官方文档是没有提供的，但是它也是很好用的获取表单参数的方法。req.body是配合Express中间件bodyParser()中间件提供的。当bodyParser()中间件使用后，这个对象默认为 {},req.body可以获取到post到body中的内容。
+1. 以上三种情形，均可以使用req.param()方法，所以说req.param()是req.query、req.body、以及req.params获取参数的三种方式的封装。
 
 ## 上传 下载
 
@@ -830,9 +844,14 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 大致上，登录过程用户提供必要信息（登录框的name、password）；验证（后台数据库一类）；保存并返回验证结果。
 
 ## JWT
+
+[Introduction to JSON Web Tokens](https://jwt.io/introduction/)
+[JSON Web Token 入门教程](http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
 [八幅漫画理解使用JSON Web Token设计单点登录系统](http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/)
 [前后端分离之JWT用户认证](https://www.jianshu.com/p/180a870a308a)
 [前后端分离的项目，如何解决登录问题](https://my.oschina.net/liuyuantao/blog/875868)
+[Vue 进阶教程之：Axios配置JWT/封装插件/发送表单数据](https://www.jianshu.com/p/aeaa353da89b)
+[Express + JWT用户认证最轻实践](https://juejin.im/post/5b06c6baf265da0db4791805)
 
 
 let aObj = {
@@ -848,16 +867,17 @@ console.log(aObj.a < 5 && aObj.a == 5 && aObj.a > 5);
 
 
 # APP
+
 content loader
 [react-content-loader](https://github.com/danilowoz/react-content-loader)
 [Skeleton Screen Vue 实现思路](https://cloud.tencent.com/developer/article/1006169)
 [Building Skeleton Screens with CSS Custom Properties](https://css-tricks.com/building-skeleton-screens-css-custom-properties/)
 
 # 开发环境
+
 [Ubuntu on Windows10 跨平台开发环境搭建权威指南](https://mp.weixin.qq.com/s?__biz=MjM5OTMxMzA4NQ==&mid=2655935509&idx=1&sn=e130c7d7fe65538e533aba292e91ae8c&chksm=bc8797c78bf01ed1a5aa641e1fc6d52e9f8db002e243bb2b9b596cc4c7debd5e4ccaf1ae01dc&mpshare=1&scene=1&srcid=0305UovU11yLF6vQsAC115qQ#rd)
 
 [Xshell配置SSH密钥登录Linux服务器](http://blog.csdn.net/ruixinroom/article/details/56017595)
-
 [win10 bash](https://aigeec.com/installing-node-js-on-windows-10-bash/)
 [Windows10开启Ubuntu子系统简易步骤](https://zhuanlan.zhihu.com/p/34133795)
 
@@ -868,11 +888,13 @@ content loader
 [正向代理与反向代理的浅解](https://segmentfault.com/a/1190000000762548)
 
 ## 调试
+
 [JavaScript Source Map 详解](http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html)
 
 注意修改地址的方法以及在webpack中的配置。
 
 # SEO
+
 [seo-and-optimize-meta](https://excaliburhan.com/post/seo-and-optimize-meta.html)
 
 # 数据库Database
