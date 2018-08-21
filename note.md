@@ -51,6 +51,7 @@ HTTP报文→|应用层|→TCP首部→|传输层|→IP数据包→|网络层|�
 [WebSocket：5分钟从入门到精通](https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651553461&idx=1&sn=1df66f564e85db96c3ef54d1790598f2&chksm=8025a974b752206280bc284e4d3288a5c357c4ff8bb427b38482e8b04c490a5ee833bb000100&mpshare=1&scene=1&srcid=0108XAs9DBEN2xOygi5rs2pB#rd)
 
 # 数据结构和算法
+
 ### 数组
 
 其他|---
@@ -760,6 +761,7 @@ Vetur的设置，不会报那些乱七八糟的错
 [揭秘组件库一二事](https://zhuanlan.zhihu.com/p/34654371)
 
 ## search搜索
+
 [为 Hexo 博客创建本地搜索引擎](https://liam0205.me/2017/09/21/local-search-engine-in-Hexo-site/)
 
 ### JavaScript是一门面向对象的语言吗？请把是不是换成能不能
@@ -771,6 +773,7 @@ Vetur的设置，不会报那些乱七八糟的错
 ### 前端开发
 
 # San百度MVVM框架
+
 [San](https://ecomfe.github.io/san/)
 [San - 一个传统的MVVM组件框架](http://efe.baidu.com/blog/san-a-traditional-mvvm-component-framework/)
 
@@ -812,6 +815,7 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 
 
 # Vim
+
 [Vim 初学者入门指南](https://linux.cn/article-8143-1.html)
 
 [Vim 快捷键速查表](https://linux.cn/article-8144-1.html)
@@ -845,13 +849,24 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 
 ## JWT
 
-[Introduction to JSON Web Tokens](https://jwt.io/introduction/)
-[JSON Web Token 入门教程](http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
-[八幅漫画理解使用JSON Web Token设计单点登录系统](http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/)
-[前后端分离之JWT用户认证](https://www.jianshu.com/p/180a870a308a)
-[前后端分离的项目，如何解决登录问题](https://my.oschina.net/liuyuantao/blog/875868)
-[Vue 进阶教程之：Axios配置JWT/封装插件/发送表单数据](https://www.jianshu.com/p/aeaa353da89b)
-[Express + JWT用户认证最轻实践](https://juejin.im/post/5b06c6baf265da0db4791805)
+- [Introduction to JSON Web Tokens](https://jwt.io/introduction/)
+- [JSON Web Token 入门教程](http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
+- [八幅漫画理解使用JSON Web Token设计单点登录系统](http://blog.leapoahead.com/2015/09/07/user-authentication-with-jwt/)
+- [前后端分离之JWT用户认证](http://lion1ou.win/2017/01/18/)
+- [前后端分离的项目，如何解决登录问题](https://my.oschina.net/liuyuantao/blog/875868)
+- [Vue 进阶教程之：Axios配置JWT/封装插件/发送表单数据](https://www.jianshu.com/p/aeaa353da89b)
+- [Express + JWT用户认证最轻实践](https://juejin.im/post/5b06c6baf265da0db4791805)
+- [express-jwt和jsonwebtoken是什么关系](https://blog.csdn.net/qq_27818541/article/details/76656784)
+- [Axios 源码分析之拦截器和请求取消](https://juejin.im/entry/59a3794751882524382f65ac)
+
+```js
+// 拦截request,设置全局请求为ajax请求
+axios.interceptors.request.use((config) => {
+  config.headers['X-Requested-With'] = 'XMLHttpRequest'
+  return config
+})
+```
+
 
 
 let aObj = {
@@ -865,6 +880,8 @@ let aObj = {
 aObj.a = 4
 console.log(aObj.a < 5 && aObj.a == 5 && aObj.a > 5);
 
+
+[基于角色管理的系统访问控制](https://www.ibm.com/developerworks/cn/security/syscontrol/index.html)
 
 # APP
 

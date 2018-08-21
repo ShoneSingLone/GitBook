@@ -118,6 +118,7 @@ db.auth("username","pwd")
 ## node middle ware
 
 [mongoose](https://mongoosejs.com/docs/guide.html)
+[Mongoose基础入门](https://www.cnblogs.com/xiaohuochai/p/7215067.html?utm_source=itdadao&utm_medium=referral)
 [model 自动加s的问题](https://mongoosejs.com/docs/api.html#mongoose_Mongoose-model)
 
 就是一定要写collection，并且与数据库的名字保持一致就不会有问题了
@@ -132,4 +133,26 @@ exports.goods = mongoose.model('', new Schema({
     "price": Number,
     "source": String
 }), "goods")//看这里，看这里
+
+let userContext = {
+    openid,
+    session_key,
+    userInfo: { ...params.wxUserInfo.userInfo
+    },
+    encryptedData: params.wxUserInfo.encryptedData,
+    signature: params.wxUserInfo.signature
+}
+let userOption = {
+    upsert: true,
+    overwrite: true
+}
+let isUpdate = await new Promise((resolve, reject) => {
+    User.update({
+        openid
+    }, userContext, userOption, function (error, raw) {
+        if (error) return reject(error);
+        console.log('The raw response from Mongo was ', raw);
+        return resolve(true)
+    })
+})
 ```

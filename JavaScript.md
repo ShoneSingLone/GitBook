@@ -346,7 +346,7 @@ hasOwnProperty判断自有属性
 
 [Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()](https://www.cnblogs.com/xiao-hong/p/3194027.html)
 [JavaScript数组所有API全解密](http://louiszhai.github.io/2017/04/28/array/?from=timeline)
-
+[【深度长文】JavaScript数组所有API全解密](http://louiszhai.github.io/2017/04/28/array/?from=timeline)
 [array 方法](http://louiszhai.github.io/2017/04/28/array/#some)
 
 - 改变自身
@@ -1359,6 +1359,7 @@ AuthController.rejected = function (err) {
 
 # 3.2 值
 
+[JavaScript赋值时的传值与传址](https://www.jianshu.com/p/1b8f6e129117)
 数组、字符、数字
 
 - JavaScript 中的数组是通过数字索引的一组任意类型的值。
