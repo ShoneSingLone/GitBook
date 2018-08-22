@@ -129,10 +129,14 @@ var Component = Vue.extend({
 #### 踩过的坑
 
 组件需在使用前声明，并没有类似变量提升的机制。
+
 - router
+
     1. children 使用的是数组 []
-    2. children 在parent里要有`<router-view>`
+    2. **children 在parent里要有`<router-view>`**
+
 ```js
+// name: news.newsitem  是NewsItem在父组件News中的router-view中显隐
 const router = new VueRouter({
     routes: [
     {
@@ -267,3 +271,11 @@ methods: {
     }
 }
 ```
+3.0出来了
+npm install -g @vue/cli
+
+
+https://github.com/browserslist/browserslist
+
+- [VUE中使用lib-flexible](https://blog.csdn.net/qq_22844483/article/details/79730604)
+- [移动端适配](https://www.w3cplus.com/search/node/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D)

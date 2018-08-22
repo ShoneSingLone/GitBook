@@ -9,6 +9,23 @@
 
 ## 数据类型
 
+[Blob](https://developer.mozilla.org/zh-CN/docs/Web/API/Blob)
+
+```js
+let title = document.getElementById('title');
+let tr = document.getElementById('tr');
+let downloadBtn = document.getElementById('download');
+
+downloadBtn.onclick = () => {
+  let content = `${title.innerHTML},${tr.innerHTML}`;
+  let blob =new Blob([content],{type: "text/plain" });
+  let url  = URL.createObjectURL(blob);
+  downloadBtn.href = url;
+  downloadBtn.download = '1.txt'
+}
+downloadBtn.click()
+```
+
 ### ECMAScript 6定义了7种数据类型
 
 >[JavaScript数据类型和数据结构](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures)
@@ -190,6 +207,8 @@ LHS RHS
 
 [关于连续赋值的坑](https://www.zhihu.com/question/41220520)
 [JavaScript 连等赋值问题](https://segmentfault.com/q/1010000002637728)
+
+[JavaScript中的逗号运算符](https://www.cnblogs.com/sun-mile-rain/p/4037916.html)
 
 ### 解构赋值
 

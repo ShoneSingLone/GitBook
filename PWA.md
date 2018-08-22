@@ -2,13 +2,11 @@
 
 ## 参考
 
-[lavas](https://lavas.baidu.com/)
-基于 Vue.js 的 PWA 解决方案
-帮助开发者快速搭建 PWA 应用，解决接入 PWA 的各种问题
+- [lavas](https://lavas.baidu.com/) 基于 Vue.js 的 PWA 解决方案 帮助开发者快速搭建 PWA 应用，解决接入 PWA 的各种问题
+- [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-sw)
+- [service-worker](https://lavas.baidu.com/pwa/offline-and-cache-loading/service-worker/service-worker-introduction)
 
-[service-worker](https://lavas.baidu.com/pwa/offline-and-cache-loading/service-worker/service-worker-introduction)
-
-- [](HTTPS)
+- [ ] (HTTPS)
 
 ## Service Worker
 
