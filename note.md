@@ -830,7 +830,7 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 [Vim 快捷键速查表](https://linux.cn/article-8144-1.html)
 
 
-# 待处理的部分
+## 待处理的部分
 
 [待处理](http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/)
 
@@ -853,7 +853,7 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 
 [Electron markdown editor](https://github.com/AnotherNote/anote)
 
-# 登录
+## 登录
 
 大致上，登录过程用户提供必要信息（登录框的name、password）；验证（后台数据库一类）；保存并返回验证结果。
 
@@ -870,14 +870,14 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 - [Axios 源码分析之拦截器和请求取消](https://juejin.im/entry/59a3794751882524382f65ac)
 
 ```js
+
 // 拦截request,设置全局请求为ajax请求
 axios.interceptors.request.use((config) => {
   config.headers['X-Requested-With'] = 'XMLHttpRequest'
   return config
 })
+
 ```
-
-
 
 let aObj = {
     get a() {

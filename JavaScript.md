@@ -234,6 +234,7 @@ LHS RHS
   - continue 语句
   - for...in 语句 *需要再学习一下，注意区别（挖坑）
   - for...of 语句 *
+  - [for of和for in的区别](https://segmentfault.com/q/1010000006658882)
 
   continue label break
 
@@ -872,7 +873,6 @@ function loadasyni(url){
   - macroTask：script脚本本身就是执行栈主要就是它先跑一遍，遇到后面列出来的玩意儿就放队列, setTimeout, setInterval, Mouse events、 Keyboard events、 Network events、 HTML parsing so on 是为了不阻塞，而移出执行栈，是一个级别（这个概念只是为了我自己方便记忆，没什么根据）
   - microTask，宏任务过程中产生的microTask。Promises、DOM mutations
 
-
 [preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)
 如果事件可取消，则取消该事件，而不停止事件的进一步传播。
 [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation)
@@ -880,29 +880,34 @@ function loadasyni(url){
 
 一般是插件需要
 
-
-
 ## BookmarkLet
+
 [BookmarkLet](https://gitee.com/Tech_Query/iBookmarkLet) 有空可以来研究一下
 
 ## iframe
+
 [js如何判断是否在iframe中及防止网页被别站用 iframe嵌套 (Load denied by X-Frame-Options)](http://justcoding.iteye.com/blog/2049127)
+
 ```js
-      if (self != top) {
-        alert('在iframe中');
-      }
+if (self != top) {
+    alert('iframe中');
+}
 ```
+
 [JQuery操作iframe父页面与子页面的元素与方法](http://www.cnblogs.com/imteach/p/3798375.html)
-# 跨域的问题
+
+## 跨域的问题
+
 XHR的使用
 B和C如何及解决跨域的问题
 jQuery给出的快鱼解决方案
 jsonp是什么？
-show me the code 
+show me the code
 
 ## CORS跨域资源共享
 
-[Access_control_CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
+- [Access_control_CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
+- [跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)
 
 ## DOM
 
