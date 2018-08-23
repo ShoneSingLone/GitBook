@@ -9,7 +9,10 @@
 
 ## 数据类型
 
-[Blob](https://developer.mozilla.org/zh-CN/docs/Web/API/Blob)
+### [Blob](https://developer.mozilla.org/zh-CN/docs/Web/API/Blob)
+
+- [前端js保存页面为图片下载到本地的坑](caibaojian.com/h5-download.html)
+- [使用 JavaScript 创建并下载文件](caibaojian.com/js-download.html)
 
 ```js
 let title = document.getElementById('title');
@@ -24,6 +27,7 @@ downloadBtn.onclick = () => {
   downloadBtn.download = '1.txt'
 }
 downloadBtn.click()
+
 ```
 
 ### ECMAScript 6定义了7种数据类型
@@ -507,29 +511,28 @@ object[__proto__] = new Constructor[prototype]
 ### this
 
 使用准则：
-1. 作为函数调用this指代全局对象（^strict）或者undefined（strict）；
 
+1. 作为函数调用this指代全局对象（^strict）或者undefined（strict）；
 
 1. 作为方法调用指代调用的对象本身；
 1. 作为构造函数this指代构造对象本身，跟2的方式不同。即`new object.constructor()`中的`this`（调用上下文）并不是object而是constructor()返回的对象；
 1. 作为间接调用call()、apply()，显示指定this。另外也可以理解成上面的三种是第四种的语法糖，因为都可以用第四种表示出来而且没有异议。
+
 ---
 >《你不知道的JavaScript（上卷）》
+
 - `this` 默认绑定 同上1
 - 隐式绑定
 - 显示绑定
 
 判断this
 现在我们可以根据优先级来判断函数在某个调用位置应用的是哪条规则。可以按照下面的顺序来进行判断：
-1. 函数是否在new 中调用（new 绑定）？如果是的话this 绑定的是新创建的对象。
- `var bar = new foo() `
-1. 函数是否通过call、apply（显式绑定）或者硬绑定调用？如果是的话，this 绑定的是指定的对象。
-`var bar = foo.call(obj2) `
-1. 函数是否在某个上下文对象中调用（隐式绑定）？如果是的话，this 绑定的是那个上下文对象。
-`var bar = obj1.foo() `
-1. 如果都不是的话，使用默认绑定。如果在严格模式下，就绑定到undefined，否则绑定到全局对象。
-`var bar = foo() `
-这个特性倒是可以用来区别当前是否是strict模式： `var isStrict = (function(){return !this})();`
+
+1. 函数是否在new 中调用（new 绑定）？如果是的话this 绑定的是新创建的对象。`var bar = new foo()`
+
+1. 函数是否通过call、apply（显式绑定）或者硬绑定调用？如果是的话，this 绑定的是指定的对象。 `var bar = foo.call(obj2)`
+1. 函数是否在某个上下文对象中调用（隐式绑定）？如果是的话，this 绑定的是那个上下文对象。 `var bar = obj1.foo()`
+1. 如果都不是的话，使用默认绑定。如果在严格模式下，就绑定到undefined，否则绑定到全局对象。`var bar = foo()` 这个特性倒是可以用来区别当前是否是strict模式： `var isStrict = (function(){return !this})();`
 
 ```JS
     function f(argument) {
@@ -580,6 +583,7 @@ ES6的新方法
 - `arguments.caller()`：调用当前函数的函数（栈）**This feature is obsolete**。 
 
 ### 默认值
+
 防止undefined或者null（未初始化）：
 
 ```js
@@ -604,6 +608,7 @@ function animalSentence(animals2 = "tigers", animals3 = "bears") {
 闭包？
 继承？
 原型？
+
 **Lexical scoping 词法作用域**
 函数定义时就决定了变量作用域，而不是在函数调用时。
 参数和局部变量，嵌套的，全局变量
@@ -957,13 +962,16 @@ document.URL是文档首次载入后保存的静态字符串不会随着hash变�
 
  window.location and document.location引用的是同一个对象
 
-- href
-  - protocal
-  - host
-    - hostname
-    - port
-- hash
-- search
+ 属 性 名| 例 子| 说 明
+ --|--|--
+hash|"#contents"| 返回URL中的hash（#号后跟零或多个字符），如果URL 中不包含散列，则返回空字符串
+host |"www.wrox.com:80"|返回服务器名称和端口号（如果有）
+hostname| "www.wrox.com" |返回不带端口号的服务器名称
+href| "http:/www.wrox.com" |返回当前加载页面的完整URL。而location对象的 toString()方法也返回这个值
+pathname |"/WileyCDA/" |返回URL中的目录和（或）文件名
+port |"8080" |返回URL中指定的端口号。如果URL中不包含端口号，则 这个属性返回空字符串
+protocol|"http:" |返回页面使用的协议。通常是http:或https:
+search "?q=javascript" 返回URL的查询字符串。这个字符串以问号开头
 
 ```js
 let url = decodeURI(location.href);

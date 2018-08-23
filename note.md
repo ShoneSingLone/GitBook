@@ -538,6 +538,14 @@ app.delete('/user', function (req, res) {
 ## cli对比 [migrating-from-npm](https://yarnpkg.com/zh-Hans/docs/migrating-from-npm)
 
 
+## npm
+
+```bash
+
+npm config set cache "D:\Programs\nodejs\node_cache"
+
+```
+
 ### npm  scripts
 
 简单来说，npm script学习了Gulp的优点。
@@ -552,6 +560,7 @@ app.delete('/user', function (req, res) {
 `npm run <自定义命令>`
 
 [npm 模块安装机制简介](http://www.ruanyifeng.com/blog/2016/01/npm-install.html)
+
 ```bash
 npm install -g npm-cache
 ```
@@ -838,6 +847,7 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 [前端开发中，使用base64图片的弊端是什么](https://www.zhihu.com/question/31155574)
 [自动精灵图工具](https://github.com/cupools/img-sprite)
 [图片优化－ base64 vs 雪碧图](http://www.jianshu.com/p/8d41aab5fba1)
+[性能优化三部曲之一——构建篇](https://github.com/lcxfs1991/blog/issues/4)
 
 [scroll组件](https://juejin.im/post/59b777015188257e764c716f)
 

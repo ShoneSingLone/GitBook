@@ -11,6 +11,7 @@
             height: 100vh;
             width: 100vw;
             text-align: center;
+            box-sizing: content-box;
         }
 
         #ball {
@@ -26,10 +27,14 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="a">
         <div style="position:absolut" id="ball">&nbsp;</div>
     </div>
     <script src="./main.js"></script>
+    <script>
+        window.a = document.getElementById('a')
+        console.log(a.style.width)
+    </script>
 </body>
 
 </html>
