@@ -868,6 +868,8 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 - [Express + JWT用户认证最轻实践](https://juejin.im/post/5b06c6baf265da0db4791805)
 - [express-jwt和jsonwebtoken是什么关系](https://blog.csdn.net/qq_27818541/article/details/76656784)
 - [Axios 源码分析之拦截器和请求取消](https://juejin.im/entry/59a3794751882524382f65ac)
+- [Github 第三方授权登录教程](https://blog.csdn.net/javagaorui5944/article/details/52918772)
+- [使用OAuth2.0协议的github、QQ、weibo第三方登录接入总结](https://www.cnblogs.com/gabrielchen/p/5800225.html#微博sdk)
 
 ```js
 

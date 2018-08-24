@@ -270,14 +270,15 @@ lf-None-Match
 2. CSS
 
 2. 盒模型： 基本概念：标准+IE 区别 如何转换 （CSS如何设置）box-sizing JS 如何获取对应的宽和高
+
 ```js
-  dom.style.width/height：获取的是内联样式
-  dom.currentStyle.width/height：兼容性只有IE可以
-  window.getComputedStyle(dom).width/height
-  dom.getBoundingClientRect().width/heigh
-  图片懒加载的时候可以用
+  dom.style.width||height//获取的是内联样式
+  dom.currentStyle.width||height//兼容性只有IE可以
+  window.getComputedStyle(dom).width||height
+  dom.getBoundingClientRect().width||heigh// 图片懒加载的时候可以用
   offsetWidth、height是什么呢？
 ```
+
 《Ninja》P321 offsetHeight、offsetWidth包含元素的padding 同时可以有效确定一个元素的可见性；
   - 基本概念:标准模型+IE模型 content padding border 标准模型和IE模型区别 CSS如何设置这两种模型 JS如何设置获取盒模型对应的宽和高
   - 边距重叠原理
