@@ -785,25 +785,25 @@ getItem、setItem、removeItem、clear
         - {"keyPath": ..., "autoIncrement": ...}
         - objectStore.createIndex(name,field,option{"unique":true})
 - transcation = db.transcation([name],"readwrite\readonly")
-    - objectStroe = transcation.objectStore(name)
-    - objectStroe add get put delete openCursor index
-        - cursor
-        ```js
-        cursor.onsuccess = function(e) {
-        var res = e.target.result;
-        if(res) {
-        res.continue();
-        }
-        transaction.oncomplete = function() {
-            ...
-        }
-        ```
-        - range = [IDBKeyRange](https://www.w3.org/TR/IndexedDB/#range-construct) bound upperBound lowerBound ...
-        - index
-        ```
-        range = IDBkeyRange.upperBound("7");
-        cursor = objectStroe.index("age").cursor(range);
-        ```
+  - objectStroe = transcation.objectStore(name)
+  - objectStroe add get put delete openCursor index
+      - cursor
+      ```js
+      cursor.onsuccess = function(e) {
+      var res = e.target.result;
+      if(res) {
+      res.continue();
+      }
+      transaction.oncomplete = function() {
+          ...
+      }
+      ```
+      - range = [IDBKeyRange](https://www.w3.org/TR/IndexedDB/#range-construct) bound upperBound lowerBound ...
+      - index
+      ```
+      range = IDBkeyRange.upperBound("7");
+      cursor = objectStroe.index("age").cursor(range);
+      ```
 - index
 - cursor
 - range
@@ -864,7 +864,7 @@ function loadasyni(url){
 事件处理
 
 ### 事件
-
+[JavaScript动画详解(一) —— 循环与事件监听](www.dengzhr.com/js/447)
 [事件循环event-loops](https://html.spec.whatwg.org/#event-loops)
 
 事件队列
@@ -968,6 +968,7 @@ document.URL是文档首次载入后保存的静态字符串不会随着hash变�
  window.location and document.location引用的是同一个对象
 
  属 性 名| 例 子| 说 明
+ --|--|--
  --|--|--
 hash|"#contents"| 返回URL中的hash（#号后跟零或多个字符），如果URL 中不包含散列，则返回空字符串
 host |"www.wrox.com:80"|返回服务器名称和端口号（如果有）
