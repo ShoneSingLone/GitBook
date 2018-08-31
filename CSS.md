@@ -351,6 +351,7 @@ background: linear-gradient(cyan, transparent),
 - [Layout Gala](https://blog.html.it/layoutgala/index.html)
 - [CSS布局](http://zh.learnlayout.com/position.html)
 - [position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position)
+- [布局的下一次革新](https://juejin.im/post/5b85586ce51d4538c77a9cc1?utm_medium=fe&utm_source=weixinqun)
 
 1. 流动模型（Flow）/ 标准文档流
 1. 浮动模型 (Float)
@@ -471,7 +472,7 @@ Inline-block和浮动布局的区别？
 - [纯js实现瀑布流布局及ajax动态新增数据](https://www.teakki.com/p/5901f3cab819c55a2789c289)
 - [多行文本'...'](https://qianduan.group/posts/5a9ff0e80cf6b624d2239cc8)
 
-### 居中
+### [居中](https://www.w3cplus.com/css/centering-css-complete-guide.html)
 
 1. 水平居中
     1. 行内元素：通过给父元素设置 text-align:center
