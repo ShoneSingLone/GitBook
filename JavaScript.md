@@ -370,7 +370,7 @@ hasOwnProperty判断自有属性
 
 [Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()](https://www.cnblogs.com/xiao-hong/p/3194027.html)
 [JavaScript数组所有API全解密](http://louiszhai.github.io/2017/04/28/array/?from=timeline)
-[【深度长文】JavaScript数组所有API全解密](http://louiszhai.github.io/2017/04/28/array/?from=timeline)
+[【深度长文】JavaScript数组所有API全解密](http://louiszhai.githnub.io/2017/04/28/array/?from=timeline)
 [array 方法](http://louiszhai.github.io/2017/04/28/array/#some)
 
 - 改变自身
@@ -1000,22 +1000,25 @@ history.go(-1|0|1)
 
 ## Element
 
-**remenber this!**: `element.scrollHeight - element.scrollTop === element.clientHeight`
+图片懒加载需要了解
 
- ---
+- [clientHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/clientHeight)这个属性是只读属性，对于没有定义CSS或者内联布局盒子的元素为0，否则，它是元素内部的高度(单位像素)，包含内边距，但不包括水平滚动条、边框和外边距。 clientHeight 可以通过 CSS height + CSS padding - 水平滚动条高度 (如果存在)来计算.
+  - ![Element.clientHeight](./media/html/Dimensions-client.png)
+- [scrollHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollHeight)这个只读属性是一个元素内容高度的度量，包括由于溢出导致的视图中不可见内容。
+  - ![Element.offsetHeight](./JavaScript/scrollHeight.png)
+- [offsetHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetHeight)HTMLElement.offsetHeight 是一个只读属性，它返回该元素的像素高度，高度包含该元素的垂直内边距和边框，且是一个整数。 通常，元素的offsetHeight是一种元素CSS高度的衡量标准，包括元素的边框、内边距和元素的水平滚动条（如果存在且渲染的话），不包含:before或:after等伪类元素的高度。 对于文档的body对象，它包括代替元素的CSS高度线性总含量高。浮动元素的向下延伸内容高度是被忽略的。
+  - ![Element.offsetHeight](./media/html/offsetHeight.png)
+- [offsetTop](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetTop)为只读属性，它返回当前元素相对于其 offsetParent 元素的顶部的距离。
+- [scrollTop](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollTop)一个元素的 scrollTop 值是这个元素的顶部到它的最顶部可见内容（的顶部）的距离的度量。当一个元素的内容没有产生垂直方向的滚动条，那么它的 scrollTop 值为0。
+  - ![Element.offsetHeight](./JavaScript/scrollTop.png)
 
-- [clientHeight](http://devdocs.io/dom/element/clientheight)
-- [offsetHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/offsetHeight)
-- [offsetTop](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/offsetTop)
-- [scrollHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollHeight)
-- [scrollTop](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollTop)
-- [clientHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/clientHeight)
+**remenber this!**: 元素是否滚动到底`element.scrollHeight - element.scrollTop === element.clientHeight`
 
-- .clientHeight
-     ![Element.clientHeight](./media/html/Dimensions-client.png)
-- .[offsetHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetHeight)
-     ![Element.offsetHeight](./media/html/offsetHeight.png)
-- [Element.scrollIntoView()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollIntoView)方法让当前的元素滚动到浏览器窗口的可视区域内。
+- .[Element.clientWidth](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/clientWidth)Element.clientWidth 属性表示元素的内部宽度，以像素计。该属性包括内边距，但不包括垂直滚动条（如果有）、边框和外边距。
+- .[Element.scrollWidth](https://developer.mozilla.org/zh-CN/docs/Web/API/element/scrollWidth)元素的scrollWidth只读属性以px为单位返回元素的内容区域宽度或元素的本身的宽度中更大的那个值。若元素的宽度大于其内容的区域（例如，元素存在滚动条时）, scrollWidth的值要大于clientWidth。
+- .[Element.offsetWidth](http://devdocs.io/dom/htmlelement/offsetwidth)The HTMLElement.offsetWidth read-only property returns the layout width of an element. Typically, an element's offsetWidth is a measurement which includes the element borders, the element horizontal padding, the element vertical scrollbar (if present, if rendered) and the element CSS width. If the element is hidden (for example, by style.display on the element or one of its ancestors to "none"), then 0 is returned.
+
+- [Element.scrollIntoView()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollIntoView)**这是一个实验中的功能**方法让当前的元素滚动到浏览器窗口的可视区域内。
 
 <iframe height='265' scrolling='no' title='scrollHeight 演示Edit' src='//codepen.io/singlone/embed/ZvqymO/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/singlone/pen/ZvqymO/'>scrollHeight 演示Edit</a> by ShoneSingLone (<a href='https://codepen.io/singlone'>@singlone</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>

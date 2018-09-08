@@ -27,6 +27,8 @@ Audio、Video、 Canvas、 webgl等等.....
 </html>
 ```
 
+[img](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img)主要是srcset
+
 ```js
 /* 结构 */
 <article>//标记定义一篇文章
@@ -186,7 +188,6 @@ autocomplete/autofocus/ multiple/placeholder/required
 ### 其他属性
 
 script/ol/html/style
-
 
 ## HTML
 

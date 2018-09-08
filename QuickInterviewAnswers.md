@@ -2,18 +2,12 @@
 
 实例题(根据盒模型解释边距重叠)
 
-- BFC (边距重叠解决方案)
-
-BFC的基本概念
-BFC的原理
-如何创建BFC
-BFC的使用场景
-
 - fix float所产生的塌陷/元素下坠
   - [利用:after伪类元素清除](http://www.html-js.com/article/2203)
   - [Why does overflow hidden stop floating elements escaping their container?](https://stackoverflow.com/questions/9193214/why-does-overflow-hidden-stop-floating-elements-escaping-their-container)
   - [BFC 块级格式化上下文](http://web.jobbole.com/83149/)+ [CSS之BFC详解](http://www.html-js.com/article/1866)+[](http://www.10tiao.com/html/59/201712/2651553261/1.html)
-  **BFC特性**
+
+  - **BFC特性**
   1. 内部的Box会在垂直方向，从顶部开始一个接一个地放置。
   1. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加
   1. 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
@@ -127,13 +121,7 @@ new运算符
 什么是同源策略及限制
 同源策略限制从一个源加载的文档或脚本如何与来自另一一个源的资源进行交互。
 这是一个用于隔离潜在恶意文件的关键的安全机制。
-- Cookie、LocalStorage 和IndexDB无法读取
-- DOM无法获得
-- AJAX请求不能发送
 
-什么是同源策略及限制
-同源策略限制从一个源加载的文档或脚本如何与来自另一一个源的资源进行交互。
-这是一个用于隔离潜在恶意文件的关键的安全机制。
 - Cookie、LocalStorage 和IndexDB无法读取
 - DOM无法获得
 - AJAX请求不能发送
@@ -191,7 +179,6 @@ CSS改动
   什么是DOCTYPE及作用
   DTD (document type definition，文档类型定义)是一系列的语法规则，用来定义XML或(X)HTML的文件类型。浏览器会使用它来判断文档类型，决定使 用何种协议来解析，以及切换浏览器模式
   DOCTYPE是用来声明文档类型和DTD规范的，一个主要的用途便是文件的合法性验证。如果文件代码不合法，那么浏览器解析时便会出一-些差错
-
 
 渲染机制类什么是DOCTYPE及作用
 HTML 5
@@ -256,6 +243,7 @@ lf-None-Match
 - [面试题之HTML5新特性，语义化](https://www.cnblogs.com/sunshine21/p/7747407.html)
 
 - 浏览器的标准模式和怪异模式
+- 替换元素 非替换元素
 - xhtml和html的区别
 - 使用data-的好处
 - meta标签
@@ -280,12 +268,18 @@ lf-None-Match
 ```
 
 《Ninja》P321 offsetHeight、offsetWidth包含元素的padding 同时可以有效确定一个元素的可见性；
-  - 基本概念:标准模型+IE模型 content padding border 标准模型和IE模型区别 CSS如何设置这两种模型 JS如何设置获取盒模型对应的宽和高
-  - 边距重叠原理
-  - 什么是bfc，如何创建bfc？解决什么问题？
+
+- 基本概念:标准模型+IE模型 content padding border 标准模型和IE模型区别 CSS如何设置这两种模型 JS如何设置获取盒模型对应的宽和高
+- 边距重叠原理
+- 什么是bfc，如何创建bfc？解决什么问题？
+- BFC (边距重叠解决方案)
+- BFC的基本概念
+- BFC的原理
+- 如何创建BFC
+- BFC的使用场景
 - CSS3新特性，伪类，伪元素，锚伪类
 - CSS实现隐藏页面的方式
-- 如何实现水平居中和垂直居中。
+- [如何实现水平居中和垂直居中。](https://www.zhangxinxu.com/wordpress/2009/08/%E5%A4%A7%E5%B0%8F%E4%B8%8D%E5%9B%BA%E5%AE%9A%E7%9A%84%E5%9B%BE%E7%89%87%E3%80%81%E5%A4%9A%E8%A1%8C%E6%96%87%E5%AD%97%E7%9A%84%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/)
 - 说说position，display
 - 请解释*{box-sizing:border-box;}的作用，并说明使用它的好处
 - 浮动元素引起的问题和解决办法？绝对定位和相对定位，元素浮动后的display值
@@ -297,9 +291,11 @@ lf-None-Match
 - table布局的作用
 - 实现两栏布局有哪些方法？
 - css dpi
-- 你知道attribute和property的区别么？
+- attribute和property的区别么？
+
 自定义的比如说设定data-url，这个data-url就是attribute，无法通过ele.dataUrl获取，但是getAttribute("data-url")就可以；按照HTML5标准，ele.dataset.url也行。而在CSS3中attr可获取attribute data-*的部分
 [CSS/attr](https://developer.mozilla.org/en-US/docs/Web/CSS/attr)
+
 - css布局问题？css实现三列布局怎么做？如果中间是自适应又怎么做？
 - 流式布局如何实现，响应式布局如何实现
 - 移动端布局方案
@@ -350,9 +346,11 @@ lf-None-Match
 - 原生事件绑定（跨浏览器），dom0和dom2的区别？
 - 给定一个元素获取它相对于视图窗口的坐标
 - 如何实现图片滚动懒加载
+
 [在vue中使用图片懒加载详细指南](https://segmentfault.com/a/1190000011672452)
 [原生JS实现最简单的图片懒加载](https://segmentfault.com/a/1190000010744417)
-- js 的字符串类型有哪些方法？ 正则表达式的函数怎么使用？
+
+- js 的字符串类型有哪些方法？ 
 - 深拷贝
 - 编写一个通用的事件监听函数
 - web端cookie的设置和获取
@@ -362,7 +360,7 @@ lf-None-Match
 - js的垃圾回收机制
 - 内存泄漏的原因和场景
 - DOM事件的绑定的几种方式
-- DOM事件中target和currentTarget的区别
+- [DOM事件中target和currentTarget的区别](https://www.cnblogs.com/wkylin/archive/2011/08/25/2153538.html)
 - typeof 和 instanceof 区别，instanceof原理
 - js动画和css3动画比较
 - JavaScript 倒计时（setTimeout）
@@ -370,8 +368,11 @@ lf-None-Match
 - js的设计模式知道那些
 - 轮播图的实现，以及轮播图组件开发，轮播10000张图片过程
 - websocket的工作原理和机制。
-- 手指点击可以触控的屏幕时，是什么事件？ 什么是函数柯里化？以及说一下JS的API有哪些应用到了函数柯里化的实现？(函数柯里化一些了解，以及在函数式编程的应用，- 最后说了一下JS中bind函数和数组的reduce方法用到了函数柯里化。)
-- JS代码调试-
+- 手指点击可以触控的屏幕时，是什么事件？ 
+- 什么是函数柯里化？以及说一下JS的API有哪些应用到了函数柯里化的实现？
+- 函数柯里化一些了解，以及在函数式编程的应用，
+- 最后说了一下JS中bind函数和数组的reduce方法用到了函数柯里化
+- JS代码调试
 
 4.ES6
 
@@ -436,7 +437,7 @@ CSRF防御措施
 
 7.工程化
 
-- 对webpack,gulp，grunt等有没有了解?对比。
+- 对webpack,gulp，grunt等有没有了解?
 - webpack的入口文件怎么配置，多个入口怎么分割。
 - webpack的loader和plugins的区别
 - gulp的具体使用。
@@ -471,6 +472,7 @@ CSRF防御措施
 - 介绍一下bootstrap的栅格系统是如何实现的-
 
 10.Nodejs
+
 - 对nodejs有没有了解
 - Express 和 koa 有什么关系，有什么区别？
 - nodejs适合做什么样的业务？
@@ -481,11 +483,14 @@ CSRF防御措施
 - 说一下 Nodejs 的 event loop 的原理-
 
 11.数据结构
+
 - 基本数据结构：（数组、队列、链表、堆、二叉树、哈希表等等）
 - 8种排序算法，原理，以及适用场景和复杂度
-- 说出越多越好的费波拉切数列的实现方法？-
+- 说出越多越好的斐波拉切数列的实现方法？
+  - 尾递归
 
 12.性能优化
+
 - cdn的用法是什么？什么时候用到？
 - 浏览器的页面优化？
 - 如何优化 DOM 操作的性能
@@ -493,7 +498,9 @@ CSRF防御措施
 - 单页面应用首屏显示比较慢，原因是什么？有什么解决方案？-
 
 13.其他
+
 - 正则表达式
+- 正则表达式的函数怎么使用？
 - 前端渲染和后端渲染的优缺点
 - 数据库的四大特性，什么是原子性，表的关系
 - 你觉得前端体系应该是怎样的？
@@ -507,6 +514,10 @@ CSRF防御措施
 - click在ios上有300ms延迟，原因及如何解决
 - 移动端的适配，rem+媒体查询/meta头设置
 - 移动端的手势和事件；
+
+[HTML5移动端交互——触摸操作篇](https://zhuanlan.zhihu.com/p/23386861?refer=html5tech)
+[HTML5移动端交互——手势操作篇](https://zhuanlan.zhihu.com/p/23503986)
+
 - unicode，utf8，gbk编码的了解，乱码的解决-
 
 14.开放性问题

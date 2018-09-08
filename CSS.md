@@ -52,6 +52,7 @@ width auto 的作用，默认值的影响。
   - Element[attribute*="value"]
   - Element[attribute|="value"]
 - 伪类选择器
+  - [A Whole Bunch of Amazing Stuff Pseudo Elements Can Do](https://css-tricks.com/pseudo-element-roundup/)
   - 动态伪类
     - 锚点伪类
       - :link
@@ -491,7 +492,7 @@ Inline-block和浮动布局的区别？
 1. 垂直居中
     1. 父元素高度确定
         1. 单行文本:通过设置height 和 line-height 高度一致来实现的。
-
+        但是要理解如果不设置height，那么height是由内部元素撑开，即如果只有一个单行文本，只需要设置line-height就行了
         <script src='http://runjs.cn/gist/11yepad9/all'></script>
 
             - ```
@@ -512,8 +513,7 @@ Inline-block和浮动布局的区别？
 
 [flexboxfroggy](http://flexboxfroggy.com)
 
-
-##
+## 
 
 - [使用 CSS overscroll-behavior 控制滚动行为：自定义下拉刷新和溢出效果](https://github.com/dev-reading/fe/blob/master/articles/2017-11-15-overscroll-behavior.md)
 - [禁止遮罩层以下屏幕滑动----正解(更新版)](http://www.cnblogs.com/gaohui/p/5819777.html)
