@@ -970,14 +970,14 @@ document.URL是文档首次载入后保存的静态字符串不会随着hash变�
  属 性 名| 例 子| 说 明
  --|--|--
  --|--|--
-hash|"#contents"| 返回URL中的hash（#号后跟零或多个字符），如果URL 中不包含散列，则返回空字符串
+href| "http:/www.wrox.com:8080/pathname?q=javascript#hash" |返回当前加载页面的完整URL。而location对象的 toString()方法也返回这个值
+protocol|"http:" |返回页面使用的协议。通常是http:或https:
 host |"www.wrox.com:80"|返回服务器名称和端口号（如果有）
 hostname| "www.wrox.com" |返回不带端口号的服务器名称
-href| "http:/www.wrox.com" |返回当前加载页面的完整URL。而location对象的 toString()方法也返回这个值
-pathname |"/WileyCDA/" |返回URL中的目录和（或）文件名
 port |"8080" |返回URL中指定的端口号。如果URL中不包含端口号，则 这个属性返回空字符串
-protocol|"http:" |返回页面使用的协议。通常是http:或https:
+pathname |"/pathname/" |返回URL中的目录和（或）文件名
 search "?q=javascript" 返回URL的查询字符串。这个字符串以问号开头
+hash|"#hash"| 返回URL中的hash（#号后跟零或多个字符），如果URL 中不包含散列，则返回空字符串
 
 ```js
 let url = decodeURI(location.href);
@@ -1001,6 +1001,9 @@ history.go(-1|0|1)
 ## Element
 
 图片懒加载需要了解
+- [Element.getBoundingClientRect()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect)
+  - ![Element.offsetHeight](./JavaScript/rect.png)
+
 
 - [clientHeight](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/clientHeight)这个属性是只读属性，对于没有定义CSS或者内联布局盒子的元素为0，否则，它是元素内部的高度(单位像素)，包含内边距，但不包括水平滚动条、边框和外边距。 clientHeight 可以通过 CSS height + CSS padding - 水平滚动条高度 (如果存在)来计算.
   - ![Element.clientHeight](./media/html/Dimensions-client.png)
@@ -1014,11 +1017,9 @@ history.go(-1|0|1)
 
 **remenber this!**: 元素是否滚动到底`element.scrollHeight - element.scrollTop === element.clientHeight`
 
-- .[Element.clientWidth](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/clientWidth)Element.clientWidth 属性表示元素的内部宽度，以像素计。该属性包括内边距，但不包括垂直滚动条（如果有）、边框和外边距。
-- .[Element.scrollWidth](https://developer.mozilla.org/zh-CN/docs/Web/API/element/scrollWidth)元素的scrollWidth只读属性以px为单位返回元素的内容区域宽度或元素的本身的宽度中更大的那个值。若元素的宽度大于其内容的区域（例如，元素存在滚动条时）, scrollWidth的值要大于clientWidth。
-- .[Element.offsetWidth](http://devdocs.io/dom/htmlelement/offsetwidth)The HTMLElement.offsetWidth read-only property returns the layout width of an element. Typically, an element's offsetWidth is a measurement which includes the element borders, the element horizontal padding, the element vertical scrollbar (if present, if rendered) and the element CSS width. If the element is hidden (for example, by style.display on the element or one of its ancestors to "none"), then 0 is returned.
-
 - [Element.scrollIntoView()](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollIntoView)**这是一个实验中的功能**方法让当前的元素滚动到浏览器窗口的可视区域内。
+- [IntersectionObserver API](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollIntoView)**这是一个实验中的功能**为开发者提供了一种可以异步监听目标元素与其祖先或视窗(viewport)交叉状态的手段。
+- [IntersectionObserver API 使用教程](http://www.ruanyifeng.com/blog/2016/11/intersectionobserver_api.html)**这是一个实验中的功能**为开发者提供了一种可以异步监听目标元素与其祖先或视窗(viewport)交叉状态的手段。
 
 <iframe height='265' scrolling='no' title='scrollHeight 演示Edit' src='//codepen.io/singlone/embed/ZvqymO/?height=265&theme-id=0&default-tab=html,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/singlone/pen/ZvqymO/'>scrollHeight 演示Edit</a> by ShoneSingLone (<a href='https://codepen.io/singlone'>@singlone</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>

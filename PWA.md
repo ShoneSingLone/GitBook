@@ -6,7 +6,11 @@
 - [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-sw)
 - [service-worker](https://lavas.baidu.com/pwa/offline-and-cache-loading/service-worker/service-worker-introduction)
 
-- [ ] (HTTPS)
+- [PWA官网] (https://developers.google.com/web/progressive-web-apps/) 
+- [letsencrypt] (https://letsencrypt.org/) HTTPS总要有个背锅，啊呸，背书的！
+- [Progressive Web Apps - A book by Dean Hume] (https://github.com/deanhume/progressive-web-apps-book) 
+- [PWA 的审核、性能指标和最佳实践工具] (https://github.com/GoogleChrome/lighthouse) 
+- [第三方跨平台推送通知工具] (https://onesignal.com/) 
 
 ## Service Worker
 

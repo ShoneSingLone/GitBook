@@ -29,7 +29,31 @@
 - inline和inline-block的区别
 - 哪些是块级元素那些是行级元素，各有什么特点
 - grid布局
-- table布局的作用
+
+---
+
+- table布局的作用 [css table布局大法，解决你大部分居中、多列等高、左右布局的问题](https://segmentfault.com/a/1190000007007885)
+
+**table标签（display:table）**
+
+1. table可设置宽高、margin、border、padding等属性。属性值的单位可以使用px，百分比值。
+2. table的宽度默认由内容的宽高撑开，如果table设置了宽度，宽度默认被它里面的td平均分，如果给某一个td设置宽度，那么table剩余的宽度会被其他的td平均分（有点类似flex布局）
+3. 给table设置的高度起到的作用只是min-height的作用，当内容的高度高于设置的高度时，table的高度会被撑高。
+
+**tr标签（display:table-row）**
+
+1. 给tr设置高度只起到min-height的作用，默认会平分table的高度。
+2. tr中的td默认高度会继承tr的高度，若给任一td设置了高度，其他td的高度也同样变高。适合多列等高布局
+3. 设置宽度、margin、都不起作用
+
+**td标签（display:table-cell）**
+
+1. td默认继承tr的高度，且平分table的宽度
+2. 若table（display:table）不存在，给td设置的宽高不能用百分比只能用准确的数值
+3. 给td设置vertical-align: middle; td元素里面(除float、position:absolute)所有的块级、非块级元素都会相对于td垂直居中
+4. 给td设置text-align: center; td元素里面所有非block元素(除float、position:absolute)都会相对于td水平居中，虽然block元素不居中，但其中的文字或inline元素会水平居中
+
+---
 - 实现两栏布局有哪些方法？
 - css dpi
 - 你知道attribute和property的区别么？ 自定义的比如说设定data-url，这个data-url就是attribute，无法通过ele.dataUrl获取，但是getAttribute("data-url")就可以；按照HTML5标准，ele.dataset.url也行。而在CSS3中attr可获取attribute data-*的部分 [CSS/attr](https://developer.mozilla.org/en-US/docs/Web/CSS/attr)

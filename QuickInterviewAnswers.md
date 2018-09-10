@@ -1,70 +1,13 @@
 # 知识点汇总
 
-实例题(根据盒模型解释边距重叠)
+---
 
-- fix float所产生的塌陷/元素下坠
-  - [利用:after伪类元素清除](http://www.html-js.com/article/2203)
-  - [Why does overflow hidden stop floating elements escaping their container?](https://stackoverflow.com/questions/9193214/why-does-overflow-hidden-stop-floating-elements-escaping-their-container)
-  - [BFC 块级格式化上下文](http://web.jobbole.com/83149/)+ [CSS之BFC详解](http://www.html-js.com/article/1866)+[](http://www.10tiao.com/html/59/201712/2651553261/1.html)
+HTTP协议类
 
-  - **BFC特性**
-  1. 内部的Box会在垂直方向，从顶部开始一个接一个地放置。
-  1. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加
-  1. 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
-  1. BFC的区域不会与float box叠加。
-  1. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然。
-  1. 计算BFC的高度时，浮动元素也参与计算。
-
-  ---
-  
-  作用
-
-  1. 说的
-  1. 解决margin叠加问题 
-  1. 布局[CSS之BFC详解](http://www.html-js.com/article/1866)
-  1. 用于清除浮动，计算BFC高度.
-  ---
-
-  `overflow: hidden;`只是创建BFC的方式之一，比较常用。
-
-  - `display: table` 可能引发响应性问题
-  - `overflow: scroll` 可能产生多余的滚动条
-  - `float: left` 将把元素移至左侧，并被其他元素环绕
-  - `overflow: hidden` 将裁切溢出元素
-
-DOM事件类
-基本概念:
- DOM事件的级别、0/2/3
-
-- DOM事件模型 
-
-捕获、冒泡 默认false 冒泡 从内到外；捕获是从外到内
-
-- DOM事件流
-
-描述DOM事件捕获的具体流程上
-Event对象的常见应用一
-
-- DOM事件类
-  Event对象的常见应用
-  event.preventDefault()event.stopPropagation()
-  event.stoplmmediatePropagation()
-  event.currentTarget 当前绑定的事件
-  event.target
-  委派代理 添加在祖先元素上，event.target获取呗单击的元素jQuery 委托实现
-
-- 自定义事件
-
-addEventListener
-dispatchEvent
-new Event(e) new CustomEvent(e,option):e.option
-
-- HTTP协议类
-
-HTTP协议的主要特点
-HTTP报文的组成部分
-HTTP方法
-POST和GET的区别
+- HTTP协议的主要特点
+- HTTP报文的组成部分
+- HTTP方法
+- POST和GET的区别
 - GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息GET参数通过URL传递，POST放在Request body中
 - GET在浏览器回退时是无害的，而POST会再次提交请求GET产生的URL地址可以被收藏，而POST不可以
 - GET请求会被浏览器主动缓存，而POST不会，除非手动设置
@@ -73,8 +16,11 @@ POST和GET的区别
 - GET请求在URL中传送的参数是有长度限制的，而POST没有限制
 - 对参数的数据类型，GET只接受ASCII字符，而POST没有限制
 
+---
 HTTP状态码
-- 1xx:指示信息-表示请求已接收，继续处理，2xx:成功-表示请求已被成功接收
+
+- 1xx:指示信息-表示请求已接收，继续处理，
+- 2xx:成功-表示请求已被成功接收
 - 3xx:重定向-要完成请求必须进行更进一步的操作
 - 4xx:客户端错误-请求有语法错误或请求无法实现
   - 429 Too many requests
@@ -89,6 +35,7 @@ HTTP状态码
 - 302 Found:所请求的页面已经临时转移新的url 
 - 304 Not Modified:客户端有缓冲的文档并发出了一个条件性的请求，服务器告诉客户，原来缓冲的 文档还可以继续使用
 
+---
 什么是持久连接
 
 1.1版本 持久与非持久的区别
@@ -129,18 +76,16 @@ new运算符
 通信类
 前后端如何通信
 
-- Ajax
+- Ajax： 如何创建Ajax
+  - XML HttpRequest对象的工作流程 （兼容性处理）
+  - 事件的触发条件
+  - 事件的触发顺序
 - WebSocket
 - CORS(存疑，这是一种通信方式？)
 
-如何创建Ajax
-
-- XML HttpRequest对象的工作流程 （兼容性处理）
-- 事件的触发条件
-- 事件的触发顺序
-
 跨域通信的几种方式
 
+- [前端跨域方法论](https://juejin.im/post/5b91d3be5188255c95380b5e)
 - JSONP
 - Hash
 - postMessage
@@ -152,7 +97,6 @@ new运算符
 存储
 DOM
 Ajax
-
 
 渲染机制类
 重排Reflow
@@ -242,8 +186,8 @@ lf-None-Match
 
 - [面试题之HTML5新特性，语义化](https://www.cnblogs.com/sunshine21/p/7747407.html)
 
-- 浏览器的标准模式和怪异模式
-- 替换元素 非替换元素
+- [浏览器的标准模式和怪异模式网景和IE5](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Quirks_Mode_and_Standards_Mode)
+- [替换元素 非替换元素](https://segmentfault.com/a/1190000006835284)
 - xhtml和html的区别
 - 使用data-的好处
 - meta标签
@@ -259,12 +203,13 @@ lf-None-Match
 
 2. 盒模型： 基本概念：标准+IE 区别 如何转换 （CSS如何设置）box-sizing JS 如何获取对应的宽和高
 
+[getComputedStyle](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/getComputedStyle)
+
 ```js
   dom.style.width||height//获取的是内联样式
   dom.currentStyle.width||height//兼容性只有IE可以
   window.getComputedStyle(dom).width||height
   dom.getBoundingClientRect().width||heigh// 图片懒加载的时候可以用
-  offsetWidth、height是什么呢？
 ```
 
 《Ninja》P321 offsetHeight、offsetWidth包含元素的padding 同时可以有效确定一个元素的可见性；
@@ -277,7 +222,41 @@ lf-None-Match
 - BFC的原理
 - 如何创建BFC
 - BFC的使用场景
+根据盒模型解释边距重叠
+
+- fix float所产生的塌陷/元素下坠
+- [利用:after伪类元素清除](http://www.html-js.com/article/2203)
+- [Why does overflow hidden stop floating elements escaping their container?](https://stackoverflow.com/questions/9193214/why-does-overflow-hidden-stop-floating-elements-escaping-their-container)
+- [BFC 块级格式化上下文](http://web.jobbole.com/83149/)+ [CSS之BFC详解](http://www.html-js.com/article/1866)
+- [CSS: 潜藏着的BFC](http://www.10tiao.com/html/59/201712/2651553261/1.html)
+
+BFC特性
+
+1. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素，反之亦然。
+1. 内部的Box会在垂直方向，从顶部开始一个接一个地放置。
+1. Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加
+1. 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化direction属性，否则相反)。即使存在浮动也是如此。
+1. BFC的区域不会与float box叠加。
+1. 计算BFC的高度时，浮动元素也参与计算。
+
+举例
+
+- 根元素或其它包含它的元素
+- float的值不为none；
+- overflow的值不为visible；
+- position的值不为static；
+- display的值为inline-block、table-cell、table-caption；
+- flex boxes (元素的display: flex或inline-flex)；
+
+作用
+
+  1. 解决margin叠加问题:可以在其中一个元素外面包裹一层容器，并触发该容器生成一个BFC。那么两个元素便属于不同的BFC，就不会发生margin重叠了。(Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生叠加)
+  1. 用于清除浮动，计算BFC高度.(BFC的区域不会与float box叠加。)
+  1. 布局[CSS之BFC详解](http://www.html-js.com/article/1866)
+  
+---
 - CSS3新特性，伪类，伪元素，锚伪类
+
 - CSS实现隐藏页面的方式
 - [如何实现水平居中和垂直居中。](https://www.zhangxinxu.com/wordpress/2009/08/%E5%A4%A7%E5%B0%8F%E4%B8%8D%E5%9B%BA%E5%AE%9A%E7%9A%84%E5%9B%BE%E7%89%87%E3%80%81%E5%A4%9A%E8%A1%8C%E6%96%87%E5%AD%97%E7%9A%84%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/)
 - 说说position，display
@@ -309,6 +288,7 @@ lf-None-Match
 - 对移动端开发了解多少？（响应式设计、Zepto；@media、viewport、JavaScript 正则表达式判断平台。）
 - CSS中的长度单位（px,pt,rem,em,ex,vw,vh,vh,vmin,vmax）
 - CSS 选择器的优先级是怎样的？
+  - 权重
 - 雪碧图
 - svg
 - 媒体查询的原理是什么？
@@ -318,23 +298,70 @@ lf-None-Match
 - 解释一下“::before”和“:after”中的双冒号和单冒号的区别-
 
 3.JS
+
 - js的基本类型有哪些？引用类型有哪些？null和undefined的区别。
 - 如何判断一个变量是Array类型？如何判断一个变量是Number类型？（都不止一种）
 - Object是引用类型嘛？引用类型和基本类型有什么区别？哪个是存在堆哪一个是存在栈上面的？
 - JS常见的dom操作api 增删查改
+
+---
+
 - 解释一下事件冒泡和事件捕获
-- 事件委托（手写例子），事件冒泡和捕获，如何阻止冒泡？如何组织默认事件？
+- DOM事件模型 捕获、冒泡： 默认false 所以默认冒泡 从内到外；捕获是从外到内
+- 事件委托（手写例子）
+
+```js
+//阻止冒泡
+function stopBubble(e) {
+if(e && e.stopPropagation){
+  e.stopPropagation();
+  } else {
+  window.event.cancelBubble = true;
+  }
+};
+//阻止默认事件
+function stopDefault(e){
+if(e && e.preventDefault) {
+e.preventDefault();
+} else {
+window.event.returnValue = false;
+}
+return false;
+};
+```
+
+- [事件委托和冒泡机制有关系吗？](https://segmentfault.com/a/1190000000470398)
+
+基本概念: DOM事件的级别、0/2/3
+
+- [DOM级别与DOM事件](https://www.jianshu.com/p/622d994906f7)
+- [DOM的默认事件、事件模型、事件委托、阻止默认事件、冒泡事件的方式等](https://blog.csdn.net/u013194113/article/details/52027275)
+- [0级DOM和2级DOM事件模型浅析](https://blog.csdn.net/sixwinds/article/details/5656413)
+- event.preventDefault()
+- event.stopPropagation()
+- event.stoplmmediatePropagation()
+- event.currentTarget 当前绑定的事件
+- event.target
+- DOM事件流
+- DOM事件类： 委派代理 添加在祖先元素上，冒泡或者捕获的时候就检查target是否符合要求
+- 自定义事件:  
+  - new [CustomEvent](https://developer.mozilla.org/zh-CN/docs/Web/API/CustomEvent)(e,payload):e.payload
+  - [EventTarget.dispatchEvent](https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/dispatchEvent)向一个指定的事件目标派发一个事件,  以合适的顺序触发受影响的 事件目标。标准事件处理规则(包括事件捕获和可选的冒泡过程)同样适用于通过手动的使用dispatchEvent()方法派发的事件。
+
+---
+
 - 对闭包的理解？什么时候构成闭包？闭包的实现方法？闭包的优缺点？
 - this有哪些使用场景？跟C,Java中的this有什么区别？如何改变this的值？
 - call，apply，bind
 - 显示原型和隐式原型，手绘原型链，原型链是什么？为什么要有原型链
 - 创建对象的多种方式
 - 实现继承的多种方式和优缺点
-- new 一个对象具体做了什么 
+- new 一个对象具体做了什么
 - 手写Ajax，XMLHttpRequest
-- 变量提升 
+- 变量提升
 - 举例说明一个匿名函数的典型用例
-- 指出JS的宿主对象和原生对象的区别，为什么扩展JS内置对象不是好的做法？有哪些内置对象和内置函数？
+- 指出JS的宿主对象和原生对象的区别，为什么扩展JS内置对象不是好的做法？
+- 有哪些内置对象和内置函数？
 - attribute和property的区别
 - document load和document DOMContentLoaded两个事件的区别
 - === 和 == , [] === [], undefined === undefined,[] == [], undefined == undefined
@@ -475,7 +502,7 @@ CSRF防御措施
 
 - 对nodejs有没有了解
 - Express 和 koa 有什么关系，有什么区别？
-- nodejs适合做什么样的业务？
+- nodejs适合做什么样的业务？:data-intensive real-time DIRT 数据密集型实时
 - nodejs与php，java有什么区别
 - Nodejs中的Stream和Buffer有什么区别？
 - node的异步问题是如何解决的？
@@ -485,7 +512,7 @@ CSRF防御措施
 11.数据结构
 
 - 基本数据结构：（数组、队列、链表、堆、二叉树、哈希表等等）
-- 8种排序算法，原理，以及适用场景和复杂度
+- 8种排序算法，原理，以及适用场景和复杂度g
 - 说出越多越好的斐波拉切数列的实现方法？
   - 尾递归
 

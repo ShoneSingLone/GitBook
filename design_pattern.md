@@ -1,27 +1,26 @@
 
-# Desig<!-- TOC -->
+<!-- TOC -->
 
-- [Design Patterns设计模式](#design-patterns设计模式)
-    - [参考资料](#参考资料)
-    - [面向对象设计原则](#面向对象设计原则)
-    - [常用模式](#常用模式)
-            - [单例模式](#单例模式)
-            - [策略模式](#策略模式)
-            - [代理模式](#代理模式)
-            - [迭代器模式](#迭代器模式)
-            - [发布-订阅者/观察者模式 Publish–subscribe pattern/Observer pattern](#发布-订阅者观察者模式-publishsubscribe-patternobserver-pattern)
-            - [命令模式](#命令模式)
-            - [组合模式](#组合模式)
-            - [模板方法模式 Template Method](#模板方法模式-template-method)
-            - [享元模式](#享元模式)
-            - [职责链模式](#职责链模式)
-            - [中介者模式](#中介者模式)
-            - [装饰者模式 Decorator](#装饰者模式-decorator)
-            - [状态模式](#状态模式)
-            - [适配器模式](#适配器模式)
-            - [集合模式](#集合模式)
+- [参考资料](#参考资料)
+- [面向对象设计原则](#面向对象设计原则)
+- [常用模式](#常用模式)
+        - [单例模式](#单例模式)
+        - [策略模式](#策略模式)
+        - [代理模式](#代理模式)
+        - [迭代器模式](#迭代器模式)
+        - [发布-订阅者/观察者模式 Publish–subscribe pattern/Observer pattern](#发布-订阅者观察者模式-publishsubscribe-patternobserver-pattern)
+        - [命令模式](#命令模式)
+        - [组合模式](#组合模式)
+        - [模板方法模式 Template Method](#模板方法模式-template-method)
+        - [享元模式](#享元模式)
+        - [职责链模式](#职责链模式)
+        - [中介者模式](#中介者模式)
+        - [装饰者模式 Decorator](#装饰者模式-decorator)
+        - [状态模式](#状态模式)
+        - [适配器模式](#适配器模式)
+        - [集合模式](#集合模式)
 
-<!-- /TOC -->n Patterns设计模式
+<!-- /TOC -->
 
 ## 参考资料
 
@@ -221,6 +220,7 @@ var pubsub = {};
 对象池和时间委托。(挖坑)
 
 #### 职责链模式
+
 (挖坑)
 express中的use 中间件middleware
 ~~管道模式：promise-them~~
@@ -248,4 +248,5 @@ Vuex
 mpvue 解决接口不一致 开闭原则
 
 #### 集合模式
+
 [集合模式](http://www.cnblogs.com/huangpeng/archive/2011/06/28/2092591.html)
