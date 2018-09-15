@@ -1238,6 +1238,8 @@ for in
 
 # 2.5 原型
 
+- [深入浅出JavaScript原型](http://yucccc.com/2017/07/28/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAJavaScript%E5%8E%9F%E5%9E%8B/#more)
+
 - 涉及到【【get】】操作
 ```js
 let aObj = {
