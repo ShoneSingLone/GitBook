@@ -20,11 +20,15 @@ Easy to say，就是需要知道浏览器拿着HTML、CSS、JavaScript干了啥�
 ## How
 
 ### 基本
+
 - 学会使用 Chrome 的performance（原为Timeline）做性能分析；基本原则先衡量在谈优化；
 - DOM：
+
 characters→Tokens→Nodes→DOM
 特点是可以一行一行的加载，期间遇到link CSS script JavaScript 就发送request，拿到response进行CSSOM 和执行Script（可能因为defer 或者 async而不同）。所以理论上DOM完成之后，CSSOM应该已经完成。
+
 - CSSOM
+
 characters→Tokens→Nodes→CSSOM
 
 DOM + CSSOM ==可见部分==> render Tree（display:none就是不可见，也就不需要render Tree )

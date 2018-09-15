@@ -9,6 +9,19 @@
 1. [MDN-Web/CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
 1. [MDN-Web/CSS/Reference](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference)
 
+---
+不权威选择器性能排行
+
+1. ID, e.g. #header
+1. Class, e.g. .promo
+1. Tag, e.g. div
+1. Adjacent sibling, e.g. h2 + p
+1. Child, e.g. li > ul
+1. Descendant, e.g. ul a*
+1. Universal, i.e. *
+1. Attribute, e.g. [type=”text”]
+1. Pseudo-classes/-elements, e.g. a:hover
+
 ## 我所认识的CSS
 
 如果以图灵完备作为标准，显然，HTML5 和CSS都不是一门编程语言。尽管没有如编程语言复杂，CSS学习起来也不轻松。这不轻松主要是体现在细枝末节太多且“不正交”，牵一发而动全身。在不明细节的情况下使用，随着项目的复杂度上升，会使开发和维护人员焦头烂额。所以，学习CSS我认为就是两个方面，一是平时积累，不在多而在吃透，遇到一个搞透一个；二是一定要有一套“最佳实践”，所谓条条大道通罗马，总有一条是最宽畅的：像Bootstrap这种流行的UI库，如何封装不正交的CSS属性成正交的类，这种整体思想很值得学习。

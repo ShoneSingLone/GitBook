@@ -1,5 +1,7 @@
 # 知识点汇总
 
+- [记一次uc面试](http://yucccc.com/2017/09/07/%E8%AE%B0%E4%B8%80%E6%AC%A1uc%E9%9D%A2%E8%AF%95/#more)
+
 ---
 
 HTTP协议类
@@ -286,6 +288,7 @@ BFC特性
 - CSS 3 如何实现旋转图片（transform: rotate）
 - sass less stylus
 - 对移动端开发了解多少？（响应式设计、Zepto；@media、viewport、JavaScript 正则表达式判断平台。）
+- [移动前端开发之viewport的深入理解](https://www.cnblogs.com/2050/p/3877280.html)
 - CSS中的长度单位（px,pt,rem,em,ex,vw,vh,vh,vmin,vmax）
 - CSS 选择器的优先级是怎样的？
   - 权重
