@@ -3,6 +3,7 @@
 ## 参考
 
 - [lavas](https://lavas.baidu.com/) 基于 Vue.js 的 PWA 解决方案 帮助开发者快速搭建 PWA 应用，解决接入 PWA 的各种问题
+- [PWA系列课程介绍](http://bit.baidu.com/Subject/index/id/14.html) 本课程为PWA入门课程，主要介绍PWA技术Web APP manifest、Service Worker、App Shell 和Skeleton的初探和应用，使学习者快速掌握开发PWA 基本技术。
 - [Workbox](https://developers.google.com/web/tools/workbox/modules/workbox-sw)
 - [service-worker](https://lavas.baidu.com/pwa/offline-and-cache-loading/service-worker/service-worker-introduction)
 

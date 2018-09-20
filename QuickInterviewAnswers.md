@@ -23,7 +23,12 @@ HTTP状态码
 
 - 1xx:指示信息-表示请求已接收，继续处理，
 - 2xx:成功-表示请求已被成功接收
+  - 200 OK:  客户端请求成功
+  - 206 Partial Content:客户发送了一个带有Range头的GET请求，服务器完成了它 
 - 3xx:重定向-要完成请求必须进行更进一步的操作
+  - 301 Moved Permanently:所请求的页面已经转移至新的url
+  - 302 Found:所请求的页面已经临时转移新的url 
+  - 304 Not Modified:客户端有缓冲的文档并发出了一个条件性的请求，服务器告诉客户，原来缓冲的 文档还可以继续使用
 - 4xx:客户端错误-请求有语法错误或请求无法实现
   - 429 Too many requests
   - 400 Invalid request
@@ -31,11 +36,6 @@ HTTP状态码
   - 410 Gone 订阅失效，需要在服务端删除保存的推送订阅对象，并调用推送订阅对象的unsubscribe()方法
   - 413 Payload size too large
 - 5xx:服务器错误-服务器未能实现合法的请求 - 
-- 200 OK:  客户端请求成功
-- 206 Partial Content:客户发送了一个带有Range头的GET请求，服务器完成了它 
-- 301 Moved Permanently:所请求的页面已经转移至新的url
-- 302 Found:所请求的页面已经临时转移新的url 
-- 304 Not Modified:客户端有缓冲的文档并发出了一个条件性的请求，服务器告诉客户，原来缓冲的 文档还可以继续使用
 
 ---
 什么是持久连接
@@ -105,7 +105,7 @@ Ajax
 定义
 DOM结构中的各个元素都有自己的盒子(模型)，这些都需要浏览器根据各种样式来计算并根据计算结果将元素
 放到它该出现的位置，这个过程称之为reflow
-触发Reflow
+触发Reflow 
 当你增加、删除、修改DOM结点时，会导致Reflow或Repaint
 当你移动DOM的位置，或是搞个动画的时候
 当你修改CSS样式的时候
@@ -369,7 +369,8 @@ return false;
 - document load和document DOMContentLoaded两个事件的区别
 - === 和 == , [] === [], undefined === undefined,[] == [], undefined == undefined
 - typeof能够得到哪些值
-- 什么是“use strict”,好处和坏处
+- 什么是“use
+ strict”,好处和坏处
 - 函数的作用域是什么？js 的作用域有几种？
 - JS如何实现重载和多态
 - 常用的数组api，字符串api 哪些是返回原数组，哪些是返回修改后不改动原数组？

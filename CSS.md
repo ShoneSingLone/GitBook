@@ -488,6 +488,9 @@ Inline-block和浮动布局的区别？
 
 ### [居中](https://www.w3cplus.com/css/centering-css-complete-guide.html)
 
+[CSS实现水平垂直居中的101010种方式](https://zhuanlan.zhihu.com/p/44439903)
+
+
 1. 水平居中
     1. 行内元素：通过给父元素设置 text-align:center
     1. 块状元素：
