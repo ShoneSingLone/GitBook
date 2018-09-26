@@ -1501,3 +1501,4 @@ false == []; // true -- []是对象，转成''，跟false Boolean值又要转成
 [async_function](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/async_function)
 [await](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/await)
 [Promise](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+[移动端手势库AlloyFinger源码分析](https://juejin.im/post/5abba410f265da238d50c6b0)

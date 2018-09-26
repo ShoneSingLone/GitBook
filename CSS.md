@@ -4,6 +4,7 @@
 
 1. [《CSS世界》](https://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/)
 1. [30个你必须记住的CSS选择符](http://yanhaijing.com/css/2014/01/04/the-30-css-selectors-you-must-memorize)
+1. [CSS实现水平垂直居中的101010种方式](https://segmentfault.com/a/1190000016389031)
 1. [divcss学习网站](http://www.divcss5.com/)
 1. [值得参考的css理论：OOCSS、SMACSS与BEM](https://segmentfault.com/a/1190000000704006)
 1. [MDN-Web/CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
