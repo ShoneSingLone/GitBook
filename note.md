@@ -31,6 +31,7 @@
 HTTP报文→|应用层|→TCP首部→|传输层|→IP数据包→|网络层|→网络架构...
 
 #### 与HTTP关系密切的协议
+
 - IP：各种数据包传送到对方
     - IP地址
     - MAC地址
@@ -38,15 +39,17 @@ HTTP报文→|应用层|→TCP首部→|传输层|→IP数据包→|网络层|�
     - three-way handshaking保证传输
 - DNS
 
-
 ## 状态码
+
 - 403：客户端没有访问权限
 - 404：客户端请求出现错误，请求的资源是不存在的
 - 304：重定向，资源在某处有缓存，可以直接取用，不需要向原始地址发起请求。
 - 500：服务器问题
 
 ## WebSocket
+
 [使用 WebSocket 构建实时性应用](https://juejin.im/post/5a3cb04951882525822793f5?utm_medium=fe&utm_source=weixinqun)
+[WebSocket的故事（五）—— Springboot中，实现网页聊天室之自定义消息代理](https://juejin.im/post/5ba2398a6fb9a05cdf308b39?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
 
 [WebSocket：5分钟从入门到精通](https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651553461&idx=1&sn=1df66f564e85db96c3ef54d1790598f2&chksm=8025a974b752206280bc284e4d3288a5c357c4ff8bb427b38482e8b04c490a5ee833bb000100&mpshare=1&scene=1&srcid=0108XAs9DBEN2xOygi5rs2pB#rd)
 
@@ -848,6 +851,8 @@ puppeteer 感觉很好玩，好似也可以用作ssr用，而且不跟框架绑�
 [自动精灵图工具](https://github.com/cupools/img-sprite)
 [图片优化－ base64 vs 雪碧图](http://www.jianshu.com/p/8d41aab5fba1)
 [性能优化三部曲之一——构建篇](https://github.com/lcxfs1991/blog/issues/4)
+[Web前端性能优化详解之资源合并与压缩](https://segmentfault.com/a/1190000015311642)
+[网站性能优化实践总结](https://juejin.im/entry/596c77536fb9a06ba4745e3c)
 
 [scroll组件](https://juejin.im/post/59b777015188257e764c716f)
 
