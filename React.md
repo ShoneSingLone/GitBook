@@ -1,6 +1,8 @@
 # React 学习笔记
 
 [React](https://reactjs.org)
+[React](http://react.yubolun.com/)
+
 
 - React本身只是一个View层的lib。
 - react 是 core
@@ -8,5 +10,7 @@
 - state 数据驱动
 - Flux架构redux
 - [v-DOM](https://github.com/Matt-Esch/virtual-dom)
+
+[](https://facebook.github.io/react/blog/all.html)
 
 组件：封装、复用

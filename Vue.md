@@ -281,3 +281,5 @@ https://github.com/browserslist/browserslist
 
 - [VUE中使用lib-flexible](https://blog.csdn.net/qq_22844483/article/details/79730604)
 - [移动端适配](https://www.w3cplus.com/search/node/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D)
+
+- refs 在mounted可以访问如果子组件没有mounted则无法访问
