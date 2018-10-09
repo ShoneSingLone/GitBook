@@ -55,7 +55,7 @@ git reflog
 
 git remote rm origin
 git remote add origin git@github.com:
-git remote add origin git@104.168.102.215:serverprovider.git
+git remote add origin git@***.***.***.***:serverprovider.git
 
 ## question and answer
 

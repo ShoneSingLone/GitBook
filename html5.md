@@ -3,7 +3,7 @@
 ## 基础
 
 enmmmm...
-基础很重要，重要到无从说起，就就一个链接[HTML](https://developer.mozilla.org/zh-CN/docs/learn/HTML)
+基础很重要，重要到无从说起，就一个链接[HTML](https://developer.mozilla.org/zh-CN/docs/learn/HTML)
 不清楚了就回头再看看呗...
 HTML5新增了离线存储、更丰富的表单、js线程、socket、 标准扩展embed、css......
 流媒体与多媒体引擎
@@ -105,7 +105,6 @@ vedio.currentTime = 0;
 vedio.play();
 //ontimeupdate 事件在视频/音频（audio/video）当前的播放位置发送改变时触发。
 vedio.ontimeupdate = function progressUpdate(e){...}
-
 ```
 
 ```js
@@ -119,7 +118,6 @@ vedio.ontimeupdate = function progressUpdate(e){...}
 <menu>//命令列表(目前所有主流浏览器都不支持)
 <menuitem>//menu命令列表标签(只有FireFox8.0+支持)
 <command>//menu标记定义一个命令按钮(只有IE9支持)
-
 
 <ruby>// 标记定义注释或音标
 <rp>// 告诉那些不支持ruby元素的浏览器如何去显示
