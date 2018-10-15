@@ -6,7 +6,9 @@
 - [重排重绘，看这一篇就够了](https://juejin.im/entry/582f16fca22b9d006b7afd89)
 - [offsetParent](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetParent)
 - [Js中 关于top、clientTop、scrollTop、offsetTop](http://www.cnblogs.com/seven_cheng/archive/2009/11/16/1603787.html)
+
 ---
+
 - [阻塞渲染的 CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css)
 
 ## What
