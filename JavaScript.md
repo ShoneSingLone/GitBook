@@ -835,10 +835,11 @@ HTML解析器遇到`<script>`时就会先解析script。
 
 区别点：
 ![efer-and-async-different](./note/defer-and-async.jpg)
+
 - html的版本html4.0中定义了defer；html5.0中定义了async
-- 执行时刻： 
-    - 每一个async属性的脚本都在它下载结束之后立刻执行，同时会在window的load事件之前执行。所以就有可能出现脚本执行顺序被打乱的情况；
-    - 每一个defer属性的脚本都是在页面解析完毕之后，按照原本的顺序执行，同时会在document的DOMContentLoaded之前执行。
+- 执行时刻：
+  - 每一个async属性的脚本都在它下载结束之后立刻执行，同时会在window的load事件之前执行。所以就有可能出现脚本执行顺序被打乱的情况；
+  - 每一个defer属性的脚本都是在页面解析完毕之后，按照原本的顺序执行，同时会在document的DOMContentLoaded之前执行。
 
 ```js
 /**
