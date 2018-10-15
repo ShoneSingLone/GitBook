@@ -42,3 +42,5 @@ DOM + CSSOM ==可见部分==> render Tree（display:none就是不可见，也就
 ### 分析关键渲染路径性能
 
 [分析关键渲染路径性能](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/analyzing-crp#performance-patterns)
+
+- Why： 优化关键渲染路径能够让浏览器尽可能快地绘制网页：更快的网页渲染速度可以提高吸引力、增加网页浏览量以及提高转化率，最大程度减少访客看到空白屏幕的时间。

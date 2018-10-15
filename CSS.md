@@ -358,6 +358,7 @@ background: linear-gradient(cyan, transparent),
 - letter-spacing:50px;||word-spacing//字母间距||单词间距
 - text-align:center;||
 - vertical-align:center;
+- [Label的两端对齐](https://www.zhangxinxu.com/wordpress/2011/03/displayinline-blocktext-alignjustify%E4%B8%8B%E5%88%97%E8%A1%A8%E7%9A%84%E4%B8%A4%E7%AB%AF%E5%AF%B9%E9%BD%90%E5%B8%83%E5%B1%80/)
 
 ## 布局
 

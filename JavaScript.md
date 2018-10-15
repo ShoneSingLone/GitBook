@@ -864,8 +864,25 @@ function loadasyni(url){
 事件处理
 
 ### 事件
+
 [JavaScript动画详解(一) —— 循环与事件监听](www.dengzhr.com/js/447)
+
 [事件循环event-loops](https://html.spec.whatwg.org/#event-loops)
+
+- 属于微任务（microtask）的事件有以下几种：
+  - Promise.then
+  - MutationObserver
+  - Object.observe
+  - process.nextTick
+
+- 属于宏任务（macrotask）的事件有以下几种：
+  - setTimeout
+  - setInterval
+  - setImmediate
+  - MessageChannel
+  - requestAnimationFrame
+  - I/O
+  - UI交互事件
 
 事件队列
 
@@ -876,7 +893,7 @@ function loadasyni(url){
 [preventDefault](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/preventDefault)
 如果事件可取消，则取消该事件，而不停止事件的进一步传播。
 [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation)
-这个取消是传播，不取消事件
+这个取消是传播，不取消事件执行代码
 
 一般是插件需要
 
