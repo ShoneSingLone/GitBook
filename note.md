@@ -562,6 +562,8 @@ npm config set cache "D:\Programs\nodejs\node_cache"
 [使用Node.js创建命令行脚本工具](https://aotu.io/notes/2015/12/23/building-command-line-tools-with-node-js/)
 `npm run <自定义命令>`
 
+| 管道 并行 && 串行
+
 [npm 模块安装机制简介](http://www.ruanyifeng.com/blog/2016/01/npm-install.html)
 
 ```bash
@@ -579,7 +581,12 @@ npm install -g npm-cache
 [Gulp v4编译Bootstrap-sass v3.3.7](http://www.jianshu.com/p/ac93605e4cf2)
 [gulp-and-babel](http://macr.ae/article/gulp-and-babel.html)
 [译-用gulp来实现web服务器](https://www.jianshu.com/p/e66a5bb96b7e)
+[PostCSS深入学习：Gulp设置](https://www.w3cplus.com/PostCSS/postcss-quickstart-guide-gulp-setup.html)
 
+Autoprefixer(处理浏览器私有前缀)，cssnext(使用CSS未来的语法),precss(像Sass的函数)。著作权归作者所有。
+```bash
+npm install gulp-postcss autoprefixer cssnext precss --D
+```
 ### Webpack
 
 #### What？
