@@ -4,6 +4,8 @@
 
 [编程入门之开发工具一键安装](https://my.oschina.net/TechQuery/blog/2877646?from=groupmessage)
 
+[Android – Kotlin](https://codelabs.developers.google.com/codelabs/mdc-101-kotlin/)
+
 ```bash
 #在系统环境变量 中增加 ChocolateyInstall：
 d:\chocolatey
