@@ -42,3 +42,20 @@ Gradle Scripts > build.gradle
 - 'Run' → 'Run app'
 - 'New'→'Kotlin File/Class'
 - 'New'→'Activity'→'Empty Activity'，
+
+## SDK
+
+![sdk_update](./images/Android/sdk_update.png)
+
+## Gradle
+
+![gradle_setting](./images/Android/gradle_setting.png)
+
+## Kotlin update
+
+![kotlin_update](./images/Android/kotlin_update.png)
+
+Kotlin Compiler 
+
+
+## build.gradle 编译配置文件
