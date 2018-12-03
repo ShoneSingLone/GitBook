@@ -55,7 +55,11 @@ Gradle Scripts > build.gradle
 
 ![kotlin_update](./images/Android/kotlin_update.png)
 
-Kotlin Compiler 
-
+Kotlin Compiler
 
 ## build.gradle 编译配置文件
+
+工程级别 Android4fun
+模块级别 app
+
+
