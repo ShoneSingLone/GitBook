@@ -12,7 +12,7 @@
 ### [Blob](https://developer.mozilla.org/zh-CN/docs/Web/API/Blob)
 
 - [前端js保存页面为图片下载到本地的坑](caibaojian.com/h5-download.html)
-- [使用 JavaScript 创建并下载文件](caibaojian.com/js-download.html)
+- [使用 JavaScript 创建并下载文件](http://caibaojian.com/js-download.html)
 
 ```js
 let title = document.getElementById('title');
@@ -918,14 +918,39 @@ if (self != top) {
 
 XHR的使用
 B和C如何及解决跨域的问题
-jQuery给出的快鱼解决方案
+jQuery给出的快速解决方案
 jsonp是什么？
+
+```js
+function getposition() {
+  $.ajax({
+    data: {},
+    url:
+      "http://api.map.baidu.com/geocoder/v2/?address=%E5%9B%9B%E5%B7%9D%E7%9C%81%E6%B3%B8%E5%B7%9E%E5%B8%82%E6%B1%9F%E9%98%B3%E5%8C%BA%E5%A4%A7%E6%A2%AF%E6%AD%A5%E5%B9%BF%E5%9C%BA&output=json&ak=G6nLjpT0D0IxB09HdIvLAzT2Z0RZKQua&tdsourcetag=s_pctim_aiomsg&qq-pf-to=pcqq.c2c",
+    dataType: "jsonp",
+    jsonp: "callback",
+    jsonpCallback: "jscb",
+    error: function() {
+      alert("aaa");
+    }
+  });
+}
+
+window.jscb = function(data) {
+  console.log(data.result.location.lat);
+};
+getposition();
+
+```
+
 show me the code
 
 ## CORS跨域资源共享
 
 - [Access_control_CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)
 - [跨域资源共享 CORS 详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)
+
+
 
 ## DOM
 
