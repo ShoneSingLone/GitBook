@@ -34,6 +34,11 @@
 - ![widgets](./Flutter/FlutterWidgets1.png)
 - ![widgets](./Flutter/FlutterWidgets2.png)
 
+### 基本概念
+
+widgets:是描述Element的数据、配置数据
+Element：最终用于绘制UI元素的类
+
 - Navigator route
 
 ### 
@@ -55,6 +60,10 @@
 1. Future可以处理链式调用和多个Future同时返回结果
 
 单线程 防阻塞 需要异步=> Future，我说是Promise Async await 就容易理解了。
+
+同名 构造函数
+ _下划线私有变量
+ const final的区别
 
 ```dart
 Future<String>  waitDinnerFuture = new Future(waitForDinner);
