@@ -34,6 +34,8 @@
 - ![widgets](./Flutter/FlutterWidgets1.png)
 - ![widgets](./Flutter/FlutterWidgets2.png)
 
+- Navigator route
+
 ### 
 
 借鉴了React 组件化和State的思想
