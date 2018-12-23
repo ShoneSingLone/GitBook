@@ -364,6 +364,17 @@ hasOwnProperty判断自有属性
 
 ### 数组(Array)
 
+初始化：
+```js
+new Array(length)
+new Array(obj,obj,obj)
+[obj,obj,obj]
+[...Array(100)].map(_=>0);
+```
+
+new Object Array String Number Boolean 返回的是相应的对象
+
+
 #### 数组方法
 
  map forEach 的区别 有么有返回值、返回的是什么（有一个术语，描述function是否改变自身array，忘了是什么了......)

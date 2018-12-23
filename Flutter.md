@@ -22,6 +22,18 @@
 - CLI
 - IDE
 
+- [Documentation](https://docs.flutter.io/)
+- [Github](https://github.com/flutter/flutter)
+- [StackOverflow](https://stackoverflow.com/questions/tagged/flutter)
+- [Gitter](https://gitter.im/flutter/flutter)
+
+- flutter doctor :
+- Android toolchain:Android SDK
+
+- [widgets](https://flutter.io/docs/development/ui/widgets)
+- ![widgets](./Flutter/FlutterWidgets1.png)
+- ![widgets](./Flutter/FlutterWidgets2.png)
+
 ### 
 
 借鉴了React 组件化和State的思想
