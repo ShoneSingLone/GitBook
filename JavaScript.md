@@ -824,6 +824,7 @@ getItem、setItem、removeItem、clear
 ## 浏览器机制
 
 [HTTP 缓存](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-cn)
+[js清除浏览器缓存的几种方法](https://github.com/giscafer/front-end-manual/issues/5)
 
 同一个页面的JavaScript代码引用同一个windows对象，所以是共享的。
 JavaScript的执行顺序分为两个阶段：
