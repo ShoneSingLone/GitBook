@@ -14,3 +14,21 @@
   对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；
   而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。
 - [GET和POST有什么区别？及为什么网上的多数答案都是错的。](http://www.cnblogs.com/nankezhishi/archive/2012/06/09/getandpost.html)
+
+curl -v www.baidu.com
+
+跨域
+[curl](https://curl.haxx.se/)
+[fetch](https://fetch.spec.whatwg.org/)
+
+允许方法GET HEAD POST
+
+预请求
+
+Content-Type
+text/plain 原文本
+multipart/form-data
+application/x-www.form-urlencoded
+
+Access-Control-Allow-Origin
+Access-Control-Allow-Headers
