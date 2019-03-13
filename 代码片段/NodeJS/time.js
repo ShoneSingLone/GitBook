@@ -1,4 +1,10 @@
-function getCurrentTiem() {
+import dayjs from "dayjs";
+
+const WEEKDAYS = "星期日_星期一_星期二_星期三_星期四_星期五_星期六".split("_");
+
+let thisVue;
+
+function getCurrentTime() {
     let date = new Date();
     let h = date.getHours();
     let m = date.getMinutes();
@@ -20,5 +26,12 @@ function getCurrentTiem() {
     } catch (error) {
         // console.log(error);
     }
-    setTimeout(getCurrentTiem, 1000);
+
+    setTimeout(getCurrentTime, 1000);
+}
+getCurrentTime(); {
+    timeH: "00",
+    timeM: "00",
+    week: "",
+    day: ""
 }
