@@ -1,5 +1,13 @@
 const fs = require('fs');
 
+exports.rename = function writeFile(oldFile, newFile, encoding = "utf-8") {
+    return new Promise((resolve, reject) => {
+        fs.rename(oldFile, newFile, (err) => {
+            if (err) reject(err);
+            else resolve(oldFile + ' Rename complete!');
+        });
+    })
+};
 exports.writeFile = function writeFile(file, data, encoding = "utf-8") {
     return new Promise((resolve, reject) => {
         fs.writeFile(file, data, encoding, function (err) {
