@@ -26,6 +26,7 @@
 - 所有的 Vue 组件都是 Vue 实例
 - 只有当实例被创建时 data 中存在的属性是响应式的
   - 数据占位的方式：
+
     ```js
     data: {
     newTodoText: '',
@@ -35,6 +36,7 @@
     error: null
     }
     ```
+    
 - 除了 data 属性，Vue 实例暴露了一些有用的实例属性与方法。它们都有前缀 $，以便与用户定义的属性区分开来
 
 $mount()
@@ -157,6 +159,18 @@ const router = new VueRouter({
   ]
 });
 ```
+
+# 状态管理
+
+一定要用VueX吗？
+组件之间的通讯方式有几种？
+
+props emit
+provide/inject
+dispatch
+$root
+$parent
+$children
 
 ## Vuex
 
