@@ -29,7 +29,9 @@ function getCurrentTime() {
 
     setTimeout(getCurrentTime, 1000);
 }
-getCurrentTime(); {
+getCurrentTime();
+
+{
     timeH: "00",
     timeM: "00",
     week: "",
