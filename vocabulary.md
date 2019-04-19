@@ -13,3 +13,9 @@
 - It was just a matter of time before someone built a more effective scaffolding system.
 - round
 - thumbnail
+
+# Dart
+
+- All uninitialized instance variables have the value null.
+
+

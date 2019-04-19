@@ -614,3 +614,6 @@ label 标记通常以下面两种方式中的一种来和表单控件相联系�
 通常是一个label和一个input
 label就设定好宽度，右对齐，间隔margin
 input
+
+cover contain
+[background-size](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size)

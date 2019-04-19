@@ -1,5 +1,27 @@
 # Git
 
+## 搭建Git服务器
+
+安装git
+
+```
+$ sudo apt-get install git
+```
+
+创建用户
+```
+$ sudo adduser git
+```
+
+创建证书登录
+>收集所有需要登录的用户的公钥，就是他们自己的`id_rsa.pub`文件，把所有公钥导入到`/home/git/.ssh/authorized_keys`文件里，一行一个。
+
+初始化Git仓库
+```
+$ sudo git init --bare sample.git
+$ sudo chown -R git:git sample.git
+
+
 - 暂存区用来准备一个提交，但可以不用把工作目录中所有的修改内容都包含进来。 这样你可以创建一个高度聚焦的提交，尽管你本地修改很多内容。
 
 ## 传统集中式开发模式
