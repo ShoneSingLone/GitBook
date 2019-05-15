@@ -142,3 +142,15 @@ $ git checkout *.java
 撤销所有修改
 
 $ git checkout 
+
+## 同一项目使用多个远程仓库
+
+```bash
+git remote add github url
+#同步一次需要fetch
+git pull github
+git rm github
+git remote set-url --add github url
+#全部push
+git push
+```

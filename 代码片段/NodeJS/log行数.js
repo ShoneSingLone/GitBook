@@ -10,5 +10,4 @@ function log(...args) {
     }
 }
 
-
-log()
+log("test")
