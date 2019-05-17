@@ -6,4 +6,4 @@
 修改环境变量
 [packages](https://chocolatey.org/packages)
 
-
+[元编程](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Meta_programming)可以改变语言本身的行为，**proxy改变语言本身**
