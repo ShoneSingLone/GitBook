@@ -1,5 +1,7 @@
 # Git
 
+[git入门](https://backlog.com/git-tutorial/cn/intro/intro1_1.html)
+
 ## 搭建Git服务器
 
 安装git
