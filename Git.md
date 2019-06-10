@@ -1,6 +1,7 @@
 # Git
 
-[git入门](https://backlog.com/git-tutorial/cn/intro/intro1_1.html)
+- [git入门](https://backlog.com/git-tutorial/cn/intro/intro1_1.html)
+- [猴子都能动的Git入门](https://backlog.com/git-tutorial/cn/intro/intro1_1.html)
 
 ## 搭建Git服务器
 
