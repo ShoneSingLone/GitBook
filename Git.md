@@ -157,3 +157,8 @@ git remote set-url --add github url
 #全部push
 git push
 ```
+
+```bash
+git remote -v
+git pull 
+```
