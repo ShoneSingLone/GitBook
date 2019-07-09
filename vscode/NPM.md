@@ -27,4 +27,7 @@ npm publish
 npm init --scope=scopename
 #scope包默认是私有，收费如果是public就免费
 npm publish --access public
+
+# 24小时之内撤回发布的包
+npm unpublish --force
 ```
