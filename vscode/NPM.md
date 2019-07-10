@@ -19,7 +19,7 @@ npm logout
 
 ```
 
-[scoped-packages](https://docs.npmjs.com/getting-started/scoped-packages)
+- [scoped-packages](https://docs.npmjs.com/getting-started/scoped-packages)
 
 ```bash
 npm publish

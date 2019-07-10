@@ -4,17 +4,21 @@
 - 自定义事件通信
 - 构建工具集成
 
+
+
 ## 相关资料
 
-[教程](https://cn.vuejs.org/v2/guide/)
-[API](https://cn.vuejs.org/v2/api/)
-[Vue解析](https://github.com/answershuto/learnVue)
-[揭秘组件库一二事](https://zhuanlan.zhihu.com/p/34654371)
-[Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)
-[Vue技术内幕](http://hcysun.me/vue-design/)
-[尤雨溪](https://weibo.com/arttechdesign?profile_ftype=1&is_all=1#_0)
-[@vue/cli 3.0](https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F)
-[@vue/cli 3.0 配置参考](https://cli.vuejs.org/zh/config/#baseurl)
+- [教程](https://cn.vuejs.org/v2/guide/)
+- [API](https://cn.vuejs.org/v2/api/)
+- [Vue解析](https://github.com/answershuto/learnVue)
+- [揭秘组件库一二事](https://zhuanlan.zhihu.com/p/34654371)
+- [Vue.js 技术揭秘](https://ustbhuangyi.github.io/vue-analysis/)
+- [Vue技术内幕](http://hcysun.me/vue-design/)
+- [尤雨溪](https://weibo.com/arttechdesign?profile_ftype=1&is_all=1#_0)
+- [@vue/cli 3.0](https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F)
+- [@vue/cli 3.0 配置参考](https://cli.vuejs.org/zh/config/#baseurl)
+- [vue组件发布npm最佳实践(看看就好)](https://juejin.im/post/5b231f6ff265da595f0d2540)
+- [vue-sfc-cli](https://github.com/FEMessage/vue-sfc-cli)
 
 ## 术语和概念
 
