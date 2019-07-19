@@ -31,3 +31,5 @@ npm publish --access public
 # 24小时之内撤回发布的包
 npm unpublish --force
 ```
+
+[package 字段说明](https://www.cnblogs.com/bydzhangxiaowei/p/8729210.html)
