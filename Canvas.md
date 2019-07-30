@@ -6,6 +6,15 @@
 
 ## How
 
+LIBS
+
+- [jcanvas](https://projects.calebevans.me/jcanvas/)
+- [paperjs](http://paperjs.org/)
+- [pixijs](https://www.pixijs.com/)
+- [fabricjs](http://fabricjs.com/)
+- [processingjs](http://processingjs.org/)
+- [ocanvas](http://ocanvas.org/)
+
 ### 基础
 
 - 理解“画布”：指定id width、height
