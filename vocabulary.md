@@ -9,7 +9,7 @@
 - If you encounter any unexpected errors during the above, please refer to the troubleshooting page or the already-mentioned requirements page, as you might be missing development headers or other prerequisites.
 - Choose GitHub Apps or OAuth Apps to get started developing an integration.
 - Responsive design versus adaptive design.
-- Like most modern programming languages, JavaScript uses lexical scoping. 
+- Like most modern programming languages, JavaScript uses lexical scoping.
 - It was just a matter of time before someone built a more effective scaffolding system.
 - round
 - thumbnail
@@ -18,4 +18,22 @@
 
 - All uninitialized instance variables have the value null.
 
+# other
 
+- considered
+  - Discrimination of any form is considered unacceptable is all civilised societies.
+- tackle
+  - Shanghai is not the only local government trying to tackle the problem.
+- regard
+  - In this regard, the North Island have been trying to sort out, but the results are often inconsistent, ended in failure.
+- composition
+  - These patterns are designed with regard to a class's structure and composition.
+- drawback
+  - This poses a hefty drawback if this class is not being used at all by the client application. 
+- operation
+  - The overhead for the synchronized method is high, and reduces the performance of the whole operation.
+- scenario
+  - I’m gonna give you a small scenario to give a better context to why and where you should use the Decorator Pattern.
+- scenario
+  - Class diagram according to coffee shop scenario
+  
