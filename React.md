@@ -17,6 +17,7 @@
 ## **组件：封装、复用**
 
 ## React hooks
+
 [React hooks都是数组，没那么神秘](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247489824&idx=1&sn=3cef360e13a70bbaf839e5a83fa755b8&chksm=f951ac63ce26257597324c4cd04d51b96cf9333ce0f8a069f6ef90fa35a436007530ee1d32cd&scene=0&xtrack=1#rd)
 
 [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
@@ -99,3 +100,4 @@
   - public filed: fn = ()=>{}
   - `<button onClick={(e) => this.handleClick(e)}> Click me </button>`
 - key surround by array []children是数组的都要有key；在作用域内保持唯一性Unique
+hper什么的是一个jsx的替代方案。如果不喜欢jsx，可以试一试。你会回来用jsx的。（括弧尴尬笑）
