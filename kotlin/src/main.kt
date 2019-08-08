@@ -1,5 +1,7 @@
 import classdata.*
 import other.*
+import java.io.BufferedReader
+import java.io.StringReader
 
 fun main(args: Array<String>) {
     val persons = listOf<Person>(Person("Alice", isMarried = true), Person("Bob", age = 10));
@@ -14,8 +16,24 @@ fun main(args: Array<String>) {
     println("isSquare: ${Rectangle(1, 2).isSquare}")
     val map = mapOf("a" to 1, "b" to 2, "c" to 3)
     var mapKey = "a"
-    val mapKeyList = listOf<String>("a", "b", "c")
-//    for({i,index} in mapKeyList.withIndex())
+    val mapKeyList = arrayListOf<Char>('a', 'b', 'c')
+    for((i,index) in mapKeyList.withIndex()){
+        printPine()
+        println("$i $index")
+    }
     println(map[mapKey])
     println(eval(Sum(Sum(Num(1), Num(2)), Num(2))))
+    /* 迭代*/
+    iteratorF()
+    printPine()
+    readNumber(BufferedReader(StringReader("not a number")))
+    readNumber(BufferedReader(StringReader("100")))
+    printPine("after NumberFormatException")
 };
+
+
+
+
+
+
+

@@ -3,6 +3,10 @@ package other
 import classdata.*
 import classdata.Color.*
 import interfacedata.Expr
+import java.io.BufferedReader
+import java.lang.NumberFormatException
+import java.lang.StringBuilder
+import java.util.*
 
 /*if是表达式，而不是语句：表达式有返回值
 * kotlin中除了for while do while 大多数结构体都是表达式
@@ -36,13 +40,12 @@ fun getWarmth(color: Color) = when (color) {
     Color.BLUE, Color.INDIGO, Color.VIOLET -> "cold"
 }
 
-fun mix(c1: Color, c2: Color) =
-    when (setOf(c1, c2)) {
-        setOf(RED, YELLOW) -> ORANGE
-        setOf(YELLOW, BLUE) -> GREEN
-        setOf(BLUE, VIOLET) -> INDIGO
-        else -> throw Exception("Dirty color")
-    }
+fun mix(c1: Color, c2: Color) = when (setOf(c1, c2)) {
+    setOf(RED, YELLOW) -> ORANGE
+    setOf(YELLOW, BLUE) -> GREEN
+    setOf(BLUE, VIOLET) -> INDIGO
+    else -> throw Exception("Dirty color")
+}
 
 fun eval(e: Expr): Int =
     /*when 表达式的类型检查应用智能转换所以不需要额外的转换就可以访问Num和Sum成员*/
@@ -55,6 +58,65 @@ fun eval(e: Expr): Int =
         is Sum -> eval(e.left) + eval(e.right)
         else -> throw IllegalAccessException("Unknown expression")
     }
+
+fun iteratorF() {
+    val oneToH = 1..100
+    fun fizzBuzz(i: Int) = when {
+        i % 15 == 0 -> "FizzBuzz"
+        i % 3 == 0 -> "Fizz"
+        i % 5 == 0 -> "Buzz"
+        else -> "$i"
+    }
+    for (i in oneToH) {
+        println(fizzBuzz(i))
+    }
+}
+
+fun iteratorMap() {
+    val binaryReps = TreeMap<Char, String>()
+
+    for (c in 'A'..'F') {
+        val binary = Integer.toBinaryString(c.toInt())
+        /*类似JavaScript的访问器*/
+        binaryReps[c] = binary
+    }
+
+    for ((letter, binary) in binaryReps) {
+        println("$letter = $binary")
+    }
+
+}
+
+fun printPine(title: String = "new block") {
+    println("###################### $title ######################")
+}
+
+fun isLetter(c: Char) = c in 'A'..'Z' || c in 'a'..'z'
+fun isNotDigital(c: Char) = c in '0'..'9'
+
+/*异常*/
+fun readNumber(read: BufferedReader) {
+    /*try可以作为表达式*/
+    val number = try {
+        Integer.parseInt(read.readLine())
+    } catch (e: NumberFormatException) {
+        "NumberFormatException"
+    }
+    println(number)
+}
+
+/*function call*/
+fun <T> jsonToString(
+    collection: Collection<T>, separator: String = ",", prefix: String = "#", postfix: String = "#"
+                    ): String {
+    val result = StringBuilder(prefix)
+    for ((index, element) in collection.withIndex()) {
+        if (index > 0) result.append((separator))
+        result.append(element)
+    }
+    result.append(postfix)
+    return result.toString()
+}
 
 
 
