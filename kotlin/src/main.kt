@@ -17,7 +17,7 @@ fun main(args: Array<String>) {
     val map = mapOf("a" to 1, "b" to 2, "c" to 3)
     var mapKey = "a"
     val mapKeyList = arrayListOf<Char>('a', 'b', 'c')
-    for((i,index) in mapKeyList.withIndex()){
+    for ((i, index) in mapKeyList.withIndex()) {
         printPine()
         println("$i $index")
     }
