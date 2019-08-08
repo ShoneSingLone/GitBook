@@ -1,11 +1,11 @@
 package other
 
-import classdata.*
+import classdata.Color
 import classdata.Color.*
+import classdata.Num
+import classdata.Sum
 import interfacedata.Expr
 import java.io.BufferedReader
-import java.lang.NumberFormatException
-import java.lang.StringBuilder
 import java.util.*
 
 /*if是表达式，而不是语句：表达式有返回值
@@ -117,6 +117,22 @@ fun <T> jsonToString(
     result.append(postfix)
     return result.toString()
 }
+
+/*function call*/
+fun <T> Collection<T>.jsonToStringE(
+    separator: String = ",", prefix: String = "#", postfix: String = "#"
+                                   ): String {
+    val result = StringBuilder(prefix)
+    for ((index, element) in this.withIndex()) {
+        if (index > 0) result.append((separator))
+        result.append(element)
+    }
+    result.append(postfix)
+    return result.toString()
+}
+
+/*可以限定集合的类型才会添加对应的方法*/
+fun Collection<String>.joinE():String = jsonToStringE("#s#")
 
 
 

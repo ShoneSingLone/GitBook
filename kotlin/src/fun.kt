@@ -6,6 +6,9 @@ import strings.lastChar
 /*取别名*/
 import strings.lastCharF as lastC
 import strings.opCount
+/*collection 的*/
+import other.jsonToStringE
+import other.joinE
 
 /* 使用IDEA 的Rename 或者 Change Signature 修改可选参数名 */
 fun main(args: Array<String>) {
@@ -15,7 +18,15 @@ fun main(args: Array<String>) {
     * 没有必要自己搞一套
     */
     val list = listOf(1, 2, 3);
-    val map = hashMapOf(1 to "one", 2 to "two", 3 to "three")
+
+    println(list.jsonToStringE())
+
+    val stringlist = listOf("string1", "string2", "string3");
+    println(stringlist.joinE())
+    
+    printPine("扩展collection方法")
+
+    val map = hashMapOf(1 to "map one", 2 to "map two", 3 to "map three")
     println(map.javaClass)
     println(map)
     /* 让函数更好调用：3.2.1 命名参数； 3.2.3 默认参数 */
@@ -32,6 +43,8 @@ fun main(args: Array<String>) {
 
     /*3.3 给别人的类添加方法：扩展函数和属性*/
     println("Kotlin".lastChar())
+
+    /*在import时候可以取别名*/
     println("Kotlin".lastC())
 };
 
