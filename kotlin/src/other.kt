@@ -132,7 +132,7 @@ fun <T> Collection<T>.jsonToStringE(
 }
 
 /*可以限定集合的类型才会添加对应的方法*/
-fun Collection<String>.joinE():String = jsonToStringE("#s#")
+fun Collection<String>.joinE(): String = jsonToStringE("#s#")
 
 
 

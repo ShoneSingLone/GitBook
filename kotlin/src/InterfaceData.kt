@@ -1,7 +1,6 @@
 package interfacedata
 
 import java.io.Serializable
-import java.lang.invoke.SerializedLambda
 
 interface Expr
 
@@ -15,8 +14,8 @@ interface Focusable {
     fun showOff() = println("I'm focusable!")
 }
 
-interface State:Serializable
-interface View{
-    fun getCurrentState():State
-    fun restoreState(state:State){}
+interface State : Serializable
+interface View {
+    fun getCurrentState(): State
+    fun restoreState(state: State) {}
 }

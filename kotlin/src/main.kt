@@ -29,7 +29,10 @@ fun main(args: Array<String>) {
     readNumber(BufferedReader(StringReader("not a number")))
     readNumber(BufferedReader(StringReader("100")))
     printPine("after NumberFormatException")
-};
+
+    runSequence()
+}
+
 
 
 

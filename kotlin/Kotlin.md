@@ -10,6 +10,12 @@
 
 # 局部函数和扩展
 
+- 中缀表示法：一个参数时，更简洁的表达方式
+mapOf( 1 to "one")如同 1.to("one")一个参数的函数一起使用
+
+`infix` 修饰符
+`infix fun Any.to(other: Any) = Pair(this, other)`
+
 # 类、对象和接口
 
 单例对象、伴生对象、对象表达式
@@ -70,3 +76,71 @@ by 委托 避免样板代码
 工厂方法和静态成员
 
 伴生对象扩展，在内部持有一个空的声明，才能再外部使用扩展
+
+## Lambda
+
+{参数->函数体}始终在大括号里
+
+`run`
+
+- lambda表达式是函数调用的最后一个实参，它可以放在括号的外边
+  - 如果lambda表达式是唯一的实参，连括号都可以省略
+
+- `Move lambda expression out of parentheses`
+- `Move lambda expression into of parentheses`
+
+### 成员引用
+
+把函数转换成一个值 `::`
+
+### 集合的 API
+
+- map
+- filter
+- all
+- any
+- count
+- find
+- groupBy
+- flatMap:需要映射返回别的值
+- [flatten](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/flatten.html)：只是平铺
+
+#### 惰性集合操作
+
+>及早创建中间集合，每一步的中间结果都被存储在一个临时列表
+
+`Sequence`
+
+Java8 并行执行流操作 =》流
+
+### SAM 但抽象方法
+
+？？？？？？？？？？
+
+### with 与 apply ：带接受者的lambda
+
+with 是两个参数
+this 引用访问接收者
+命名冲突解决方式 `this@otherClass.同名的函数`
+
+apply的区别是只返回接收者对象自己
+
+## Kotlin 的类型系统
+
+- 可空类型
+- 只读集合的支持
+
+### 可空类型
+
+- 类型 内存空间固定 行为可控、可靠
+- 所以 虽声明为 String 而实际为 null 就无法按照 String 的行为做事，废材是也
+- Kotlin 彻底解决问题的思路就是 永远不要在代码中使用 null 值
+  - ?. 安全调用运算符
+  - ?: Elvis
+  - as? 安全转换运算符
+  - !! 非空断言（咆哮）
+- 延迟初始化的属性
+
+this 可能是 null 
+
+### 基本数据类型：Int Boolean and other

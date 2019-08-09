@@ -18,11 +18,11 @@ fun main(args: Array<String>) {
     * 所以还是要有Java基础,集合的实现都一样，
     * 没有必要自己搞一套
     */
-    val list = listOf(1, 2, 3);
+    val list = listOf(1, 2, 3)
 
     println(list.jsonToStringE())
 
-    val stringlist = listOf("string1", "string2", "string3");
+    val stringlist = listOf("string1", "string2", "string3")
     println(stringlist.joinE())
 
     printPine("扩展collection方法")
@@ -46,7 +46,7 @@ fun main(args: Array<String>) {
     println("Kotlin".lastChar())
 
     /*在import时候可以取别名*/
-    println("Kotlin".lastC());
+    println("Kotlin".lastC())
     println("12.2-34-6.A".split("\\.|-".toRegex()))
     parsePath("/User/yole/kotlin-book/chapter.adoc")
 
@@ -58,7 +58,7 @@ fun main(args: Array<String>) {
 
     printPine()
     inc(1)
-};
+}
 /*可变参数vararg 函数有不确定的参数
 * Java 中的...
 * Kotlin KeyWorks vararg
@@ -100,6 +100,15 @@ fun inc(num: Int) {
 }
 
 /*Kotlin 的可见性修改符*/
+
+
+
+fun runSequence() {
+    printPine("runSequence")
+    val naturalNumbers = generateSequence(0) { it + 1 }
+    val numbersTo100 = naturalNumbers.takeWhile { it <= 100 }
+    println(numbersTo100.sum())
+};
 
 
 

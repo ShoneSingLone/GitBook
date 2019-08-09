@@ -26,6 +26,6 @@ fun main(args: Array<String>) {
     Payroll.calculateSalary()
 
     printPine()
-    val files= listOf(File("C:/"), File("D:/"))
+    val files = listOf(File("C:/"), File("D:/"))
     println("结果： ${files.sortedWith(CaseInsensitiveFileComparator)}")
 }

@@ -51,6 +51,8 @@ open class View {
 }
 
 /*这里是继承！！？*/
+
+
 class Button : View() {
     /*这里是override了View里的click()*/
     override fun click() = println("Button clicked")
@@ -145,8 +147,5 @@ sealed class ExprSealed {
 }
 
 
-
-
-
-
+class Book(val title: String, val authors: ArrayList<String>)
 
