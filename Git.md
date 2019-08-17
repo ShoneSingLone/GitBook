@@ -38,6 +38,7 @@ git clone ssh://user@host/path/to/repo.git
 git status # 查看本地仓库的修改状态
 git add # 暂存文件
 git commit # 提交文件
+
 # 发布功能
 git push origin master
 # 拉取 如同update
