@@ -89,6 +89,8 @@ git remote add origin git@***.***.***.***:serverprovider.git
 
 简单来说就是权限不够，git是专用repository
 
+[](https://juejin.im/post/5a7802846fb9a063317c2e92)
+
 ```js
 chown -R git:git serverprovider.git
 
