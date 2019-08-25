@@ -98,6 +98,7 @@ Lights（光照）：
 - AreaLight
 - DirectionalLight
 - HemisphereLight
+`室外光源，这个光源主要是为了模拟在户外的环境光效果，比如在蓝天绿地的户外，模型下面会显示出来绿色的环境光，而上方则会受到蓝天的影响而颜色偏蓝。`
 - PointLight
 `点光源就是从一个点的位置向四面八方发射出去的光，一个简单的例子就是一个裸露的灯泡。`
 - SpotLight
@@ -324,6 +325,10 @@ Extras / Shaders
 三维投影到二维的一个抽象
 
 ## others
+
+### 添加阴影效果
+light castShadow
+geometry castShadow
 
 [vantajs](https://www.vantajs.com/?effect=clouds)
 [水波纹](http://uusama.com/643.html)
