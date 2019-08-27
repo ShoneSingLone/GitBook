@@ -104,13 +104,22 @@ use admin
 
 - 创建用户，可选则指定数据库
 
+mongo --host ip:port
+use db
 db.createUser({user:"username",pwd:"pwd",roles:["root"]})
 
 - 只管相关的数据库（collection）
 
 use myproject
-db.createUser({user:"username",pwd:"pwd",roles:[{role:"dbOwner",db:"myproject"]})
-
+db.createUser(
+    {
+        user:"dbuser",
+        pwd:"dbpwd",
+        roles:[
+        {role:"dbOwner",db:"db"}
+        ]
+    }
+)
 - 验证
 
 db.auth("username","pwd")
