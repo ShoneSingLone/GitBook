@@ -24,3 +24,5 @@ node_modules
 parent node_modules递归
 NODE_PATH
 
+
+express demo -e
