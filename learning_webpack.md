@@ -289,3 +289,8 @@ npm install --save-dev babel-plugin-transform-runtime npm install --save babel-r
 loader基础
 core编程方式调用babel的能力
 babel-preset-latest 预设就是要转成的样子
+
+
+```bash
+yarn add babylon babel-traverse babel-core babel-preset-env  
+```
