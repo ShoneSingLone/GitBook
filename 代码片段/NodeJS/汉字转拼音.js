@@ -14,7 +14,7 @@ let getArray1 = (nameArray) => {
         }));
         return target;
     });
-}
+};
 let getArray2 = (nameArray) => {
     return nameArray.map(name => {
         let res = simplePinyin(name, {
@@ -31,6 +31,6 @@ let getArray2 = (nameArray) => {
             }
         });
     }).join(",");
-}
+};
 
 Tools.writeFile(`./${Date.now()}.js`, getArray2(nameArray));
