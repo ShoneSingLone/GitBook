@@ -617,3 +617,7 @@ input
 
 cover contain
 [background-size](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size)
+
+# mask 渐变 遮罩
+
+[css-css3-mask-masks](https://www.zhangxinxu.com/wordpress/2017/11/css-css3-mask-masks/)
