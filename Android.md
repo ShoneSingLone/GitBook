@@ -10,6 +10,7 @@
 d:\chocolatey
 ```
 
+
 ```js
 shortcut:
 Ctrl Alt S =>setting

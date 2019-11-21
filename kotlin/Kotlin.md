@@ -22,7 +22,7 @@ native
 
 ## ？？？不甚了解
 
-- 访问修饰符？？？
+- 访问修饰符？？？rwiiufk
 - 属性 getter setter 支持字段filed
 - [From Java to Kotlin and Back Again](https://allegro.tech/2018/05/From-Java-to-Kotlin-and-Back-Again.html)
 - [兼听则明](https://cloud.tencent.com/developer/news/249347)
@@ -163,3 +163,5 @@ apply的区别是只返回接收者对象自己
 this 可能是 null 
 
 ### 基本数据类型：Int Boolean and other
+
+
