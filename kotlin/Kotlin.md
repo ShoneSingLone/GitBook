@@ -14,6 +14,9 @@
 - val value 运行时常量 final
 - const val 相当于Java public final
 
+## 注释
+
+
 # 局部函数和扩展
 
 - 中缀表示法：一个参数时，更简洁的表达方式
