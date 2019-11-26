@@ -20,7 +20,7 @@ native
 5. 协程(thread)
 6. DSL(领域特定语言)
 
-## ？？？不甚了解
+## ？？？
 
 - 访问修饰符？？？rwiiufk
 - 属性 getter setter 支持字段filed
@@ -32,6 +32,8 @@ native
 - var variable 变量
 - val value 运行时常量 final
 - const val 相当于Java public final
+
+
 
 ## 注释
 
