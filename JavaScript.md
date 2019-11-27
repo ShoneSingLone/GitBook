@@ -26,6 +26,7 @@ downloadBtn.onclick = () => {
   downloadBtn.href = url;
   downloadBtn.download = '1.txt'
 }
+
 downloadBtn.click()
 
 ```
@@ -342,13 +343,14 @@ function letTest() {
 
 - 字面量:不会调用Object构造函数
 - new
-- Object.create()：涉及原型
+- [Object.create()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
+- [Object.create 和new区别](https://blog.csdn.net/blueblueskyhua/article/details/73135938)
 
 Delete 属性
 原型对象、类和继承
 原型是一个实例对象。
 对象
-JavaScript秘密花园
+[JavaScript-Garden](https://bonsaiden.github.io/JavaScript-Garden/zh/)
 
 hasOwnProperty判断自有属性
 
@@ -374,15 +376,13 @@ new Array(obj,obj,obj)
 
 new Object Array String Number Boolean 返回的是相应的对象
 
-
 #### 数组方法
 
  map forEach 的区别 有么有返回值、返回的是什么（有一个术语，描述function是否改变自身array，忘了是什么了......)
 
-[Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()](https://www.cnblogs.com/xiao-hong/p/3194027.html)
-[JavaScript数组所有API全解密](http://louiszhai.github.io/2017/04/28/array/?from=timeline)
-[【深度长文】JavaScript数组所有API全解密](http://louiszhai.githnub.io/2017/04/28/array/?from=timeline)
-[array 方法](http://louiszhai.github.io/2017/04/28/array/#some)
+- [Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()](https://www.cnblogs.com/xiao-hong/p/3194027.html)
+- [JavaScript数组所有API全解密](http://louiszhai.github.io/2017/04/28/array/?from=timeline)
+- [array 方法](http://louiszhai.github.io/2017/04/28/array/#some)
 
 - 改变自身
 - 不改变自身
@@ -403,7 +403,7 @@ function isArray(obj) {
 
 唯一性
 
-NaN等于自身，而精确相等运算符认为NaN不等于自身`NaN !==NaN`为true。
+NaN 等于自身，而精确相等运算符认为 NaN 不等于自身 `NaN !==NaN` 为true。
 
 ### 函数(function)
 

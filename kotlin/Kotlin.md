@@ -1,17 +1,71 @@
 
+
 # Kotlin
 
-[releases](https://github.com/JetBrains/kotlin/releases)
-KOTLIN_HOME
+- KOTLIN_HOME
+- [releases](https://github.com/JetBrains/kotlin/releases)
+- [Kotlin源代码网址](https://github.com/JetBrains/kotlin)
+- [Kotlin官网](https://kotlinlang.org/)
+- [Kotlin官方参考文档](https://kotlinlang.org/docs/reference/)
+- [Kotlin标准库](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)
 
-## ？？？不甚了解
+更好的Java
+- JVM
+  - J2EE
+  - Android 
+native
+2js
+
+1. 简洁(数据类扩展方法区间)
+2. 空值安全(编译时异常 运行时异常)
+3. 100%兼容 Java scala
+4. 函数式编程 (多范式) JDK1.8
+5. 协程(thread)
+6. DSL(领域特定语言)
+
+## ？？？
 
 - 访问修饰符？？？rwiiufk
 - 属性 getter setter 支持字段filed
 - [From Java to Kotlin and Back Again](https://allegro.tech/2018/05/From-Java-to-Kotlin-and-Back-Again.html)
 - [兼听则明](https://cloud.tencent.com/developer/news/249347)
 
-# 局部函数和扩展
+## 变量 常量
+
+- var variable 变量
+- val value 运行时常量 final
+- const val 相当于Java public final
+
+
+
+## 注释
+
+
+## 区间
+
+区间中的元素只能是整数或字符
+
+- 开区
+- 闭区间
+- 开闭区间
+
+---
+
+- in
+- !in
+
+## 函数
+
+- 顶层函数（全局函数）
+- 局部函数
+- 成员函数（方法）
+
+> 函数与方法的区别=》函数式独立的，方法隶属于类或接口（有宿主，可能这个说法不准确，自己体会）。
+
+---
+无返回数据与Unit类型
+
+### 局部函数和扩展
 
 - 中缀表示法：一个参数时，更简洁的表达方式
 mapOf( 1 to "one")如同 1.to("one")一个参数的函数一起使用

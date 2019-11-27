@@ -109,7 +109,9 @@ open class ButtonII : Clickable {
     }
 
 
-    fun disable() {}
+    fun disable() {
+
+    }
     open fun animate() {}
     override fun click() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -145,7 +147,6 @@ sealed class ExprSealed {
     class Num(val value: Int) : ExprSealed()
     class Sum(val left: ExprSealed, val right: ExprSealed) : ExprSealed()
 }
-
 
 class Book(val title: String, val authors: ArrayList<String>)
 

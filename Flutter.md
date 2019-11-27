@@ -3,7 +3,7 @@
 ## Flutter Resources
 
 - [cookbook](https://flutter.io/cookbook/)
-- [Documentatio](ttps://docs.flutter.io/)
+- [Documentatio](https://docs.flutter.io/)
 - [Github](https://github.com/flutter/flutter)
 - [StackOverflow](https://stackoverflow.com/questions/tagged/flutter)
 - [Gitter](https://gitter.im/flutter/flutter)
@@ -40,7 +40,7 @@
 至少两个方面
 
 - 框架自己的渲染引擎，跨平台和效率优势
-- dart语言强类型语言，比JavaScript更适合复杂应用
+- dart 强类型语言，比JavaScript更适合复杂应用
 
 ## [How](https://flutter.io/setup-windows/#system-requirements)
 
@@ -84,7 +84,7 @@ Element：最终用于绘制UI元素的类
 
 [tutorials futurs](https://www.dartlang.org/tutorials/language/futurs)
 
-1. Dart是单线程的变成语言
+1. Dart是单线程的编程语言
 1. 使用Future可以是同步操作异步化
 1. Future可以使用async和await来回去
 1. Future可以处理链式调用和多个Future同时返回结果
@@ -114,3 +114,11 @@ main() async {
 ```
 
 ### [Flutter中的本地存储](https://mp.weixin.qq.com/s?__biz=MjM5MzkxNDg2OQ==&mid=2649872974&idx=1&sn=edba3c27df1601cea770b396c0eaeb4e&chksm=be8ab0d489fd39c2db0ef983aef0f5931f775c04bbf5e917885ce66b98101af05670ccff14e8&mpshare=1&scene=1&srcid=0712jhme4PctFabOdmRER8AO#rd)
+
+## 起步
+
+`lib/main.dart`
+
+`import 'package:flutter/material.dart';`
+
+`jar` 包位于 `flutter\bin\cache\artifacts\engine`
