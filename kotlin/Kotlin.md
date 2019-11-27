@@ -1,6 +1,9 @@
 
 # Kotlin
 
+[releases](https://github.com/JetBrains/kotlin/releases)
+KOTLIN_HOME
+
 ## ？？？不甚了解
 
 - 访问修饰符？？？rwiiufk
