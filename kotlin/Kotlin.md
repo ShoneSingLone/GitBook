@@ -272,5 +272,3 @@ apply的区别是只返回接收者对象自己
 this 可能是 null 
 
 ### 基本数据类型：Int Boolean and other
-
-
