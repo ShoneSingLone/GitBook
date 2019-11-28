@@ -33,8 +33,6 @@ native
 - val value 运行时常量 final
 - const val 相当于Java public final
 
-
-
 ## 注释
 
 
@@ -62,7 +60,73 @@ native
 ---
 无返回数据与Unit类型
 
-### 局部函数和扩展
+- **Nothing**声明的函数永远不会正常的返回，只会抛出异常。
+  - 有些框架，例如Junit单元测试框架，在测试失败时会调用Nothing返回类型的函数，通过它抛出异常使当前测试用例失败。 　
+- Unit与**Nothing**区别？
+  - Unit表示数据没有实际意义，它可以声明函数返回类 型，也可以声明变量类型，声明函数时函数可以正常返回，只是返回数据没有实际意 义。
+  - **Nothing**只能声明函数返回类型不能声明变量，说明函数永远不会正常返回，
+
+
+```java
+import java.io.IOException
+
+fun main(args: Array<String>) {
+    val date = readDate()
+}
+fun readDate(): Nothing {
+    throw IOException()
+}
+```
+### 参数
+
+- 命名参数
+- 默认参数
+- 可变参数 **vararg** 顺序很重要，可变参数不是最后一个参数时，后面的参数需要采用命名参数形式传递；
+  - \* 是展开运算符（ES next扩展运算符）
+
+```java
+fun sum(vararg numbers: Double, multiple: Int = 1): Double {
+    var total = 0.0
+    for (number in numbers) {
+        total += number
+    }
+    return total * multiple
+}
+
+val doubleAry = doubleArrayOf(50.0, 60.0, 0.0)
+/* 把数组展开 */
+println(sum(30.0, 80.0, *doubleAry)) //输出220.0
+```
+
+- 表达式函数体 `fun rectangleArea(width: Double, height: Double) = width * height` (类似胖箭头函数只有一句可以省略花括号，这里因类型腿短可以省略返回类型)
+
+### 局部函数
+
+关键是作用域，常规操作
+
+### 匿名函数
+
+策略模式可以跟JavaScript一样简单（函数作为一等公民可以作为返回值）
+
+```java
+fun calculate(n1: Int, n2: Int, opr: Char): Int {
+    val multiple = 2
+    val resultFun = if (opr == '+')
+    //声明相加匿名函数
+    fun(a: Int, b: Int): Int { ①
+        return (a + b) * multiple
+    }
+    else
+    //声明相减匿名函数
+    fun(a: Int, b: Int): Int = (a - b) * multiple ②
+    return resultFun(n1, n2)
+    }
+fun main(args: Array<String>) {
+    println(calculate(10, 5, '+')) //输出结果是30
+}
+```
+
+### 扩展
 
 - 中缀表示法：一个参数时，更简洁的表达方式
 mapOf( 1 to "one")如同 1.to("one")一个参数的函数一起使用
@@ -70,7 +134,14 @@ mapOf( 1 to "one")如同 1.to("one")一个参数的函数一起使用
 `infix` 修饰符
 `infix fun Any.to(other: Any) = Pair(this, other)`
 
-# 类、对象和接口
+
+## 面向对象
+
+自顶向下任务分解逐步求精
+
+对状态改变的封装：对象=》属性、方法=》方法改变属性=》对外，实例
+
+## 类、对象和接口
 
 单例对象、伴生对象、对象表达式
 
