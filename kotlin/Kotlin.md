@@ -8,8 +8,9 @@
 - [Kotlin官网](https://kotlinlang.org/)
 - [Kotlin官方参考文档](https://kotlinlang.org/docs/reference/)
 - [Kotlin标准库](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)
+- [操作符和其他符号](https://kotlinlang.org/docs/reference/keyword-reference.html#operators-and-special-symbols)
 
-更好的Java
+更珍爱生命的Java
 - JVM
   - J2EE
   - Android 
@@ -25,7 +26,7 @@ native
 
 ## ？？？
 
-- 访问修饰符？？？rwiiufk
+- 访问修饰符？？？通篇问号
 - 属性 getter setter 支持字段filed
 - [From Java to Kotlin and Back Again](https://allegro.tech/2018/05/From-Java-to-Kotlin-and-Back-Again.html)
 - [兼听则明](https://cloud.tencent.com/developer/news/249347)
@@ -137,14 +138,44 @@ mapOf( 1 to "one")如同 1.to("one")一个参数的函数一起使用
 `infix` 修饰符
 `infix fun Any.to(other: Any) = Pair(this, other)`
 
-
 ## 面向对象
 
 自顶向下任务分解逐步求精
 
-对状态改变的封装：对象=》属性、方法=》方法改变属性=》对外，实例
+对状态改变的封装：对象=》属性（数据）、方法（操作）=》方法改变属性=》对外，实例
+
+对业务逻辑对封装
+
+- 封装：隐藏内部细节,降低心智负担
+- 继承：复用
+- 多态：低耦合
 
 ## 类、对象和接口
+
+- constructor
+- init code block
+- method
+- property
+- inner class
+- 嵌套类
+- 对象表达声明式
+
+### 属性
+
+- [backing field](https://kotlinlang.org/docs/reference/properties.html#backing-fields)
+- [what is backing field？](https://medium.com/@nomanr/backing-field-in-kotlin-explained-9f903f27946c)
+
+- [lateinit 延迟初始化属性](https://kotlinlang.org/docs/reference/properties.html#late-initialized-properties-and-variables) 后初始化
+- [Delegated Properties 委托属性](https://kotlinlang.org/docs/reference/properties.html#delegated-properties)
+- [惰性加载属性](https://kotlinlang.org/docs/reference/delegated-properties.html#standard-delegates)
+用的时候才加载，而且是同一个结果 -> val
+- [可观察属性](https://kotlinlang.org/docs/reference/delegated-properties.html#observable)
+  - proxy?
+  - reactive?
+  - [definedProperty](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)?
+  - [computed](https://cn.vuejs.org/v2/guide/computed.html)?
+
+
 
 单例对象、伴生对象、对象表达式
 
