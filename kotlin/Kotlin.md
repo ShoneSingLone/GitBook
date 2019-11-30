@@ -132,8 +132,17 @@ fun main(args: Array<String>) {
 
 ### 扩展
 
+- 扩展函数（类方法）
+- 扩展属性（类属性）
+
+成员优先 参数列表顺序
+
+---
+
 - 中缀表示法：一个参数时，更简洁的表达方式
 mapOf( 1 to "one")如同 1.to("one")一个参数的函数一起使用
+
+只能是扩展函数在或者是类方法，不能是顶层函数
 
 `infix` 修饰符
 `infix fun Any.to(other: Any) = Pair(this, other)`
@@ -181,12 +190,17 @@ mapOf( 1 to "one")如同 1.to("one")一个参数的函数一起使用
 
 可见性 访问修饰符
 
+- public
+- internal
+- protected
+- private
+
 ## Interface
 
 - `:` 代替 Java 中 的 `extend` `implements`
 - 实现任意多个接口但是只能继承一个类
 
-脆弱的基类问题：要么为继承做好设计彬记录文档，要么禁止这么做
+脆弱的基类问题：要么为继承做好设计记录文档，要么禁止这么做
 Kotlin 默认都是 final 除非明确希望子类override 加上 open 前缀，实现时继承 open 特性；
 
 ## abstract
