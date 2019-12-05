@@ -130,22 +130,6 @@ fun main(args: Array<String>) {
 }
 ```
 
-### 扩展
-
-- 扩展函数（类方法）
-- 扩展属性（类属性）
-
-成员优先 参数列表顺序
-
----
-
-- 中缀表示法：一个参数时，更简洁的表达方式
-mapOf( 1 to "one")如同 1.to("one")一个参数的函数一起使用
-
-只能是扩展函数在或者是类方法，不能是顶层函数
-
-`infix` 修饰符
-`infix fun Any.to(other: Any) = Pair(this, other)`
 
 ## 面向对象
 
@@ -186,14 +170,68 @@ mapOf( 1 to "one")如同 1.to("one")一个参数的函数一起使用
 
 
 
+### 扩展
+
+- 扩展函数（类方法）
+- 扩展属性（类属性）
+
+成员优先 参数列表顺序
+
+---
+
+- 中缀表示法：一个参数时，更简洁的表达方式
+mapOf( 1 to "one")如同 1.to("one")一个参数的函数一起使用
+
+只能是扩展函数在或者是类方法，不能是顶层函数
+
+`infix` 修饰符
+`infix fun Any.to(other: Any) = Pair(this, other)`
+
+### 构造函数
+
+- [constructors](https://kotlinlang.org/docs/reference/classes.html#constructors)
+- `init{}` 代码块
+- 类体中没有代码可以省略大括号
+
+```java
+/* 不可以省略val 或者 var */
+class User constructor(val name: String, var password: String)
+```
+
+#### 次构造函数
+
+```java
+class Person(val name: String) {
+    var children: MutableList<Person> = mutableListOf<Person>();
+/* this(name)调用当前类主构造函数Person(val name:String) 类似super()的作用 */
+    constructor(name: String, parent: Person) : this(name) {
+        /* this表示当前对象 */
+        parent.children.add(this)
+    }
+}
+```
+
+#### 默认构造函数
+
+### 封装性与可见性修饰符
+
+- [visibility-modifiers](https://kotlinlang.org/docs/reference/visibility-modifiers.html)
+- [modules](https://kotlinlang.org/docs/reference/visibility-modifiers.html#modules)
+
+| 可见性  |   修饰符  | 类成员声明   | 顶层声明     | 说明               |
+|--------|------------|--------------|--------------|--------------------|
+| 公有   | public     | 所有地方可见 | 所有地方可见 | public是默认修饰符 |
+| 内部   | internal   | 模块中可见   | 模块中可见   | 不同于Java中的包   |
+| 保护   | protected  | 子类中可见   |             | 顶层声明中不能使用 |
+| 私有   | private    | 类中可见     | 文件中可见   |                    |
+
+### [数据类型](https://kotlinlang.org/docs/reference/data-classes.html)
+
+- [copying](https://kotlinlang.org/docs/reference/data-classes.html#copying)
+- [destructuring-declarations](https://kotlinlang.org/docs/reference/data-classes.html#data-classes-and-destructuring-declarations)
+
 单例对象、伴生对象、对象表达式
 
-可见性 访问修饰符
-
-- public
-- internal
-- protected
-- private
 
 ## Interface
 
@@ -204,10 +242,6 @@ mapOf( 1 to "one")如同 1.to("one")一个参数的函数一起使用
 Kotlin 默认都是 final 除非明确希望子类override 加上 open 前缀，实现时继承 open 特性；
 
 ## abstract
-
-## 修饰符
-
-[visibility-modifiers](https://kotlinlang.org/docs/reference/visibility-modifiers.html)
 
 ## 密封类 ：定义首先的类继承结构
 
@@ -237,10 +271,6 @@ sealed class ExprSealed {
 
 - 从构造方法 内部
 
-## 数据类型和类委托
-
-equals toString hashCode 都要自己搞，不如先来点默认的。
-by 委托 避免样板代码
 
 ### object 声明一个类并创建一个实例
 
