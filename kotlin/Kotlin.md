@@ -230,7 +230,21 @@ class Person(val name: String) {
 - [copying](https://kotlinlang.org/docs/reference/data-classes.html#copying)
 - [destructuring-declarations](https://kotlinlang.org/docs/reference/data-classes.html#data-classes-and-destructuring-declarations)
 
-单例对象、伴生对象、对象表达式
+### [枚举类](https://kotlinlang.org/docs/reference/enum-classes.html)
+
+### [嵌套类 与 内部类](https://kotlinlang.org/docs/reference/nested-classes.html)
+
+- 客观上命名空间
+
+### [单例对象、伴生对象、对象表达式](https://kotlinlang.org/docs/reference/object-declarations.html)
+
+```java
+window.addMouseListener(object : MouseAdapter() {
+    override fun mouseClicked(e: MouseEvent) { /*...*/ }
+    override fun mouseEntered(e: MouseEvent) { /*...*/ }
+})
+
+```
 
 
 ## Interface
