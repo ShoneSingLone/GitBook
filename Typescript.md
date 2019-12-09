@@ -2,6 +2,30 @@
 
 [打造TypeScript的Visual Studio Code开发环境](https://zhuanlan.zhihu.com/p/21611724)
 [tsconfig.json](http://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
+[ts-node](https://github.com/TypeStrong/ts-node)
+
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register"
+            ],
+            "args": [
+                "${workspaceFolder}\\src\\server.ts"
+            ]
+        }
+    ]
+}
+```
 
 ## 类型定义文件
 

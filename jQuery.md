@@ -5,6 +5,7 @@
 ## [jQuery 源码系列（九）回溯机制](https://segmentfault.com/a/1190000008468456)
 
 ## 字符实体转码的方法
+
 [Javascript：字符的编码转换和实体转换](https://segmentfault.com/q/1010000000146420)
 [html 实体](http://www.w3school.com.cn/html/html_entities.asp)
 
@@ -48,17 +49,19 @@
 submit\click
 
 ### .closest()
+
 >Description: For each element in the set, get the first element that matches the selector by testing the element itself and traversing up through its ancestors in the DOM tree.
 
 ### .detach()
+
 >Description: Remove the set of matched elements from the DOM.The .detach() method is the same as .remove(), except that .detach() keeps all jQuery data associated with the removed elements. This method is useful when removed elements are to be reinserted into the DOM at a later time.
 
-
 ### 自定义事件
+
 发布-订阅者/观察者模式
 
-
 在事件类型后添加一个感叹号`!`就可以触发没有命名空间的事件处理程序:
+
 ```JS
 $("button").trigger("click!");
 ```
