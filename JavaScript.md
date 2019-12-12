@@ -175,6 +175,8 @@ console.log(Object.prototype.toString.call(null));//[object Null]
 
 ##### $$ and ||
 
+- **返回的是变量本身**
+
 ```js
 $("#btshow").click(function (e) {
     /*
@@ -383,10 +385,11 @@ new Object Array String Number Boolean 返回的是相应的对象
 - [Js 数组——filter()、map()、some()、every()、forEach()、lastIndexOf()、indexOf()](https://www.cnblogs.com/xiao-hong/p/3194027.html)
 - [JavaScript数组所有API全解密](http://louiszhai.github.io/2017/04/28/array/?from=timeline)
 - [array 方法](http://louiszhai.github.io/2017/04/28/array/#some)
+- [array 方法 15](https://segmentfault.com/a/1190000021071600?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com&share_user=1030000000178452)
 
 - 改变自身
 - 不改变自身
-- 遍历
+- 迭代
 
 判断是否是数组的方法是看类属性（是对象的三个属性之一：原型、类、可扩展）
 
