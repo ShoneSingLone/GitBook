@@ -2,7 +2,7 @@
 
 # Kotlin
 
-- KOTLIN_HOME
+- KOTLIN_HOME 环境变量
 - [releases](https://github.com/JetBrains/kotlin/releases)
 - [Kotlin源代码网址](https://github.com/JetBrains/kotlin)
 - [Kotlin官网](https://kotlinlang.org/)
@@ -11,11 +11,12 @@
 - [操作符和其他符号](https://kotlinlang.org/docs/reference/keyword-reference.html#operators-and-special-symbols)
 
 更珍爱生命的Java
+
 - JVM
   - J2EE
   - Android 
-native
-2js
+- native
+- 2js
 
 1. 简洁(数据类扩展方法区间)
 2. 空值安全(编译时异常 运行时异常)
