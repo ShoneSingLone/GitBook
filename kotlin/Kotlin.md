@@ -2,7 +2,7 @@
 
 # Kotlin
 
-- KOTLIN_HOME
+- KOTLIN_HOME 环境变量
 - [releases](https://github.com/JetBrains/kotlin/releases)
 - [Kotlin源代码网址](https://github.com/JetBrains/kotlin)
 - [Kotlin官网](https://kotlinlang.org/)
@@ -11,11 +11,12 @@
 - [操作符和其他符号](https://kotlinlang.org/docs/reference/keyword-reference.html#operators-and-special-symbols)
 
 更珍爱生命的Java
+
 - JVM
   - J2EE
   - Android 
-native
-2js
+- native
+- 2js
 
 1. 简洁(数据类扩展方法区间)
 2. 空值安全(编译时异常 运行时异常)
@@ -157,25 +158,23 @@ fun main(args: Array<String>) {
 
 - [backing field](https://kotlinlang.org/docs/reference/properties.html#backing-fields)
 - [what is backing field？](https://medium.com/@nomanr/backing-field-in-kotlin-explained-9f903f27946c)
-
 - [lateinit 延迟初始化属性](https://kotlinlang.org/docs/reference/properties.html#late-initialized-properties-and-variables) 后初始化
 - [Delegated Properties 委托属性](https://kotlinlang.org/docs/reference/properties.html#delegated-properties)
 - [惰性加载属性](https://kotlinlang.org/docs/reference/delegated-properties.html#standard-delegates)
 用的时候才加载，而且是同一个结果 -> val
 - [可观察属性](https://kotlinlang.org/docs/reference/delegated-properties.html#observable)
   - proxy?
+  
   - reactive?
   - [definedProperty](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)?
   - [computed](https://cn.vuejs.org/v2/guide/computed.html)?
-
-
 
 ### 扩展
 
 - 扩展函数（类方法）
 - 扩展属性（类属性）
-
-成员优先 参数列表顺序
+- **成员优先**
+- **参数列表顺序**
 
 ---
 
@@ -219,7 +218,7 @@ class Person(val name: String) {
 - [modules](https://kotlinlang.org/docs/reference/visibility-modifiers.html#modules)
 
 | 可见性  |   修饰符  | 类成员声明   | 顶层声明     | 说明               |
-|--------|------------|--------------|--------------|--------------------|
+|--------|------------|-------------|--------------|--------------------|
 | 公有   | public     | 所有地方可见 | 所有地方可见 | public是默认修饰符 |
 | 内部   | internal   | 模块中可见   | 模块中可见   | 不同于Java中的包   |
 | 保护   | protected  | 子类中可见   |             | 顶层声明中不能使用 |
@@ -234,9 +233,25 @@ class Person(val name: String) {
 
 ### [嵌套类 与 内部类](https://kotlinlang.org/docs/reference/nested-classes.html)
 
-- 客观上命名空间
+- 嵌套 类不能引用外部类，也不能引用外部类的成员，
+  - 客观上是命名空间通过使用“外部类.嵌套类”使用
+- 内部类是一种特殊的嵌套类，嵌套类不能访问外部类引用，不能访问外部类的成员，而内
+部可以
 
-### [单例对象、伴生对象、对象表达式](https://kotlinlang.org/docs/reference/object-declarations.html)
+### object 声明一个类并创建一个实例
+
+- [单例对象、伴生对象、对象表达式](https://kotlinlang.org/docs/reference/object-declarations.html)
+
+#### 对象表达式
+
+- object关键字可以声明对象表达式，对象表达式用来替代Java中的匿名内部类。
+- 对象声明不能嵌套在其他函数中，但可以嵌套在其他类中或其他对象声明中。
+
+#### 伴生对象
+
+- 通过声明伴生对象实现Java静态成员访问方式。
+- 我寻思有点JavaScript原型链继承的意思，共用的往原型链上扔
+- 伴生对象扩展，在内部持有一个空的声明，才能在外部使用扩展
 
 ```java
 window.addMouseListener(object : MouseAdapter() {
@@ -245,6 +260,10 @@ window.addMouseListener(object : MouseAdapter() {
 })
 
 ```
+
+## 继承与多态
+
+
 
 
 ## Interface
@@ -286,14 +305,6 @@ sealed class ExprSealed {
 - 从构造方法 内部
 
 
-### object 声明一个类并创建一个实例
-
-### 伴生对象
-
-工厂方法和静态成员
-
-伴生对象扩展，在内部持有一个空的声明，才能再外部使用扩展
-
 ## Lambda
 
 {参数->函数体}始终在大括号里
@@ -302,7 +313,6 @@ sealed class ExprSealed {
 
 - lambda表达式是函数调用的最后一个实参，它可以放在括号的外边
   - 如果lambda表达式是唯一的实参，连括号都可以省略
-
 - `Move lambda expression out of parentheses`
 - `Move lambda expression into of parentheses`
 
