@@ -44,7 +44,6 @@ openssl req -newky rsa:4096 -nodes -keyout https.key -x509 -days 3650 -out htts.
 
 - HA机制（容器代理，可用容器池）
 
-
 ## DockerHub（Repository）
 
 类似GitHub存代码，DockerHub用来存image
@@ -54,7 +53,7 @@ openssl req -newky rsa:4096 -nodes -keyout https.key -x509 -days 3650 -out htts.
 - docker search
 - docker pull
 
-### private repository
+### [private repository](https://docs.docker.com/registry/deploying/)
 
 - docker run -d -p 5000:5000 -v <本地目录>:/tmp/registry<容器内地址> registry
 - docker tag hello-world:latest http://www.singlone.top:5000/hello:0.0.1
