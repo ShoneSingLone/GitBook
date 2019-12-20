@@ -1,5 +1,7 @@
 # 安装
 
+[over-view](https://docs.docker.com/engine/docker-overview/)
+
 ## CLI
 
 - docker images
@@ -58,4 +60,50 @@ openssl req -newky rsa:4096 -nodes -keyout https.key -x509 -days 3650 -out htts.
 - docker run -d -p 5000:5000 -v <本地目录>:/tmp/registry<容器内地址> registry
 - docker tag hello-world:latest http://www.singlone.top:5000/hello:0.0.1
 
-## Data Volume
+## [Data Volume](https://docs.docker.com/storage/volumes/)
+
+- 创建数据卷 挂载
+  - -v 挂载
+  - docker volume create --name volumeName
+  - docker volume inspect volumeName
+- docker volume list
+- docker volume rm 
+- 数据卷容器是专门用来存放数据卷的容器
+  - **已经启动的容器是无法在挂载新的外部目录进去**
+    - docker create --name volumeContainerName -v volumeName:/volumemountedpath imageName
+    - 创建容器web 挂载volumeName到以ubuntu镜像基础的容器volumeContainerName的/volumemountedpath
+- 其他容器使用数据卷容器里的数据
+  - docker run -d --name newContainerName --wolumes-from volumeContainerName imageName
+
+### 数据卷的迁移->导入、导出
+
+- docker run -it --volumes-from volumeContainerName -v ${pwd}:/backup --name exporter --rm ubuntu
+- `docker volume create --name volumeDB`
+- `docker create --name vlcData -v /vlData ubuntu`
+- `docker run -it --name addsomedata --volumes-from vlcData ubuntu`
+- `docker run -it --volumes-from vlcData -v ${pwd}:/vlData --name exporter --rm ubuntu` **windows=>/d/github/path**
+
+## 网络
+
+-P
+-p
+-link
+docker run -d --name cMysql mysql
+docker run -d -p 80:80 -p 443:443 --name dbmysql --link cMysql nginx
+
+## Dockerfile
+
+netstat -tunlp
+
+## application
+
+### mysql
+
+docker pull mysql:latest
+docker run -it --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql
+
+docker pull mongo:latest
+docker run -it --name mongo -p 27017:27017 mongo --auth
+$ docker exec -it mongo mongo admin
+db.createUser({ user:'admin',pwd:'123456',roles:[ { role:'userAdminAnyDatabase', db: 'admin'}]});
+db.auth('admin', '123456')
