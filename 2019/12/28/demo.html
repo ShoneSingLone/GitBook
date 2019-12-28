@@ -66,8 +66,8 @@
                     </filter>
                 </defs>
                 <path :d="dPath" stroke="rgba(30, 90, 150, 0.78)" fill="#fff" />
-                <path :d="qPathUp" stroke="rgba(30, 90, 150, 0.78)" fill="none" filter="url(#shadow)" />
-                <path :d="qPathDown" stroke="rgba(30, 90, 150, 0.78)" fill="none" filter="url(#shadow)" />
+                <path :d="dPathBC" stroke="rgba(30, 90, 150, 0.78)" fill="none" filter="url(#shadow)" />
+                <path :d="dPathAC" stroke="rgba(30, 90, 150, 0.78)" fill="none" filter="url(#shadow)" />
                 <path :d="areaPath" stroke="rgba(30, 90, 150, 0.78)" fill="gray" />
             </svg>
             <div class="div-container">
@@ -110,14 +110,14 @@
                     Z
                     `;
                 },
-                qPathUp() {
+                dPathBC() {
                     return `
                     M${this.bPoint.x} ${this.bPoint.y} 
                     Q${(this.aPoint.x + this.bPoint.x) / 2} ${(this.aPoint.y + this.bPoint.y) / 2} 
                     ${this.cPoint.x} ${this.cPoint.y}
                     `;
                 },
-                qPathDown() {
+                dPathAC() {
                     return `
                     M${this.aPoint.x} ${this.aPoint.y} 
                     Q${(this.aPoint.x + this.bPoint.x) / 2} ${(this.aPoint.y + this.bPoint.y) / 2} 

@@ -1,21 +1,22 @@
-# 这篇文章讲什么？
+# SVG完成卷角动画Demo
+
+## 这篇文章讲什么？
 
 使用SVG完成卷角的动画效果。
+`<iframe src="./demo.html" style="width:100%;height:400px;"></iframe>`
 
-<iframe src="./demo.html"/>
-
-# 为什么要这么做？
+## 为什么要这么做？
 
 确实,用CSS就能实现卷角效果，很多文章有介绍——[css实现简约的纸张卷角效果][2]、 [不规则卷角][3]、 [纸张边角卷起效果][4]、 [css-backgrounds-4][1]。
 >如果你手里有一个锤子，那么......
 
 我的想法是，大部分所谓的“效果”其实是属于“设计”的范围，有很多工具——AI、XD、Inkscape[（Adobe AI开源免费替代品，点击链接查看该工具的作品集)][5] 都能够在设计阶段完成。既然已经完成，就没有必要再进行所谓的“一比一还原”，而只需要对设计产出加上适当的前端代码即可。SVG与位图相比，在交互性上有着天然的优势，按照一套固定的方法，适当加一些JS，就能够实现高质量的效果。
 
-# 实现
+## 实现
 
 Talk is cheap. Show me the code
 
-## 必要的知识点
+### 必要的知识点
 
 - web三架马车就不提了
 - [SVG][6]
@@ -23,9 +24,9 @@ Talk is cheap. Show me the code
   - [贝塞尔曲线][8] 按我的理解，就有点素描里面切圆的概念。知道**点**的意义，才能控制图形。
   - [FLIP Your Animations][9] 国内有翻译文，可以自己搜一下。这是一个高性能WEB动画的方法论，我上面提到的**按照一套固定的方法**就是这个。
 
-## 搞事情
+### 搞事情
 
-### 假装设计给了个好看的 SVG
+#### 假装设计给了个好看的 SVG
 
 其实是我为了方便直接按照 560*320 大小画出的SVG图片敲的
 
@@ -55,7 +56,7 @@ const aStart = {//A
     };
 ```
 
-然后就是路径的绘制：这里的控制点为了方便就是中点，总之意图就是该点可以受控。
+然后就是路径的绘制：这里的控制点为了方便就是中点，总之意图就是该点可以受控,如果按照设计稿，效果应该更灵动。
 
 ```js
 dPath() {//矩形
@@ -68,14 +69,14 @@ dPath() {//矩形
     Z
     `;
 },
-qPathUp() {//AC
+dPathBC() {//BC
     return `
     M${this.bPoint.x} ${this.bPoint.y} 
     Q${(this.aPoint.x + this.bPoint.x) / 2} ${(this.aPoint.y + this.bPoint.y) / 2} 
     ${this.cPoint.x} ${this.cPoint.y}
     `;
 },
-qPathDown() {//
+dPathAC() {//AC
     return `
     M${this.aPoint.x} ${this.aPoint.y} 
     Q${(this.aPoint.x + this.bPoint.x) / 2} ${(this.aPoint.y + this.bPoint.y) / 2} 
@@ -93,7 +94,7 @@ areaPath() {
     Z
     `;
 },
-backPath() {
+backPath() {//卷角区域颜色可以单独控制
     return `
     M${this.aPoint.x} ${this.aPoint.y}
     L560 0
@@ -119,19 +120,23 @@ backPath() {
     }
 ```
 
-HTML 只加了一个按钮作为切换状态，实际也可以添加拖拽
+HTML 只加了一个按钮作为切换状态，实际也可以添加拖拽之类的交互。
 
-以上。
+## 总结
 
-# 总结
+以FLIP为主要的方法步骤=>确定起止状态=>找到关键点=>数据绑定=>触发
 
-- 直接使用使用设计产出，减少中间环节，避免无效功夫。
+- 直接使用使用设计产出，减少中间环节，所见即所得，避免无效功夫。
 - 找出关键**点**，
 - 按照FLIP方法实现
 
 ---
 
+另外，使用SVG完成异形图标、log、icon，字体渐变之类也是不错。
+
+---
 抛砖引玉，若有斧正，在此谢过。
+以上。
 
 [1]:http://dev.w3.org/csswg/css-backgrounds-4
 [2]:http://www.uml.org.cn/html/201207164.asp
