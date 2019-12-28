@@ -2,7 +2,7 @@
 
 使用SVG完成卷角的动画效果。
 
-<iframe src="./Corner.html"/>
+<iframe src="./demo.html"/>
 
 # 为什么要这么做？
 
