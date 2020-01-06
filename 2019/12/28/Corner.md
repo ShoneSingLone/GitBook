@@ -83,7 +83,7 @@ dPathAC() {//AC
     ${this.cPoint.x} ${this.cPoint.y}
     `;
 },
-areaPath() {
+areaPath() {//卷角区域颜色可以单独控制
     return `
     M${this.aPoint.x} ${this.aPoint.y}
     L${this.bPoint.x} ${this.bPoint.y}
@@ -94,7 +94,7 @@ areaPath() {
     Z
     `;
 },
-backPath() {//卷角区域颜色可以单独控制
+backPath() {//我实际上是想用clipPath，无奈不是很娴熟，分别用了背景填充和图片
     return `
     M${this.aPoint.x} ${this.aPoint.y}
     L560 0
@@ -126,7 +126,7 @@ HTML 只加了一个按钮作为切换状态，实际也可以添加拖拽之类
 
 以FLIP为主要的方法步骤=>确定起止状态=>找到关键点=>数据绑定=>触发
 
-- 直接使用使用设计产出，减少中间环节，所见即所得，避免无效功夫。
+- 直接使用设计产出，减少中间环节，所见即所得，避免无效功夫。
 - 找出关键**点**，
 - 按照FLIP方法实现
 
