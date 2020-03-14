@@ -40,7 +40,7 @@
 至少两个方面
 
 - 框架自己的渲染引擎，跨平台和效率优势
-- dart 强类型语言，比JavaScript更适合复杂应用
+- dart 强类型语言，比JavaScript更适合复杂应用多人协作
 
 ## [How](https://flutter.io/setup-windows/#system-requirements)
 
