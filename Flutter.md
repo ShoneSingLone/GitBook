@@ -117,7 +117,7 @@ main() async {
 
 ## 起步
 
-`lib/main.dart`
+- 入口文件：`lib/main.dart`
 
 `import 'package:flutter/material.dart';`
 
