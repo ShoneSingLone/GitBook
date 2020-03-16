@@ -122,3 +122,7 @@ main() async {
 `import 'package:flutter/material.dart';`
 
 `jar` 包位于 `flutter\bin\cache\artifacts\engine`
+
+## Using the Flutter inspector
+
+[调试工具](https://flutter.dev/docs/development/tools/devtools/inspector)
