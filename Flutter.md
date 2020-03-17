@@ -122,3 +122,9 @@ main() async {
 `import 'package:flutter/material.dart';`
 
 `jar` 包位于 `flutter\bin\cache\artifacts\engine`
+
+## 引入包
+
+[pub.dev] (https://pub.dev/flutter/packages)
+1. pubspec
+1. flutter packages get
