@@ -126,5 +126,10 @@ main() async {
 ## 引入包
 
 [pub.dev] (https://pub.dev/flutter/packages)
+
 1. pubspec
 1. flutter packages get
+
+## Using the Flutter inspector
+
+[调试工具](https://flutter.dev/docs/development/tools/devtools/inspector)
