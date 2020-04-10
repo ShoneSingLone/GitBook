@@ -138,7 +138,6 @@ main() async {
 
 [调试工具](https://flutter.dev/docs/development/tools/devtools/inspector)
 
-
 ## plugin
 
 cached_network_image
@@ -147,3 +146,5 @@ json_serializable
 built_value
 Map<String,dynamic> app = JSON.decode(jsonresponsebody)
 map['key']
+json_to_dart
+shared_preferences
