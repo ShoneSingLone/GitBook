@@ -2,6 +2,10 @@
 
 ## Flutter Resources
 
+- [flutter-examples](https://github.com/nisrulz/flutter-examples)
+- [examples](https://github.com/flutter/examples)
+- [examples](https://github.com/flutter/flutter/tree/master/examples)
+- [FluterExampleApps](https://github.com/iampawan/FlutterExampleApps)
 - [cookbook](https://flutter.io/cookbook/)
 - [Documentatio](https://docs.flutter.io/)
 - [Github](https://github.com/flutter/flutter)
@@ -122,3 +126,25 @@ main() async {
 `import 'package:flutter/material.dart';`
 
 `jar` 包位于 `flutter\bin\cache\artifacts\engine`
+
+## 引入包
+
+[pub.dev] (https://pub.dev/flutter/packages)
+
+1. pubspec
+1. flutter packages get
+
+## Using the Flutter inspector
+
+[调试工具](https://flutter.dev/docs/development/tools/devtools/inspector)
+
+## plugin
+
+cached_network_image
+http 
+json_serializable
+built_value
+Map<String,dynamic> app = JSON.decode(jsonresponsebody)
+map['key']
+json_to_dart
+shared_preferences

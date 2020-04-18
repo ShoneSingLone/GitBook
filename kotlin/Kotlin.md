@@ -36,7 +36,7 @@
 
 - var variable 变量
 - val value 运行时常量 final
-- const val 相当于Java public final
+- const val 相当于Java public final[区别](https://www.jianshu.com/p/01aac645d003)
 
 ## 注释
 
@@ -217,12 +217,12 @@ class Person(val name: String) {
 - [visibility-modifiers](https://kotlinlang.org/docs/reference/visibility-modifiers.html)
 - [modules](https://kotlinlang.org/docs/reference/visibility-modifiers.html#modules)
 
-| 可见性  |   修饰符  | 类成员声明   | 顶层声明     | 说明               |
-|--------|------------|-------------|--------------|--------------------|
-| 公有   | public     | 所有地方可见 | 所有地方可见 | public是默认修饰符 |
-| 内部   | internal   | 模块中可见   | 模块中可见   | 不同于Java中的包   |
-| 保护   | protected  | 子类中可见   |             | 顶层声明中不能使用 |
-| 私有   | private    | 类中可见     | 文件中可见   |                    |
+| 可见性 | 修饰符    | 类成员声明   | 顶层声明     | 说明               |
+|--------|-----------|--------------|--------------|--------------------|
+| 公有   | public    | 所有地方可见 | 所有地方可见 | public是默认修饰符 |
+| 内部   | internal  | 模块中可见   | 模块中可见   | 不同于Java中的包   |
+| 保护   | protected | 子类中可见   |              | 顶层声明中不能使用 |
+| 私有   | private   | 类中可见     | 文件中可见   |                    |
 
 ### [数据类型](https://kotlinlang.org/docs/reference/data-classes.html)
 
