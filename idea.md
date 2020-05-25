@@ -1,1 +1,3 @@
 - Surround selection on typing quote or brace
+- ligatures
+- 
