@@ -65,6 +65,9 @@
 ---
 无返回数据与Unit类型
 
+<!-- https://stackoverflow.com/questions/55953052/kotlin-void-vs-unit-vs-nothing -->
+
+- [void](https://stackoverflow.com/questions/55953052/kotlin-void-vs-unit-vs-nothing)Java中的void，在kotlin中不适用，只是一个兼容性包袱
 - **Nothing**声明的函数永远不会正常的返回，只会抛出异常。
   - 有些框架，例如Junit单元测试框架，在测试失败时会调用Nothing返回类型的函数，通过它抛出异常使当前测试用例失败。 　
 - Unit与**Nothing**区别？

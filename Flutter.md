@@ -108,6 +108,7 @@ waitDinnerFuture.catchError((error){});事件错误的捕获
 waitDinnerFuture.timeout(new Duration(microseconds: 30));超时时间
 ```
 
+
 ```dart
 // Sequential processing using async and await.
 main() async {
@@ -145,6 +146,5 @@ http
 json_serializable
 built_value
 Map<String,dynamic> app = JSON.decode(jsonresponsebody)
-map['key'
-]json_to_dart
+map['key']json_to_dart
 shared_preferences
