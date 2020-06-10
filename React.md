@@ -101,3 +101,5 @@
   - `<button onClick={(e) => this.handleClick(e)}> Click me </button>`
 - key surround by array []children是数组的都要有key；在作用域内保持唯一性Unique
 hper什么的是一个jsx的替代方案。如果不喜欢jsx，可以试一试。你会回来用jsx的。（括弧尴尬笑）
+
+ReactDom.protal 与 Vue 的mounte 都是可以让这个视图与实际的作用域分开
