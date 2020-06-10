@@ -41,6 +41,14 @@
 ## 注释
 
 
+## Control Flow
+
+### [when](https://kotlinlang.org/docs/reference/control-flow.html#when-expression)
+
+## exception
+
+[exception](https://kotlinlang.org/docs/reference/coroutines/exception-handling.html)
+
 ## 区间
 
 区间中的元素只能是整数或字符
@@ -85,6 +93,9 @@ fun readDate(): Nothing {
     throw IOException()
 }
 ```
+
+
+
 ### 参数
 
 - 命名参数
