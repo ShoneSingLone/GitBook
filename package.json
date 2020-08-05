@@ -1,0 +1,26 @@
+{
+  "name": "gitbook",
+  "version": "1.0.0",
+  "description": "This file file serves as your book's preface, a great place to describe your book's content and ideas.",
+  "main": ".eslintrc.js",
+  "dependencies": {
+    "node": "^12.8.0",
+    "mddir": "^1.1.1",
+    "simple-pinyin": "^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "pull": "git pull &git pull gitee master",
+    "push": "git push &git push gitee master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShoneSingLone/GitBook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShoneSingLone/GitBook/issues"
+  },
+  "homepage": "https://github.com/ShoneSingLone/GitBook#readme"
+}
